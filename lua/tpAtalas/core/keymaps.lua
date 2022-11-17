@@ -78,26 +78,26 @@ keymap.set("n", "<leader>ttl", ":lua_LAZYGIT_TOGGLE()<CR>", noremap)
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
--- nvim-tree
-keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>", noremap) -- toggle file explorer
-keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>", noremap) --  Move the cursor in the tree for the current buffer, opening folders if needed.
-keymap.set("n", "<leader>ec", ":NvimTreeCollapse<CR>", noremap) -- Collapses the nvim-tree recursively.
+-- file explorer nvim-tree
+keymap.set("n", "<leader>fee", ":NvimTreeToggle<CR>", noremap) -- toggle file explorer
+keymap.set("n", "<leader>fef", ":NvimTreeFindFile<CR>", noremap) --  Move the cursor in the tree for the current buffer, opening folders if needed.
+keymap.set("n", "<leader>fec", ":NvimTreeCollapse<CR>", noremap) -- Collapses the nvim-tree recursively.
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", noremap) -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>", noremap) -- find string in current working directory as you type
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>", noremap) -- find string under cursor in current working directory
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", noremap) -- list open buffers in current neovim instance
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", noremap) -- list available help tags
+keymap.set("n", "<leader>tsf", "<cmd>Telescope find_files<CR>", noremap) -- find files within current working directory, respects .gitignore
+keymap.set("n", "<leader>tss", "<cmd>Telescope live_grep<CR>", noremas) -- find string in current working directory as you type
+keymap.set("n", "<leader>tsc", "<cmd>Telescope grep_string<CR>", noremap) -- find string under cursor in current working directory
+keymap.set("n", "<leader>tsb", "<cmd>Telescope buffers<CR>", noremap) -- list open buffers in current neovim instance
+keymap.set("n", "<leader>tsh", "<cmd>Telescope help_tags<CR>", noremap) -- list available help tags
 
 -- telescope git commands
-keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<CR>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<CR>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<CR>") -- list current changes per file with diff preview ["gs" for git status]
+keymap.set("n", "<leader>tgc", "<cmd>Telescope git_commits<CR>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+keymap.set("n", "<leader>tgf", "<cmd>Telescope git_bcommits<CR>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+keymap.set("n", "<leader>tgb", "<cmd>Telescope git_branches<CR>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
+keymap.set("n", "<leader>tgs", "<cmd>Telescope git_status<CR>") -- list current changes per file with diff preview ["gs" for git status]
 
--- restart lsp server
-keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+-- lsp server restart
+keymap.set("n", "<leader>lsr", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
 -- markdown preview
 keymap.set("n", "<leader>mpo", ":MarkdownPreview<CR>", noremap) -- start markdown preview open
@@ -110,3 +110,6 @@ keymap.set("n", "<leader>mtg", ":GenTocGFM<CR>", noremap) -- generate markdown t
 keymap.set("n", "<leader>tro", ":Trouble<CR>", noremap) -- Open the list
 keymap.set("n", "<leader>trc", ":TroubleClose<CR>", noremap) -- Close the list
 keymap.set("n", "<leader>trr", ":TroubleRefresh<CR>", noremap) -- Manually refresh the active list
+
+-- colorizer
+keymap.set("n", "<leader>cro", ":ColorizerToggle<CR>", noremap) -- toggle colorizer
