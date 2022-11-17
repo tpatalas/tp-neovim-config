@@ -9,7 +9,7 @@ toggleterm.setup({
 	hide_numbers = true,
 	shade_filetypes = {},
 	shade_terminals = true,
-	shading_factor = 2,
+	shading_factor = 3,
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
@@ -18,7 +18,13 @@ toggleterm.setup({
 	shell = vim.o.shell,
 	float_opts = {
 		border = "curved",
-		winblend = 0,
+     width = function()
+      return math.floor(vim.o.columns * 0.9)
+    end,
+    height = function()
+      return math.floor(vim.o.lines * 0.83)
+    end,
+    winblend = 3,
 		highlights = {
 			border = "Normal",
 			background = "Normal",
@@ -28,7 +34,7 @@ toggleterm.setup({
 
 function _G.set_terminal_keymaps()
 	local opts = { noremap = true }
-	vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+	-- vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
@@ -41,23 +47,22 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 local Terminal = require("toggleterm.terminal").Terminal
 
 local lazygit = Terminal:new({
-  cmd = "lazygit",
-  dir = "git_dir",
-  direction = "float",
-  float_opts = {
-    border = "double",
-  },
-  -- function to run on opening the terminal
-  on_open = function(term)
-    vim.cmd("startinsert!")
-    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "<q>", "<cmd>close<CR>", {noremap = true, silent = true})
-  end,
-  -- function to run on closing the terminal
-  on_close = function(term)
-    vim.cmd("startinsert!")
-  end,
+	cmd = "lazygit",
+	dir = "git_dir",
+	direction = "float",
+	float_opts = {
+		border = "double",
+	},
+	-- function to run on opening the terminal
+	on_open = function(term)
+		vim.cmd("startinsert!")
+		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "<q>", "<cmd>close<CR>", { noremap = true, silent = true })
+	end,
+	-- function to run on closing the terminal
+	on_close = function(term)
+		vim.cmd("startinsert!")
+	end,
 })
-
 
 function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
