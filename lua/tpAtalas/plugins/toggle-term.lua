@@ -9,7 +9,7 @@ toggleterm.setup({
 	hide_numbers = true,
 	shade_filetypes = {},
 	shade_terminals = true,
-	shading_factor = 2,
+	shading_factor = 3,
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
@@ -18,8 +18,13 @@ toggleterm.setup({
 	shell = vim.o.shell,
 	float_opts = {
 		border = "curved",
-    width = 150,
-		winblend = 0,
+     width = function()
+      return math.floor(vim.o.columns * 0.9)
+    end,
+    height = function()
+      return math.floor(vim.o.lines * 0.83)
+    end,
+    winblend = 3,
 		highlights = {
 			border = "Normal",
 			background = "Normal",
