@@ -1,11 +1,11 @@
 local keymap = vim.keymap -- for conciseness
-
 local noremap = { noremap = true }
 
 -- set leader key to space
 keymap.set("", "<Space>", "<Nop>", { noremap = true, silent = true })
 vim.g.maplocalleader = " "
 vim.g.mapleader = " "
+vim.g.VM_default_mappings = 0 -- disable the visual-multi default key mapping
 
 -- Modes
 --   normal_mode = "n",
@@ -34,6 +34,9 @@ keymap.set("i", "<c-d><c-d>", "<ESC>dawi", noremap)
 -- keymap.set("i", "<leader>dd", "<ESC>ddi")
 keymap.set("n", "<leader>DD", ":%d<CR>", noremap)
 
+-- formatting
+keymap.set("n", "<leader>fma", "gggqG", noremap)
+
 -- Exiting
 keymap.set("n", "QQ", ":q!<CR>", noremap)
 keymap.set("n", "qq", ":q<CR>")
@@ -42,8 +45,14 @@ keymap.set("n", "qq", ":q<CR>")
 keymap.set("n", "<leader>ra", ":%s/<c-r><c-w>/", noremap) -- Search and replace the word under current
 --cursor
 keymap.set("n", "<leader>rr", "*#ciw", noremap) -- Search all same words and replace current worrd under cursor
--- keymap.set("n", "<leader><space>", ":noh<CR>") -- Clear Search Hightlight -- currently turned off
+-- keymap.set("n", "<leader><space>", ":noh<CR>") -- Clear Search Highlight -- currently turned off
 -- from setting
+
+-- Navigation
+keymap.set("n", "<s-up>", "<S-{>", noremap) -- jump paragraph up
+keymap.set("n", "<s-down>", "<S-}>", noremap) -- jump paragraph down
+keymap.set("n", "<s-right>", "w", noremap) -- jump paragraph down
+keymap.set("n", "<s-left>", "b", noremap) -- jump paragraph down
 
 -- Save
 keymap.set("n", "SS", ":w<CR>", noremap)
@@ -100,7 +109,7 @@ keymap.set("n", "<leader>tgs", "<cmd>Telescope git_status<CR>") -- list current 
 keymap.set("n", "<leader>lsr", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
 -- markdown preview
-keymap.set("n", "<leader>mpo", ":MarkdownPreview<CR>", noremap) -- start markdown preview open
+-- keymap.set("n", "<leader>mpo", ":MarkdownPreview<CR>", noremap) -- start markdown preview open
 keymap.set("n", "<leader>mps", ":MarkdownPreviewStop<CR>", noremap) -- stop markdown preview stop
 
 -- markdown toc

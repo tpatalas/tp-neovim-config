@@ -104,7 +104,7 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
 	-- Indent Blankline
-	-- use("lukas-reineke/indent-blankline.nvim") -- adding unncessary characters when typing
+	-- use("lukas-reineke/indent-blankline.nvim") -- adding unnecessary characters when typing
 
 	-- Impatient improve the performance of lua module
 	use("lewis6991/impatient.nvim")
