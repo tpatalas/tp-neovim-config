@@ -9,6 +9,7 @@ opt.autoindent = true -- copy indent from current line when starting new one
 opt.colorcolumn = "80"
 opt.textwidth = 0
 opt.linebreak = true
+opt.breakindent = true
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 opt.wrap = false
 opt.ignorecase = true -- ignore case when searching
