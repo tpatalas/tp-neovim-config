@@ -10,13 +10,13 @@
 - [Installed Plugins](#installed-plugins)
   - [Plugin Manager](#plugin-manager)
   - [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
-  - [Color Scheme](#color-scheme)
+  - [Colors](#colors)
   - [Windows/Terminal Manager](#windowsterminal-manager)
   - [Essential plugins](#essential-plugins)
   - [File Explorer](#file-explorer)
   - [Icons](#icons)
   - [Status Line](#status-line)
-  - [Finder](#finder)
+  - [Search and find](#search-and-find)
   - [Autocompletion](#autocompletion)
   - [Snippet](#snippet)
   - [Managing servers](#managing-servers)
@@ -31,7 +31,7 @@
 
 <!-- vim-markdown-toc -->
 
-This is the initial basic setup for the Neovim Lua.
+This repo is the resource for the initial setup of the Neovim Lua.
 The primary purpose of this repo is to help you set up Neovim, and none of these setups is meant to provide the best practice.
 
 ## Installation (Homebrew)
@@ -72,11 +72,12 @@ brew install lazygit
 
 - [Plenary](https://github.com/nvim-lua/plenary.nvim)
 
-#### Color Scheme
+#### Colors
 
 > Checkout [Rose Pine Palette](https://rosepinetheme.com/palette)
 
 - [Rose-pine](https://github.com/rose-pine/neovim)
+- [Nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 
 #### Windows/Terminal Manager
 
@@ -101,9 +102,10 @@ brew install lazygit
 
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
-#### Finder
+#### Search and find
 
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [Visual-multi](https://github.com/mg979/vim-visual-multi)
 
 #### Autocompletion
 
