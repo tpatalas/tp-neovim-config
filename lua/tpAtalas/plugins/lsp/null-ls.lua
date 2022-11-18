@@ -40,13 +40,9 @@ local source = {
 	--  to disable file types use
 	-- diagnostics.cspell,
 	-- codeactions.cspell,
-	-- diagnostics.codespell,
-	-- formatting.codespell,
-	-- codeactions.proselint,
-	-- diagnostics.proselint,
-	completion.spell,
+	diagnostics.codespell,
+	formatting.codespell,
 	formatting.stylua, -- lua formatter
-	-- diagnostics.markdownlint,
 	codeactions.eslint_d.with(eslint),
 	diagnostics.eslint_d.with(eslint),
 	formatting.prettier.with(filetype), -- js/ts formatter
