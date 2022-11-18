@@ -38,6 +38,8 @@ return packer.startup(function(use)
 	use("rose-pine/neovim")
 	-- use("cocopon/iceberg.vim")
 	-- use("rebelot/kanagawa.nvim")
+	-- use("catppuccin/nvim")
+	use("norcalli/nvim-colorizer.lua")
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -59,10 +61,11 @@ return packer.startup(function(use)
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
 
-	-- fuzzy finding w/ telescope
+	-- search and finder
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 	-- makesure to install `$ brew install ripgrep` to use livegrep
+	use("mg979/vim-visual-multi") -- visual-multi cursor
 
 	-- autocompletion
 	use("hrsh7th/nvim-cmp") -- completion plugin

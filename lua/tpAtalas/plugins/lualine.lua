@@ -5,7 +5,7 @@ if not status then
 end
 
 -- get lualine rose-pine theme
-local lualine_rosepine = require("lualine.themes.palenight")
+local lualine_custom_theme = require("lualine.themes.powerline")
 
 -- new colors for theme
 local new_colors = {
@@ -18,10 +18,10 @@ local new_colors = {
 }
 
 -- change nightlfy theme colors
-lualine_rosepine.normal.a.bg = new_colors.foam
-lualine_rosepine.insert.a.bg = new_colors.rose
-lualine_rosepine.visual.a.bg = new_colors.iris
-lualine_rosepine.command = {
+lualine_custom_theme.normal.a.bg = new_colors.foam
+lualine_custom_theme.insert.a.bg = new_colors.rose
+lualine_custom_theme.visual.a.bg = new_colors.iris
+lualine_custom_theme.command = {
 	a = {
 		gui = "bold",
 		bg = new_colors.gold,
@@ -32,6 +32,41 @@ lualine_rosepine.command = {
 -- configure lualine with modified theme
 lualine.setup({
 	options = {
-		theme = lualine_rosepine,
+		icons_enabled = true,
+		theme = lualine_custom_theme,
+		-- component_separators = { left = "", right = "" },
+		-- section_separators = { left = "", right = "" },
+		disabled_filetypes = {
+			statusline = {},
+			winbar = {},
+		},
+		ignore_focus = {},
+		always_divide_middle = true,
+		globalstatus = false,
+		refresh = {
+			statusline = 1000,
+			tabline = 1000,
+			winbar = 1000,
+		},
 	},
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diff", "diagnostics" },
+		lualine_c = { "filename" },
+		lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { "filename" },
+		lualine_x = { "location" },
+		lualine_y = {},
+		lualine_z = {},
+	},
+	tabline = {},
+	winbar = {},
+	inactive_winbar = {},
+	extensions = {},
 })
