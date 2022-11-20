@@ -15,10 +15,10 @@ telescope.setup({
 	-- configure custom mappings
 	defaults = {
 		layout_config = {
-      horizontal = {
-        width = 0.95,
-			  -- preview_width = 0.55,
-      },
+			horizontal = {
+				width = 0.95,
+				preview_width = 0.5,
+			},
 		},
 		mappings = {
 			i = {
@@ -28,13 +28,11 @@ telescope.setup({
 			},
 		},
 	},
-  pickers = {
-    find_files = {
-      -- theme = "dropdown",
-
-    }
-  },
-
+	pickers = {
+		find_files = {
+			-- theme = "dropdown",
+		},
+	},
 })
 
 telescope.load_extension("fzf")
