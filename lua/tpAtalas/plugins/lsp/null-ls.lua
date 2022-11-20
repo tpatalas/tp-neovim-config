@@ -20,6 +20,7 @@ local eslint = { -- js/ts linter
 local filetype = {
 	filetypes = {
 		javascript,
+    http,
 		javascriptreact,
 		typescript,
 		typescriptreact,
@@ -36,12 +37,15 @@ local filetype = {
 -- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+-- Built-in sources: 
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local source = {
 	--  to disable file types use
 	-- diagnostics.cspell,
 	-- codeactions.cspell,
 	diagnostics.codespell,
 	formatting.codespell,
+	-- formatting.tidy,
 	formatting.stylua, -- lua formatter
 	codeactions.eslint_d.with(eslint),
 	diagnostics.eslint_d.with(eslint),

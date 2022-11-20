@@ -61,14 +61,9 @@ keymap.set("n", "<leader><CR><CR>", ":w<CR><cmd>lua ReloadConfig()<CR>", noremap
 -- Delete single character without copying into register
 keymap.set("n", "x", '"_x', noremap)
 
--- Increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>") -- inCRement
-keymap.set("n", "<leader>-", "<C-x>") -- deCRement
-
 -- Window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
@@ -76,16 +71,20 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
+keymap.set("n", "<c-a-right>", ":vertical resize +5<CR>", noremap) -- increase size vertically
+keymap.set("n", "<c-a-left>", ":vertical resize -5<CR>", noremap) -- decrease size vertically
+keymap.set("n", "<c-a-up>", ":horizontal resize +5<CR>", noremap) -- increase size horizontally
+keymap.set("n", "<c-a-down>", ":horizontal resize -5<CR>", noremap) -- decreise size horizontally
+keymap.set("n", "<leader>=", "<C-W>=", noremap) -- reset resize: press <alt-=>
+keymap.set("n", "<leader>`", "<C-W>w", noremap) -- switch split window
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
 
 -- toggleTerm
-keymap.set("n", "<leader>tto", ":ToggleTerm<CR>", noremap) -- toggle split window maximization
+keymap.set("n", "<leader>tto", ":ToggleTerm<CR>", noremap) -- toggle split window maximization or press <c-\>
 keymap.set("n", "<leader>ttl", ":lua_LAZYGIT_TOGGLE()<CR>", noremap)
-
--- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- file explorer nvim-tree
 keymap.set("n", "<leader>feo", ":NvimTreeToggle<CR>", noremap) -- toggle file explorer
@@ -122,3 +121,7 @@ keymap.set("n", "<leader>trr", ":TroubleRefresh<CR>", noremap) -- Manually refre
 
 -- colorizer
 keymap.set("n", "<leader>cro", ":ColorizerToggle<CR>", noremap) -- toggle colorizer
+
+-- rest nvim
+keymap.set("n", "<leader>rno", "<Plug>RestNvim<CR>", noremap) -- run the request under the cursor
+keymap.set("n", "<leader>rnl", "<Plug>RestNvimLast<CR>", noremap) -- re-reun the last request
