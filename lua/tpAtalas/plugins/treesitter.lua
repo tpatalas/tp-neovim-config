@@ -21,6 +21,7 @@ treesitter.setup({
 		"typescript",
 		"tsx",
 		"yaml",
+    "http",
 		"html",
 		"css",
 		"markdown",

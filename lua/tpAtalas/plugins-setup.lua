@@ -41,10 +41,6 @@ return packer.startup(function(use)
 	-- use("catppuccin/nvim")
 	use("norcalli/nvim-colorizer.lua")
 
-	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
-
-	use("szw/vim-maximizer") -- maximizes and restores current window
-
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
 	use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
@@ -145,9 +141,8 @@ return packer.startup(function(use)
 	-- trouble
 	use("folke/trouble.nvim")
 
-	-- spell checks
-	-- use("kamykn/spelunker.vim")
-	-- use("kamykn/popup-menu.nvim")
+	-- http client
+	use("rest-nvim/rest.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

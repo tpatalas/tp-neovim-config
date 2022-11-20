@@ -16,7 +16,7 @@ telescope.setup({
 	defaults = {
 		layout_config = {
 			horizontal = {
-				width = 0.95,
+				width = 0.90,
 				preview_width = 0.5,
 			},
 		},
