@@ -1,5 +1,5 @@
 -- import null-ls plugin safely
-local setup, null_ls = pcall(require, "null-ls")
+local setup, null_ls = pcall(require, 'null-ls')
 if not setup then
 	return
 end
@@ -13,14 +13,14 @@ local completion = null_ls.builtins.completion -- to setup completion
 local eslint = { -- js/ts linter
 	-- only enable eslint if root has .eslintrc.js
 	condition = function(utils)
-		return utils.root_has_file(".eslintrc.json") -- change file extension if you use something else
+		return utils.root_has_file('.eslintrc.json') -- change file extension if you use something else
 	end,
 }
 
 local filetype = {
 	filetypes = {
 		javascript,
-    http,
+		http,
 		javascriptreact,
 		typescript,
 		typescriptreact,
@@ -35,9 +35,9 @@ local filetype = {
 }
 
 -- to setup format on save
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
--- Built-in sources: 
+-- Built-in sources:
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local source = {
 	--  to disable file types use
@@ -53,16 +53,16 @@ local source = {
 }
 
 local on_attach = function(current_client, bufnr)
-	if current_client.supports_method("textDocument/formatting") then
+	if current_client.supports_method('textDocument/formatting') then
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-		vim.api.nvim_create_autocmd("BufWritePre", {
+		vim.api.nvim_create_autocmd('BufWritePre', {
 			group = augroup,
 			buffer = bufnr,
 			callback = function()
 				vim.lsp.buf.format({
 					filter = function(client)
 						--  only use null-ls for formatting instead of lsp server
-						return client.name == "null-ls"
+						return client.name == 'null-ls'
 					end,
 					bufnr = bufnr,
 				})

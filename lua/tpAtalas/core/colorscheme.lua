@@ -1,6 +1,6 @@
-require("rose-pine").setup({
+require('rose-pine').setup({
 	--- @usage 'main' | 'moon'
-	dark_variant = "main",
+	dark_variant = 'main',
 	bold_vert_split = false,
 	dim_nc_background = false,
 	disable_background = false,
@@ -9,24 +9,24 @@ require("rose-pine").setup({
 
 	--- @usage string hex value or named color from rosepinetheme.com/palette
 	groups = {
-		background = "#13111b",
-		panel = "surface",
-		border = "highlight_med",
-		comment = "muted",
-		link = "iris",
-		punctuation = "subtle",
+		background = '#13111b',
+		panel = 'surface',
+		border = 'highlight_med',
+		comment = 'muted',
+		link = 'iris',
+		punctuation = 'subtle',
 
-		error = "love",
-		hint = "love",
-		info = "foam",
+		error = 'love',
+		hint = 'love',
+		info = 'foam',
 
 		headings = {
-			h1 = "iris",
-			h2 = "foam",
-			h3 = "rose",
-			h4 = "gold",
-			h5 = "text",
-			h6 = "foam",
+			h1 = 'iris',
+			h2 = 'foam',
+			h3 = 'rose',
+			h4 = 'gold',
+			h5 = 'text',
+			h6 = 'foam',
 		},
 		-- or set all headings at once
 		-- headings = 'subtle'
@@ -34,16 +34,16 @@ require("rose-pine").setup({
 
 	-- Change specific vim highlight groups
 	highlight_groups = {
-		ColorColumn = { bg = "highlight_low" },
+		ColorColumn = { bg = 'highlight_low' },
 	},
 })
 
 -- set colorscheme to tokyonight-night with protected call
 -- in case it isn't installed
-local status, _ = pcall(vim.cmd, "colorscheme rose-pine")
+local status, _ = pcall(vim.cmd, 'colorscheme rose-pine')
 -- local status, _ = pcall(vim.cmd, "colorscheme iceberg")
 if not status then
-	print("Colorscheme not found!") -- print error if colorscheme not installed
+	print('Colorscheme not found!') -- print error if colorscheme not installed
 	return
 end
 

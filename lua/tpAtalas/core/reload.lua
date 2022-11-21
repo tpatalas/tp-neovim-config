@@ -3,11 +3,11 @@
 
 function _G.ReloadConfig()
 	for name, _ in pairs(package.loaded) do
-		if name:match("^tpAtalas") and not name:match("nvim-tree") then
+		if name:match('^tpAtalas') and not name:match('nvim-tree') then
 			package.loaded[name] = nil
 		end
 	end
 
 	dofile(vim.env.MYVIMRC)
-	vim.notify("configuration reloaded!", vim.log.levels.INFO)
+	vim.notify('configuration reloaded!', vim.log.levels.INFO)
 end
