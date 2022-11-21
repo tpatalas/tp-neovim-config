@@ -8,8 +8,8 @@ end
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
--- change color for arrows in tree to light blue
--- vim.cmd([[ highlight NvimTreeIndentMarker guifg=#FF0000 ]])
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
 
 -- configure nvim-tree
 nvimtree.setup({
@@ -24,8 +24,16 @@ nvimtree.setup({
 			},
 		},
 		indent_markers = {
-			enable = true,
+			enable = true, -- press <s-i> toggle on/off
 		},
+	},
+	git = {
+		ignore = true, -- hide files listed in .gitignore
+	},
+	filters = {
+		exclude = {
+      ".http", -- more info: :help nvim-tree.filters.exclude 
+    }
 	},
 	-- disable window_picker for
 	-- explorer to work well with
@@ -37,7 +45,4 @@ nvimtree.setup({
 			},
 		},
 	},
-	-- 	git = {
-	-- 		ignore = false,
-	-- 	},
 })
