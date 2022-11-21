@@ -1,5 +1,7 @@
 # Neovim initial setup
 
+![image](https://github.com/tpAtalas/tp-nvim-lua-config/blob/ba1ad1a63e91193f9071efd281b54810ea63b3dc/image.png?raw=true)
+
 ## Table of contents
 
 <!-- vim-markdown-toc GFM -->
