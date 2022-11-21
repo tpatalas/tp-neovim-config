@@ -1,4 +1,4 @@
-local status_ok, rest = pcall(require, "rest-nvim")
+local status_ok, rest = pcall(require, 'rest-nvim')
 if not status_ok then
 	return
 end
@@ -25,8 +25,8 @@ rest.setup({
 		-- executables or functions for formatting response body [optional]
 		-- set them to nil if you want to disable them
 		formatters = {
-			json = "jq",
-			html = "prettier",
+			json = 'jq',
+			html = 'prettier',
 			-- html = function(body)
 			-- 	return vim.fn.system({ "tidy", "-i", "-q", "-" }, body)
 			-- end,
@@ -34,7 +34,7 @@ rest.setup({
 	},
 	-- Jump to request line on run
 	jump_to_request = false,
-	env_file = ".env",
+	env_file = '.env',
 	custom_dynamic_variables = {},
 	yank_dry_run = true,
 })

@@ -1,5 +1,5 @@
 -- import nvim-treesitter plugin safely
-local status, treesitter = pcall(require, "nvim-treesitter.configs")
+local status, treesitter = pcall(require, 'nvim-treesitter.configs')
 if not status then
 	return
 end
@@ -16,22 +16,22 @@ treesitter.setup({
 	autotag = { enable = true },
 	-- ensure these language parsers are installed
 	ensure_installed = {
-		"json",
-		"javascript",
-		"typescript",
-		"tsx",
-		"yaml",
-    "http",
-		"html",
-		"css",
-		"markdown",
-		"svelte",
-		"graphql",
-		"bash",
-		"lua",
-		"vim",
-		"dockerfile",
-		"gitignore",
+		'json',
+		'javascript',
+		'typescript',
+		'tsx',
+		'yaml',
+		'http',
+		'html',
+		'css',
+		'markdown',
+		'svelte',
+		'graphql',
+		'bash',
+		'lua',
+		'vim',
+		'dockerfile',
+		'gitignore',
 	},
 	-- auto install above language parsers
 	auto_install = true,
