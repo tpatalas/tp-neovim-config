@@ -27,6 +27,7 @@
   - [Git integration](#git-integration)
   - [Markdown](#markdown)
   - [Code observer](#code-observer)
+  - [Http client](#http-client)
 - [References](#references)
 
 <!-- vim-markdown-toc -->
@@ -161,6 +162,10 @@ brew install lazygit
 #### Code observer
 
 - [Trouble](https://github.com/folke/trouble.nvim)
+
+#### Http client
+
+- [Rest.nvim](https://github.com/rest-nvim/rest.nvim)
 
 ## References
 
