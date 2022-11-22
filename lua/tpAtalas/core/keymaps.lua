@@ -36,7 +36,7 @@ keymap.set('n', '<leader>DD', ':%d<CR>', noremap)
 
 -- formatting
 keymap.set('n', '<leader>fma', 'gggqG', noremap)
-keymap.set('n', '<leader>fmi', ":OrganizeImports", noremap)
+keymap.set('n', '<leader>fmi', ':OrganizeImports<CR>', noremap)
 
 -- Exiting
 keymap.set('n', 'QQ', ':q!<CR>', noremap)
