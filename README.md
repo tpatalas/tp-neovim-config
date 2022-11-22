@@ -24,7 +24,7 @@
   - [Managing servers](#managing-servers)
   - [LSP Configuration](#lsp-configuration)
   - [Formatting and linting](#formatting-and-linting)
-  - [Syntax highlight and autoclosing](#syntax-highlight-and-autoclosing)
+  - [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
   - [Optimizer](#optimizer)
   - [Git integration](#git-integration)
   - [Markdown](#markdown)
@@ -143,10 +143,11 @@ brew install lazygit
 - [Null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [Mason-null-ls](https://github.com/mason-null-ls.nvim)
 
-#### Syntax highlight and autoclosing
+#### Syntax highlight and auto-closing
 
 - [Tree Sitter](https://github.com/nvim-treesitter.install)
 - [AutoPair](https://github.com/nvim-autopairs)
+- [Nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
 
 #### Optimizer
 
