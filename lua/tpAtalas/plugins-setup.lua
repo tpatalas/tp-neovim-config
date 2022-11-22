@@ -32,14 +32,15 @@ return packer.startup(function(use)
 
 	use('nvim-lua/plenary.nvim') -- lua functions that many plugins use
 
-	-- colorScheme
+	-- colors --
 	-- use("joshdick/onedark.vim")
 	-- use("folke/tokyonight.nvim")
-	use('rose-pine/neovim')
+	use('rose-pine/neovim') -- colorScheme
 	-- use("cocopon/iceberg.vim")
 	-- use("rebelot/kanagawa.nvim")
 	-- use("catppuccin/nvim")
-	use('norcalli/nvim-colorizer.lua')
+
+	use('norcalli/nvim-colorizer.lua') -- colorizer
 
 	-- essential plugins
 	use('tpope/vim-surround') -- add, delete, change surroundings (it's awesome)
@@ -99,26 +100,11 @@ return packer.startup(function(use)
 	use('windwp/nvim-autopairs') -- autoclose parens, brackets, quotes, etc...
 	use({ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' }) -- autoclose tags
 
-	-- Indent Blankline
-	-- use("lukas-reineke/indent-blankline.nvim") -- adding unnecessary characters when typing
-
 	-- Impatient improve the performance of lua module
 	use('lewis6991/impatient.nvim')
 
 	-- git integration
 	use('lewis6991/gitsigns.nvim') -- show line modifications on left hand side
-
-	-- whichkey -- displays a popup with possible key bindings of the command
-	-- use({
-	-- 	"folke/which-key.nvim",
-	-- 	config = function()
-	-- 		require("which-key").setup({
-	-- 			-- your configuration comes here
-	-- 			-- or leave it empty to use the default settings
-	-- 			-- refer to the configuration section below
-	-- 		})
-	-- 	end,
-	-- })
 
 	-- toggle multiple terminal -- can also control the lazyGit (installed through homebrew)
 	use({
