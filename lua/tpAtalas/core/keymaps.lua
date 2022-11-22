@@ -34,9 +34,13 @@ keymap.set('i', '<c-d><c-d>', '<ESC>dawi', noremap)
 -- keymap.set("i", "<leader>dd", "<ESC>ddi")
 keymap.set('n', '<leader>DD', ':%d<CR>', noremap)
 
--- formatting
-keymap.set('n', '<leader>fma', 'gggqG', noremap)
-keymap.set('n', '<leader>fmi', ':OrganizeImports<CR>', noremap)
+-- formatting --
+keymap.set('n', '<leader>fma', 'gggqG', noremap) -- apply formatting if any 
+-- formatting with typescript.nvim
+keymap.set('n', '<leader>fmf', ':TypescriptRenameFile<CR>') -- rename file and update imports
+keymap.set('n', '<leader>fmd', ':TypescriptRemoveUnused<CR>') -- remove unused variables
+keymap.set('n', '<leader>fmo', ':TypescriptOrganizeImports<CR>') -- Organize Import
+keymap.set('n', '<leader>fmm', ':TypescriptAddMissingImports<CR>') -- add missing imports
 
 -- Exiting
 keymap.set('n', 'QQ', ':q!<CR>', noremap)
@@ -126,3 +130,4 @@ keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colori
 -- rest nvim
 keymap.set('n', '<leader>rno', '<Plug>RestNvim<CR>', noremap) -- run the request under the cursor
 keymap.set('n', '<leader>rnl', '<Plug>RestNvimLast<CR>', noremap) -- re-reun the last request
+

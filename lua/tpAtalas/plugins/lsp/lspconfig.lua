@@ -1,12 +1,16 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
--- import lspconfig plugin safely
 local lspconfig_status, lspconfig = pcall(require, 'lspconfig')
 if not lspconfig_status then
 	return
 end
 
--- import cmp-nvim-lsp plugin safely
+
+local typescript_setup, typescript = pcall(require, "typescript")
+if not typescript_setup then
+  return
+end
+
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if not cmp_nvim_lsp_status then
 	return
@@ -14,9 +18,7 @@ end
 
 local keymap = vim.keymap -- for conciseness
 
--- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
-	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- set keybinds
@@ -34,12 +36,6 @@ local on_attach = function(client, bufnr)
 	keymap.set('n', '<leader>o', '<cmd>LSoutlineToggle<CR>', opts) -- see outline on right hand side
 	keymap.set('n', '<space>wa', '<cmd>add_workspace_folder<CR>', opts)
 
-	-- typescript specific keymaps (e.g. rename file and update imports)
-	if client.name == 'tsserver' then
-		keymap.set('n', '<leader>rf', ':TypescriptRenameFile<CR>') -- rename file and update imports
-		keymap.set('n', '<leader>oi', ':TypescriptOrganizeImports<CR>') -- organize imports
-		keymap.set('n', '<leader>ru', ':TypescriptRemoveUnused<CR>') -- remove unused variables
-	end
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
@@ -52,14 +48,15 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
-local function organize_imports()
-	local params = {
-		command = '_typescript.organizeImports',
-		arguments = { vim.api.nvim_buf_get_name(0) },
-		title = '',
-	}
-	vim.lsp.buf.execute_command(params)
-end
+-- For Reference: 
+-- local function organize_imports()
+-- 	local params = {
+-- 		command = '_typescript.organizeImports',
+-- 		arguments = { vim.api.nvim_buf_get_name(0) },
+-- 		title = '',
+-- 	}
+-- 	vim.lsp.buf.execute_command(params)
+-- end
 
 -- Servers --
 -- html
@@ -69,21 +66,30 @@ lspconfig['html'].setup({
 })
 
 -- typescript
-lspconfig['tsserver'].setup({
-	init_options = {
-		preferences = {
-			disableSuggestions = true,
-		},
-	},
-	capabilities = capabilities,
-	on_attach = on_attach,
-	commands = {
-		OrganizeImports = {
-			organize_imports,
-			description = 'Organize Imports',
-		},
-	},
+-- Currently typescript.nvim plugin give better functionality
+typescript.setup({
+  server = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+  },
 })
+
+-- For Reference
+-- lspconfig['tsserver'].setup({
+-- 	init_options = {
+-- 		preferences = {
+-- 			disableSuggestions = true,
+-- 		},
+-- 	},
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	commands = {
+-- 		OrganizeImports = {
+-- 			organize_imports,
+-- 			description = 'Organize Imports',
+-- 		},
+-- 	},
+-- })
 
 -- docker
 lspconfig['dockerls'].setup({
