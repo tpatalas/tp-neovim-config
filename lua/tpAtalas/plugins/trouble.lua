@@ -1,12 +1,12 @@
 -- import trouble plugin safely
-local setup, trouble = pcall(require, 'touble')
+local setup, trouble = pcall(require, 'trouble')
 if not setup then
 	return
 end
 
 -- enable trouble
 trouble.setup({
-	height = 8,
+	height = 7,
 	auto_open = true,
 	auto_close = true,
 	use_diagnostic_signs = true,
