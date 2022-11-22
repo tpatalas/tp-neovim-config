@@ -7,7 +7,7 @@ end
 -- enable trouble
 trouble.setup({
 	height = 7,
-	auto_open = true,
+	auto_open = false,
 	auto_close = true,
 	use_diagnostic_signs = true,
 })
