@@ -8,6 +8,7 @@ opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.colorcolumn = '80'
 opt.textwidth = 0
+opt.undofile = true -- undo file after ':wp'
 opt.linebreak = true
 opt.breakindent = true
 opt.signcolumn = 'yes' -- show sign column so that text doesn't shift
