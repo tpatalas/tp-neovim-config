@@ -83,19 +83,14 @@ return packer.startup(function(use)
 	use('hrsh7th/cmp-nvim-lsp') -- for autocompletion
 	use({ 'glepnir/lspsaga.nvim', branch = 'main' }) -- enhanced lsp uis
 	use('onsails/lspkind.nvim') -- vs-code like icons for autocompletion
-  use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+	use('jose-elias-alvarez/typescript.nvim') -- additional functionality for typescript server (e.g. rename file & update imports)
 
 	-- formatting & linting
 	use('jose-elias-alvarez/null-ls.nvim') -- configure formatters & linters
 	use('jayp0521/mason-null-ls.nvim') -- bridges gap b/w mason & null-ls
 
 	-- treesitter configuration
-	use({
-		'nvim-treesitter/nvim-treesitter',
-		run = function()
-			require('nvim-treesitter.install').update({ with_sync = true })
-		end,
-	})
+	use('nvim-treesitter/nvim-treesitter', { 'do', ':TSUpdate' })
 
 	-- auto closing
 	use('windwp/nvim-autopairs') -- autoclose parens, brackets, quotes, etc...
