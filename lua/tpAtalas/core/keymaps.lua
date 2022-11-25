@@ -35,12 +35,17 @@ keymap.set('i', '<c-d><c-d>', '<ESC>dawi', noremap)
 keymap.set('n', '<leader>DD', ':%d<CR>', noremap)
 
 -- formatting --
-keymap.set('n', '<leader>fma', 'gggqG', noremap) -- apply formatting if any 
+keymap.set('n', '<leader>fma', 'gggqG', noremap) -- apply formatting if any
 -- formatting with typescript.nvim
 keymap.set('n', '<leader>fmf', ':TypescriptRenameFile<CR>') -- rename file and update imports
 keymap.set('n', '<leader>fmd', ':TypescriptRemoveUnused<CR>') -- remove unused variables
 keymap.set('n', '<leader>fmo', ':TypescriptOrganizeImports<CR>') -- Organize Import
 keymap.set('n', '<leader>fmm', ':TypescriptAddMissingImports<CR>') -- add missing imports
+-- formatting move lines
+keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
+keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
+-- formatting color
+keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap) -- vim highlight group
 
 -- Exiting
 keymap.set('n', 'QQ', ':q!<CR>', noremap)
@@ -59,9 +64,11 @@ keymap.set('n', '<s-down>', '<S-}>', noremap) -- jump paragraph down
 keymap.set('n', '<s-right>', 'w', noremap) -- jump paragraph down
 keymap.set('n', '<s-left>', 'b', noremap) -- jump paragraph down
 
+
 -- Save
-keymap.set('n', 'SS', ':w<CR>', noremap)
-keymap.set('n', '<leader><CR><CR>', ':w<CR><cmd>lua ReloadConfig()<CR>', noremap)
+keymap.set('n', 'SS', ':w<CR>', noremap) -- save
+keymap.set('n', '<leader><CR><CR>', ':source<CR>', noremap) -- reload
+-- keymap.set('n', '<leader><CR><CR>', ':w<CR><cmd>lua ReloadConfig()<CR>', noremap)
 
 -- Delete single character without copying into register
 keymap.set('n', 'x', '"_x', noremap)
@@ -130,4 +137,3 @@ keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colori
 -- rest nvim
 keymap.set('n', '<leader>rno', '<Plug>RestNvim<CR>', noremap) -- run the request under the cursor
 keymap.set('n', '<leader>rnl', '<Plug>RestNvimLast<CR>', noremap) -- re-reun the last request
-
