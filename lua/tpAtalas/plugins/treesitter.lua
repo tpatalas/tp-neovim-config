@@ -17,15 +17,14 @@ treesitter.setup({
 		max_file_lines = nil, -- Do not enable for files with more than n lines, int
 		bold = true,
 		colors = {
-			'#ffb86c',
-			'#8be9fd',
-			'#bd93f9',
-			'#50fa7b',
-			'#f1fa8c',
-			'#abb2c0',
-			'#eb6f92',
+			'#FAB387',
+			'#89B4FA',
+			'#CBA6F7',
+			'#A6E3A1',
+			'#F5C2E7',
+			'#A6ADC8',
+			'#F38BA8',
 		}, -- table of hex strings
-		-- termcolors = {} -- table of colour name strings
 	},
 	-- enable indentation
 	indent = { enable = true },
