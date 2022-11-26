@@ -5,10 +5,9 @@ if not lspconfig_status then
 	return
 end
 
-
-local typescript_setup, typescript = pcall(require, "typescript")
+local typescript_setup, typescript = pcall(require, 'typescript')
 if not typescript_setup then
-  return
+	return
 end
 
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
@@ -35,7 +34,6 @@ local on_attach = function(client, bufnr)
 	keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts) -- show documentation for what is under cursor
 	keymap.set('n', '<leader>o', '<cmd>LSoutlineToggle<CR>', opts) -- see outline on right hand side
 	keymap.set('n', '<space>wa', '<cmd>add_workspace_folder<CR>', opts)
-
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
@@ -48,7 +46,7 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
--- For Reference: 
+-- For Reference:
 -- local function organize_imports()
 -- 	local params = {
 -- 		command = '_typescript.organizeImports',
@@ -69,9 +67,9 @@ lspconfig['html'].setup({
 -- Currently typescript.nvim plugin give better functionality
 typescript.setup({
   server = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  },
+		capabilities = capabilities,
+		on_attach = on_attach,
+	},
 })
 
 -- For Reference

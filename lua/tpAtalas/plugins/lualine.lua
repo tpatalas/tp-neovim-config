@@ -1,48 +1,71 @@
+-- https://github.com/nvim-lualine/lualine.nvim
 -- import lualine plugin safely
 local status, lualine = pcall(require, 'lualine')
 if not status then
 	return
 end
 
--- get lualine rose-pine theme
-local lualine_custom_theme = require('lualine.themes.powerline')
-
--- new colors for theme
-local new_colors = {
+-- https://rosepinetheme.com/palette
+local colors = {
 	foam = '#9ccfd8',
+	pine = '#31748f',
 	rose = '#ebbcba',
 	iris = '#c4a7e7',
 	gold = '#f6c177',
-	base = '#191724',
+	base = '#13111b',
+	love = '#eb6f92',
 	muted = '#6e6a86',
+	subtle = '#908caa',
+	text = '#e0def4',
+	overlay = '#26233a',
+	surface = '#1f1d2e',
+	blackhole = '#0a0a0a',
+	highlight_high = '#524f67',
+	highlight_med = '#403d52',
+	highlight_low = '#21202e',
 }
 
--- change nightlfy theme colors
-lualine_custom_theme.normal.a.bg = new_colors.foam
-lualine_custom_theme.insert.a.bg = new_colors.rose
-lualine_custom_theme.visual.a.bg = new_colors.iris
-lualine_custom_theme.command = {
-	a = {
-		gui = 'bold',
-		bg = new_colors.gold,
-		fg = new_colors.base,
+local custom_theme = {
+	normal = {
+		a = { gui = 'bold', fg = colors.surface, bg = colors.foam },
+		b = { fg = colors.text, bg = colors.highlight_med },
+		c = { fg = colors.subtle, bg = none },
+	},
+	insert = {
+		a = { gui = 'bold', fg = colors.surface, bg = colors.rose },
+		b = { fg = colors.base, bg = colors.foam,
+      },
+	},
+	visual = {
+		a = { gui = 'bold', fg = colors.surface, bg = colors.iris },
+	},
+	command = {
+		a = {
+			gui = 'bold',
+			bg = colors.gold,
+			fg = colors.base,
+		},
+	},
+	inactive = {
+		a = { fg = colors.subtle, bg = colors.highlight_low },
+		b = { fg = colors.muted, bg = colors.blackhole },
+		c = { fg = colors.subtle, bg = colors.base },
 	},
 }
 
--- configure lualine with modified theme
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = lualine_custom_theme,
-		component_separators = '',
-		-- section_separators = { left = "", right = "" },
+		theme = custom_theme,
+		component_separators = '|',
+		section_separators = { left = '', right = '' },
 		disabled_filetypes = {
 			statusline = {},
 			winbar = {},
 		},
 		ignore_focus = {},
 		always_divide_middle = true,
-		globalstatus = false,
+		globalstatus = true,
 		refresh = {
 			statusline = 1000,
 			tabline = 1000,
@@ -51,9 +74,30 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { 'mode' },
-		lualine_b = { 'branch', 'diff', 'diagnostics' },
-		lualine_c = { 'filename' },
-		lualine_x = { 'fileformat', 'filetype' },
+		lualine_b = {
+      'branch',
+      {
+			'diff',
+      symbols = { added = ' ', modified = '柳', removed = ' ' },
+      diff_color = {
+          added = { fg = colors.foam },
+          modified = { fg = colors.gold },
+          removed = { fg = colors.love },
+        },
+      }
+		},
+		lualine_c = {
+			{
+				'diagnostics',
+				sources = { 'nvim_lsp', 'nvim_workspace_diagnostic', 'nvim_diagnostic' },
+				symbols = { error = ' ', warn = ' ', info = ' ' },
+				sections = { 'error', 'warn', 'info' },
+				colored = true,
+				update_in_insert = true,
+	  		always_visible = false,
+			},
+		},
+		lualine_x = { 'filetype' },
 		lualine_y = { 'progress' },
 		lualine_z = { 'location' },
 	},
@@ -65,8 +109,45 @@ lualine.setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	tabline = {},
-	winbar = {},
+	tabline = {
+		lualine_a = {},
+		lualine_b = {
+			{
+				'buffers',
+				symbols = {
+					modified = ' ●',
+					alternate_file = '',
+					directory = '',
+				},
+			},
+		},
+		lualine_c = {},
+		lualine_x = {
+			{
+				'filename',
+				file_status = true,
+				newfile_status = false,
+				path = 1,
+				shorting_target = 40,
+				symbols = {
+					modified = '[+]',
+					readonly = '[-]',
+					unnamed = '',
+					newfile = '[New]',
+				},
+			},
+		},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	winbar = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
 	inactive_winbar = {},
-	extensions = {},
+	extensions = { 'toggleterm', 'nvim-tree' },
 })
