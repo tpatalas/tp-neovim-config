@@ -43,6 +43,7 @@ local source = {
 	--  to disable file types use
 	-- diagnostics.cspell,
 	-- codeactions.cspell,
+	diagnostics.tsc,
 	diagnostics.codespell,
 	formatting.codespell,
 	-- formatting.tidy,

@@ -53,22 +53,22 @@ keymap.set('n', 'qq', ':q<CR>')
 
 -- Search and  Replace
 keymap.set('n', '<leader>ra', ':%s/<c-r><c-w>/', noremap) -- Search and replace the word under current
---cursor
-keymap.set('n', '<leader>rr', '*#ciw', noremap) -- Search all same words and replace current worrd under cursor
--- keymap.set("n", "<leader><space>", ":noh<CR>") -- Clear Search Highlight -- currently turned off
--- from setting
 
--- Navigation
+-- Navigation --
+-- paragraph navigate
 keymap.set('n', '<s-up>', '<S-{>', noremap) -- jump paragraph up
 keymap.set('n', '<s-down>', '<S-}>', noremap) -- jump paragraph down
 keymap.set('n', '<s-right>', 'w', noremap) -- jump paragraph down
 keymap.set('n', '<s-left>', 'b', noremap) -- jump paragraph down
-
+-- buffers navigate
+keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
+keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
+keymap.set('n', '<c-q>', ':bd<CR>', noremap) -- go to the previous buffer
 
 -- Save
 keymap.set('n', 'SS', ':w<CR>', noremap) -- save
-keymap.set('n', '<leader><CR><CR>', ':source<CR>', noremap) -- reload
--- keymap.set('n', '<leader><CR><CR>', ':w<CR><cmd>lua ReloadConfig()<CR>', noremap)
+-- keymap.set('n', '<leader><CR><CR>', ':source<CR>', noremap) -- reload
+keymap.set('n', '<leader><CR><CR>', ':w<CR><cmd>lua ReloadConfig()<CR>', noremap)
 
 -- Delete single character without copying into register
 keymap.set('n', 'x', '"_x', noremap)
@@ -87,8 +87,8 @@ keymap.set('n', '<c-a-right>', ':vertical resize +5<CR>', noremap) -- increase s
 keymap.set('n', '<c-a-left>', ':vertical resize -5<CR>', noremap) -- decrease size vertically
 keymap.set('n', '<c-a-up>', ':horizontal resize +5<CR>', noremap) -- increase size horizontally
 keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decreise size horizontally
+keymap.set('n', '<c-space>', '<C-W>w', noremap) -- switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
 keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press <alt-=>
-keymap.set('n', '<leader>`', '<C-W>w', noremap) -- switch split window
 
 ----------------------
 -- Plugin Keybinds
@@ -105,7 +105,7 @@ keymap.set('n', '<leader>fec', ':NvimTreeCollapse<CR>', noremap) -- Collapses th
 
 -- telescope
 keymap.set('n', '<leader>ffo', '<cmd>Telescope find_files<CR>', noremap) -- find files within current working directory, respects .gitignore
-keymap.set('n', '<leader>ffs', '<cmd>Telescope live_grep<CR>', noremas) -- find string in current working directory as you type
+keymap.set('n', '<leader>ffs', '<cmd>Telescope live_grep<CR>', noremap) -- find string in current working directory as you type
 keymap.set('n', '<leader>ffc', '<cmd>Telescope grep_string<CR>', noremap) -- find string under cursor in current working directory
 keymap.set('n', '<leader>ffb', '<cmd>Telescope buffers<CR>', noremap) -- list open buffers in current neovim instance
 keymap.set('n', '<leader>ffh', '<cmd>Telescope help_tags<CR>', noremap) -- list available help tags
@@ -137,3 +137,6 @@ keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colori
 -- rest nvim
 keymap.set('n', '<leader>rno', '<Plug>RestNvim<CR>', noremap) -- run the request under the cursor
 keymap.set('n', '<leader>rnl', '<Plug>RestNvimLast<CR>', noremap) -- re-reun the last request
+
+--
+keymap.set('n', '<leader>dlo', '', noremap)

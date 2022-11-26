@@ -1,6 +1,6 @@
 # Neovim initial setup
 
-![image](https://github.com/tpAtalas/tp-nvim-lua-config/blob/ba1ad1a63e91193f9071efd281b54810ea63b3dc/image.png?raw=true)
+![image](https://github.com/tpAtalas/tp-nvim-lua-config/blob/c6f214e0820f01bfc1bc38b3aad87170abeb7670/image.png?raw=true)
 
 ## Table of contents
 
