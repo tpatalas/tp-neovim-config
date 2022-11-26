@@ -9,3 +9,6 @@ vim.cmd([[autocmd BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=63,72,80]])
 
 -- conditional textwidth and wrap text
 vim.cmd([[autocmd FileType markdown set textwidth=80 wrap]])
+
+-- auto-save
+vim.cmd([[autocmd TextChanged,InsertLeave,FocusLost *.* silent write]])

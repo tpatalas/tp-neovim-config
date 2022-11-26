@@ -19,6 +19,7 @@ opt.hlsearch = false -- highlight all matches
 opt.incsearch = true
 opt.cursorline = true -- highlight the current cursor line
 opt.scrolloff = 10
+opt.updatetime = 1500 -- cusorhold updatetime (default: 4000)
 opt.sidescrolloff = 10
 opt.termguicolors = true
 opt.background = 'dark' -- colorschemes that can be light or dark will be made dark
