@@ -48,12 +48,12 @@ todo_comments.setup({
 	-- list of named colors where we try to extract the guifg from the
 	-- list of highlight groups or use the hex color if hl not found as a fallback
 	colors = {
-		error = { 'DiagnosticError', 'ErrorMsg', '#DC2626' },
-		warning = { 'DiagnosticWarning', 'WarningMsg', '#FBBF24' },
-		info = { 'DiagnosticInfo', '#2563EB' },
-		hint = { 'DiagnosticHint', '#10B981' },
-		default = { 'Identifier', '#7C3AED' },
-		test = { 'Identifier', '#FF00FF' },
+		error = { '#DC2626', 'DiagnosticError', 'ErrorMsg' },
+		warning = { '#FBBF24', 'DiagnosticWarning', 'WarningMsg' },
+		info = { '#2563EB', 'DiagnosticInfo'  },
+		hint = { '#10B981', 'DiagnosticHint' },
+		default = { '#7C3AED', 'Identifier' },
+		test = { '#FF00FF', 'Identifier' },
 	},
 	search = {
 		command = 'rg',
