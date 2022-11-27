@@ -72,7 +72,6 @@ brew install lazygit
 #### Essential Lua Functions for other plugins
 
 - [Plenary](https://github.com/nvim-lua/plenary.nvim)
-- [Mason](https://github.com/williamboman/mason.nvim)
 
 #### Themes/colors/icons
 
@@ -90,6 +89,7 @@ brew install lazygit
 
 - [Vim-surround](https://github.com/tpope/vim-surround)
 - [ReplaceWithRegister](https://github.com/vim-scripts/ReplaceWithRegister)
+- [Mason](https://github.com/williamboman/mason.nvim)
 
 #### File Explorer/status
 
