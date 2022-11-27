@@ -130,6 +130,9 @@ return packer.startup(function(use)
 	-- http client
 	use('rest-nvim/rest.nvim')
 
+	-- commenting
+	use('folke/todo-comments.nvim')
+
 	if packer_bootstrap then
 		require('packer').sync()
 	end
