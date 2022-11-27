@@ -7,6 +7,7 @@ vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
 vim.g.VM_default_mappings = 0 -- disable the visual-multi default key mapping
 
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
