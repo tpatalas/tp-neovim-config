@@ -21,7 +21,7 @@ todo_comments.setup({
 		HACK = { icon = ' ', color = 'warning' },
 		WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
 		PERF = { icon = ' ', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
-		NOTE = { icon = ' ', color = 'hint', alt = { 'INFO' } },
+		NOTE = { icon = ' ', color = 'hint', alt = { 'INFO', 'i' } },
 		TEST = { icon = '⏲ ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
 	},
 	gui_style = {
@@ -50,7 +50,7 @@ todo_comments.setup({
 	colors = {
 		error = { '#DC2626', 'DiagnosticError', 'ErrorMsg' },
 		warning = { '#FBBF24', 'DiagnosticWarning', 'WarningMsg' },
-		info = { '#2563EB', 'DiagnosticInfo'  },
+		info = { '#2563EB', 'DiagnosticInfo' },
 		hint = { '#10B981', 'DiagnosticHint' },
 		default = { '#7C3AED', 'Identifier' },
 		test = { '#FF00FF', 'Identifier' },
