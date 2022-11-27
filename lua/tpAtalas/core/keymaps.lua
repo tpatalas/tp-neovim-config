@@ -7,7 +7,6 @@ vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
 vim.g.VM_default_mappings = 0 -- disable the visual-multi default key mapping
 
-
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -110,7 +109,8 @@ keymap.set('n', '<leader>ffs', '<cmd>Telescope live_grep<CR>', noremap) -- find 
 keymap.set('n', '<leader>ffc', '<cmd>Telescope grep_string<CR>', noremap) -- find string under cursor in current working directory
 keymap.set('n', '<leader>ffb', '<cmd>Telescope buffers<CR>', noremap) -- list open buffers in current neovim instance
 keymap.set('n', '<leader>ffh', '<cmd>Telescope help_tags<CR>', noremap) -- list available help tags
-
+-- telescope todo-comments
+keymap.set('n', '<leader>fft', ':TodoTelescope<CR>', noremap) -- open todo-comments within telescope
 -- telescope git commands
 keymap.set('n', '<leader>fgc', '<cmd>Telescope git_commits<CR>') -- list all git commits (use <cr> to checkout) ["gc" for git commits]
 keymap.set('n', '<leader>fgf', '<cmd>Telescope git_bcommits<CR>') -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
@@ -131,6 +131,8 @@ keymap.set('n', '<leader>mtg', ':GenTocGFM<CR>', noremap) -- generate markdown t
 keymap.set('n', '<leader>tro', ':Trouble<CR>', noremap) -- Open the list
 keymap.set('n', '<leader>trc', ':TroubleClose<CR>', noremap) -- Close the list
 keymap.set('n', '<leader>trr', ':TroubleRefresh<CR>', noremap) -- Manually refresh the active list
+-- trouble todo-comments
+keymap.set('n', '<leader>trt', ':TodoTrouble<CR>', noremap) -- open todo-comments within trouble
 
 -- colorizer
 keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colorizer

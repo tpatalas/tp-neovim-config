@@ -30,6 +30,7 @@
   - [Markdown](#markdown)
   - [Code observer](#code-observer)
   - [Http client](#http-client)
+  - [Comments](#comments)
 - [References](#references)
 
 <!-- vim-markdown-toc -->
@@ -84,7 +85,6 @@ brew install lazygit
 
 #### Windows/Terminal Manager
 
-- [Vim Maximizer](https://github.com/vim-maximizer)
 - [Toggleterm](https://github.com/akinsho/toggleterm.nvim)
 
 #### Essential plugins
@@ -113,17 +113,13 @@ brew install lazygit
 #### Autocompletion
 
 - [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-
 - [Cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
-
 - [Camp-path](https://github.com/hrsh7th/cmp-path)
 
 #### Snippet
 
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-
 - [Cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
-
 - [Friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 
 #### Managing servers
@@ -169,6 +165,10 @@ brew install lazygit
 #### Http client
 
 - [Rest.nvim](https://github.com/rest-nvim/rest.nvim)
+
+#### Comments
+
+- [Todo-comments](https://github.com/folke/todo-comments.nvim)
 
 ## References
 
