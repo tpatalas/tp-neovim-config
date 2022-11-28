@@ -6,29 +6,29 @@
 
 <!-- vim-markdown-toc GFM -->
 
-- [Installation (Homebrew)](#installation-homebrew)
-  - [Install Neovim](#install-neovim)
-  - [Install Lazygit](#install-lazygit)
-- [Installed Plugins](#installed-plugins)
-  - [Plugin Manager](#plugin-manager)
-  - [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
-  - [Themes/colors/icons](#themescolorsicons)
-  - [Windows/terminal Manager](#windowsterminal-manager)
-  - [Essential plugins](#essential-plugins)
-  - [File Explorer/status](#file-explorerstatus)
-  - [Search and find](#search-and-find)
-  - [Autocompletion](#autocompletion)
-  - [Snippet](#snippet)
-  - [LSP Configuration](#lsp-configuration)
-  - [Formatting and linting](#formatting-and-linting)
-  - [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
-  - [Optimizer](#optimizer)
-  - [Git integration](#git-integration)
-  - [Markdown](#markdown)
-  - [Code observer](#code-observer)
-  - [Http client](#http-client)
-  - [Comments](#comments)
-- [References](#references)
+* [Installation (Homebrew)](#installation-homebrew)
+  * [Install Neovim](#install-neovim)
+  * [Install Lazygit](#install-lazygit)
+* [Installed Plugins](#installed-plugins)
+    * [Plugin Manager](#plugin-manager)
+    * [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
+    * [Themes/colors/icons](#themescolorsicons)
+    * [Windows/terminal Manager](#windowsterminal-manager)
+    * [Essential plugins](#essential-plugins)
+    * [File Explorer/status](#file-explorerstatus)
+    * [Search and find](#search-and-find)
+    * [Autocompletion](#autocompletion)
+    * [Snippet](#snippet)
+    * [LSP Configuration](#lsp-configuration)
+    * [Formatting and linting](#formatting-and-linting)
+    * [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
+    * [Optimizer](#optimizer)
+    * [Git integration](#git-integration)
+    * [Markdown](#markdown)
+    * [Code observer](#code-observer)
+    * [Http client](#http-client)
+    * [Comments](#comments)
+* [References](#references)
 
 <!-- vim-markdown-toc -->
 
@@ -105,7 +105,7 @@ brew install lazygit
 
 - [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [Cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
-- [Camp-path](https://github.com/hrsh7th/cmp-path)
+- [Cmp-path](https://github.com/hrsh7th/cmp-path)
 
 #### Snippet
 
@@ -119,7 +119,7 @@ brew install lazygit
 - [Lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [Cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - [Lspsaga](https://github.com/glepnir/lspsaga.nvim)
-- [lspkind](https://github.com/lspkind.nvim)
+- [Lspkind](https://github.com/onsails/lspkind.nvim)
 
 #### Formatting and linting
 
@@ -161,6 +161,6 @@ brew install lazygit
 ## References
 
 - [LunarVim/Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch)
-- [josean-dev/dev-environment-files](https://github.com/josean-dev/dev-environment-files)
+- [Josean-dev/dev-environment-files](https://github.com/josean-dev/dev-environment-files)
 - [Homebrew](https://brew.sh/)
-- [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit/)
+- [Jesseduffield/lazygit](https://github.com/jesseduffield/lazygit/)
