@@ -67,8 +67,6 @@ keymap.set('n', '<c-q>', ':bd<CR>', noremap) -- go to the previous buffer
 
 -- Save
 keymap.set('n', 'SS', ':w<CR>', noremap) -- save
--- keymap.set('n', '<leader><CR><CR>', ':source<CR>', noremap) -- reload
-keymap.set('n', '<leader><CR><CR>', ':w<CR><cmd>lua ReloadConfig()<CR>', noremap)
 
 -- Delete single character without copying into register
 keymap.set('n', 'x', '"_x', noremap)
