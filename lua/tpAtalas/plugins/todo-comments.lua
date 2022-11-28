@@ -4,8 +4,7 @@ if not todo_comments_setup then
 end
 
 todo_comments.setup({
-
-	-- https://github.com/folke/todo-comments.nvim
+	-- INFO: For more information: https://github.com/folke/todo-comments.nvim
 
 	signs = true, -- show icons in the signs column
 	sign_priority = 8, -- sign priority
@@ -45,6 +44,7 @@ todo_comments.setup({
 		max_line_len = 400, -- ignore lines longer than this
 		exclude = {}, -- list of file types to exclude highlighting
 	},
+
 	-- list of named colors where we try to extract the guifg from the
 	-- list of highlight groups or use the hex color if hl not found as a fallback
 	colors = {
@@ -55,6 +55,7 @@ todo_comments.setup({
 		default = { '#7C3AED', 'Identifier' },
 		test = { '#FF00FF', 'Identifier' },
 	},
+
 	search = {
 		command = 'rg',
 		args = {

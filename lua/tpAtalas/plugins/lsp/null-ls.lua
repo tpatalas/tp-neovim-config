@@ -40,13 +40,14 @@ local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 -- Built-in sources:
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local source = {
-	--  to disable file types use
-	-- diagnostics.cspell,
-	-- codeactions.cspell,
-	diagnostics.tsc,
+  -- INFO: diagnostics listed below supports the workspace diagnostics
+  -- https://github.com/jose-elias-alvarez/null-ls.nvim/search?p=2&q=multiple_files
+  diagnostics.tsc,
+  diagnostics.markdownlint,
+  -- WARNING: diagnostics listed below do not support workspace level diagnostics
+  formatting.markdownlint,
 	diagnostics.codespell,
 	formatting.codespell,
-	-- formatting.tidy,
 	formatting.stylua, -- lua formatter
 	codeactions.eslint_d.with(eslint),
 	diagnostics.eslint_d.with(eslint),
