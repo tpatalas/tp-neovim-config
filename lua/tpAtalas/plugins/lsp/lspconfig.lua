@@ -46,7 +46,7 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
--- For Reference:
+-- TODO: (Keep or Remove) For Reference:
 -- local function organize_imports()
 -- 	local params = {
 -- 		command = '_typescript.organizeImports',
@@ -64,15 +64,15 @@ lspconfig['html'].setup({
 })
 
 -- typescript
--- Currently typescript.nvim plugin give better functionality
+-- Currently typescript.nvim plugin gives better functionality
 typescript.setup({
-  server = {
+	server = {
 		capabilities = capabilities,
 		on_attach = on_attach,
 	},
 })
 
--- For Reference
+-- TODO: (Keep or Remove) For Reference
 -- lspconfig['tsserver'].setup({
 -- 	init_options = {
 -- 		preferences = {
