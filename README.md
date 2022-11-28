@@ -6,36 +6,37 @@
 
 <!-- vim-markdown-toc GFM -->
 
-* [Installation (Homebrew)](#installation-homebrew)
-  * [Install Neovim](#install-neovim)
-  * [Install Lazygit](#install-lazygit)
-* [Installed Plugins](#installed-plugins)
-    * [Plugin Manager](#plugin-manager)
-    * [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
-    * [Themes/colors/icons](#themescolorsicons)
-    * [Windows/terminal Manager](#windowsterminal-manager)
-    * [Essential plugins](#essential-plugins)
-    * [File Explorer/status](#file-explorerstatus)
-    * [Search and find](#search-and-find)
-    * [Autocompletion](#autocompletion)
-    * [Snippet](#snippet)
-    * [LSP Configuration](#lsp-configuration)
-    * [Formatting and linting](#formatting-and-linting)
-    * [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
-    * [Optimizer](#optimizer)
-    * [Git integration](#git-integration)
-    * [Markdown](#markdown)
-    * [Code observer](#code-observer)
-    * [Http client](#http-client)
-    * [Comments](#comments)
-* [References](#references)
+- [Installation (Homebrew)](#installation-homebrew)
+  - [Install Neovim](#install-neovim)
+  - [Install Lazygit](#install-lazygit)
+- [Installed Plugins](#installed-plugins)
+  - [Plugin Manager](#plugin-manager)
+  - [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
+  - [Themes/colors/icons](#themescolorsicons)
+  - [Windows/terminal Manager](#windowsterminal-manager)
+  - [Essential plugins](#essential-plugins)
+  - [File Explorer/status](#file-explorerstatus)
+  - [Search and find](#search-and-find)
+  - [Autocompletion](#autocompletion)
+  - [Snippet](#snippet)
+  - [LSP Configuration](#lsp-configuration)
+  - [Formatting and linting](#formatting-and-linting)
+  - [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
+  - [Optimizer](#optimizer)
+  - [Git integration](#git-integration)
+  - [Markdown](#markdown)
+  - [Code observer](#code-observer)
+  - [Http client](#http-client)
+  - [Comments](#comments)
+- [References](#references)
 
 <!-- vim-markdown-toc -->
 
 This repo is the resource for the initial setup of the Neovim Lua.
-The primary purpose of this repo is to help you set up Neovim, and none of these setups is meant to provide the best practice.
+The primary purpose of this repo is to help you set up Neovim, and none of
+these setups is meant to provide the best practice.
 
-## Installation (Homebrew)
+### Installation (Homebrew)
 
 > Reference:
 >
@@ -43,25 +44,25 @@ The primary purpose of this repo is to help you set up Neovim, and none of these
 > [Lazygit](https://github.com/jesseduffield/lazygit)  
 > [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
-### Install Neovim
+#### Install Neovim
 
 > For other installation methods, please visit [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
-```
+```bash
 brew install neovim
 ```
 
-### Install Lazygit
+#### Install Lazygit
 
 > Lazygit is a simple terminal UI for git commands.
 >
 > For other installation methods, please visit [Lazygit](https://github.com/jesseduffield/lazygit).
 
-```
+```bash
 brew install lazygit
 ```
 
-## Installed Plugins
+### Installed Plugins
 
 > Following plugins are installed for the initial setup
 
@@ -158,7 +159,7 @@ brew install lazygit
 - [Todo-comments](https://github.com/folke/todo-comments.nvim)
 - [Comment](https://github.com/numToStr/Comment.nvim)
 
-## References
+### References
 
 - [LunarVim/Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch)
 - [Josean-dev/dev-environment-files](https://github.com/josean-dev/dev-environment-files)
