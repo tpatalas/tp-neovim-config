@@ -60,11 +60,10 @@ keymap.set('n', '<s-up>', '<S-{>', noremap) -- jump paragraph up
 keymap.set('n', '<s-down>', '<S-}>', noremap) -- jump paragraph down
 keymap.set('n', '<s-right>', 'w', noremap) -- jump paragraph down
 keymap.set('n', '<s-left>', 'b', noremap) -- jump paragraph down
--- buffers navigate
+-- buffers navigate/action
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
-keymap.set('n', '<c-q>', ':bd<CR>', noremap) -- go to the previous buffer
-
+keymap.set('n', '<c-w>', ':bp<bar>sp<bar>bn<bar>bd<CR>', noremap) -- close current buffer
 -- Save
 keymap.set('n', 'SS', ':w<CR>', noremap) -- save
 
