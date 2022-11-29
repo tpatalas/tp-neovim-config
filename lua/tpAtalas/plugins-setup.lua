@@ -33,12 +33,7 @@ return packer.startup(function(use)
 	use('nvim-lua/plenary.nvim') -- lua functions that many plugins use
 
 	-- colors --
-	-- use("joshdick/onedark.vim")
-	-- use("folke/tokyonight.nvim")
 	use('rose-pine/neovim') -- colorScheme
-	-- use("cocopon/iceberg.vim")
-	-- use("rebelot/kanagawa.nvim")
-	-- use("catppuccin/nvim")
 
 	use('norcalli/nvim-colorizer.lua') -- colorizer
 
