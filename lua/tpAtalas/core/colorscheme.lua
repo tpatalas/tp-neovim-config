@@ -37,6 +37,7 @@ require('rose-pine').setup({
 		ColorColumn = { bg = 'highlight_low' },
 		IncSearch = { fg = '', bg = 'overlay' },
 		Visual = { fg = '', bg = '#304E74' },
+		CursorLineNr = { fg = 'gold', bg = 'highlight_low' },
 	},
 })
 
