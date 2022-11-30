@@ -116,7 +116,7 @@ return packer.startup(function(use)
 		end,
 		ft = { 'markdown' },
 	}) -- markdown preview
-
+	use('dhruvasagar/vim-table-mode') -- markdown table
 	use('mzlogin/vim-markdown-toc') -- toc generator
 
 	-- trouble
