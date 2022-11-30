@@ -127,7 +127,10 @@ keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdow
 keymap.set('n', '<leader>mps', ':MarkdownPreviewStop<CR>', noremap) -- stop markdown preview stop
 
 -- markdown toc
-keymap.set('n', '<leader>mtg', ':GenTocGFM<CR>', noremap) -- generate markdown toc
+keymap.set('n', '<leader>mco', ':GenTocGFM<CR>', noremap) -- generate markdown toc
+
+-- vim table mode
+keymap.set('n', '<leader>mto', ':TableModeToggle<CR>', noremap) -- toggle markdown table
 
 -- trouble
 keymap.set('n', '<leader>tro', ':Trouble<CR>', noremap) -- Open the list

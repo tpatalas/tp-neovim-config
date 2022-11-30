@@ -145,6 +145,7 @@ brew install lazygit
 
 - [Markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
 - [Vim-Markdown-toc](https://github.com/iamcco/vim-markdown-toc)
+- [Vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)
 
 #### Code observer
 
