@@ -38,7 +38,7 @@ keymap.set('n', '<leader>DD', ':%d<CR>', noremap)
 keymap.set('n', '<leader>fma', 'gggqG', noremap) -- apply formatting if any
 -- formatting with typescript.nvim
 keymap.set('n', '<leader>fmf', ':TypescriptRenameFile<CR>') -- rename file and update imports
-keymap.set('n', '<leader>fmd', ':TypescriptRemoveUnused<CR>') -- remove unused variables
+keymap.set('n', '<leader>fmu', ':TypescriptRemoveUnused<CR>') -- remove unused variables
 keymap.set('n', '<leader>fmo', ':TypescriptOrganizeImports<CR>') -- Organize Import
 keymap.set('n', '<leader>fmm', ':TypescriptAddMissingImports<CR>') -- add missing imports
 -- formatting move lines
@@ -58,8 +58,8 @@ keymap.set('n', '<leader>ra', ':%s/<c-r><c-w>/', noremap) -- Search and replace 
 -- paragraph navigate
 keymap.set('n', '<s-up>', '<S-{>', noremap) -- jump paragraph up
 keymap.set('n', '<s-down>', '<S-}>', noremap) -- jump paragraph down
-keymap.set('n', '<s-right>', 'w', noremap) -- jump paragraph down
-keymap.set('n', '<s-left>', 'b', noremap) -- jump paragraph down
+keymap.set('n', '<s-right>', 'w', noremap) -- jump forward to the start of a word
+keymap.set('n', '<s-left>', 'b', noremap) -- jump backward to the start of a word
 -- buffers navigate/action
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
@@ -71,6 +71,7 @@ keymap.set('n', 'SS', ':w<CR>', noremap) -- save
 keymap.set('n', 'x', '"_x', noremap)
 
 -- Window management
+-- TODO: (REMOVE OR KEEP)
 keymap.set('n', '<leader>sv', '<C-w>v') -- split window vertically
 keymap.set('n', '<leader>sh', '<C-w>s') -- split window horizontally
 keymap.set('n', '<leader>sx', ':close<CR>') -- close current split window
@@ -150,6 +151,3 @@ keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colori
 -- rest nvim
 keymap.set('n', '<leader>rno', '<Plug>RestNvim<CR>', noremap) -- run the request under the cursor
 keymap.set('n', '<leader>rnl', '<Plug>RestNvimLast<CR>', noremap) -- re-reun the last request
-
---
-keymap.set('n', '<leader>dlo', '', noremap)

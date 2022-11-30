@@ -1,4 +1,4 @@
-# Neovim initial setup
+# Neovim configuration
 
 ![image](https://github.com/tpAtalas/tp-nvim-lua-config/blob/c6f214e0820f01bfc1bc38b3aad87170abeb7670/image.png?raw=true)
 
@@ -9,6 +9,11 @@
 - [Installation (Homebrew)](#installation-homebrew)
   - [Install Neovim](#install-neovim)
   - [Install Lazygit](#install-lazygit)
+- [Major Keymaps](#major-keymaps)
+  - [General Keymaps (Normal Mode)](#general-keymaps-normal-mode)
+    - [Formatting](#formatting)
+    - [Navigation](#navigation)
+    - [Window Management](#window-management)
 - [Installed Plugins](#installed-plugins)
   - [Plugin Manager](#plugin-manager)
   - [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
@@ -61,6 +66,49 @@ brew install neovim
 ```bash
 brew install lazygit
 ```
+
+### Major Keymaps
+
+> [More keymaps](https://github.com/tpAtalas/tp-nvim-lua-config/blob/master/lua/tpAtalas/core/keymaps.lua)
+
+#### General Keymaps (Normal Mode)
+
+##### Formatting
+
+| Keymap        | Description                     | Comment                 |
+| ------------- | ------------------------------- | ----------------------- |
+| `<leader>fma` | Apply formatting                | -                       |
+| `<leader>fmf` | Rename files and update imports | Plugin: Typescript.nvim |
+| `<leader>fmd` | Remove unused variables         | Plugin: Typescript.nvim |
+| `<leader>fmm` | Add missing imports             | Plugin: Typescript.nvim |
+|               |                                 |                         |
+| `alt+up`      | Move the current line upward    | -                       |
+| `alt+down`    | Move the current line downward  | -                       |
+
+##### Navigation
+
+| Keymap            | Description                        | Comment |
+| ----------------- | ---------------------------------- | ------- |
+| `shift+up`        | Jump paragraph up                  | -       |
+| `shift+down`      | Jump paragraph down                | -       |
+| `shift+right`     | Jump forward to the start of word  | -       |
+| `shift+left`      | Jump backward to the start of word | -       |
+|                   |                                    |         |
+| `shift+alt+left`  | Go to the previous buffer          | -       |
+| `shift+alt+right` | Go to the next buffer              | -       |
+| `ctrl+w`          | Close the current buffer           | -       |
+
+##### Window Management
+
+| Keymap           | Description                         | Comment |
+| ---------------- | ----------------------------------- | ------- |
+| `ctrl+alt+right` | Increase the vertical window size   | -       |
+| `ctrl+alt+left`  | Descrese the vertical window size   | -       |
+| `ctrl+alt+up`    | Increase the horizontal window size | -       |
+| `ctrl+alt+down`  | Decrease the horizontal window size | -       |
+|                  |                                     |         |
+| `ctrl+backtick`  | Switch between split windows        | -       |
+| `<leader>=`      | Reset window size                   | -       |
 
 ### Installed Plugins
 
