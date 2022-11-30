@@ -84,7 +84,7 @@ keymap.set('n', '<c-a-right>', ':vertical resize +5<CR>', noremap) -- increase s
 keymap.set('n', '<c-a-left>', ':vertical resize -5<CR>', noremap) -- decrease size vertically
 keymap.set('n', '<c-a-up>', ':horizontal resize +5<CR>', noremap) -- increase size horizontally
 keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decreise size horizontally
-keymap.set('n', '<c-space>', '<C-W>w', noremap) -- switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
+keymap.set('n', '<c-@>', '<C-W>w', noremap) -- ctrl+` is the easier wasy to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
 keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press <alt-=>
 
 ----------------------
