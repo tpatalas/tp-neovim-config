@@ -35,7 +35,7 @@ require('rose-pine').setup({
 	-- Change specific vim highlight groups
 	highlight_groups = {
 		ColorColumn = { bg = 'highlight_low' },
-		IncSearch = { fg = '', bg = 'overlay' },
+		IncSearch = { fg = '', bg = 'highlight_med' },
 		Visual = { fg = '', bg = '#304E74' },
 		CursorLineNr = { fg = 'gold', bg = 'highlight_low' },
 	},
