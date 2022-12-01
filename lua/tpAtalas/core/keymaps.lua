@@ -130,6 +130,8 @@ keymap.set('n', '<leader>mps', ':MarkdownPreviewStop<CR>', noremap) -- stop mark
 
 -- markdown toc
 keymap.set('n', '<leader>mco', ':GenTocGFM<CR>', noremap) -- generate markdown toc
+keymap.set('n', '<leader>mcu', ':UpdateToc<CR>', noremap) -- update markdown toc
+keymap.set('n', '<leader>mcd', ':RemoveToc<CR>', noremap) -- delete markdown toc
 
 -- vim table mode
 keymap.set('n', '<leader>mto', ':TableModeToggle<CR>', noremap) -- toggle markdown table
