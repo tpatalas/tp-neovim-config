@@ -113,11 +113,11 @@ lualine.setup({
 		lualine_b = {
 			{
 				'buffers',
-			  show_filename_only = true,   -- Shows shortened relative path when set to false.
-        hide_filename_extension = true,   -- Hide filename extension when set to true.
-        show_modified_status = true, -- Shows indicator when the buffer is modified.	mode = 2, 
-        mode = 2,
-        -- 0: Shows buffer name
+				show_filename_only = true, -- Shows shortened relative path when set to false.
+				hide_filename_extension = true, -- Hide filename extension when set to true.
+				show_modified_status = true, -- Shows indicator when the buffer is modified.	mode = 2,
+				mode = 2,
+				-- 0: Shows buffer name
 				-- 1: Shows buffer index
 				-- 2: Shows buffer name + buffer index
 				-- 3: Shows buffer number
@@ -127,7 +127,7 @@ lualine.setup({
 					alternate_file = '',
 					directory = '',
 				},
-        max_length = vim.o.columns * 2 / 3,
+				max_length = vim.o.columns * 7 / 10,
 			},
 		},
 		lualine_c = {},
