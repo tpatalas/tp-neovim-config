@@ -17,41 +17,24 @@ local eslint = { -- js/ts linter
 	end,
 }
 
-local filetype = {
-	filetypes = {
-		javascript,
-		http,
-		javascriptreact,
-		typescript,
-		typescriptreact,
-		css,
-		scss,
-		less,
-		html,
-		json,
-		markdown,
-		graphql,
-	},
-}
-
 -- to setup format on save
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
 -- Built-in sources:
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local source = {
-  -- INFO: diagnostics listed below supports the workspace diagnostics
-  -- https://github.com/jose-elias-alvarez/null-ls.nvim/search?p=2&q=multiple_files
-  diagnostics.tsc,
-  diagnostics.markdownlint,
-  -- WARNING: diagnostics listed below do not support workspace level diagnostics
-  formatting.markdownlint,
+	-- INFO: diagnostics listed below supports the workspace diagnostics
+	-- https://github.com/jose-elias-alvarez/null-ls.nvim/search?p=2&q=multiple_files
+	diagnostics.tsc,
+	diagnostics.markdownlint,
+	-- WARNING: diagnostics listed below do not support workspace level diagnostics
+	formatting.markdownlint,
 	diagnostics.codespell,
 	formatting.codespell,
 	formatting.stylua, -- lua formatter
+	formatting.prettier, -- js/ts formatter
 	codeactions.eslint_d.with(eslint),
 	diagnostics.eslint_d.with(eslint),
-	formatting.prettier.with(filetype), -- js/ts formatter
 }
 
 local on_attach = function(current_client, bufnr)

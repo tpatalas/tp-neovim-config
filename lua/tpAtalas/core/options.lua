@@ -11,6 +11,7 @@ opt.textwidth = 0
 opt.undofile = true -- undo file after ':wp'
 opt.linebreak = true
 opt.breakindent = true
+opt.foldcolumn = '1'
 opt.signcolumn = 'yes' -- show sign column so that text doesn't shift
 opt.wrap = false
 opt.ignorecase = true -- ignore case when searching
