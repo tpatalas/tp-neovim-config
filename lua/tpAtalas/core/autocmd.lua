@@ -17,6 +17,14 @@ vim.cmd([[autocmd FileType markdown set textwidth=80 wrap]])
 vim.cmd([[autocmd TextChanged,InsertLeave *.* silent write]])
 
 -- highlight the match under cursor
--- for changing highlight color, go to colorScheme: IncSearch
-vim.cmd([[autocmd CursorHold,CursorHoldI * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))]])
-
+vim.cmd([[
+  augroup AutoHighlight
+    function! HighlightCurrentWord(event)
+        set updatetime=500 " default updatetime=4000
+        exe printf('match IncSearch /\V\<%s\>/', escape(expand(a:event), '/\'))
+    endfunction    
+    autocmd!
+    autocmd CursorMovedI,CursorMoved * call HighlightCurrentWord('')
+    autocmd CursorHoldI,CursorHold * call HighlightCurrentWord('<cword>')
+  augroup end
+]])
