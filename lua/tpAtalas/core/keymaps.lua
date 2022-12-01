@@ -54,33 +54,34 @@ keymap.set('n', 'qq', ':q<CR>')
 -- Search and  Replace
 keymap.set('n', '<leader>ra', ':%s/<c-r><c-w>/', noremap) -- Search and replace the word under current
 
--- Navigation --
--- paragraph navigate
-keymap.set('n', '<s-up>', '<S-{>', noremap) -- jump paragraph up
-keymap.set('n', '<s-down>', '<S-}>', noremap) -- jump paragraph down
-keymap.set('n', '<s-right>', 'w', noremap) -- jump forward to the start of a word
-keymap.set('n', '<s-left>', 'b', noremap) -- jump backward to the start of a word
--- buffers navigate/action
+-- buffers --
+-- buffers navigation
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
+keymap.set('n', '<f1>', ':LualineBuffersJump 1<CR>', noremap)
+keymap.set('n', '<f2>', ':LualineBuffersJump 2<CR>', noremap)
+keymap.set('n', '<f3>', ':LualineBuffersJump 3<CR>', noremap)
+keymap.set('n', '<f4>', ':LualineBuffersJump 4<CR>', noremap)
+keymap.set('n', '<f5>', ':LualineBuffersJump 5<CR>', noremap)
+keymap.set('n', '<f6>', ':LualineBuffersJump 6<CR>', noremap)
+keymap.set('n', '<f7>', ':LualineBuffersJump 7<CR>', noremap)
+keymap.set('n', '<f8>', ':LualineBuffersJump 8<CR>', noremap)
+keymap.set('n', '<f9>', ':LualineBuffersJump 9<CR>', noremap)
+keymap.set('n', '<f10>', ':LualineBuffersJump 10<CR>', noremap)
+-- buffers action
 keymap.set('n', '<c-w>', ':bp<bar>sp<bar>bn<bar>bd<CR>', noremap) -- close current buffer
+keymap.set('n', '<c-c>', ':%bd|e#|bd#<CR><CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
+
 -- Save
 keymap.set('n', 'SS', ':w<CR>', noremap) -- save
 
 -- Delete single character without copying into register
 keymap.set('n', 'x', '"_x', noremap)
 
--- Window management
--- TODO: (REMOVE OR KEEP)
-keymap.set('n', '<leader>sv', '<C-w>v') -- split window vertically
-keymap.set('n', '<leader>sh', '<C-w>s') -- split window horizontally
-keymap.set('n', '<leader>sx', ':close<CR>') -- close current split window
-
-keymap.set('n', '<leader>to', ':tabnew<CR>') -- open new tab
-keymap.set('n', '<leader>tx', ':tabclose<CR>') -- close current tab
-keymap.set('n', '<leader>tn', ':tabn<CR>') --  go to next tab
-keymap.set('n', '<leader>tp', ':tabp<CR>') --  go to previous tab
-
+-- Window management --
+keymap.set('n', '<leader>wsv', '<C-w>v') -- split window vertically
+keymap.set('n', '<leader>wsh', '<C-w>s') -- split window horizontally
+keymap.set('n', '<leader>wsc', ':close<CR>') -- close current split window
 keymap.set('n', '<c-a-right>', ':vertical resize +5<CR>', noremap) -- increase size vertically
 keymap.set('n', '<c-a-left>', ':vertical resize -5<CR>', noremap) -- decrease size vertically
 keymap.set('n', '<c-a-up>', ':horizontal resize +5<CR>', noremap) -- increase size horizontally
