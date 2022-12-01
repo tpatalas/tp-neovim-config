@@ -58,6 +58,7 @@ keymap.set('n', '<leader>ra', ':%s/<c-r><c-w>/', noremap) -- Search and replace 
 -- buffers navigation
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
+-- buffers jump by index
 keymap.set('n', '<f1>', ':LualineBuffersJump 1<CR>', noremap)
 keymap.set('n', '<f2>', ':LualineBuffersJump 2<CR>', noremap)
 keymap.set('n', '<f3>', ':LualineBuffersJump 3<CR>', noremap)

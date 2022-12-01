@@ -1,6 +1,7 @@
 # Neovim configuration
 
-![image](https://github.com/tpAtalas/tp-nvim-lua-config/blob/c6f214e0820f01bfc1bc38b3aad87170abeb7670/image.png?raw=true)
+![image](https://github.com/tpAtalas/tp-nvim-lua-config/blob/assets/image.png?raw=true)
+colorscheme: [rose-pine](https://github.com/rose-pine/neovim) | [palette](https://rosepinetheme.com/palette)
 
 ## Table of contents
 
@@ -12,7 +13,7 @@
 - [Major Keymaps](#major-keymaps)
   - [General Keymaps (Normal Mode)](#general-keymaps-normal-mode)
     - [Formatting](#formatting)
-    - [Navigation](#navigation)
+    - [Buffers](#buffers)
     - [Window Management](#window-management)
 - [Installed Plugins](#installed-plugins)
   - [Plugin Manager](#plugin-manager)
@@ -85,23 +86,35 @@ brew install lazygit
 | `alt+up`      | Move the current line upward    | -                       |
 | `alt+down`    | Move the current line downward  | -                       |
 
-##### Navigation
+##### Buffers
 
-| Keymap            | Description                        | Comment |
-| ----------------- | ---------------------------------- | ------- |
-| `shift+up`        | Jump paragraph up                  | -       |
-| `shift+down`      | Jump paragraph down                | -       |
-| `shift+right`     | Jump forward to the start of word  | -       |
-| `shift+left`      | Jump backward to the start of word | -       |
-|                   |                                    |         |
-| `shift+alt+left`  | Go to the previous buffer          | -       |
-| `shift+alt+right` | Go to the next buffer              | -       |
-| `ctrl+w`          | Close the current buffer           | -       |
+| Keymap            | Description                         | Comment         |
+| ----------------- | ----------------------------------- | --------------- |
+| `shift+alt+left`  | Go to the previous buffer           | -               |
+| `shift+alt+right` | Go to the next buffer               | -               |
+|                   |                                     |                 |
+| `F1`              | Go to the buffer 1                  | Plugin: Lualine |
+| `F2`              | Go to the buffer 2                  | Plugin: Lualine |
+| `F3`              | Go to the buffer 3                  | Plugin: Lualine |
+| `F4`              | Go to the buffer 4                  | Plugin: Lualine |
+| `F5`              | Go to the buffer 5                  | Plugin: Lualine |
+| `F6`              | Go to the buffer 6                  | Plugin: Lualine |
+| `F7`              | Go to the buffer 7                  | Plugin: Lualine |
+| `F8`              | Go to the buffer 8                  | Plugin: Lualine |
+| `F9`              | Go to the buffer 9                  | Plugin: Lualine |
+| `F10`             | Go to the buffer 10                 | Plugin: Lualine |
+|                   |                                     |                 |
+| `ctrl+w`          | Close the current buffer            | -               |
+| `ctrl+c`          | Close all except the current buffer | -               |
 
 ##### Window Management
 
 | Keymap           | Description                         | Comment |
 | ---------------- | ----------------------------------- | ------- |
+| `leader+wsv`     | Split the window vertically         | -       |
+| `leader+wsh`     | Split the window horizontally       | -       |
+| `leader+wsc`     | Close the current split window      | -       |
+|                  |                                     |         |
 | `ctrl+alt+right` | Increase the vertical window size   | -       |
 | `ctrl+alt+left`  | Descrese the vertical window size   | -       |
 | `ctrl+alt+up`    | Increase the horizontal window size | -       |
@@ -192,7 +205,7 @@ brew install lazygit
 #### Markdown
 
 - [Markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
-- [Vim-Markdown-toc](https://github.com/iamcco/vim-markdown-toc)
+- [Vim-markdown-toc](https://github.com/iamcco/vim-markdown-toc)
 - [Vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)
 
 #### Code observer
