@@ -1,0 +1,29 @@
+{
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "Lua.diagnostics.disable": [
+        "unused-local"
+    ],
+    "Lua.diagnostics.globals": [
+        "vim",
+        "graphql",
+        "javascript",
+        "http",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "css",
+        "scss",
+        "less",
+        "html",
+        "json",
+        "markdown",
+        "none",
+        "require",
+        "pcall",
+        "print",
+        "pairs",
+        "package",
+        "_G",
+        "dofile"
+    ]
+}
