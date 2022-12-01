@@ -13,8 +13,12 @@ vim.opt.termguicolors = true
 
 -- configure nvim-tree
 nvimtree.setup({
+	view = {
+		adaptive_size = true,
+	},
 	-- change folder arrow icons
 	renderer = {
+    highlight_git = true,
 		icons = {
 			show = {
 				file = true,
@@ -35,6 +39,7 @@ nvimtree.setup({
 			'.http', -- more info: :help nvim-tree.filters.exclude
 		},
 	},
+
 	-- disable window_picker for
 	-- explorer to work well with
 	-- window splits

@@ -1,10 +1,8 @@
--- import telescope plugin safely
 local telescope_setup, telescope = pcall(require, 'telescope')
 if not telescope_setup then
 	return
 end
 
--- import telescope actions safely
 local actions_setup, actions = pcall(require, 'telescope.actions')
 if not actions_setup then
 	return
@@ -14,9 +12,14 @@ end
 telescope.setup({
 	-- configure custom mappings
 	defaults = {
+		sorting_strategy = 'ascending',
+		layout_strategy = 'horizontal',
+		prompt_prefix = '> ',
 		layout_config = {
+			prompt_position = 'top',
 			horizontal = {
 				width = 0.90,
+				height = 0.97,
 				preview_width = 0.5,
 			},
 		},
@@ -33,6 +36,5 @@ telescope.setup({
 			-- theme = "dropdown",
 		},
 	},
+	extensions = {},
 })
-
-telescope.load_extension('fzf')
