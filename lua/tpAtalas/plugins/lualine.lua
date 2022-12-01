@@ -33,8 +33,7 @@ local custom_theme = {
 	},
 	insert = {
 		a = { gui = 'bold', fg = colors.surface, bg = colors.rose },
-		b = { fg = colors.base, bg = colors.foam,
-      },
+		b = { fg = colors.base, bg = colors.foam },
 	},
 	visual = {
 		a = { gui = 'bold', fg = colors.surface, bg = colors.iris },
@@ -75,16 +74,16 @@ lualine.setup({
 	sections = {
 		lualine_a = { 'mode' },
 		lualine_b = {
-      'branch',
-      {
-			'diff',
-      symbols = { added = ' ', modified = '柳', removed = ' ' },
-      diff_color = {
-          added = { fg = colors.foam },
-          modified = { fg = colors.gold },
-          removed = { fg = colors.love },
-        },
-      }
+			'branch',
+			{
+				'diff',
+				symbols = { added = ' ', modified = '柳', removed = ' ' },
+				diff_color = {
+					added = { fg = colors.foam },
+					modified = { fg = colors.gold },
+					removed = { fg = colors.love },
+				},
+			},
 		},
 		lualine_c = {
 			{
@@ -94,7 +93,7 @@ lualine.setup({
 				sections = { 'error', 'warn', 'info' },
 				colored = true,
 				update_in_insert = true,
-	  		always_visible = false,
+				always_visible = false,
 			},
 		},
 		lualine_x = { 'filetype' },
@@ -114,11 +113,21 @@ lualine.setup({
 		lualine_b = {
 			{
 				'buffers',
+			  show_filename_only = true,   -- Shows shortened relative path when set to false.
+        hide_filename_extension = true,   -- Hide filename extension when set to true.
+        show_modified_status = true, -- Shows indicator when the buffer is modified.	mode = 2, 
+        mode = 2,
+        -- 0: Shows buffer name
+				-- 1: Shows buffer index
+				-- 2: Shows buffer name + buffer index
+				-- 3: Shows buffer number
+				-- 4: Shows buffer name + buffer number
 				symbols = {
 					modified = ' ●',
 					alternate_file = '',
 					directory = '',
 				},
+        max_length = vim.o.columns * 2 / 3,
 			},
 		},
 		lualine_c = {},
