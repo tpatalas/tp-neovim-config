@@ -39,8 +39,8 @@ keymap.set('n', '<leader>fma', 'gggqG', noremap) -- apply formatting if any
 -- formatting with typescript.nvim
 keymap.set('n', '<leader>fmf', ':TypescriptRenameFile<CR>') -- rename file and update imports
 keymap.set('n', '<leader>fmu', ':TypescriptRemoveUnused<CR>') -- remove unused variables
-keymap.set('n', '<leader>fmo', ':TypescriptOrganizeImports<CR>') -- Organize Import
 keymap.set('n', '<leader>fmm', ':TypescriptAddMissingImports<CR>') -- add missing imports
+keymap.set('n', '<leader>fmo', ':OrganizeImports<CR>') -- Organize Import (Custom)
 -- formatting move lines
 keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
 keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
