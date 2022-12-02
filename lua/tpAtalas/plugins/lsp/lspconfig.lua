@@ -46,6 +46,15 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
+local function organize_imports()
+	local params = {
+		command = '_typescript.organizeImports',
+		arguments = { vim.api.nvim_buf_get_name(0) },
+		title = '',
+	}
+	vim.lsp.buf.execute_command(params)
+end
+
 -- Servers --
 -- html
 lspconfig['html'].setup({
@@ -62,6 +71,12 @@ typescript.setup({
 		init_options = {
 			preferences = {
 				disableSuggestions = true,
+			},
+		},
+		commands = {
+			OrganizeImports = {
+				organize_imports,
+				description = 'Organize Imports',
 			},
 		},
 	},
