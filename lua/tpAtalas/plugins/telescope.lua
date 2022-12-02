@@ -10,19 +10,48 @@ end
 
 -- configure telescope
 telescope.setup({
-	-- configure custom mappings
 	defaults = {
 		sorting_strategy = 'ascending',
-		layout_strategy = 'horizontal',
+		-- path_display = {'smart'},
+		path_display = { truncate = 6 },
 		prompt_prefix = '> ',
+		layout_strategy = 'horizontal',
 		layout_config = {
-			prompt_position = 'top',
+			bottom_pane = {
+				height = 25,
+				preview_cutoff = 120,
+				prompt_position = 'top',
+			},
+			center = {
+				height = 0.33,
+				preview_cutoff = 0,
+				prompt_position = 'top',
+				width = 0.95,
+        anchor = 'N',
+        mirror = true
+			},
+			cursor = {
+				height = 0.9,
+				preview_cutoff = 40,
+				width = 0.8,
+			},
 			horizontal = {
-				width = 0.90,
-				height = 0.97,
-				preview_width = 0.5,
+				height = 0.99,
+				preview_cutoff = 120,
+				prompt_position = 'top',
+				width = 0.95,
+        preview_width = 0.55,
+			},
+			vertical = {
+				height = 0.99,
+				preview_cutoff = 0,
+				prompt_position = 'top',
+				width = 0.95,
+        anchor = 'N',
+        mirror = true,
 			},
 		},
+		dynamic_preview_title = true,
 		mappings = {
 			i = {
 				['<C-k>'] = actions.move_selection_previous, -- move to prev result
