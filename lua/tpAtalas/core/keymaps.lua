@@ -91,7 +91,7 @@ keymap.set('n', '<c-@>', '<C-W>w', noremap) -- ctrl+` is the easier wasy to swit
 keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press <alt-=>
 
 ----------------------
--- Plugin Keybinds
+--  Plugin Keybinds --
 ----------------------
 
 -- toggleTerm
@@ -104,23 +104,23 @@ keymap.set('n', '<leader>fef', ':NvimTreeFindFile<CR>', noremap) --  Move the cu
 keymap.set('n', '<leader>fec', ':NvimTreeCollapse<CR>', noremap) -- Collapses the nvim-tree recursively.
 
 -- telescope
-keymap.set('n', '<leader>ffo', '<cmd>Telescope find_files<CR>', noremap) -- find files within current working directory, respects .gitignore
-keymap.set('n', '<leader>ffs', '<cmd>Telescope live_grep<CR>', noremap) -- find string in current working directory as you type
-keymap.set('n', '<leader>ffc', '<cmd>Telescope grep_string<CR>', noremap) -- find string under cursor in current working directory
-keymap.set('n', '<leader>ffb', '<cmd>Telescope buffers<CR>', noremap) -- list open buffers in current neovim instance
-keymap.set('n', '<leader>ffh', '<cmd>Telescope help_tags<CR>', noremap) -- list available help tags
+keymap.set('n', '<leader>tfo', '<cmd>Telescope find_files<CR>', noremap) -- find files within current working directory, respects .gitignore
+keymap.set('n', '<leader>tfs', '<cmd>Telescope live_grep<CR>', noremap) -- find string in current working directory as you type
+keymap.set('n', '<leader>tfc', '<cmd>Telescope grep_string<CR>', noremap) -- find string under cursor in current working directory
+keymap.set('n', '<leader>tfb', '<cmd>Telescope buffers<CR>', noremap) -- list open buffers in current neovim instance
+keymap.set('n', '<leader>tfh', '<cmd>Telescope help_tags<CR>', noremap) -- list available help tags
 -- telescope todo-comments
 keymap.set(
 	'n',
-	'<leader>fft',
+	'<leader>tco',
 	':TodoTelescope keywords=TODO,HACK,NOTE,WARN,PERF,TEST,FIX,FIXME,FIXIT,BUG,ISSUE<CR>',
 	noremap
 ) -- open todo-comments within telescope
 -- telescope git commands
-keymap.set('n', '<leader>fgc', '<cmd>Telescope git_commits<CR>') -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set('n', '<leader>fgf', '<cmd>Telescope git_bcommits<CR>') -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set('n', '<leader>fgb', '<cmd>Telescope git_branches<CR>') -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set('n', '<leader>fgs', '<cmd>Telescope git_status<CR>') -- list current changes per file with diff preview ["gs" for git status]
+keymap.set('n', '<leader>tgc', '<cmd>Telescope git_commits<CR>') -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+keymap.set('n', '<leader>tgf', '<cmd>Telescope git_bcommits<CR>') -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+keymap.set('n', '<leader>tgb', '<cmd>Telescope git_branches<CR>') -- list git branches (use <cr> to checkout) ["gb" for git branch]
+keymap.set('n', '<leader>tgs', '<cmd>Telescope git_status<CR>') -- list current changes per file with diff preview ["gs" for git status]
 
 -- lsp server restart
 keymap.set('n', '<leader>lsr', ':LspRestart<CR>') -- mapping to restart lsp if necessary
