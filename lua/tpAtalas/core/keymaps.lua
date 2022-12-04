@@ -19,10 +19,10 @@ vim.g.VM_default_mappings = 0 -- disable the visual-multi default key mapping
 -- General Keymaps - Insert Mode
 ---------------------------------
 
--- Escape insert mode
+-- escape insert mode
 keymap.set('i', 'jk', '<ESC>l', noremap)
 
--- Delete Word in insert mode
+-- delete Word in insert mode
 keymap.set('i', '<c-d><c-d>', '<ESC>dawi', noremap)
 
 ---------------------------------
@@ -47,14 +47,22 @@ keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
 -- formatting color
 keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap) -- vim highlight group
 
--- Exiting
+-- exiting
 keymap.set('n', 'QQ', ':q!<CR>', noremap)
-keymap.set('n', 'qq', ':q<CR>')
+keymap.set('n', 'qq', ':q<CR>', noremap)
 
--- Search and  Replace
+-- search and  Replace
 keymap.set('n', '<leader>ra', ':%s/<c-r><c-w>/', noremap) -- Search and replace the word under current
 
--- buffers --
+-- navigation --
+-- general navigation
+keymap.set('n', '<c-d>', '<c-d>zz', noremap) -- move forward half a screen then center cursor
+keymap.set('n', '<c-u>', '<c-u>zz', noremap) -- move backward half a screen then center cursor
+keymap.set('n', ']]', ']]zz', noremap) -- go to the end of the line then center cursor
+keymap.set('n', '}', '}zz', noremap) -- jump to the next paragraph then center cursor
+keymap.set('n', '{', '{zz', noremap) -- jump to the previous paragraph then center cursor
+keymap.set('n', '<s-down>', '<s-down>zz', noremap)
+keymap.set('n', '<s-up>', '<s-up>zz', noremap)
 -- buffers navigation
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
@@ -73,10 +81,10 @@ keymap.set('n', '<f10>', ':LualineBuffersJump 10<CR>', noremap)
 keymap.set('n', '<c-w>', ':bp<bar>sp<bar>bn<bar>bd<CR>', noremap) -- close current buffer
 keymap.set('n', '<c-c>', ':%bd|e#|bd#<CR><CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
 
--- Save
+-- save
 keymap.set('n', 'SS', ':w<CR>', noremap) -- save
 
--- Delete single character without copying into register
+-- delete single character without copying into register
 keymap.set('n', 'x', '"_x', noremap)
 
 -- Window management --
