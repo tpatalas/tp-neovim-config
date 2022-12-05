@@ -219,7 +219,8 @@ brew install lazygit
 #### Comments
 
 - [Todo-comments](https://github.com/folke/todo-comments.nvim)
-- [Comment](https://github.com/numToStr/Comment.nvim)
+- [Comment.nvim](https://github.com/numToStr/Comment.nvim)
+- [Nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
 
 ### References
 
