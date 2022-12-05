@@ -41,8 +41,9 @@ return packer.startup(function(use)
 	use('tpope/vim-surround') -- add, delete, change surroundings (it's awesome)
 	use('vim-scripts/ReplaceWithRegister') -- replace with register contents using motion (gr + motion)
 
-	-- commenting with gc
+	-- commenting
 	use('numToStr/Comment.nvim')
+	use('JoosepAlviste/nvim-ts-context-commentstring')
 
 	-- file explorer
 	use('nvim-tree/nvim-tree.lua')
