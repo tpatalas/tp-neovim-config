@@ -1,7 +1,7 @@
 require('rose-pine').setup({
 	--- @usage 'main' | 'moon'
 	dark_variant = 'main',
-	bold_vert_split = false,
+	bold_vert_split = true,
 	dim_nc_background = false,
 	disable_background = false,
 	disable_float_background = false,
@@ -9,7 +9,7 @@ require('rose-pine').setup({
 
 	--- @usage string hex value or named color from rosepinetheme.com/palette
 	groups = {
-		background = '#13111b',
+		background = 'base',
 		panel = 'surface',
 		border = 'highlight_med',
 		comment = 'muted',
@@ -34,10 +34,20 @@ require('rose-pine').setup({
 
 	-- Change specific vim highlight groups
 	highlight_groups = {
-		ColorColumn = { bg = 'highlight_low' },
+		ColorColumn = { bg = 'surface' },
 		IncSearch = { fg = '', bg = 'highlight_med' },
 		Visual = { fg = '', bg = '#304E74' },
 		CursorLineNr = { fg = 'gold', bg = 'highlight_low' },
+		rainbowcol1 = { fg = '#abb2c0' },
+		rainbowcol2 = { fg = '#5caeef' },
+		rainbowcol3 = { fg = '#bd93f9' },
+		rainbowcol4 = { fg = '#50fa7b' },
+		rainbowcol5 = { fg = '#f1fa8c' },
+		rainbowcol6 = { fg = '#ffb86c' },
+		rainbowcol7 = { fg = '#ff5555' },
+		Pmenu = { bg = '#12101a' },
+		NormalFloat = { bg = '#12101a' },
+		PmenuSel = { bg = '#332f49' },
 	},
 })
 
