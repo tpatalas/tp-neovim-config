@@ -43,6 +43,7 @@ return packer.startup(function(use)
 
 	-- commenting
 	use('numToStr/Comment.nvim')
+	use('folke/todo-comments.nvim')
 	use('JoosepAlviste/nvim-ts-context-commentstring')
 
 	-- file explorer
@@ -126,8 +127,6 @@ return packer.startup(function(use)
 	-- http client
 	use('rest-nvim/rest.nvim')
 
-	-- commenting
-	use('folke/todo-comments.nvim')
 
 	if packer_bootstrap then
 		require('packer').sync()
