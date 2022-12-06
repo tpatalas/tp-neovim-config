@@ -127,6 +127,14 @@ return packer.startup(function(use)
 	-- http client
 	use('rest-nvim/rest.nvim')
 
+	-- navigation
+	use({
+		'andymass/vim-matchup',
+		setup = function()
+			-- may set any options here
+			vim.g.matchup_matchparen_offscreen = { method = 'popup' }
+		end,
+	})
 
 	if packer_bootstrap then
 		require('packer').sync()
