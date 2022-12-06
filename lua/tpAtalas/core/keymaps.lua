@@ -53,6 +53,7 @@ keymap.set('n', 'qq', ':q<CR>', noremap)
 
 -- search and  Replace
 keymap.set('n', '<leader>ra', ':%s/<c-r><c-w>/', noremap) -- Search and replace the word under current
+keymap.set('n', '<leader>ssl', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 
 -- navigation --
 -- general navigation
