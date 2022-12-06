@@ -14,7 +14,14 @@ vim.cmd([[autocmd FileType lua nnoremap <buffer><leader><CR><CR> :w<CR><cmd>lua 
 vim.cmd([[autocmd FileType markdown set textwidth=80 wrap]])
 
 -- auto-save
-vim.cmd([[autocmd TextChanged,InsertLeave *.* silent write]])
+--
+-- NOTE:
+-- Write too often with autocmd will cause the high usage of CPU by TSC (typescript compiler) in null-ls. 
+-- By default, TSC runs on workspace whenever the new buffer is open or saved (write). `silent write` 
+-- every time TextChanged may cause performance issue
+--
+-- vim.cmd([[autocmd TextChanged,InsertLeave *.* silent write]])
+vim.cmd([[autocmd BufLeave,BufWinLeave,BufWipeout,BufUnload,BufDelete *.* silent write]])
 
 -- highlight the match under cursor
 vim.cmd([[
