@@ -21,8 +21,7 @@ colorscheme: [rose-pine](https://github.com/rose-pine/neovim) | [palette](https:
   - [Themes/colors/icons](#themescolorsicons)
   - [Windows/terminal Manager](#windowsterminal-manager)
   - [Essential plugins](#essential-plugins)
-  - [File Explorer/status](#file-explorerstatus)
-  - [Search and find](#search-and-find)
+  - [Search/find/navigation](#searchfindnavigation)
   - [Autocompletion](#autocompletion)
   - [Snippet](#snippet)
   - [LSP Configuration](#lsp-configuration)
@@ -142,6 +141,8 @@ brew install lazygit
 - [Rose-pine](https://github.com/rose-pine/neovim)
 - [Nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
 #### Windows/terminal Manager
 
@@ -153,15 +154,11 @@ brew install lazygit
 - [ReplaceWithRegister](https://github.com/vim-scripts/ReplaceWithRegister)
 - [Mason](https://github.com/williamboman/mason.nvim)
 
-#### File Explorer/status
-
-- [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
-- [Lualine](https://github.com/nvim-lualine/lualine.nvim)
-
-#### Search and find
+#### Search/find/navigation
 
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Visual-multi](https://github.com/mg979/vim-visual-multi)
+- [Vim-matchup](https://github.com/andymass/vim-matchup)
 
 #### Autocompletion
 
