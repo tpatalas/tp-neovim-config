@@ -92,6 +92,23 @@ lspconfig['dockerls'].setup({
 lspconfig['cssls'].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		scss = {
+			lint = {
+				unknownAtRules = 'ignore',
+			},
+		},
+		css = {
+			lint = {
+				unknownAtRules = 'ignore',
+			},
+		},
+		less = {
+			lint = {
+				unknownAtRules = 'ignore',
+			},
+    }
+	},
 })
 
 -- css module
