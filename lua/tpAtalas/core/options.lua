@@ -2,6 +2,7 @@ local opt = vim.opt -- for conciseness
 
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+opt.pumheight = 10 -- max number of items to show in the popup menu
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
@@ -11,6 +12,7 @@ opt.textwidth = 0
 opt.undofile = true -- undo file after ':wp'
 opt.linebreak = true
 opt.breakindent = true
+opt.lazyredraw = false
 opt.foldcolumn = '1'
 opt.signcolumn = 'yes' -- show sign column so that text doesn't shift
 opt.wrap = false
