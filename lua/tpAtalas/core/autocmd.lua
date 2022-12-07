@@ -20,8 +20,8 @@ vim.cmd([[autocmd FileType markdown set textwidth=80 wrap]])
 -- By default, TSC runs on workspace whenever the new buffer is open or saved (write). `silent write`
 -- every time TextChanged may cause performance issue
 --
-vim.cmd([[autocmd TextChanged,InsertLeave *.* silent write]])
--- vim.cmd([[autocmd BufLeave,BufWinLeave,BufWipeout,BufUnload,BufDelete *.* silent write]])
+-- vim.cmd([[autocmd TextChanged,InsertLeave *.* silent write]])
+vim.cmd([[autocmd BufLeave,BufWinLeave,BufWipeout,BufUnload,BufDelete *.* silent write]])
 
 -- highlight the match under cursor
 vim.cmd([[
