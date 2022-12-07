@@ -21,17 +21,18 @@ vim.cmd([[autocmd FileType markdown set textwidth=80 wrap]])
 -- every time TextChanged may cause performance issue
 --
 -- vim.cmd([[autocmd TextChanged,InsertLeave *.* silent write]])
-vim.cmd([[autocmd BufLeave,BufWinLeave,BufWipeout,BufUnload,BufDelete *.* silent write]])
+-- vim.cmd([[autocmd BufLeave,BufWinLeave,BufWipeout,BufUnload *.* silent write]])
 
--- highlight the match under cursor
+-- highlight and autosave the match under cursor
 vim.cmd([[
   augroup AutoHighlight
     function! HighlightCurrentWord(event)
-        set updatetime=500 " default updatetime=4000
+        set updatetime=800 " default updatetime=4000
         exe printf('match IncSearch /\V\<%s\>/', escape(expand(a:event), '/\'))
     endfunction    
     autocmd!
     autocmd CursorMovedI,CursorMoved * call HighlightCurrentWord('')
     autocmd CursorHoldI,CursorHold * if @% != 'NvimTree_1' | call HighlightCurrentWord('<cword>')
+    autocmd CursorHold *.* silent write
   augroup end
 ]])
