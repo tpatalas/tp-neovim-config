@@ -23,9 +23,8 @@ local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 -- Built-in sources:
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local source = {
-	-- INFO: diagnostics listed below supports the workspace diagnostics
-	-- https://github.com/jose-elias-alvarez/null-ls.nvim/search?p=2&q=multiple_files
-	diagnostics.tsc,
+	-- WARNING: Currently tsc has memory leak issues.
+	-- diagnostics.tsc,
 	diagnostics.markdownlint,
 	-- WARNING: diagnostics listed below do not support workspace level diagnostics
 	formatting.markdownlint,
@@ -63,6 +62,6 @@ null_ls.setup({
 	on_attach = on_attach,
 	debug = false,
 	fallback_severity = vim.diagnostic.severity.WARN,
-  update_in_insert = false,
-  debounce = 2000
+	update_in_insert = false,
+	debounce = 1000,
 })
