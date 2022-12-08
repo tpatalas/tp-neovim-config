@@ -26,6 +26,10 @@ local colors = {
 	highlight_low = '#21202e',
 }
 
+local total_lines = function()
+	return vim.fn.line('$')
+end
+
 local custom_theme = {
 	normal = {
 		a = { gui = 'bold', fg = colors.foam, bg = colors.surface },
@@ -33,7 +37,7 @@ local custom_theme = {
 		c = { fg = colors.text, bg = colors.surface },
 		x = { fg = colors.text, bg = colors.surface },
 		y = { fg = colors.subtle, bg = colors.surface },
-		z = { fg = colors.subtle, bg = colors.surface },
+		z = { fg = colors.pine, bg = colors.surface },
 	},
 	insert = {
 		a = { gui = 'bold', fg = colors.iris, bg = colors.surface },
@@ -98,10 +102,10 @@ lualine.setup({
 				always_visible = false,
 			},
 		},
-		lualine_x = { 'filetype', 'filesize' },
-		lualine_y = { 'progress' },
+		lualine_x = { 'filetype' },
+		lualine_y = { 'progress','location' },
 		lualine_z = {
-			'location',
+			total_lines, 'filesize',
 			{
 				'diff',
 				symbols = { added = ' ', modified = '柳', removed = ' ' },
