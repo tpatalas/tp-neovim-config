@@ -92,7 +92,6 @@ return packer.startup(function(use)
 	-- auto closing
 	use('windwp/nvim-autopairs') -- autoclose parens, brackets, quotes, etc...
 	use({ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' }) -- autoclose tags
-	use('p00f/nvim-ts-rainbow') -- colorizer
 
 	-- Impatient improve the performance of lua module
 	use('lewis6991/impatient.nvim')

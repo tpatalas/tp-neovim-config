@@ -189,7 +189,6 @@ brew install lazygit
 
 - [Tree Sitter](https://github.com/nvim-treesitter.install)
 - [AutoPair](https://github.com/nvim-autopairs)
-- [Nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
 
 #### Optimizer
 
