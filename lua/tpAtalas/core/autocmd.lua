@@ -33,6 +33,6 @@ vim.cmd([[
     autocmd!
     autocmd CursorMovedI,CursorMoved * call HighlightCurrentWord('')
     autocmd CursorHoldI,CursorHold * if @% != 'NvimTree_1' | call HighlightCurrentWord('<cword>')
-    autocmd CursorHold *.* silent write
+    autocmd CursorHold *.* silent! write
   augroup end
 ]])
