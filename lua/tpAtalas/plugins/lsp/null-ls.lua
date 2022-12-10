@@ -62,6 +62,10 @@ null_ls.setup({
 	on_attach = on_attach,
 	debug = false,
 	fallback_severity = vim.diagnostic.severity.WARN,
+	float = false,
+	virtual_text = true,
+	signs = true,
+	severity_sort = true,
 	update_in_insert = false,
 	debounce = 1000,
 })
