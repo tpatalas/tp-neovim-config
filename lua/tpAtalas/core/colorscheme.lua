@@ -48,7 +48,7 @@ require('rose-pine').setup({
 		Pmenu = { bg = '#12101a' },
 		NormalFloat = { bg = '#12101a' },
 		PmenuSel = { bg = '#332f49' },
-		MatchParen = { bg = 'highlight_med', fg='love' },
+		MatchParen = { bg = 'highlight_med', fg='iris' },
 	},
 })
 
