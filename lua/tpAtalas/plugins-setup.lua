@@ -62,9 +62,9 @@ return packer.startup(function(use)
 	use('mg979/vim-visual-multi') -- visual-multi cursor
 
 	-- autocompletion
-	use('hrsh7th/nvim-cmp') -- completion plugin
-	use('hrsh7th/cmp-buffer') -- source for text in buffer
-	use('hrsh7th/cmp-path') -- source for file system paths
+	use('ms-jpq/coq_nvim')
+	use('ms-jpq/coq.artifacts')
+	use('ms-jpq/coq.thirdparty')
 
 	-- snippets
 	use('L3MON4D3/LuaSnip') -- snippet engine
