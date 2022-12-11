@@ -26,7 +26,7 @@ vim.cmd([[
   augroup AutoHighlight
     function! HighlightCurrentWord(event)
         exe printf('match IncSearch /\V\<%s\>/', escape(expand(a:event), '/\'))
-    endfunction    
+    endfunction
     autocmd!
     autocmd CursorMovedI,CursorMoved * call HighlightCurrentWord('')
     autocmd CursorHold * if @% != 'NvimTree_1' | call HighlightCurrentWord('<cword>')
@@ -51,3 +51,10 @@ vim.cmd([[
     autocmd TextChangedI * call s:on_text_changed()
   augroup end
 ]])
+
+-----------------------------------
+-- remove all trailing whitespce --
+-----------------------------------
+vim.cmd([[autocmd FileType lua :%s/\s\+$//e]])
+
+
