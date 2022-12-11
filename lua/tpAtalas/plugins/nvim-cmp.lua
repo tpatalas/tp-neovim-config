@@ -66,7 +66,7 @@ cmp.setup({
 		['<C-e>'] = cmp.mapping.abort(), -- close completion window
 		['<CR>'] = cmp.mapping.confirm({ select = false }),
 	}),
-	completion = { keyword_length = 3, autocomplete = true },
+	completion = { keyword_length = 3, autocomplete = false },
 	-- sources for autocompletion
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp', keyword_length = 2, group_index = 1, max_item_count = 30 }, -- lsp
