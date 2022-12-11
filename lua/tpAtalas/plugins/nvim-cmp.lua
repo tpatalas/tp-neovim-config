@@ -48,8 +48,8 @@ local kind_icons = {
 
 cmp.setup({
 	performance = {
-		trigger_debounce_time = 600,
-		throttle = 650,
+		trigger_debounce_time = 800,
+		throttle = 850,
 		fetching_timeout = 150,
 	},
 	snippet = {
@@ -69,9 +69,9 @@ cmp.setup({
 	completion = { keyword_length = 3, autocomplete = true },
 	-- sources for autocompletion
 	sources = cmp.config.sources({
-		{ name = 'nvim_lsp', keyword_length = 2, group_index = 1 }, -- lsp
-		{ name = 'luasnip', keyword_length = 3 }, -- snippets
-		{ name = 'buffer', keyword_length = 3 }, -- text within current buffer
+		{ name = 'nvim_lsp', keyword_length = 2, group_index = 1, max_item_count = 30 }, -- lsp
+		{ name = 'luasnip', keyword_length = 3, max_item_count = 30 }, -- snippets
+		{ name = 'buffer', keyword_length = 3, max_item_count = 20 }, -- text within current buffer
 		{ name = 'path' }, -- file system paths
 	}),
 	-- configure lspkind for vs-code like icons
