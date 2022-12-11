@@ -24,6 +24,7 @@ opt.cursorline = true -- highlight the current cursor line
 opt.scrolloff = 10
 opt.sidescrolloff = 10
 opt.termguicolors = true
+opt.updatetime = 500
 opt.background = 'dark' -- colorschemes that can be light or dark will be made dark
 opt.backspace = 'indent,eol,start' -- allow backspacr on indent, end of line or insert mode start position
 opt.clipboard:append('unnamedplus') -- use system clipboard as default register

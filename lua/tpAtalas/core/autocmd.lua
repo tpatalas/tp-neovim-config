@@ -13,26 +13,35 @@ vim.cmd([[autocmd FileType lua nnoremap <buffer><leader><CR><CR> :w<CR><cmd>lua 
 -- conditional textwidth and wrap text
 vim.cmd([[autocmd FileType markdown set textwidth=80 wrap]])
 
--- auto-save
---
--- NOTE:
--- Write too often with autocmd will cause the high usage of CPU by TSC (typescript compiler) in null-ls.
--- By default, TSC runs on workspace whenever the new buffer is open or saved (write). `silent write`
--- every time TextChanged may cause performance issue
---
--- vim.cmd([[autocmd TextChanged,InsertLeave *.* silent write]])
--- vim.cmd([[autocmd BufLeave,BufWinLeave,BufWipeout,BufUnload *.* silent write]])
-
--- highlight and autosave the match under cursor
+---------------------------------------------------
+-- highlight and autosave the match under cursor --
+---------------------------------------------------
 vim.cmd([[
   augroup AutoHighlight
     function! HighlightCurrentWord(event)
-        set updatetime=800 " default updatetime=4000
         exe printf('match IncSearch /\V\<%s\>/', escape(expand(a:event), '/\'))
     endfunction    
     autocmd!
     autocmd CursorMovedI,CursorMoved * call HighlightCurrentWord('')
-    autocmd CursorHoldI,CursorHold * if @% != 'NvimTree_1' | call HighlightCurrentWord('<cword>')
+    autocmd CursorHold * if @% != 'NvimTree_1' | call HighlightCurrentWord('<cword>')
     autocmd CursorHold *.* silent! write
+  augroup end
+]])
+
+-------------------------------------
+-- cmp custom delay autocompletion --
+-------------------------------------
+vim.cmd([[
+  augroup DelayAutoCompletionCmp
+    let s:timer = 0
+    function! s:on_text_changed() abort
+      call timer_stop(s:timer)
+      let s:timer = timer_start(500, function('s:complete'))
+    endfunction
+    function! s:complete(...) abort
+      lua require('cmp').complete({ reason = require('cmp').ContextReason.Auto })
+    endfunction
+    autocmd!
+    autocmd TextChangedI * call s:on_text_changed()
   augroup end
 ]])
