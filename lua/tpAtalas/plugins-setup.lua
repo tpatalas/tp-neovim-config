@@ -61,15 +61,10 @@ return packer.startup(function(use)
 	-- makesure to install `$ brew install ripgrep` to use livegrep
 	use('mg979/vim-visual-multi') -- visual-multi cursor
 
-	-- autocompletion
-	use('hrsh7th/nvim-cmp') -- completion plugin
-	use('hrsh7th/cmp-buffer') -- source for text in buffer
-	use('hrsh7th/cmp-path') -- source for file system paths
-
-	-- snippets
-	use('L3MON4D3/LuaSnip') -- snippet engine
-	use('saadparwaiz1/cmp_luasnip') -- for autocompletion
-	use('rafamadriz/friendly-snippets') -- useful snippets
+	-- autocompletion & snippets
+	use({ 'ms-jpq/coq_nvim', branch = 'coq' })
+	use({ 'ms-jpq/coq.artifacts', branch = 'artifacts' })
+	use({ 'ms-jpq/coq.thirdparty', branch = '3p' })
 
 	-- managing & installing lsp servers, linters & formatters
 	use('williamboman/mason.nvim') -- in charge of managing lsp servers, linters & formatters
@@ -77,7 +72,6 @@ return packer.startup(function(use)
 
 	-- configuring lsp servers
 	use('neovim/nvim-lspconfig') -- easily configure language servers
-	use('hrsh7th/cmp-nvim-lsp') -- for autocompletion
 	use({ 'glepnir/lspsaga.nvim', branch = 'main' }) -- enhanced lsp uis
 	use('onsails/lspkind.nvim') -- vs-code like icons for autocompletion
 	use('jose-elias-alvarez/typescript.nvim') -- additional functionality for typescript server (e.g. rename file & update imports)

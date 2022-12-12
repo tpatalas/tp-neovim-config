@@ -10,10 +10,40 @@ if not typescript_setup then
 	return
 end
 
-local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-if not cmp_nvim_lsp_status then
-	return
-end
+vim.g.coq_settings = {
+	auto_start = 'shut-up',
+	keymap = {
+		pre_select = false, -- default false
+	},
+	match = {
+		max_results = 30, -- default 33
+	},
+	clients = {
+		lsp = {
+			resolve_timeout = 0.045, -- default 0.06
+		},
+	},
+	display = {
+		pum = {
+			fast_close = true,
+			x_max_len = 50, -- default 66
+      x_truncate_len = 0 -- default 12
+		},
+    preview = {
+      positions = {
+        south = 1,
+        north = 2,
+        east = 3,
+        west = 4
+      }
+    }
+	},
+	limits = {
+		completion_auto_timeout = 0.05, -- default 0.088
+	},
+}
+
+local coq = require('coq')
 
 local keymap = vim.keymap -- for conciseness
 
@@ -37,7 +67,6 @@ local on_attach = function(client, bufnr)
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
-local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 local signs = { Error = ' ', Warn = ' ', Hint = 'ﴞ ', Info = ' ' }
@@ -57,16 +86,14 @@ end
 
 -- Servers --
 -- html
-lspconfig['html'].setup({
-	capabilities = capabilities,
+lspconfig['html'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
-})
+}))
 
 -- typescript
 -- Currently typescript.nvim plugin gives better functionality
-typescript.setup({
+typescript.setup(coq.lsp_ensure_capabilities({
 	server = {
-		capabilities = capabilities,
 		on_attach = on_attach,
 		init_options = {
 			preferences = {
@@ -80,17 +107,15 @@ typescript.setup({
 			},
 		},
 	},
-})
+}))
 
 -- docker
-lspconfig['dockerls'].setup({
-	capabilities = capabilities,
+lspconfig['dockerls'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
-})
+}))
 
 -- css
-lspconfig['cssls'].setup({
-	capabilities = capabilities,
+lspconfig['cssls'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 	settings = {
 		scss = {
@@ -109,30 +134,26 @@ lspconfig['cssls'].setup({
 			},
 		},
 	},
-})
+}))
 
 -- css module
-lspconfig['cssmodules_ls'].setup({
-	capabilities = capabilities,
+lspconfig['cssmodules_ls'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
-})
+}))
 
 -- tailwind
-lspconfig['tailwindcss'].setup({
-	capabilities = capabilities,
+lspconfig['tailwindcss'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
-})
+}))
 
 -- emmet
-lspconfig['emmet_ls'].setup({
-	capabilities = capabilities,
+lspconfig['emmet_ls'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 	filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
-})
+}))
 
 -- lua
-lspconfig['sumneko_lua'].setup({
-	capabilities = capabilities,
+lspconfig['sumneko_lua'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 	settings = { -- custom settings for lua
 		Lua = {
@@ -149,4 +170,4 @@ lspconfig['sumneko_lua'].setup({
 			},
 		},
 	},
-})
+}))

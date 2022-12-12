@@ -34,27 +34,7 @@ vim.cmd([[
   augroup end
 ]])
 
--------------------------------------
--- cmp custom delay autocompletion --
--------------------------------------
-vim.cmd([[
-  augroup DelayAutoCompletionCmp
-    let s:timer = 0
-    function! s:on_text_changed() abort
-      call timer_stop(s:timer)
-      let s:timer = timer_start(500, function('s:complete'))
-    endfunction
-    function! s:complete(...) abort
-      lua require('cmp').complete({ reason = require('cmp').ContextReason.Auto })
-    endfunction
-    autocmd!
-    autocmd TextChangedI * call s:on_text_changed()
-  augroup end
-]])
-
 -----------------------------------
 -- remove all trailing whitespce --
 -----------------------------------
 vim.cmd([[autocmd FileType lua :%s/\s\+$//e]])
-
-
