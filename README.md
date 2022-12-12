@@ -1,7 +1,7 @@
 # Neovim configuration
 
 ![image](https://github.com/tpAtalas/tp-nvim-lua-config/blob/assets/image.png?raw=true)
-colorscheme: [rose-pine](https://github.com/rose-pine/neovim) | [palette](https://rosepinetheme.com/palette)
+colorscheme: [nightfox](https://github.com/EdenEast/nightfox.nvim)
 
 ## Table of contents
 
@@ -135,9 +135,7 @@ brew install lazygit
 
 #### Themes/colors/icons
 
-> Checkout [Rose Pine Palette](https://rosepinetheme.com/palette)
-
-- [Rose-pine](https://github.com/rose-pine/neovim)
+- [Nightfox](https://github.com/EdenEast/nightfox.nvim)
 - [Nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)

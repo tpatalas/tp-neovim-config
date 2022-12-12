@@ -5,26 +5,8 @@ if not status then
 	return
 end
 
--- https://rosepinetheme.com/palette
-local colors = {
-	foam = '#9ccfd8',
-	pine = '#31748f',
-	rose = '#ebbcba',
-	iris = '#c4a7e7',
-	gold = '#f6c177',
-	base = '#13111b',
-	love = '#eb6f92',
-	muted = '#6e6a86',
-	subtle = '#908caa',
-	text = '#e0def4',
-	overlay = '#26233a',
-	surface = '#1f1d2e',
-	visual = '#5caeef',
-	blackhole = '#0a0a0a',
-	highlight_high = '#524f67',
-	highlight_med = '#403d52',
-	highlight_low = '#21202e',
-}
+-- https://github.com/EdenEast/nightfox.nvim/blob/main/usage.md#palette
+local palette = require('nightfox.palette').load('nightfox')
 
 local total_lines = function()
 	return vim.fn.line('$')
@@ -32,40 +14,40 @@ end
 
 local custom_theme = {
 	normal = {
-		a = { gui = 'bold', fg = colors.foam, bg = colors.surface },
-		b = { fg = colors.subtle, bg = colors.surface },
-		c = { fg = colors.text, bg = colors.surface },
-		x = { fg = colors.text, bg = colors.surface },
-		y = { fg = colors.subtle, bg = colors.surface },
-		z = { fg = colors.pine, bg = colors.surface },
+		a = { gui = 'bold', fg = palette.blue.bright, bg = palette.bg2 },
+		b = { fg = palette.fg3, bg = palette.bg2 },
+		c = { fg = palette.yellow.dim, bg = palette.bg2 },
+		x = { fg = palette.fg2, bg = palette.bg2 },
+		y = { fg = palette.fg3, bg = palette.bg2 },
+		z = { fg = palette.yellow.base, bg = palette.bg2 },
 	},
 	insert = {
-		a = { gui = 'bold', fg = colors.iris, bg = colors.surface },
-		b = { fg = colors.iris, bg = colors.surface },
-		c = { fg = colors.iris, bg = colors.surface },
-		x = { fg = colors.iris, bg = colors.surface },
-		y = { fg = colors.iris, bg = colors.surface },
-		z = { fg = colors.iris, bg = colors.surface },
+		a = { gui = 'bold', fg = palette.cyan.base, bg = palette.bg2 },
+		b = { fg = palette.cyan.base, bg = palette.bg2 },
+		c = { fg = palette.cyan.base, bg = palette.bg2 },
+		x = { fg = palette.cyan.base, bg = palette.bg2 },
+		y = { fg = palette.cyan.base, bg = palette.bg2 },
+		z = { fg = palette.cyan.base, bg = palette.bg2 },
 	},
 	visual = {
-		a = { gui = 'bold', fg = colors.visual, bg = colors.surface },
-		b = { fg = colors.visual, bg = colors.surface },
-		c = { fg = colors.visual, bg = colors.surface },
-		x = { fg = colors.visual, bg = colors.surface },
-		y = { fg = colors.visual, bg = colors.surface },
-		z = { fg = colors.visual, bg = colors.surface },
+		a = { gui = 'bold', fg = palette.magenta.base, bg = palette.bg2 },
+		b = { fg = palette.magenta.base, bg = palette.bg2 },
+		c = { fg = palette.magenta.base, bg = palette.bg2 },
+		x = { fg = palette.magenta.base, bg = palette.bg2 },
+		y = { fg = palette.magenta.base, bg = palette.bg2 },
+		z = { fg = palette.magenta.base, bg = palette.bg2 },
 	},
 	command = {
 		a = {
 			gui = 'bold',
-			bg = colors.gold,
-			fg = colors.base,
+			bg = palette.orange.base,
+			fg = palette.fg1,
 		},
 	},
 	inactive = {
-		a = { fg = colors.subtle, bg = colors.highlight_low },
-		b = { fg = colors.muted, bg = colors.blackhole },
-		c = { fg = colors.muted, bg = colors.blackhole },
+		a = { fg = palette.bg4, bg = palette.bg0 },
+		b = { fg = palette.bg4, bg = palette.bg0 },
+		c = { fg = palette.bg4, bg = palette.bg0 },
 	},
 }
 
@@ -103,16 +85,17 @@ lualine.setup({
 			},
 		},
 		lualine_x = { 'filetype' },
-		lualine_y = { 'progress','location' },
+		lualine_y = { 'progress', 'location' },
 		lualine_z = {
-			total_lines, 'filesize',
+			total_lines,
+			'filesize',
 			{
 				'diff',
 				symbols = { added = ' ', modified = '柳', removed = ' ' },
 				diff_color = {
-					added = { fg = colors.foam },
-					modified = { fg = colors.gold },
-					removed = { fg = colors.love },
+					added = { fg = palette.cyan.base },
+					modified = { fg = palette.orange.base },
+					removed = { fg = palette.red.base },
 				},
 			},
 		},
