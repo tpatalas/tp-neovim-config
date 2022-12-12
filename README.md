@@ -23,7 +23,6 @@ colorscheme: [rose-pine](https://github.com/rose-pine/neovim) | [palette](https:
   - [Essential plugins](#essential-plugins)
   - [Search/find/navigation](#searchfindnavigation)
   - [Autocompletion](#autocompletion)
-  - [Snippet](#snippet)
   - [LSP Configuration](#lsp-configuration)
   - [Formatting and linting](#formatting-and-linting)
   - [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
@@ -162,21 +161,12 @@ brew install lazygit
 
 #### Autocompletion
 
-- [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- [Cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
-- [Cmp-path](https://github.com/hrsh7th/cmp-path)
-
-#### Snippet
-
-- [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-- [Cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
-- [Friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+- [Coq_nvim](https://github.com/ms-jpq/coq_nvim)
 
 #### LSP Configuration
 
 - [Mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 - [Lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [Cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - [Lspsaga](https://github.com/glepnir/lspsaga.nvim)
 - [Lspkind](https://github.com/onsails/lspkind.nvim)
 
