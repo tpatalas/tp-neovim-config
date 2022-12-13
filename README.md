@@ -166,7 +166,6 @@ brew install lazygit
 - [Mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 - [Lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [Lspsaga](https://github.com/glepnir/lspsaga.nvim)
-- [Lspkind](https://github.com/onsails/lspkind.nvim)
 
 #### Formatting and linting
 
