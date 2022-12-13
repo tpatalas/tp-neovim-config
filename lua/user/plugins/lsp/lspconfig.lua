@@ -27,16 +27,16 @@ vim.g.coq_settings = {
 		pum = {
 			fast_close = false,
 			x_max_len = 50, -- default 66
-      x_truncate_len = 0 -- default 12
+			x_truncate_len = 0, -- default 12
 		},
-    preview = {
-      positions = {
-        south = 1,
-        north = 2,
-        east = 3,
-        west = 4
-      }
-    }
+		preview = {
+			positions = {
+				south = 1,
+				north = 2,
+				east = 3,
+				west = 4,
+			},
+		},
 	},
 	limits = {
 		completion_auto_timeout = 0.05, -- default 0.088
