@@ -6,7 +6,7 @@ end
 
 -- enable trouble
 trouble.setup({
-	height = 10,
+	height = 7,
 	auto_open = false,
 	auto_close = true,
 	mode = 'workspace_diagnostics',
