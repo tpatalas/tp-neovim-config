@@ -6,15 +6,13 @@ end
 
 -- enable comment
 comment.setup({
-  pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+	pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
 	toggler = {
-		---Line-comment toggle keymap
 		line = '?',
-		-- line = "<leader><space><space>",
+		block = '??',
 	},
-	---LHS of operator-pending mappings in NORMAL and VISUAL mode
 	opleader = {
-		---Line-comment keymap
 		line = '?',
+		block = '??',
 	},
 })
