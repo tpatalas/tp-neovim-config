@@ -6,6 +6,7 @@ local groups = {
 		ColorColumn = { bg = 'palette.bg2' },
 		CursorLineNr = { fg = 'palette.yellow.dim', bg = 'palette.bg2' },
 		CursorLine = { bg = 'palette.bg2' },
+		MatchParen = { gui = 'NONE', fg = 'palette.yellow.base' },
 	},
 }
 
