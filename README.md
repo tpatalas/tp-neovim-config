@@ -68,7 +68,7 @@ brew install lazygit
 
 ### Major Keymaps
 
-> [More keymaps](https://github.com/tpAtalas/tp-nvim-lua-config/blob/master/lua/tpAtalas/core/keymaps.lua)
+> [More keymaps](https://github.com/tpAtalas/tp-nvim-lua-config/blob/master/lua/user/core/keymaps.lua)
 
 #### General Keymaps (Normal Mode)
 
