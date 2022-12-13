@@ -25,7 +25,7 @@ vim.g.coq_settings = {
 	},
 	display = {
 		pum = {
-			fast_close = true,
+			fast_close = false,
 			x_max_len = 50, -- default 66
       x_truncate_len = 0 -- default 12
 		},
