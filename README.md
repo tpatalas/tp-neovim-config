@@ -1,4 +1,4 @@
-# Neovim configuration
+<!-- # Neovim configuration -->
 
 ![image](https://github.com/tpAtalas/tp-nvim-lua-config/blob/assets/image.png?raw=true)
 colorscheme: [nightfox](https://github.com/EdenEast/nightfox.nvim)
@@ -18,18 +18,17 @@ colorscheme: [nightfox](https://github.com/EdenEast/nightfox.nvim)
 - [Installed Plugins](#installed-plugins)
   - [Plugin Manager](#plugin-manager)
   - [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
-  - [Themes/colors/icons](#themescolorsicons)
+  - [Themes](#themes)
   - [Windows/terminal Manager](#windowsterminal-manager)
   - [Essential plugins](#essential-plugins)
   - [Search/find/navigation](#searchfindnavigation)
-  - [Autocompletion](#autocompletion)
+  - [Autocompletion & snippets](#autocompletion--snippets)
   - [LSP Configuration](#lsp-configuration)
   - [Formatting and linting](#formatting-and-linting)
   - [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
   - [Optimizer](#optimizer)
   - [Git integration](#git-integration)
   - [Markdown](#markdown)
-  - [Code observer](#code-observer)
   - [Http client](#http-client)
   - [Comments](#comments)
 - [References](#references)
@@ -74,15 +73,24 @@ brew install lazygit
 
 ##### Formatting
 
-| Keymap        | Description                     | Comment                 |
-| ------------- | ------------------------------- | ----------------------- |
-| `<leader>fma` | Apply formatting                | -                       |
-| `<leader>fmf` | Rename files and update imports | Plugin: Typescript.nvim |
-| `<leader>fmd` | Remove unused variables         | Plugin: Typescript.nvim |
-| `<leader>fmm` | Add missing imports             | Plugin: Typescript.nvim |
-|               |                                 |                         |
-| `alt+up`      | Move the current line upward    | -                       |
-| `alt+down`    | Move the current line downward  | -                       |
+| Keymap        | Description                                      | Comment                  |
+| ------------- | ------------------------------------------------ | ------------------------ |
+| `<leader>fma` | Apply formatting                                 | -                        |
+| `<leader>fmf` | Rename files and update imports                  | Plugin: Typescript       |
+| `<leader>fmd` | Remove unused variables                          | Plugin: Typescript       |
+| `<leader>fmm` | Add missing imports                              | Plugin: Typescript       |
+|               |                                                  |                          |
+| `alt+up`      | Move the current line upward                     | -                        |
+| `alt+down`    | Move the current line downward                   | -                        |
+|               |                                                  |                          |
+| `<leader>RR`  | Search the word under the cursor and replace all | -                        |
+| `<leader>rr`  | Replace the current word under the curosr \*     | press `.` to change next |
+| `<leader>DD`  | Delete all                                       | -                        |
+| `<leader>AA`  | Select all with Visual mode                      |
+
+\* **Replace the current word under the curosr**:  
+*1) `<leader>rr` 2) change
+word 3)`<ESC>` 4) Press `.` to apply the change next*
 
 ##### Buffers
 
@@ -102,8 +110,8 @@ brew install lazygit
 | `F9`              | Go to the buffer 9                  | Plugin: Lualine |
 | `F10`             | Go to the buffer 10                 | Plugin: Lualine |
 |                   |                                     |                 |
-| `ctrl+w`          | Close the current buffer            | -               |
-| `ctrl+c`          | Close all except the current buffer | -               |
+| `<leader>ww`      | Close the current buffer            | -               |
+| `<leader>WW`      | Close all except the current buffer | -               |
 
 ##### Window Management
 
@@ -133,11 +141,10 @@ brew install lazygit
 
 - [Plenary](https://github.com/nvim-lua/plenary.nvim)
 
-#### Themes/colors/icons
+#### Themes
 
 - [Nightfox](https://github.com/EdenEast/nightfox.nvim)
 - [Nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
-- [Nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
@@ -154,12 +161,17 @@ brew install lazygit
 #### Search/find/navigation
 
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-- [Visual-multi](https://github.com/mg979/vim-visual-multi)
-- [Vim-matchup](https://github.com/andymass/vim-matchup)
+- [Visual-multi](https://github.com/mg979/vim-visual-multi) -[Vim-matchup](https://github.com/andymass/vim-matchup)
 
-#### Autocompletion
+#### Autocompletion & snippets
 
-- [Coq_nvim](https://github.com/ms-jpq/coq_nvim)
+- [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [Cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
+- [Cmp-path](https://github.com/hrsh7th/cmp-path)
+- [Cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
+- [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- [Cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
+- [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 
 #### LSP Configuration
 
@@ -190,10 +202,6 @@ brew install lazygit
 - [Markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
 - [Vim-markdown-toc](https://github.com/iamcco/vim-markdown-toc)
 - [Vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)
-
-#### Code observer
-
-- [Trouble](https://github.com/folke/trouble.nvim)
 
 #### Http client
 

@@ -25,20 +25,35 @@ keymap.set('i', 'jk', '<ESC>l', noremap)
 -- delete Word in insert mode
 keymap.set('i', '<c-d><c-d>', '<ESC>dawi', noremap)
 
----------------------------------
--- General Keymaps - Normal Mode
----------------------------------
+-----------------------------------
+-- General Keymaps - Normal Mode --
+-----------------------------------
 
--- delete while in insertMode
--- keymap.set("i", "<leader>diw", "<ESC>diwi")
--- keymap.set("i", "<leader>dd", "<ESC>ddi")
-keymap.set('n', '<leader>DD', ':%d<CR>', noremap)
+-------------
+-- Global ---
+-------------
+-- deleting
+keymap.set('n', '<leader>DD', ':%d<CR>', noremap) -- delete everything
+-- select
+keymap.set('n', '<leader>AA', 'ggVG<CR>', noremap) -- select everything in visual mode
+-- exiting
+keymap.set('n', '<leader>QQ', ':q!<CR>', noremap) -- quit without saving
+keymap.set('n', '<leader>qq', ':q<CR>', noremap) -- quit
+-- save
+keymap.set('n', '<leader>ss', ':w<CR>', noremap) -- save
+-- search and  Replace
+keymap.set('n', '<leader>RR', ':%s/<c-r><c-w>/<c-r><c-w>', noremap) -- Search and replace the word under current
+keymap.set('n', '<leader>rr', '*#cgn', noremap) -- change the current word under the cursor * change > ESC > press `.` to change next
+keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 
+----------------
 -- formatting --
+----------------
+-- formatting general
 keymap.set('n', '<leader>fma', 'gggqG', noremap) -- apply formatting if any
 -- formatting with typescript.nvim
-keymap.set('n', '<leader>fmf', ':TypescriptRenameFile<CR>') -- rename file and update imports
-keymap.set('n', '<leader>fmu', ':TypescriptRemoveUnused<CR>') -- remove unused variables
+keymap.set('n', '<leader>fmr', ':TypescriptRenameFile<CR>') -- rename file and update imports
+keymap.set('n', '<leader>fmd', ':TypescriptRemoveUnused<CR>') -- remove unused variables
 keymap.set('n', '<leader>fmm', ':TypescriptAddMissingImports<CR>') -- add missing imports
 keymap.set('n', '<leader>fmo', ':OrganizeImports<CR>') -- Organize Import (Custom)
 -- formatting move lines
@@ -46,14 +61,6 @@ keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
 keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
 -- formatting color
 keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap) -- vim highlight group
-
--- exiting
-keymap.set('n', 'QQ', ':q!<CR>', noremap)
-keymap.set('n', 'qq', ':q<CR>', noremap)
-
--- search and  Replace
-keymap.set('n', '<leader>ra', ':%s/<c-r><c-w>/', noremap) -- Search and replace the word under current
-keymap.set('n', '<leader>ssl', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 
 -- navigation --
 -- general navigation
@@ -79,11 +86,8 @@ keymap.set('n', '<f8>', ':LualineBuffersJump 8<CR>', noremap)
 keymap.set('n', '<f9>', ':LualineBuffersJump 9<CR>', noremap)
 keymap.set('n', '<f10>', ':LualineBuffersJump 10<CR>', noremap)
 -- buffers action
-keymap.set('n', '<c-w>', ':bp<bar>sp<bar>bn<bar>bd<CR>', noremap) -- close current buffer
-keymap.set('n', '<c-c>', ':%bd|e#|bd#<CR><CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
-
--- save
-keymap.set('n', 'SS', ':w<CR>', noremap) -- save
+keymap.set('n', '<leader>ww', ':bp<bar>sp<bar>bn<bar>bd<CR>', noremap) -- close current buffer
+keymap.set('n', '<leader>WW', ':%bd|e#|bd#<CR><CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
 
 -- delete single character without copying into register
 keymap.set('n', 'x', '"_x', noremap)
@@ -112,27 +116,33 @@ keymap.set('n', '<leader>eeo', ':NvimTreeToggle<CR>', noremap) -- toggle file ex
 keymap.set('n', '<leader>eef', ':NvimTreeFindFile<CR>', noremap) --  Move the cursor in the tree for the current buffer, opening folders if needed.
 keymap.set('n', '<leader>eec', ':NvimTreeCollapse<CR>', noremap) -- Collapses the nvim-tree recursively.
 
--- telescope
-keymap.set('n', '<leader>ffo', '<cmd>Telescope find_files<CR>', noremap) -- find files within current working directory, respects .gitignore
+---------------
+-- telescope --
+---------------
+-- telescope find files
+keymap.set('n', '<leader>ffo', '<cmd>Telescope find_files<CR>', noremap) -- find files within current working directory, respects gitignore
 keymap.set('n', '<leader>ffs', '<cmd>Telescope live_grep<CR>', noremap) -- find string in current working directory as you type
 keymap.set('n', '<leader>ffc', '<cmd>Telescope grep_string<CR>', noremap) -- find string under cursor in current working directory
 keymap.set('n', '<leader>ffb', '<cmd>Telescope buffers<CR>', noremap) -- list open buffers in current neovim instance
 keymap.set('n', '<leader>ffh', '<cmd>Telescope help_tags<CR>', noremap) -- list available help tags
+keymap.set('n', '<leader>ffd', '<cmd>Telescope diagnostics<CR>', noremap) -- lists diagnostics for all open buffers
+
+-- telescope LSP pickers
+-- telescope git commands
+keymap.set('n', '<leader>fgc', '<cmd>Telescope git_commits<CR>', noremap) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+keymap.set('n', '<leader>fgf', '<cmd>Telescope git_bcommits<CR>', noremap) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+keymap.set('n', '<leader>fgb', '<cmd>Telescope git_branches<CR>', noremap) -- list git branches (use <cr> to checkout) ["gb" for git branch]
+keymap.set('n', '<leader>fgs', '<cmd>Telescope git_status<CR>', noremap) -- list current changes per file with diff preview ["gs" for git status]
 -- telescope todo-comments
 keymap.set(
 	'n',
-	'<leader>tco',
+	'<leader>fto',
 	':TodoTelescope keywords=TODO,HACK,NOTE,WARN,PERF,TEST,FIX,FIXME,FIXIT,BUG,ISSUE<CR>',
 	noremap
 ) -- open todo-comments within telescope
--- telescope git commands
-keymap.set('n', '<leader>fgc', '<cmd>Telescope git_commits<CR>') -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set('n', '<leader>fgf', '<cmd>Telescope git_bcommits<CR>') -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set('n', '<leader>fgb', '<cmd>Telescope git_branches<CR>') -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set('n', '<leader>fgs', '<cmd>Telescope git_status<CR>') -- list current changes per file with diff preview ["gs" for git status]
 
 -- lsp server restart
-keymap.set('n', '<leader>lsr', ':LspRestart<CR>') -- mapping to restart lsp if necessary
+keymap.set('n', '<leader>lsr', ':LspRestart<CR>', noremap) -- mapping to restart lsp if necessary
 
 -- markdown preview
 keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
@@ -145,18 +155,6 @@ keymap.set('n', '<leader>mcd', ':RemoveToc<CR>', noremap) -- delete markdown toc
 
 -- vim table mode
 keymap.set('n', '<leader>mto', ':TableModeToggle<CR>', noremap) -- toggle markdown table
-
--- trouble
-keymap.set('n', '<leader>tro', ':Trouble<CR>', noremap) -- Open the list
-keymap.set('n', '<leader>trc', ':TroubleClose<CR>', noremap) -- Close the list
-keymap.set('n', '<leader>trr', ':TroubleRefresh<CR>', noremap) -- Manually refresh the active list
--- trouble todo-comments
-keymap.set(
-	'n',
-	'<leader>trt',
-	':TodoTrouble keywords=TODO,HACK,NOTE,WARN,PERF,TEST,FIX,FIXME,FIXIT,BUG,ISSUE<<CR>',
-	noremap
-) -- open todo-comments within trouble
 
 -- colorizer
 keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colorizer
