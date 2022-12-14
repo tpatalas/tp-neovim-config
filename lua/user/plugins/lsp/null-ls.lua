@@ -25,7 +25,6 @@ local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 local source = {
 	-- WARNING: Currently tsc has memory leak issues.
 	-- diagnostics.tsc,
-	diagnostics.markdownlint,
 	-- WARNING: diagnostics listed below do not support workspace level diagnostics
 	formatting.markdownlint,
 	diagnostics.codespell,

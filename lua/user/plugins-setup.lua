@@ -34,7 +34,6 @@ return packer.startup(function(use)
 
 	-- colors --
 	use('EdenEast/nightfox.nvim') -- colorscheme
-
 	use('norcalli/nvim-colorizer.lua') -- colorizer
 
 	-- essential plugins
@@ -49,9 +48,6 @@ return packer.startup(function(use)
 	-- file explorer
 	use('nvim-tree/nvim-tree.lua')
 
-	-- vs-code like icons
-	use('kyazdani42/nvim-web-devicons')
-
 	-- statusline
 	use('nvim-lualine/lualine.nvim')
 
@@ -59,7 +55,14 @@ return packer.startup(function(use)
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }) -- dependency for better sorting performance
 	use({ 'nvim-telescope/telescope.nvim', branch = '0.1.x' }) -- fuzzy finder
 	-- makesure to install `$ brew install ripgrep` to use livegrep
-	use('mg979/vim-visual-multi') -- visual-multi cursor
+	-- navigation
+	use({
+		'andymass/vim-matchup',
+		setup = function()
+			-- may set any options here
+			vim.g.matchup_matchparen_offscreen = { method = 'popup' }
+		end,
+	})
 
 	-- autocompletion & snippets
 	use('hrsh7th/nvim-cmp') -- completion plugin
@@ -118,20 +121,8 @@ return packer.startup(function(use)
 	use('dhruvasagar/vim-table-mode') -- markdown table
 	use('mzlogin/vim-markdown-toc') -- toc generator
 
-	-- trouble
-	use('folke/trouble.nvim')
-
 	-- http client
 	use('rest-nvim/rest.nvim')
-
-	-- navigation
-	use({
-		'andymass/vim-matchup',
-		setup = function()
-			-- may set any options here
-			vim.g.matchup_matchparen_offscreen = { method = 'popup' }
-		end,
-	})
 
 	if packer_bootstrap then
 		require('packer').sync()

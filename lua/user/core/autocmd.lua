@@ -17,6 +17,7 @@ vim.cmd([[autocmd FileType lua nnoremap <buffer><leader><CR><CR> :w<CR><cmd>lua 
 -----------------------------------------
 -- conditional textwidth and wrap text --
 -----------------------------------------
+vim.cmd([[autocmd FileType markdown set colorcolumn=80,90]])
 vim.cmd([[autocmd FileType markdown set textwidth=80 wrap]])
 
 ---------------------------------------------------
