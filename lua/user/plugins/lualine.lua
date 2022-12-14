@@ -139,7 +139,7 @@ lualine.setup({
 				file_status = true,
 				newfile_status = false,
 				path = 1,
-				shorting_target = 40,
+				shorting_target = 20,
 				symbols = {
 					modified = '[+]',
 					readonly = '[-]',

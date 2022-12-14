@@ -8,11 +8,6 @@ if not luasnip_status then
 	return
 end
 
-local lspkind_status, lspkind = pcall(require, 'lspkind')
-if not lspkind_status then
-	return
-end
-
 require('luasnip/loaders/from_vscode').lazy_load()
 
 local kind_icons = {
@@ -44,13 +39,13 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
--- vim.opt.completeopt = 'menu,menuone,noselect'
+vim.opt.completeopt = 'menu,menuone,noselect'
 
 cmp.setup({
 	performance = {
-		trigger_debounce_time = 800,
-		throttle = 850,
-		fetching_timeout = 150,
+		trigger_debounce_time = 500,
+		throttle = 550,
+		fetching_timeout = 80,
 	},
 	snippet = {
 		expand = function(args)
@@ -66,17 +61,17 @@ cmp.setup({
 		['<C-e>'] = cmp.mapping.abort(), -- close completion window
 		['<CR>'] = cmp.mapping.confirm({ select = false }),
 	}),
-	completion = { keyword_length = 3, autocomplete = false },
+	completion = { keyword_length = 3 },
 	-- sources for autocompletion
 	sources = cmp.config.sources({
-		{ name = 'nvim_lsp', keyword_length = 2, group_index = 1, max_item_count = 30 }, -- lsp
-		{ name = 'luasnip', keyword_length = 3, max_item_count = 30 }, -- snippets
-		{ name = 'buffer', keyword_length = 3, max_item_count = 20 }, -- text within current buffer
+		{ name = 'nvim_lsp', keyword_length = 6, group_index = 1, max_item_count = 30 }, -- lsp
+		{ name = 'luasnip', keyword_length = 2, group_index = 2, max_item_count = 30 }, -- snippets
+		{ name = 'buffer', keyword_length = 2, group_index = 2, max_item_count = 20 }, -- text within current buffer
 		{ name = 'path' }, -- file system paths
 	}),
 	-- configure lspkind for vs-code like icons
 	formatting = {
-		fields = { 'kind', 'abbr', 'menu' },
+		fields = { 'abbr', 'kind', 'menu' },
 		maxwidth = 50,
 		ellipsis_char = '...',
 		format = function(entry, vim_item)
@@ -91,4 +86,31 @@ cmp.setup({
 			return vim_item
 		end,
 	},
+})
+
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+	sources = cmp.config.sources({
+		{ name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+	}, {
+		{ name = 'buffer' },
+	}),
+})
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = 'buffer' },
+	},
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = cmp.config.sources({
+		{ name = 'path' },
+	}, {
+		{ name = 'cmdline' },
+	}),
 })
