@@ -6,7 +6,7 @@ if not status then
 end
 
 -- https://github.com/EdenEast/nightfox.nvim/blob/main/usage.md#palette
-local palette = require('nightfox.palette').load('nightfox')
+local palette = require('nightfox.palette').load('terafox')
 
 local total_lines = function()
 	return vim.fn.line('$')
@@ -14,28 +14,28 @@ end
 
 local custom_theme = {
 	normal = {
-		a = { gui = 'bold', fg = palette.blue.bright, bg = palette.bg2 },
-		b = { fg = palette.fg3, bg = palette.bg2 },
-		c = { fg = palette.yellow.dim, bg = palette.bg2 },
-		x = { fg = palette.fg2, bg = palette.bg2 },
-		y = { fg = palette.fg3, bg = palette.bg2 },
-		z = { fg = palette.yellow.base, bg = palette.bg2 },
+		a = { gui = 'bold', fg = palette.blue.bright, bg = palette.bg0 },
+		b = { fg = palette.fg3, bg = palette.bg0 },
+		c = { fg = palette.yellow.dim, bg = palette.bg0 },
+		x = { fg = palette.fg2, bg = palette.bg0 },
+		y = { fg = palette.fg3, bg = palette.bg0 },
+		z = { fg = palette.yellow.base, bg = palette.bg0 },
 	},
 	insert = {
-		a = { gui = 'bold', fg = palette.cyan.base, bg = palette.bg2 },
-		b = { fg = palette.cyan.base, bg = palette.bg2 },
-		c = { fg = palette.cyan.base, bg = palette.bg2 },
-		x = { fg = palette.cyan.base, bg = palette.bg2 },
-		y = { fg = palette.cyan.base, bg = palette.bg2 },
-		z = { fg = palette.cyan.base, bg = palette.bg2 },
+		a = { gui = 'bold', fg = palette.cyan.base, bg = palette.bg0 },
+		b = { fg = palette.cyan.base, bg = palette.bg0 },
+		c = { fg = palette.cyan.base, bg = palette.bg0 },
+		x = { fg = palette.cyan.base, bg = palette.bg0 },
+		y = { fg = palette.cyan.base, bg = palette.bg0 },
+		z = { fg = palette.cyan.base, bg = palette.bg0 },
 	},
 	visual = {
 		a = { gui = 'bold', fg = palette.magenta.base, bg = palette.bg2 },
-		b = { fg = palette.magenta.base, bg = palette.bg2 },
-		c = { fg = palette.magenta.base, bg = palette.bg2 },
-		x = { fg = palette.magenta.base, bg = palette.bg2 },
-		y = { fg = palette.magenta.base, bg = palette.bg2 },
-		z = { fg = palette.magenta.base, bg = palette.bg2 },
+		b = { fg = palette.magenta.base, bg = palette.bg0 },
+		c = { fg = palette.magenta.base, bg = palette.bg0 },
+		x = { fg = palette.magenta.base, bg = palette.bg0 },
+		y = { fg = palette.magenta.base, bg = palette.bg0 },
+		z = { fg = palette.magenta.base, bg = palette.bg0 },
 	},
 	command = {
 		a = {
@@ -45,9 +45,9 @@ local custom_theme = {
 		},
 	},
 	inactive = {
-		a = { fg = palette.bg4, bg = palette.bg0 },
-		b = { fg = palette.bg4, bg = palette.bg0 },
-		c = { fg = palette.bg4, bg = palette.bg0 },
+		a = { fg = palette.fg3, bg = '' },
+		b = { fg = palette.fg3, bg = '' },
+		c = { fg = palette.fg3, bg = '' },
 	},
 }
 
@@ -55,8 +55,8 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = custom_theme,
-		component_separators = ' ',
-		section_separators = ' ',
+		component_separators = '',
+		section_separators = '',
 		disabled_filetypes = {
 			statusline = {},
 			winbar = {},
@@ -111,7 +111,7 @@ lualine.setup({
 	},
 	tabline = {
 		lualine_a = {},
-		lualine_b = {},
+    lualine_b = {},
 		lualine_c = {
 			{
 				'buffers',
