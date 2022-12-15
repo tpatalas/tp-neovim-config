@@ -8,6 +8,8 @@ if not actions_setup then
 	return
 end
 
+local fb_actions = require('telescope').extensions.file_browser.actions
+
 -- configure telescope
 telescope.setup({
 	defaults = {
@@ -65,7 +67,37 @@ telescope.setup({
 			-- theme = "dropdown",
 		},
 	},
-	extensions = {},
+	extensions = {
+		file_browser = {
+			grouped = true,
+			initial_mode = 'normal',
+			hijack_netrw = true,
+			mappings = {
+				['i'] = {},
+				['n'] = {
+					['c'] = false,
+					['r'] = false,
+					['m'] = false,
+					['y'] = false,
+					['d'] = false,
+					['g'] = false,
+					['w'] = false,
+					['t'] = false,
+					['h'] = false,
+					['N'] = fb_actions.create,
+					['P'] = fb_actions.goto_parent_dir,
+					['R'] = fb_actions.rename,
+					['M'] = fb_actions.move,
+					['Y'] = fb_actions.copy,
+					['D'] = fb_actions.remove,
+					['W'] = fb_actions.goto_cwd,
+					['H'] = fb_actions.toggle_hidden,
+					['T'] = fb_actions.change_cwd,
+				},
+			},
+		},
+	},
 })
 
 telescope.load_extension('fzf')
+telescope.load_extension('file_browser')

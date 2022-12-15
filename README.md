@@ -89,8 +89,8 @@ brew install lazygit
 | `<leader>AA`  | Select all with Visual mode                      |
 
 \* **Replace the current word under the curosr**:  
-*1) `<leader>rr` 2) change
-word 3)`<ESC>` 4) Press `.` to apply the change next*
+_1) `<leader>rr` 2) change
+word 3)`<ESC>` 4) Press `.` to apply the change next_
 
 ##### Buffers
 
@@ -145,7 +145,6 @@ word 3)`<ESC>` 4) Press `.` to apply the change next*
 
 - [Nightfox](https://github.com/EdenEast/nightfox.nvim)
 - [Nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
-- [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
 #### Windows/terminal Manager
@@ -162,6 +161,7 @@ word 3)`<ESC>` 4) Press `.` to apply the change next*
 
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Visual-multi](https://github.com/mg979/vim-visual-multi) -[Vim-matchup](https://github.com/andymass/vim-matchup)
+- [Telescope_file_browser](https://github.com/nvim-telescope/telescope-file-browser.nvim)
 
 #### Autocompletion & snippets
 
