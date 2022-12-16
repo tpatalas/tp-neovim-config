@@ -3,11 +3,12 @@ local groups = {
 	all = {
 		Whitespace = { link = 'Comment' },
 		IncSearch = { fg = '', bg = 'palette.bg4' },
-		ColorColumn = { bg = 'palette.bg4' },
-		CursorLineNr = { fg = 'palette.yellow.dim', bg = 'palette.bg4' },
-		CursorLine = { bg = 'palette.bg4' },
+		ColorColumn = { bg = 'palette.bg3' },
+		CursorLineNr = { fg = 'palette.yellow.dim', bg = 'palette.bg3' },
+		CursorLine = { bg = 'palette.bg3' },
 		MatchParen = { gui = 'NONE', fg = 'palette.yellow.base' },
 		Visual = { bg = 'palette.bg4' },
+		TelescopeBorder = { fg = 'palette.fg2', bg = '' },
 	},
 }
 
