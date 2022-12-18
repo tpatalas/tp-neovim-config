@@ -121,9 +121,6 @@ keymap.set('n', '<leader>ffc', '<cmd>Telescope grep_string<CR>', noremap) -- fin
 keymap.set('n', '<leader>ffb', '<cmd>Telescope buffers<CR>', noremap) -- list open buffers in current neovim instance
 keymap.set('n', '<leader>ffh', '<cmd>Telescope help_tags<CR>', noremap) -- list available help tags
 keymap.set('n', '<leader>ffd', '<cmd>Telescope diagnostics<CR>', noremap) -- lists diagnostics for all open buffers
--- telescope extension: file browser
-keymap.set('n', '<leader>fbo', '<cmd>Telescope file_browser <CR>', noremap) -- open file browser extension
-keymap.set('n', '<leader>fbf', '<cmd>Telescope file_browser path=%:p:h <CR>', noremap) -- open file browser extension
 -- telescope git commands
 keymap.set('n', '<leader>fgc', '<cmd>Telescope git_commits<CR>', noremap) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
 keymap.set('n', '<leader>fgf', '<cmd>Telescope git_bcommits<CR>', noremap) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
@@ -136,6 +133,13 @@ keymap.set(
 	':TodoTelescope keywords=TODO,HACK,NOTE,WARN,PERF,TEST,FIX,FIXME,FIXIT,BUG,ISSUE<CR>',
 	noremap
 ) -- open todo-comments within telescope
+
+------------------------------
+-- file explorer nvim-tree ---
+------------------------------
+keymap.set('n', '<leader>eeo', ':NvimTreeToggle<CR>', noremap) -- toggle file explorer
+keymap.set('n', '<leader>eef', ':NvimTreeFindFile<CR>', noremap) --  Move the cursor in the tree for the current buffer, opening folders if needed.
+keymap.set('n', '<leader>eec', ':NvimTreeCollapse<CR>', noremap) -- Collapses the nvim-tree recursively.
 
 -- lsp server restart
 keymap.set('n', '<leader>lsr', ':LspRestart<CR>', noremap) -- mapping to restart lsp if necessary

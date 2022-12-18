@@ -7,31 +7,31 @@ colorscheme: [nightfox](https://github.com/EdenEast/nightfox.nvim)
 
 <!-- vim-markdown-toc GFM -->
 
-- [Installation (Homebrew)](#installation-homebrew)
-  - [Install Neovim](#install-neovim)
-  - [Install Lazygit](#install-lazygit)
-- [Major Keymaps](#major-keymaps)
-  - [General Keymaps (Normal Mode)](#general-keymaps-normal-mode)
-    - [Formatting](#formatting)
-    - [Buffers](#buffers)
-    - [Window Management](#window-management)
-- [Installed Plugins](#installed-plugins)
-  - [Plugin Manager](#plugin-manager)
-  - [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
-  - [Themes](#themes)
-  - [Windows/terminal Manager](#windowsterminal-manager)
-  - [Essential plugins](#essential-plugins)
-  - [Search/find/navigation](#searchfindnavigation)
-  - [Autocompletion & snippets](#autocompletion--snippets)
-  - [LSP Configuration](#lsp-configuration)
-  - [Formatting and linting](#formatting-and-linting)
-  - [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
-  - [Optimizer](#optimizer)
-  - [Git integration](#git-integration)
-  - [Markdown](#markdown)
-  - [Http client](#http-client)
-  - [Comments](#comments)
-- [References](#references)
+* [Installation (Homebrew)](#installation-homebrew)
+  * [Install Neovim](#install-neovim)
+  * [Install Lazygit](#install-lazygit)
+* [Major Keymaps](#major-keymaps)
+  * [General Keymaps (Normal Mode)](#general-keymaps-normal-mode)
+    * [Formatting](#formatting)
+    * [Buffers](#buffers)
+    * [Window Management](#window-management)
+* [Installed Plugins](#installed-plugins)
+  * [Plugin Manager](#plugin-manager)
+  * [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
+  * [Themes](#themes)
+  * [Windows/terminal Manager](#windowsterminal-manager)
+  * [Essential plugins](#essential-plugins)
+  * [Search/find/navigation](#searchfindnavigation)
+  * [Autocompletion/snippets](#autocompletionsnippets)
+  * [LSP Configuration](#lsp-configuration)
+  * [Formatting and linting](#formatting-and-linting)
+  * [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
+  * [Optimizer](#optimizer)
+  * [Git integration](#git-integration)
+  * [Markdown](#markdown)
+  * [Http client](#http-client)
+  * [Comments](#comments)
+* [References](#references)
 
 <!-- vim-markdown-toc -->
 
@@ -146,6 +146,7 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 - [Nightfox](https://github.com/EdenEast/nightfox.nvim)
 - [Nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
+- [Nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 
 #### Windows/terminal Manager
 
@@ -160,10 +161,10 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 #### Search/find/navigation
 
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-- [Visual-multi](https://github.com/mg979/vim-visual-multi) -[Vim-matchup](https://github.com/andymass/vim-matchup)
-- [Telescope_file_browser](https://github.com/nvim-telescope/telescope-file-browser.nvim)
+- [Vim-matchup](https://github.com/andymass/vim-matchup)
+- [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 
-#### Autocompletion & snippets
+#### Autocompletion/snippets
 
 - [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [Cmp-buffer](https://github.com/hrsh7th/cmp-buffer)

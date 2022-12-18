@@ -10,6 +10,7 @@ local groups = {
 		MatchParen = { gui = 'NONE', fg = 'palette.yellow.base' },
 		Visual = { bg = 'palette.bg4' },
 		TelescopeBorder = { fg = 'palette.fg2', bg = '' },
+		NvimTreeNormal = { fg = '', bg = 'palette.bg0' },
 	},
 }
 
@@ -39,13 +40,11 @@ require('nightfox').setup({
 			visual = false,
 			search = false,
 		},
-		modules = {
-		},
+		modules = {},
 	},
 	palettes = {},
 	specs = {},
 	groups = groups,
 })
-
 
 vim.cmd('colorscheme terafox')
