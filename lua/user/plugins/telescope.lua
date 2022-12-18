@@ -71,6 +71,7 @@ telescope.setup({
 		file_browser = {
 			grouped = true,
 			initial_mode = 'normal',
+			respect_gitignore = false,
 			hijack_netrw = true,
 			mappings = {
 				['i'] = {},
