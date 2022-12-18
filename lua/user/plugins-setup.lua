@@ -49,7 +49,6 @@ return packer.startup(function(use)
 	use('nvim-lualine/lualine.nvim')
 
 	-- search and finder
-	use('nvim-telescope/telescope-file-browser.nvim')
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }) -- dependency for better sorting performance
 	use({ 'nvim-telescope/telescope.nvim', branch = '0.1.x' }) -- fuzzy finder
 	-- makesure to install `$ brew install ripgrep` to use livegrep
@@ -61,6 +60,12 @@ return packer.startup(function(use)
 			vim.g.matchup_matchparen_offscreen = { method = 'popup' }
 		end,
 	})
+
+	-- file explorer
+	use('nvim-tree/nvim-tree.lua')
+
+	-- vscode like icon
+	use('nvim-tree/nvim-web-devicons')
 
 	-- autocompletion & snippets
 	use('hrsh7th/nvim-cmp') -- completion plugin
