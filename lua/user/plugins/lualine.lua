@@ -111,7 +111,7 @@ lualine.setup({
 	},
 	tabline = {
 		lualine_a = {},
-    lualine_b = {},
+		lualine_b = {},
 		lualine_c = {
 			{
 				'buffers',
@@ -139,7 +139,7 @@ lualine.setup({
 				file_status = true,
 				newfile_status = false,
 				path = 1,
-				shorting_target = 20,
+				shorting_target = 100,
 				symbols = {
 					modified = '[+]',
 					readonly = '[-]',
