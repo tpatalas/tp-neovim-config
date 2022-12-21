@@ -27,12 +27,11 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
-	-- packer can manage itself
-	use('wbthomason/packer.nvim')
-
+	-- plugin manager
+	use('wbthomason/packer.nvim') -- packer can manage itself
 	use('nvim-lua/plenary.nvim') -- lua functions that many plugins use
 
-	-- colors --
+	-- colors
 	use('EdenEast/nightfox.nvim') -- colorscheme
 	use('norcalli/nvim-colorizer.lua') -- colorizer
 
@@ -92,20 +91,11 @@ return packer.startup(function(use)
 	use('windwp/nvim-autopairs') -- autoclose parens, brackets, quotes, etc...
 	use({ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' }) -- autoclose tags
 
-	-- Impatient improve the performance of lua module
-	use('lewis6991/impatient.nvim')
-
 	-- git integration
 	use('lewis6991/gitsigns.nvim') -- show line modifications on left hand side
 
 	-- toggle multiple terminal -- can also control the lazyGit (installed through homebrew)
-	use({
-		'akinsho/toggleterm.nvim',
-		tag = '*',
-		config = function()
-			require('toggleterm').setup()
-		end,
-	})
+	use({ 'akinsho/toggleterm.nvim', tag = '*' })
 
 	-- markdown
 	use({
@@ -118,9 +108,6 @@ return packer.startup(function(use)
 	}) -- markdown preview
 	use('dhruvasagar/vim-table-mode') -- markdown table
 	use('mzlogin/vim-markdown-toc') -- toc generator
-
-	-- http client
-	use('rest-nvim/rest.nvim')
 
 	if packer_bootstrap then
 		require('packer').sync()

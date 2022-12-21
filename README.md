@@ -26,10 +26,8 @@ colorscheme: [nightfox](https://github.com/EdenEast/nightfox.nvim)
   - [LSP Configuration](#lsp-configuration)
   - [Formatting and linting](#formatting-and-linting)
   - [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
-  - [Optimizer](#optimizer)
   - [Git integration](#git-integration)
   - [Markdown](#markdown)
-  - [Http client](#http-client)
   - [Comments](#comments)
 - [References](#references)
 
@@ -184,10 +182,6 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 - [Tree Sitter](https://github.com/nvim-treesitter.install)
 - [AutoPair](https://github.com/nvim-autopairs)
 
-#### Optimizer
-
-- [Impatient](https://github.com/lewis6991/impatient.nvim)
-
 #### Git integration
 
 - [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
@@ -197,10 +191,6 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 - [Markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
 - [Vim-markdown-toc](https://github.com/iamcco/vim-markdown-toc)
 - [Vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)
-
-#### Http client
-
-- [Rest.nvim](https://github.com/rest-nvim/rest.nvim)
 
 #### Comments
 
