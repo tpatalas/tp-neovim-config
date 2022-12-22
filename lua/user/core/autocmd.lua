@@ -31,7 +31,7 @@ vim.cmd([[
     autocmd!
     autocmd CursorMovedI,CursorMoved * call HighlightCurrentWord('')
     autocmd CursorHold * if @% != 'NvimTree_1' | call HighlightCurrentWord('<cword>')
-    autocmd CursorHold *.* silent! write
+    autocmd CursorHold *.* if @% != 'wezterm.lua' | silent! write
   augroup end
 ]])
 
@@ -39,3 +39,15 @@ vim.cmd([[
 -- remove all trailing whitespce --
 -----------------------------------
 vim.cmd([[autocmd FileType lua :%s/\s\+$//e]])
+
+------------------
+-- Blink Cursor --
+------------------
+vim.cmd([[
+  augroup BlinkCurosr
+    autocmd!
+    autocmd BufRead,BufNewFile * set guicursor=n-v-c:block-Cursor
+    autocmd InsertEnter * set guicursor+=i:ver100-iCursor
+    autocmd CursorHold,CursorHoldI * set guicursor+=n-v-c-i:blinkon1
+  augroup end
+]])
