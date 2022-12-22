@@ -7,7 +7,7 @@ local groups = {
 		ColorColumn = { bg = 'palette.bg3' },
 		CursorLineNr = { fg = 'palette.yellow.dim', bg = 'palette.bg3' },
 		CursorLine = { bg = 'palette.bg3' },
-		Cursor = { bg = 'palette.yellow.dim' },
+		Cursor = { bg = '#d4af37' },
 		MatchParen = { gui = 'NONE', fg = 'palette.yellow.base' },
 		Visual = { bg = 'palette.bg4' },
 		TelescopeBorder = { fg = 'palette.fg2', bg = '' },
