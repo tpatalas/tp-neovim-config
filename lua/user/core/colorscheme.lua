@@ -11,6 +11,7 @@ local groups = {
 		Visual = { bg = 'palette.bg4' },
 		TelescopeBorder = { fg = 'palette.fg2', bg = '' },
 		NvimTreeNormal = { fg = '', bg = 'palette.bg0' },
+		MatchParen = { fg = '#09fbd3', bg = 'palette.fg3', style = '' },
 	},
 }
 
