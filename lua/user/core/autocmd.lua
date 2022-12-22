@@ -1,10 +1,5 @@
 local palette = require('nightfox.palette').load('terafox')
 
-------------------------
--- matchParen control --
-------------------------
-vim.cmd([[autocmd BufRead,BufNewFile * highlight MatchParen guifg=#00CED1 guibg=#425e5e gui=NONE]])
-
 -----------------------------
 -- conditional colorcolumn --
 -----------------------------
