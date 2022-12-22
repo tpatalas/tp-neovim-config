@@ -1,8 +1,9 @@
--- comment out to disable the autocmd
+local palette = require('nightfox.palette').load('terafox')
 
--- set spell checks
--- vim.cmd([[autocmd BufRead,BufNewFile * setlocal spell spelllang=en spelloptions=camel spellsuggest=best,5]])
--- vim.cmd([[autocmd BufRead,BufNewFile * highlight SpellBad ctermfg=009 ctermbg=011 guifg=#e0def4 guibg=#403d52]])
+------------------------
+-- matchParen control --
+------------------------
+vim.cmd([[autocmd BufRead,BufNewFile * highlight MatchParen guifg=#00CED1 guibg=#425e5e gui=NONE]])
 
 -----------------------------
 -- conditional colorcolumn --
@@ -46,8 +47,8 @@ vim.cmd([[autocmd FileType lua :%s/\s\+$//e]])
 vim.cmd([[
   augroup BlinkCurosr
     autocmd!
-    autocmd BufRead,BufNewFile * set guicursor=n-v-c:block-Cursor
-    autocmd InsertEnter * set guicursor+=i:ver100-iCursor
+    autocmd BufRead,BufNewFile * set guicursor=n-v:block-Cursor
+    autocmd InsertEnter * set guicursor+=i-c:ver100-iCursor
     autocmd CursorHold,CursorHoldI * set guicursor+=n-v-c-i:blinkon1
   augroup end
 ]])

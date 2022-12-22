@@ -8,7 +8,6 @@ local groups = {
 		CursorLineNr = { fg = 'palette.yellow.dim', bg = 'palette.bg3' },
 		CursorLine = { bg = 'palette.bg3' },
 		Cursor = { bg = '#d4af37' },
-		MatchParen = { gui = 'NONE', fg = 'palette.yellow.base' },
 		Visual = { bg = 'palette.bg4' },
 		TelescopeBorder = { fg = 'palette.fg2', bg = '' },
 		NvimTreeNormal = { fg = '', bg = 'palette.bg0' },
