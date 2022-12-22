@@ -109,6 +109,9 @@ return packer.startup(function(use)
 	use('dhruvasagar/vim-table-mode') -- markdown table
 	use('mzlogin/vim-markdown-toc') -- toc generator
 
+	-- startup time
+	-- use('dstein64/vim-startuptime')
+
 	if packer_bootstrap then
 		require('packer').sync()
 	end
