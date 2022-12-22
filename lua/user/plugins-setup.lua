@@ -32,7 +32,7 @@ return packer.startup(function(use)
 	use('nvim-lua/plenary.nvim') -- lua functions that many plugins use
 
 	-- colors
-	use('EdenEast/nightfox.nvim') -- colorscheme
+	use('folke/tokyonight.nvim', { branch = 'main' })
 	use('norcalli/nvim-colorizer.lua') -- colorizer
 
 	-- essential plugins
