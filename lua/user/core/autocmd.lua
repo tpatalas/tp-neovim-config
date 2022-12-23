@@ -1,5 +1,3 @@
-local palette = require('nightfox.palette').load('terafox')
-
 -----------------------------
 -- conditional colorcolumn --
 -----------------------------

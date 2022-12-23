@@ -1,51 +1,37 @@
-local groups = {
-	-- https://github.com/EdenEast/nightfox.nvim/blob/main/usage.md#palette
-	all = {
-		Whitespace = { link = 'Comment' },
-		IncSearch = { fg = '', bg = 'palette.bg4' },
-		Search = { fg = 'palette.yellow.dim', bg = '' },
-		ColorColumn = { bg = 'palette.bg3' },
-		CursorLineNr = { fg = 'palette.yellow.dim', bg = 'palette.bg3' },
-		CursorLine = { bg = 'palette.bg3' },
-		Cursor = { bg = '#d4af37' },
-		Visual = { bg = 'palette.bg4' },
-		TelescopeBorder = { fg = 'palette.fg2', bg = '' },
-		NvimTreeNormal = { fg = '', bg = 'palette.bg0' },
-		MatchParen = { fg = '#09fbd3', bg = 'palette.fg3', style = '' },
-	},
-}
+-- https://github.com/folke/tokyonight.nvim
+-- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
 
--- Default options
-require('nightfox').setup({
-	options = {
-		compile_path = vim.fn.stdpath('cache') .. '/nightfox',
-		compile_file_suffix = '_compiled',
-		transparent = true,
-		terminal_colors = true,
-		dim_inactive = false,
-		module_default = true,
-		styles = {
-			comments = 'italic',
-			conditionals = 'NONE',
-			constants = 'NONE',
-			functions = 'italic',
-			keywords = 'NONE',
-			numbers = 'NONE',
-			operators = 'NONE',
-			strings = 'NONE',
-			types = 'NONE',
-			variables = 'NONE',
-		},
-		inverse = {
-			match_paren = false,
-			visual = false,
-			search = false,
-		},
-		modules = {},
+local custom_highlight = '#404459'
+
+require('tokyonight').setup({
+	style = 'night',
+	light_style = 'day',
+	transparent = true,
+	terminal_colors = true,
+	styles = {
+		comments = { italic = true },
+		keywords = { italic = true },
+		functions = {},
+		variables = {},
+		sidebars = 'dark',
+		floats = 'dark',
 	},
-	palettes = {},
-	specs = {},
-	groups = groups,
+	sidebars = { 'qf', 'help' },
+	day_brightness = 0.3,
+	hide_inactive_statusline = false,
+	dim_inactive = false,
+	lualine_bold = true,
+	on_colors = function(colors) end,
+	on_highlights = function(highlights, colors)
+		highlights.IncSearch = { fg = '', bg = colors.bg_highlight }
+		highlights.Search = { fg = colors.yellow, bg = '' }
+		highlights.CursorLineNr = { fg = colors.yellow, bg = custom_highlight }
+		highlights.CursorLine = { bg = custom_highlight }
+		highlights.ColorColumn = { bg = custom_highlight }
+		highlights.Cursor = { bg = colors.yellow }
+		highlights.MatchParen = { fg = colors.orange, bg = colors.bg }
+	end,
 })
 
-vim.cmd('colorscheme terafox')
+vim.cmd([[colorscheme tokyonight]])
+

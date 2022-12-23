@@ -3,9 +3,9 @@ local status, lualine = pcall(require, 'lualine')
 if not status then
 	return
 end
+-- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
 
--- https://github.com/EdenEast/nightfox.nvim/blob/main/usage.md#palette
-local palette = require('nightfox.palette').load('terafox')
+local colors = require('tokyonight.colors').setup() -- pass in any of the config options as explained above
 
 local total_lines = function()
 	return vim.fn.line('$')
@@ -13,40 +13,39 @@ end
 
 local custom_theme = {
 	normal = {
-		a = { gui = 'bold', fg = palette.blue.bright, bg = palette.bg0 },
-		b = { fg = palette.fg3, bg = palette.bg0 },
-		c = { fg = palette.yellow.dim, bg = palette.bg0 },
-		x = { fg = palette.fg2, bg = palette.bg0 },
-		y = { fg = palette.fg3, bg = palette.bg0 },
-		z = { fg = palette.yellow.base, bg = palette.bg0 },
+		a = { fg = colors.blue, bg = colors.bg_dark },
+		b = { fg = colors.fg_float, bg = colors.bg_dark },
+		c = { fg = colors.yellow, bg = colors.bg_dark },
+		x = { fg = colors.fg_float, bg = colors.bg_dark },
+		y = { fg = colors.fg_float, bg = colors.bg_dark },
+		z = { fg = colors.yellow, bg = colors.bg_dark },
 	},
 	insert = {
-		a = { gui = 'bold', fg = palette.cyan.base, bg = palette.bg0 },
-		b = { fg = palette.cyan.base, bg = palette.bg0 },
-		c = { fg = palette.cyan.base, bg = palette.bg0 },
-		x = { fg = palette.cyan.base, bg = palette.bg0 },
-		y = { fg = palette.cyan.base, bg = palette.bg0 },
-		z = { fg = palette.cyan.base, bg = palette.bg0 },
+		a = { fg = colors.cyan, bg = colors.bg_dark },
+		b = { fg = colors.cyan, bg = colors.bg_dark },
+		c = { fg = colors.cyan, bg = colors.bg_dark },
+		x = { fg = colors.cyan, bg = colors.bg_dark },
+		y = { fg = colors.cyan, bg = colors.bg_dark },
+		z = { fg = colors.cyan, bg = colors.bg_dark },
 	},
 	visual = {
-		a = { gui = 'bold', fg = palette.magenta.base, bg = palette.bg2 },
-		b = { fg = palette.magenta.base, bg = palette.bg0 },
-		c = { fg = palette.magenta.base, bg = palette.bg0 },
-		x = { fg = palette.magenta.base, bg = palette.bg0 },
-		y = { fg = palette.magenta.base, bg = palette.bg0 },
-		z = { fg = palette.magenta.base, bg = palette.bg0 },
+		a = { fg = colors.magenta, bg = colors.bg_dark },
+		b = { fg = colors.magenta, bg = colors.bg_dark },
+		c = { fg = colors.magenta, bg = colors.bg_dark },
+		x = { fg = colors.magenta, bg = colors.bg_dark },
+		y = { fg = colors.magenta, bg = colors.bg_dark },
+		z = { fg = colors.magenta, bg = colors.bg_dark },
 	},
 	command = {
 		a = {
-			gui = 'bold',
-			bg = palette.orange.base,
-			fg = palette.fg1,
+			bg = colors.orange,
+			fg = colors.fg_float,
 		},
 	},
 	inactive = {
-		a = { fg = palette.fg3, bg = '' },
-		b = { fg = palette.fg3, bg = '' },
-		c = { fg = palette.fg3, bg = '' },
+		a = { fg = colors.fg_gutter, bg = '' },
+		b = { fg = colors.fg_gutter, bg = '' },
+		c = { fg = colors.fg_gutter, bg = '' },
 	},
 }
 
@@ -92,9 +91,9 @@ lualine.setup({
 				'diff',
 				symbols = { added = ' ', modified = '柳', removed = ' ' },
 				diff_color = {
-					added = { fg = palette.cyan.base },
-					modified = { fg = palette.orange.base },
-					removed = { fg = palette.red.base },
+					added = { fg = colors.cyan },
+					modified = { fg = colors.orange },
+					removed = { fg = colors.red },
 				},
 			},
 		},
