@@ -1,7 +1,7 @@
-<!-- # Neovim configuration -->
+# Neovim Configuration
 
 ![image](https://github.com/tpAtalas/tp-nvim-lua-config/blob/assets/image.png?raw=true)
-colorscheme: [nightfox](https://github.com/EdenEast/nightfox.nvim)
+colorscheme: [Tokyonight](https://github.com/folke/tokyonight.nvim)
 
 ## Table of contents
 
@@ -141,7 +141,7 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 
 #### Themes
 
-- [Nightfox](https://github.com/EdenEast/nightfox.nvim)
+- [Tokyonight](https://github.com/folke/tokyonight.nvim)
 - [Nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [Nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
