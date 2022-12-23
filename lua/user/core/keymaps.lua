@@ -39,8 +39,10 @@ keymap.set('n', '<leader>AA', 'ggVG<CR>', noremap) -- select everything in visua
 -- exiting
 keymap.set('n', '<leader>QQ', ':q!<CR>', noremap) -- quit without saving
 keymap.set('n', '<leader>qq', ':q<CR>', noremap) -- quit
--- save
+-- save & edit
 keymap.set('n', '<leader>ss', ':w<CR>', noremap) -- save
+keymap.set('n', '<leader>ee', ':e<CR>', noremap) -- save
+keymap.set('n', '<leader>EE', ':e!<CR>', noremap) -- save
 -- search and  Replace
 keymap.set('n', '<leader>RR', ':%s/<c-r><c-w>/<c-r><c-w>', noremap) -- Search and replace the word under current
 keymap.set('n', '<leader>rr', '*#cgn', noremap) -- change the current word under the cursor * change > ESC > press `.` to change next

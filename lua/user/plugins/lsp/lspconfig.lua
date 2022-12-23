@@ -84,7 +84,6 @@ local function organize_imports()
 end
 
 -- Servers --
--- html
 lspconfig['html'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 }))
@@ -108,12 +107,14 @@ typescript.setup(coq.lsp_ensure_capabilities({
 	},
 }))
 
--- docker
 lspconfig['dockerls'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 }))
 
--- css
+lspconfig['jsonls'].setup(coq.lsp_ensure_capabilities({
+	on_attach = on_attach,
+}))
+
 lspconfig['cssls'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 	settings = {
@@ -135,23 +136,23 @@ lspconfig['cssls'].setup(coq.lsp_ensure_capabilities({
 	},
 }))
 
--- css module
 lspconfig['cssmodules_ls'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 }))
 
--- tailwind
 lspconfig['tailwindcss'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 }))
 
--- emmet
+lspconfig['eslint'].setup(coq.lsp_ensure_capabilities({
+	on_attach = on_attach,
+}))
+
 lspconfig['emmet_ls'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 	filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
 }))
 
--- lua
 lspconfig['sumneko_lua'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 	settings = { -- custom settings for lua

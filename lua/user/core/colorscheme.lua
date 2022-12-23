@@ -1,7 +1,9 @@
 -- https://github.com/folke/tokyonight.nvim
 -- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
 
-local custom_highlight = '#404459'
+local custom = {
+	highlight = '#404459',
+}
 
 require('tokyonight').setup({
 	style = 'night',
@@ -23,15 +25,15 @@ require('tokyonight').setup({
 	lualine_bold = true,
 	on_colors = function(colors) end,
 	on_highlights = function(highlights, colors)
-		highlights.IncSearch = { fg = '', bg = colors.bg_highlight }
+		highlights.IncSearch = { fg = '', bg = custom.highlight }
 		highlights.Search = { fg = colors.yellow, bg = '' }
-		highlights.CursorLineNr = { fg = colors.yellow, bg = custom_highlight }
-		highlights.CursorLine = { bg = custom_highlight }
-		highlights.ColorColumn = { bg = custom_highlight }
+		highlights.LineNr = { fg = colors.comment, bg = '' }
+		highlights.CursorLineNr = { fg = colors.yellow, bg = colors.bg_highlight }
+		highlights.CursorLine = { bg = colors.bg_highlight }
+		highlights.ColorColumn = { bg = colors.bg_highlight }
 		highlights.Cursor = { bg = colors.yellow }
 		highlights.MatchParen = { fg = colors.orange, bg = colors.bg }
 	end,
 })
 
 vim.cmd([[colorscheme tokyonight]])
-
