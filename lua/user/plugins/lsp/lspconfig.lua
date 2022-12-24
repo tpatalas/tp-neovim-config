@@ -144,10 +144,6 @@ lspconfig['tailwindcss'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 }))
 
-lspconfig['eslint'].setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
-}))
-
 lspconfig['emmet_ls'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 	filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
