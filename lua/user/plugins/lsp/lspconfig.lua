@@ -10,6 +10,10 @@ if not typescript_setup then
 	return
 end
 
+vim.diagnostic.config({
+	virtual_text = false,
+})
+
 vim.g.coq_settings = {
 	auto_start = 'shut-up',
 	keymap = {
