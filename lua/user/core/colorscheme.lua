@@ -2,7 +2,7 @@
 -- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
 
 local custom = {
-	highlight = '#404459',
+	highlight = '#51566F',
 }
 
 require('tokyonight').setup({
@@ -32,7 +32,7 @@ require('tokyonight').setup({
 		highlights.CursorLine = { bg = colors.bg_highlight }
 		highlights.ColorColumn = { bg = colors.bg_highlight }
 		highlights.Cursor = { bg = colors.yellow }
-		highlights.MatchParen = { fg = colors.orange, bg = colors.bg }
+		highlights.MatchParen = { fg = '', bg = custom.highlight }
 	end,
 })
 
