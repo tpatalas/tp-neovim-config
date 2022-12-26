@@ -34,14 +34,3 @@ vim.cmd([[
 -----------------------------------
 vim.cmd([[autocmd FileType lua :%s/\s\+$//e]])
 
-------------------
--- Blink Cursor --
-------------------
-vim.cmd([[
-  augroup BlinkCurosr
-    autocmd!
-    autocmd BufRead,BufNewFile * set guicursor=n-v:block-Cursor
-    autocmd InsertEnter * set guicursor+=i-c:ver100-iCursor
-    autocmd CursorHold,CursorHoldI * set guicursor+=n-v-c-i:blinkon1
-  augroup end
-]])
