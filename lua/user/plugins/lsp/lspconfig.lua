@@ -11,7 +11,9 @@ if not typescript_setup then
 end
 
 vim.diagnostic.config({
+	underline = true,
 	virtual_text = false,
+	update_in_insert = true,
 })
 
 vim.g.coq_settings = {
