@@ -12,8 +12,8 @@ end
 telescope.setup({
 	defaults = {
 		sorting_strategy = 'ascending',
-		-- path_display = {'smart'},
-		path_display = { truncate = 6 },
+		path_display = {'smart'},
+		-- path_display = { truncate = 6 },
 		prompt_prefix = '> ',
 		layout_strategy = 'horizontal',
 		layout_config = {
@@ -23,7 +23,7 @@ telescope.setup({
 				prompt_position = 'top',
 			},
 			center = {
-				height = 0.33,
+				height = 0.30,
 				preview_cutoff = 0,
 				prompt_position = 'top',
 				width = 0.95,
@@ -36,17 +36,17 @@ telescope.setup({
 				width = 0.8,
 			},
 			horizontal = {
-				height = 0.90,
+				height = 0.98,
 				preview_cutoff = 120,
 				prompt_position = 'top',
-				width = 0.90,
-				preview_width = 0.55,
+				width = 0.97,
+				preview_width = 0.60,
 			},
 			vertical = {
-				height = 0.95,
+				height = 0.99,
 				preview_cutoff = 0,
 				prompt_position = 'top',
-				width = 0.85,
+				width = 0.90,
 				anchor = 'N',
 				mirror = true,
 			},
@@ -56,7 +56,7 @@ telescope.setup({
 			i = {
 				['<C-k>'] = actions.move_selection_previous, -- move to prev result
 				['<C-j>'] = actions.move_selection_next, -- move to next result
-				['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
+				['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickFixList
 			},
 		},
 	},
