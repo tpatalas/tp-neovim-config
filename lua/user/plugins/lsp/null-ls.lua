@@ -28,12 +28,9 @@ local cspell_config_file_path = function()
 	return custom_path
 end
 
-local cspell_extra_args = function()
+local cspell_config_args = function()
 	if cspell_config_file_path ~= nil then
-		return {
-			'--config',
-			cspell_custom_file_path,
-		}
+		return cspell_custom_file_path
 	else
 		return nil
 	end
@@ -58,7 +55,28 @@ local cspell = {
 	disable_filetypes = {
 		'NvimTree',
 	},
-	extra_args = cspell_extra_args,
+	extra_args = {
+		'--config',
+		cspell_config_args(),
+		'--cache',
+		'--gitignore',
+		'--no-gitignore',
+		'--locale',
+		'en-US',
+		'--language-id',
+		'companies',
+		'softwareTerms',
+		'misc',
+		'typescript',
+		'node',
+		'html',
+		'python',
+		'css',
+		'bash',
+		'fonts',
+		'filetypes',
+		'npm',
+	},
 }
 
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
