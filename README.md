@@ -82,11 +82,11 @@ brew install lazygit
 | `alt+down`    | Move the current line downward                   | -                        |
 |               |                                                  |                          |
 | `<leader>RR`  | Search the word under the cursor and replace all | -                        |
-| `<leader>rr`  | Replace the current word under the curosr \*     | press `.` to change next |
+| `<leader>rr`  | Replace the current word under the cursor \*     | press `.` to change next |
 | `<leader>DD`  | Delete all                                       | -                        |
 | `<leader>AA`  | Select all with Visual mode                      |
 
-\* **Replace the current word under the curosr**:  
+\* **Replace the current word under the cursor**:  
 _1) `<leader>rr` 2) change
 word 3)`<ESC>` 4) Press `.` to apply the change next_
 
@@ -120,7 +120,7 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 | `leader+wsc`     | Close the current split window      | -       |
 |                  |                                     |         |
 | `ctrl+alt+right` | Increase the vertical window size   | -       |
-| `ctrl+alt+left`  | Descrese the vertical window size   | -       |
+| `ctrl+alt+left`  | Decrease the vertical window size   | -       |
 | `ctrl+alt+up`    | Increase the horizontal window size | -       |
 | `ctrl+alt+down`  | Decrease the horizontal window size | -       |
 |                  |                                     |         |
