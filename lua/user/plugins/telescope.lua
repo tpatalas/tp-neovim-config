@@ -12,7 +12,7 @@ end
 telescope.setup({
 	defaults = {
 		sorting_strategy = 'ascending',
-		path_display = {'smart'},
+		path_display = { 'smart' },
 		-- path_display = { truncate = 6 },
 		prompt_prefix = '> ',
 		layout_strategy = 'horizontal',
@@ -36,10 +36,10 @@ telescope.setup({
 				width = 0.8,
 			},
 			horizontal = {
-				height = 0.98,
+				height = 0.95,
 				preview_cutoff = 120,
 				prompt_position = 'top',
-				width = 0.97,
+				width = 0.95,
 				preview_width = 0.60,
 			},
 			vertical = {
