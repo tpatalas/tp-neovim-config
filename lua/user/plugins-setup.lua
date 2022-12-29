@@ -109,6 +109,8 @@ return packer.startup(function(use)
 	use('dhruvasagar/vim-table-mode') -- markdown table
 	use('mzlogin/vim-markdown-toc') -- toc generator
 
+	use('barreiroleo/ltex-extra.nvim')
+
 	-- startup time
 	-- use('dstein64/vim-startuptime')
 

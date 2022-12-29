@@ -1,4 +1,5 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+--
 
 local lspconfig_status, lspconfig = pcall(require, 'lspconfig')
 if not lspconfig_status then
@@ -52,6 +53,24 @@ vim.g.coq_settings = {
 
 local coq = require('coq')
 
+----------------------
+-- ltex custom path --
+----------------------
+-- you need to create the custom path if you wish to save dictionary in one place
+local dictionary_path = vim.fn.finddir('~/.config/langs/ltex') -- optionl
+-- if custom path does not exist it will create a dictionary in cwd (this will lead to save dictionary for each workspace)
+local dictionary_custom_path = function() -- optional
+	local custom_path = nil
+	if dictionary_path ~= '' then
+		custom_path = dictionary_path
+	end
+	return custom_path
+end
+
+---------------------
+-- keymap setting ---
+---------------------
+
 local keymap = vim.keymap -- for conciseness
 
 local on_attach = function(client, bufnr)
@@ -89,9 +108,39 @@ local function organize_imports()
 	vim.lsp.buf.execute_command(params)
 end
 
+-------------
 -- Servers --
+-------------
+-- html
 lspconfig['html'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
+}))
+
+-- ltex
+-- equipped with ltex-extra plugin
+lspconfig['ltex'].setup(coq.lsp_ensure_capabilities({
+	on_attach = function(client, bufnr)
+		require('ltex_extra').setup({
+			load_langs = { 'en-US' },
+			init_check = true,
+			path = dictionary_custom_path(),
+			log_level = 'none',
+		})
+	end,
+	settings = {
+		-- more info on setting: https://valentjn.github.io/ltex/settings.html
+		ltex = {
+			additionalRules = {
+				enablePickyRules = true,
+				motherTongue = 'en-US',
+				-- download n-gram: https://dev.languagetool.org/finding-errors-using-n-gram-data.html
+				-- please read before download n-gram data, it is 8.3GB for just English.
+				languageModel = vim.fn.finddir('~/.ngram'),
+			},
+			checkFrequency = 'edit', -- save or manual if performance has an issue
+			diagnosticSeverity = 'hint',
+		},
+	},
 }))
 
 -- typescript
