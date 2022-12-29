@@ -18,7 +18,7 @@ require('tokyonight').setup({
 		sidebars = 'dark',
 		floats = 'transparent',
 	},
-	sidebars = { 'qf', 'help' },
+	sidebars = { 'qf', 'help', 'mason' },
 	day_brightness = 0.3,
 	hide_inactive_statusline = false,
 	dim_inactive = false,
