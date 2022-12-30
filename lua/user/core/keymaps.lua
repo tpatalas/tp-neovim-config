@@ -101,9 +101,19 @@ keymap.set('n', '<leader>wsc', ':close<CR>') -- close current split window
 keymap.set('n', '<c-a-right>', ':vertical resize +5<CR>', noremap) -- increase size vertically
 keymap.set('n', '<c-a-left>', ':vertical resize -5<CR>', noremap) -- decrease size vertically
 keymap.set('n', '<c-a-up>', ':horizontal resize +5<CR>', noremap) -- increase size horizontally
-keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decreise size horizontally
-keymap.set('n', '<c-@>', '<C-W>w', noremap) -- ctrl+` is the easier wasy to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
+keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decrease size horizontally
+keymap.set('n', '<c-@>', '<C-W>w', noremap) -- ctrl+` is the easier way to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
 keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press <alt-=>
+
+---------------
+-- LSP Remap --
+---------------
+keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opts) -- see available code actions
+keymap.set('n', '<leader>d', '<cmd>Lspsaga show_line_diagnostics<CR>', opts) -- show  diagnostics for line
+keymap.set('n', '<leader>d', '<cmd>Lspsaga show_cursor_diagnostics<CR>', opts) -- show diagnostics for cursor
+keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts) -- jump to previous diagnostic in buffer
+keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts) -- jump to next diagnostic in buffer
+
 
 ----------------------
 --  Plugin Keybinds --
@@ -163,4 +173,4 @@ keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colori
 
 -- rest nvim
 keymap.set('n', '<leader>rno', '<Plug>RestNvim<CR>', noremap) -- run the request under the cursor
-keymap.set('n', '<leader>rnl', '<Plug>RestNvimLast<CR>', noremap) -- re-reun the last request
+keymap.set('n', '<leader>rnl', '<Plug>RestNvimLast<CR>', noremap) -- re-run the last request
