@@ -73,9 +73,8 @@ end
 
 local keymap = vim.keymap -- for conciseness
 
-local on_attach = function(client, bufnr)
+local keybinds = function()
 	local opts = { noremap = true, silent = true, buffer = bufnr }
-
 	-- set keybinds
 	keymap.set('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>', opts) -- show definition, references
 	keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts) -- got to declaration
@@ -90,6 +89,21 @@ local on_attach = function(client, bufnr)
 	keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts) -- show documentation for what is under cursor
 	keymap.set('n', '<leader>o', '<cmd>LSoutlineToggle<CR>', opts) -- see outline on right hand side
 	keymap.set('n', '<space>wa', '<cmd>add_workspace_folder<CR>', opts)
+end
+
+local on_attach = function(client, bufnr)
+	keybinds()
+end
+
+local on_attach_ltex_extra = function(client, bufnr)
+	require('ltex_extra').setup({
+		load_langs = { 'en-US' },
+		init_check = true,
+		path = dictionary_custom_path(),
+		log_level = 'none',
+	})
+	keybinds()
+	keymap.set('n', '<leader><cr><cr>', '<cmd>lua require("ltex_extra").reload()<CR>')
 end
 
 -- Change the Diagnostic symbols in the sign column (gutter)
@@ -119,14 +133,7 @@ lspconfig['html'].setup(coq.lsp_ensure_capabilities({
 -- ltex
 -- equipped with ltex-extra plugin
 lspconfig['ltex'].setup(coq.lsp_ensure_capabilities({
-	on_attach = function(client, bufnr)
-		require('ltex_extra').setup({
-			load_langs = { 'en-US' },
-			init_check = true,
-			path = dictionary_custom_path(),
-			log_level = 'none',
-		})
-	end,
+	on_attach = on_attach_ltex_extra,
 	settings = {
 		-- more info on setting: https://valentjn.github.io/ltex/settings.html
 		ltex = {
