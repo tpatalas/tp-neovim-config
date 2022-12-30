@@ -105,16 +105,6 @@ keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decrease 
 keymap.set('n', '<c-@>', '<C-W>w', noremap) -- ctrl+` is the easier way to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
 keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press <alt-=>
 
----------------
--- LSP Remap --
----------------
-keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opts) -- see available code actions
-keymap.set('n', '<leader>d', '<cmd>Lspsaga show_line_diagnostics<CR>', opts) -- show  diagnostics for line
-keymap.set('n', '<leader>d', '<cmd>Lspsaga show_cursor_diagnostics<CR>', opts) -- show diagnostics for cursor
-keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts) -- jump to previous diagnostic in buffer
-keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts) -- jump to next diagnostic in buffer
-
-
 ----------------------
 --  Plugin Keybinds --
 ----------------------
