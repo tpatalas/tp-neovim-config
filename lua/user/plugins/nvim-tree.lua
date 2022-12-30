@@ -32,6 +32,7 @@ nvimtree.setup({
 	filters = {
 		exclude = {
 			'.http',
+			'.md',
 		},
 	},
 

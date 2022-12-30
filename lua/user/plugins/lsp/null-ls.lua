@@ -18,7 +18,7 @@ local eslint = {
 --------------------
 -- cspell setting --
 --------------------
-local cspell_custom_file_path = vim.fn.findfile('~/.config/cspell/cspell.json')
+local cspell_custom_file_path = vim.fn.findfile('~/.config/langs/cspell.json')
 
 local cspell_config_file_path = function()
 	local custom_path = nil
@@ -37,13 +37,16 @@ local cspell_config_args = function()
 end
 
 local cspell = {
+	diagnostics_postprocess = function(diagnostic)
+		if diagnostic.severity == vim.diagnostic.severity.WARN then
+			diagnostic.severity = vim.diagnostic.severity.HINT
+		end
+	end,
 	config = {
 		create_config_file = true,
 		find_json = cspell_config_file_path,
 	},
 	filetypes = {
-		'markdown',
-		'text',
 		'lua',
 		'javascript',
 		'javascriptreact',
@@ -53,7 +56,9 @@ local cspell = {
 		'css',
 	},
 	disable_filetypes = {
+		'text',
 		'NvimTree',
+		'markdown',
 	},
 	extra_args = {
 		'--config',
@@ -61,21 +66,6 @@ local cspell = {
 		'--cache',
 		'--gitignore',
 		'--no-gitignore',
-		'--locale',
-		'en-US',
-		'--language-id',
-		'companies',
-		'softwareTerms',
-		'misc',
-		'typescript',
-		'node',
-		'html',
-		'python',
-		'css',
-		'bash',
-		'fonts',
-		'filetypes',
-		'npm',
 	},
 }
 

@@ -34,3 +34,7 @@ vim.cmd([[
 -----------------------------------
 vim.cmd([[autocmd FileType lua :%s/\s\+$//e]])
 
+-----------------------------------
+-- auto reload ltex-extra plugin --
+-----------------------------------
+vim.cmd([[autocmd BufWritePost *.md,*gitcommit,*.org,*.txt,*.tex,*.bib lua require('ltex_extra').reload()]])
