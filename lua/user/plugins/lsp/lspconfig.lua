@@ -142,7 +142,10 @@ lspconfig['ltex'].setup(coq.lsp_ensure_capabilities({
 				motherTongue = 'en-US',
 				-- download n-gram: https://dev.languagetool.org/finding-errors-using-n-gram-data.html
 				-- please read before download n-gram data, it is 8.3GB for just English.
-				languageModel = vim.fn.finddir('~/.ngram'),
+				languageModel = vim.fn.finddir('~/.language-models/ngram'),
+				-- download word2vec: https://languagetool.org/download/word2vec/
+				-- please read before download word2Vec: https://github.com/languagetool-org/languagetool/blob/master/languagetool-standalone/CHANGES.md#word2vec
+				word2VecModel = vim.fn.finddir('~/.language-models/word2VecModel'),
 			},
 			checkFrequency = 'edit', -- save or manual if performance has an issue
 			diagnosticSeverity = 'hint',
