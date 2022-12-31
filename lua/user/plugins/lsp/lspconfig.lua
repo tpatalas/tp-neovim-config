@@ -1,13 +1,7 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
---
 
 local lspconfig_status, lspconfig = pcall(require, 'lspconfig')
 if not lspconfig_status then
-	return
-end
-
-local typescript_setup, typescript = pcall(require, 'typescript')
-if not typescript_setup then
 	return
 end
 
@@ -113,6 +107,10 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
+-----------
+-- utils --
+-----------
+-- tsserver organize import
 local function organize_imports()
 	local params = {
 		command = '_typescript.organizeImports',
@@ -120,6 +118,19 @@ local function organize_imports()
 		title = '',
 	}
 	vim.lsp.buf.execute_command(params)
+end
+
+-- disable fallowing diagnostics 
+vim.lsp.handlers["textDocument/publishDiagnostics"] = function(_, result, ctx, ...)
+    local client = vim.lsp.get_client_by_id(ctx.client_id)
+
+    if client and client.name == "tsserver" then
+        result.diagnostics = vim.tbl_filter(function(diagnostic)
+            return not diagnostic.message:find("File is a CommonJS module; it may be converted to an ES module.")
+        end, result.diagnostics)
+    end
+
+    return vim.lsp.diagnostic.on_publish_diagnostics(nil, result, ctx, ...)
 end
 
 -------------
@@ -153,16 +164,14 @@ lspconfig['ltex'].setup(coq.lsp_ensure_capabilities({
 	},
 }))
 
+
 -- typescript
--- Currently typescript.nvim plugin gives better functionality
-typescript.setup(coq.lsp_ensure_capabilities({
-	server = {
-		on_attach = on_attach,
+lspconfig['tsserver'].setup(coq.lsp_ensure_capabilities({
+	on_attach = on_attach,
 		commands = {
 			OrganizeImports = {
 				organize_imports,
 				description = 'Organize Imports',
-			},
 		},
 	},
 }))
