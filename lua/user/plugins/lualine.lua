@@ -74,7 +74,7 @@ lualine.setup({
 		lualine_c = {
 			{
 				'diagnostics',
-				sources = { 'nvim_diagnostic' },
+				sources = { 'nvim_diagnostic', 'nvim_lsp', 'nvim_workspace_diagnostic' },
 				symbols = { error = ' ', warn = ' ', info = ' ', hint = 'ﴞ ' },
 				sections = { 'error', 'warn', 'info', 'hint' },
 				colored = true,
