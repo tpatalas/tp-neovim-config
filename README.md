@@ -74,9 +74,7 @@ brew install lazygit
 | Keymap        | Description                                      | Comment                  |
 | ------------- | ------------------------------------------------ | ------------------------ |
 | `<leader>fma` | Apply formatting                                 | -                        |
-| `<leader>fmf` | Rename files and update imports                  | Plugin: Typescript       |
-| `<leader>fmd` | Remove unused variables                          | Plugin: Typescript       |
-| `<leader>fmm` | Add missing imports                              | Plugin: Typescript       |
+| `<leader>fmo` | Remove unused imports                            | -                        |
 |               |                                                  |                          |
 | `alt+up`      | Move the current line upward                     | -                        |
 | `alt+down`    | Move the current line downward                   | -                        |

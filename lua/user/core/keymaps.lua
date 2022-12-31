@@ -53,11 +53,7 @@ keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word 
 ----------------
 -- formatting general
 keymap.set('n', '<leader>fma', 'gggqG', noremap) -- apply formatting if any
--- formatting with typescript.nvim
-keymap.set('n', '<leader>fmr', ':TypescriptRenameFile<CR>') -- rename file and update imports
-keymap.set('n', '<leader>fmd', ':TypescriptRemoveUnused<CR>') -- remove unused variables
-keymap.set('n', '<leader>fmm', ':TypescriptAddMissingImports<CR>') -- add missing imports
-keymap.set('n', '<leader>fmo', ':OrganizeImports<CR>') -- Organize Import (Custom)
+keymap.set('n', '<leader>fmo', ':OrganizeImports<CR>') -- Organize Import (Custom: typescript)
 -- formatting move lines
 keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
 keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
