@@ -158,11 +158,6 @@ lspconfig['ltex'].setup(coq.lsp_ensure_capabilities({
 typescript.setup(coq.lsp_ensure_capabilities({
 	server = {
 		on_attach = on_attach,
-		init_options = {
-			preferences = {
-				disableSuggestions = true,
-			},
-		},
 		commands = {
 			OrganizeImports = {
 				organize_imports,
