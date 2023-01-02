@@ -15,60 +15,6 @@ local eslint = {
 	end,
 }
 
---------------------
--- cspell setting --
---------------------
-local cspell_custom_file_path = vim.fn.findfile('~/.config/langs/cspell.json')
-
-local cspell_config_file_path = function()
-	local custom_path = nil
-	if cspell_custom_file_path ~= '' then
-		custom_path = cspell_custom_file_path
-	end
-	return custom_path
-end
-
-local cspell_config_args = function()
-	if cspell_config_file_path ~= nil then
-		return cspell_custom_file_path
-	else
-		return nil
-	end
-end
-
-local cspell = {
-	diagnostics_postprocess = function(diagnostic)
-		if diagnostic.severity == vim.diagnostic.severity.warn then
-			diagnostic.severity = vim.diagnostic.severity.info
-		end
-	end,
-	config = {
-		create_config_file = true,
-		find_json = cspell_config_file_path,
-	},
-	filetypes = {
-		'lua',
-		'javascript',
-		'javascriptreact',
-		'typescript',
-		'typescriptreact',
-		'json',
-		'css',
-	},
-	disable_filetypes = {
-		'text',
-		'NvimTree',
-		'markdown',
-	},
-	extra_args = {
-		'--config',
-		cspell_config_args(),
-		'--cache',
-		'--gitignore',
-		'--no-gitignore',
-	},
-}
-
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
 -- Built-in sources:
@@ -77,12 +23,12 @@ local source = {
 	diagnostics.tsc,
 	-- WARNING: diagnostics listed below do not support workspace level diagnostics
 	formatting.markdownlint,
+	formatting.codespell,
+	diagnostics.codespell,
 	formatting.stylua,
 	formatting.prettier,
-	codeactions.cspell.with(cspell),
-	diagnostics.cspell.with(cspell),
-	codeactions.eslint.with(eslint),
-	diagnostics.eslint.with(eslint),
+	codeactions.eslint_d.with(eslint),
+	diagnostics.eslint_d.with(eslint),
 }
 
 local on_attach = function(current_client, bufnr)
@@ -112,6 +58,6 @@ null_ls.setup({
 	virtual_text = true,
 	signs = true,
 	severity_sort = true,
-	update_in_insert = true,
+	update_in_insert = false,
 	debounce = 350,
 })
