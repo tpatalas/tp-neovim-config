@@ -41,7 +41,7 @@ vim.g.coq_settings = {
 		},
 	},
 	limits = {
-		completion_auto_timeout = 0.12, -- default 0.088
+		completion_auto_timeout = 0.20, -- default 0.088
 	},
 }
 
@@ -120,17 +120,17 @@ local function organize_imports()
 	vim.lsp.buf.execute_command(params)
 end
 
--- disable fallowing diagnostics 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = function(_, result, ctx, ...)
-    local client = vim.lsp.get_client_by_id(ctx.client_id)
+-- disable fallowing diagnostics
+vim.lsp.handlers['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
+	local client = vim.lsp.get_client_by_id(ctx.client_id)
 
-    if client and client.name == "tsserver" then
-        result.diagnostics = vim.tbl_filter(function(diagnostic)
-            return not diagnostic.message:find("File is a CommonJS module; it may be converted to an ES module.")
-        end, result.diagnostics)
-    end
+	if client and client.name == 'tsserver' then
+		result.diagnostics = vim.tbl_filter(function(diagnostic)
+			return not diagnostic.message:find('File is a CommonJS module; it may be converted to an ES module.')
+		end, result.diagnostics)
+	end
 
-    return vim.lsp.diagnostic.on_publish_diagnostics(nil, result, ctx, ...)
+	return vim.lsp.diagnostic.on_publish_diagnostics(nil, result, ctx, ...)
 end
 
 -------------
@@ -164,14 +164,13 @@ lspconfig['ltex'].setup(coq.lsp_ensure_capabilities({
 	},
 }))
 
-
 -- typescript
 lspconfig['tsserver'].setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
-		commands = {
-			OrganizeImports = {
-				organize_imports,
-				description = 'Organize Imports',
+	commands = {
+		OrganizeImports = {
+			organize_imports,
+			description = 'Organize Imports',
 		},
 	},
 }))
