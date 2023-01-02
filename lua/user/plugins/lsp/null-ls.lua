@@ -38,8 +38,8 @@ end
 
 local cspell = {
 	diagnostics_postprocess = function(diagnostic)
-		if diagnostic.severity == vim.diagnostic.severity.WARN then
-			diagnostic.severity = vim.diagnostic.severity.HINT
+		if diagnostic.severity == vim.diagnostic.severity.warn then
+			diagnostic.severity = vim.diagnostic.severity.info
 		end
 	end,
 	config = {
@@ -81,8 +81,8 @@ local source = {
 	formatting.prettier,
 	codeactions.cspell.with(cspell),
 	diagnostics.cspell.with(cspell),
-	codeactions.eslint_d.with(eslint),
-	diagnostics.eslint_d.with(eslint),
+	codeactions.eslint.with(eslint),
+	diagnostics.eslint.with(eslint),
 }
 
 local on_attach = function(current_client, bufnr)
