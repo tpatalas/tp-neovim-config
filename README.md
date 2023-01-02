@@ -1,5 +1,11 @@
 # Neovim Configuration
 
+> [Neovim](https://neovim.io/charter/) is a refactor, and sometimes redactor, in the
+> tradition of Vim (which itself derives from Stevie). It is not a rewrite but a
+> continuation and extension of Vim. Many clones and derivatives exist, some very
+> clever but none are Vim. Neovim is built for users who want the good parts of Vim, and
+> more.
+
 ![image](https://github.com/tpAtalas/tp-nvim-lua-config/blob/assets/image.png?raw=true)
 colorscheme: [Tokyonight](https://github.com/folke/tokyonight.nvim)
 
@@ -95,19 +101,19 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 | `shift+alt+left`  | Go to the previous buffer           | -               |
 | `shift+alt+right` | Go to the next buffer               | -               |
 |                   |                                     |                 |
-| `F1`              | Go to the buffer 1                  | Plugin: Lualine |
-| `F2`              | Go to the buffer 2                  | Plugin: Lualine |
-| `F3`              | Go to the buffer 3                  | Plugin: Lualine |
-| `F4`              | Go to the buffer 4                  | Plugin: Lualine |
-| `F5`              | Go to the buffer 5                  | Plugin: Lualine |
-| `F6`              | Go to the buffer 6                  | Plugin: Lualine |
-| `F7`              | Go to the buffer 7                  | Plugin: Lualine |
-| `F8`              | Go to the buffer 8                  | Plugin: Lualine |
-| `F9`              | Go to the buffer 9                  | Plugin: Lualine |
-| `F10`             | Go to the buffer 10                 | Plugin: Lualine |
+| `alt+1`           | Go to the buffer 1                  | Plugin: Lualine |
+| `alt+2`           | Go to the buffer 2                  | Plugin: Lualine |
+| `alt+3`           | Go to the buffer 3                  | Plugin: Lualine |
+| `alt+4`           | Go to the buffer 4                  | Plugin: Lualine |
+| `alt+5`           | Go to the buffer 5                  | Plugin: Lualine |
+| `alt+6`           | Go to the buffer 6                  | Plugin: Lualine |
+| `alt+7`           | Go to the buffer 7                  | Plugin: Lualine |
+| `alt+8`           | Go to the buffer 8                  | Plugin: Lualine |
+| `alt+9`           | Go to the buffer 9                  | Plugin: Lualine |
+| `alt+0`           | Go to the buffer 10                 | Plugin: Lualine |
 |                   |                                     |                 |
-| `<leader>ww`      | Close the current buffer            | -               |
-| `<leader>WW`      | Close all except the current buffer | -               |
+| `alt+w`           | Close the current buffer            | -               |
+| `alt+W`           | Close all except the current buffer | -               |
 
 ##### Window Management
 

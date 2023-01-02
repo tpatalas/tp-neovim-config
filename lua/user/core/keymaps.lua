@@ -73,19 +73,19 @@ keymap.set('n', '<s-up>', '<s-up>zz', noremap)
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
 -- buffers jump by index
-keymap.set('n', '<f1>', ':LualineBuffersJump 1<CR>', noremap)
-keymap.set('n', '<f2>', ':LualineBuffersJump 2<CR>', noremap)
-keymap.set('n', '<f3>', ':LualineBuffersJump 3<CR>', noremap)
-keymap.set('n', '<f4>', ':LualineBuffersJump 4<CR>', noremap)
-keymap.set('n', '<f5>', ':LualineBuffersJump 5<CR>', noremap)
-keymap.set('n', '<f6>', ':LualineBuffersJump 6<CR>', noremap)
-keymap.set('n', '<f7>', ':LualineBuffersJump 7<CR>', noremap)
-keymap.set('n', '<f8>', ':LualineBuffersJump 8<CR>', noremap)
-keymap.set('n', '<f9>', ':LualineBuffersJump 9<CR>', noremap)
-keymap.set('n', '<f10>', ':LualineBuffersJump 10<CR>', noremap)
+keymap.set('n', '<a-1>', ':LualineBuffersJump 1<CR>', noremap)
+keymap.set('n', '<a-2>', ':LualineBuffersJump 2<CR>', noremap)
+keymap.set('n', '<a-3>', ':LualineBuffersJump 3<CR>', noremap)
+keymap.set('n', '<a-4>', ':LualineBuffersJump 4<CR>', noremap)
+keymap.set('n', '<a-5>', ':LualineBuffersJump 5<CR>', noremap)
+keymap.set('n', '<a-6>', ':LualineBuffersJump 6<CR>', noremap)
+keymap.set('n', '<a-7>', ':LualineBuffersJump 7<CR>', noremap)
+keymap.set('n', '<a-8>', ':LualineBuffersJump 8<CR>', noremap)
+keymap.set('n', '<a-9>', ':LualineBuffersJump 9<CR>', noremap)
+keymap.set('n', '<a-10>', ':LualineBuffersJump 10<CR>', noremap)
 -- buffers action
-keymap.set('n', '<leader>ww', ':bp<bar>sp<bar>bn<bar>bd<CR>', noremap) -- close current buffer
-keymap.set('n', '<leader>WW', ':%bd|e#|bd#<CR><CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
+keymap.set('n', '<a-w>', ':bp<bar>sp<bar>bn<bar>bd<CR>', noremap) -- close current buffer
+keymap.set('n', '<a-W>', ':%bd|e#|bd#<CR><CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
 
 -- delete single character without copying into register
 keymap.set('n', 'x', '"_x', noremap)
