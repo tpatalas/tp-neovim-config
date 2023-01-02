@@ -39,7 +39,7 @@ end
 local cspell = {
 	diagnostics_postprocess = function(diagnostic)
 		if diagnostic.severity == vim.diagnostic.severity.WARN then
-			diagnostic.severity = vim.diagnostic.severity.INFO
+			diagnostic.severity = vim.diagnostic.severity.HINT
 		end
 	end,
 	config = {
