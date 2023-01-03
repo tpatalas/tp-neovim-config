@@ -34,3 +34,7 @@ vim.cmd([[
 -----------------------------------
 vim.cmd([[autocmd FileType lua :%s/\s\+$//e]])
 
+----------------------------------------------
+-- auto close quickFix after selecting item --
+----------------------------------------------
+vim.cmd([[autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>]])
