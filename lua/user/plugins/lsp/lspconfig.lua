@@ -5,6 +5,11 @@ if not lspconfig_status then
 	return
 end
 
+local typescript_setup, typescript = pcall(require, 'typescript')
+if not typescript_setup then
+	return
+end
+
 vim.diagnostic.config({
 	underline = true,
 	virtual_text = false,
@@ -165,12 +170,15 @@ lspconfig['ltex'].setup(coq.lsp_ensure_capabilities({
 }))
 
 -- typescript
-lspconfig['tsserver'].setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
-	commands = {
-		OrganizeImports = {
-			organize_imports,
-			description = 'Organize Imports',
+-- Currently typescript.nvim plugin gives better functionality
+typescript.setup(coq.lsp_ensure_capabilities({
+	server = {
+		on_attach = on_attach,
+		commands = {
+			OrganizeImports = {
+				organize_imports,
+				description = 'Organize Imports',
+			},
 		},
 	},
 }))
