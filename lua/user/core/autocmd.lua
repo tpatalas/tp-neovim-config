@@ -25,9 +25,13 @@ vim.cmd([[
     autocmd!
     autocmd CursorMovedI,CursorMoved * call HighlightCurrentWord('')
     autocmd CursorHold * if @% != 'NvimTree_1' | call HighlightCurrentWord('<cword>')
-    autocmd CursorHold *.* if @% != 'wezterm.lua' | silent! write
   augroup end
 ]])
+
+---------------
+-- auto save --
+---------------
+vim.cmd([[autocmd BufLeave,BufRead,InsertLeave *.* if @% != 'wezterm.lua' | silent! write]])
 
 -----------------------------------
 -- remove all trailing whitespce --
