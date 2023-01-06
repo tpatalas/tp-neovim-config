@@ -27,8 +27,8 @@ local source = {
 	diagnostics.codespell,
 	formatting.stylua,
 	formatting.prettier,
-	codeactions.eslint_d.with(eslint),
-	diagnostics.eslint_d.with(eslint),
+	codeactions.eslint.with(eslint),
+	diagnostics.eslint.with(eslint),
 }
 
 local on_attach = function(current_client, bufnr)
