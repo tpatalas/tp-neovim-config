@@ -26,7 +26,7 @@ local source = {
 	formatting.codespell,
 	diagnostics.codespell,
 	formatting.stylua,
-	formatting.prettier,
+	formatting.prettierd,
 	codeactions.eslint.with(eslint),
 	diagnostics.eslint.with(eslint),
 }
