@@ -58,6 +58,6 @@ null_ls.setup({
 	virtual_text = true,
 	signs = true,
 	severity_sort = true,
-	update_in_insert = false,
+	update_in_insert = true,
 	debounce = 350,
 })
