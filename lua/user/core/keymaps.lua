@@ -52,11 +52,11 @@ keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word 
 -- formatting --
 ----------------
 -- formatting general
-keymap.set('n', '<leader>fma', 'gggqG', noremap) -- apply formatting if any
-keymap.set('n', '<leader>fmr', ':TypescriptRenameFile<CR>') -- rename file and update imports
-keymap.set('n', '<leader>fmd', ':TypescriptRemoveUnused<CR>') -- remove unused variables
-keymap.set('n', '<leader>fmm', ':TypescriptAddMissingImports<CR>') -- add missing imports
-keymap.set('n', '<leader>fmo', ':OrganizeImports<CR>') -- Organize Import (Custom: typescript)
+keymap.set('n', '<leader>fa', 'gggqG', noremap) -- apply formatting if any
+keymap.set('n', '<leader>fr', ':TypescriptRenameFile<CR>') -- rename file and update imports
+keymap.set('n', '<leader>fd', ':TypescriptRemoveUnused<CR>') -- remove unused variables
+keymap.set('n', '<leader>fm', ':TypescriptAddMissingImports<CR>') -- add missing imports
+keymap.set('n', '<leader>fi', ':OrganizeImports<CR>') -- Organize Import (Custom: typescript)
 -- formatting move lines
 keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
 keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
@@ -94,9 +94,9 @@ keymap.set('n', '<a-W>', ':%bd|e#|bd#<CR><CR>', noremap) -- close all buffers ex
 keymap.set('n', 'x', '"_x', noremap)
 
 -- Window management --
-keymap.set('n', '<leader>wsv', '<C-w>v') -- split window vertically
-keymap.set('n', '<leader>wsh', '<C-w>s') -- split window horizontally
-keymap.set('n', '<leader>wsc', ':close<CR>') -- close current split window
+keymap.set('n', '<leader>wv', '<C-w>v') -- split window vertically
+keymap.set('n', '<leader>wh', '<C-w>s') -- split window horizontally
+keymap.set('n', '<leader>wc', ':close<CR>') -- close current split window
 keymap.set('n', '<c-a-right>', ':vertical resize +5<CR>', noremap) -- increase size vertically
 keymap.set('n', '<c-a-left>', ':vertical resize -5<CR>', noremap) -- decrease size vertically
 keymap.set('n', '<c-a-up>', ':horizontal resize +5<CR>', noremap) -- increase size horizontally
@@ -109,28 +109,28 @@ keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press <alt-=>
 ----------------------
 
 -- toggleTerm
-keymap.set('n', '<leader>tto', ':ToggleTerm<CR>', noremap) -- toggle split window maximization or press <c-\>
-keymap.set('n', '<leader>ttl', ':lua_LAZYGIT_TOGGLE()<CR>', noremap)
+keymap.set('n', '<leader>tt', ':ToggleTerm<CR>', noremap) -- toggle split window maximization or press <c-\>
+keymap.set('n', '<leader>tl', ':lua_LAZYGIT_TOGGLE()<CR>', noremap)
 
 ---------------
 -- telescope --
 ---------------
 -- telescope find files
-keymap.set('n', '<leader>ffo', '<cmd>Telescope find_files<CR>', noremap) -- find files within current working directory, respects gitignore
-keymap.set('n', '<leader>ffs', '<cmd>Telescope live_grep<CR>', noremap) -- find string in current working directory as you type
-keymap.set('n', '<leader>ffc', '<cmd>Telescope grep_string<CR>', noremap) -- find string under cursor in current working directory
-keymap.set('n', '<leader>ffb', '<cmd>Telescope buffers<CR>', noremap) -- list open buffers in current neovim instance
-keymap.set('n', '<leader>ffh', '<cmd>Telescope help_tags<CR>', noremap) -- list available help tags
-keymap.set('n', '<leader>ffd', '<cmd>Telescope diagnostics<CR>', noremap) -- lists diagnostics for all open buffers
+keymap.set('n', '<leader>to', '<cmd>Telescope find_files<CR>', noremap) -- find files within current working directory, respects gitignore
+keymap.set('n', '<leader>ts', '<cmd>Telescope live_grep<CR>', noremap) -- find string in current working directory as you type
+keymap.set('n', '<leader>tc', '<cmd>Telescope grep_string<CR>', noremap) -- find string under cursor in current working directory
+keymap.set('n', '<leader>tb', '<cmd>Telescope buffers<CR>', noremap) -- list open buffers in current neovim instance
+keymap.set('n', '<leader>th', '<cmd>Telescope help_tags<CR>', noremap) -- list available help tags
+keymap.set('n', '<leader>td', '<cmd>Telescope diagnostics<CR>', noremap) -- lists diagnostics for all open buffers
 -- telescope git commands
-keymap.set('n', '<leader>fgc', '<cmd>Telescope git_commits<CR>', noremap) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set('n', '<leader>fgf', '<cmd>Telescope git_bcommits<CR>', noremap) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set('n', '<leader>fgb', '<cmd>Telescope git_branches<CR>', noremap) -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set('n', '<leader>fgs', '<cmd>Telescope git_status<CR>', noremap) -- list current changes per file with diff preview ["gs" for git status]
+keymap.set('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', noremap) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+keymap.set('n', '<leader>gf', '<cmd>Telescope git_bcommits<CR>', noremap) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+keymap.set('n', '<leader>gb', '<cmd>Telescope git_branches<CR>', noremap) -- list git branches (use <cr> to checkout) ["gb" for git branch]
+keymap.set('n', '<leader>gs', '<cmd>Telescope git_status<CR>', noremap) -- list current changes per file with diff preview ["gs" for git status]
 -- telescope todo-comments
 keymap.set(
 	'n',
-	'<leader>fto',
+	'<leader>tn',
 	':TodoTelescope keywords=TODO,HACK,NOTE,WARN,PERF,TEST,FIX,FIXME,FIXIT,BUG,ISSUE<CR>',
 	noremap
 ) -- open todo-comments within telescope
@@ -138,9 +138,9 @@ keymap.set(
 ------------------------------
 -- file explorer nvim-tree ---
 ------------------------------
-keymap.set('n', '<leader>eeo', ':NvimTreeToggle<CR>', noremap) -- toggle file explorer
-keymap.set('n', '<leader>eef', ':NvimTreeFindFile<CR>', noremap) --  Move the cursor in the tree for the current buffer, opening folders if needed.
-keymap.set('n', '<leader>eec', ':NvimTreeCollapse<CR>', noremap) -- Collapses the nvim-tree recursively.
+keymap.set('n', '<leader>eo', ':NvimTreeToggle<CR>', noremap) -- toggle file explorer
+keymap.set('n', '<leader>ef', ':NvimTreeFindFile<CR>', noremap) --  Move the cursor in the tree for the current buffer, opening folders if needed.
+keymap.set('n', '<leader>ec', ':NvimTreeCollapse<CR>', noremap) -- Collapses the nvim-tree recursively.
 
 -- lsp server restart
 keymap.set('n', '<leader>lsr', ':LspRestart<CR>', noremap) -- mapping to restart lsp if necessary
@@ -159,7 +159,3 @@ keymap.set('n', '<leader>mto', ':TableModeToggle<CR>', noremap) -- toggle markdo
 
 -- colorizer
 keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colorizer
-
--- rest nvim
-keymap.set('n', '<leader>rno', '<Plug>RestNvim<CR>', noremap) -- run the request under the cursor
-keymap.set('n', '<leader>rnl', '<Plug>RestNvimLast<CR>', noremap) -- re-run the last request

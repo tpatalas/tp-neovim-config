@@ -119,9 +119,9 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 
 | Keymap           | Description                         | Comment |
 | ---------------- | ----------------------------------- | ------- |
-| `leader+wsv`     | Split the window vertically         | -       |
-| `leader+wsh`     | Split the window horizontally       | -       |
-| `leader+wsc`     | Close the current split window      | -       |
+| `leader+wv`      | Split the window vertically         | -       |
+| `leader+wh`      | Split the window horizontally       | -       |
+| `leader+wc`      | Close the current split window      | -       |
 |                  |                                     |         |
 | `ctrl+alt+right` | Increase the vertical window size   | -       |
 | `ctrl+alt+left`  | Decrease the vertical window size   | -       |
