@@ -125,7 +125,7 @@ local function organize_imports()
 	vim.lsp.buf.execute_command(params)
 end
 
--- disable fallowing diagnostics
+-- disable following diagnostics
 vim.lsp.handlers['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
 	local client = vim.lsp.get_client_by_id(ctx.client_id)
 
