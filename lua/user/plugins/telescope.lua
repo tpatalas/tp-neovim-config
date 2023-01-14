@@ -36,11 +36,11 @@ telescope.setup({
 				width = 0.8,
 			},
 			horizontal = {
-				height = 0.95,
+				height = 0.99,
 				preview_cutoff = 0,
 				prompt_position = 'top',
-				width = 0.95,
-				preview_width = 0.60,
+				width = 0.99,
+				preview_width = 0.55,
 			},
 			vertical = {
 				height = 0.99,
