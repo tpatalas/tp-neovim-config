@@ -19,10 +19,10 @@ toggleterm.setup({
 	float_opts = {
 		border = 'curved',
 		width = function()
-			return math.floor(vim.o.columns * 0.95)
+			return math.floor(vim.o.columns * 1)
 		end,
 		height = function()
-			return math.floor(vim.o.lines * 0.90)
+			return math.floor(vim.o.lines * 1)
 		end,
 		winblend = 0,
 		highlights = {
