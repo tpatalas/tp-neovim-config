@@ -10,47 +10,16 @@ if not typescript_setup then
 	return
 end
 
+local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+if not cmp_nvim_lsp_status then
+	return
+end
+
 vim.diagnostic.config({
 	underline = true,
 	virtual_text = false,
 	update_in_insert = true,
 })
-
-vim.g.coq_settings = {
-	auto_start = 'shut-up',
-	keymap = {
-		pre_select = false, -- default false
-	},
-	match = {
-		max_results = 30, -- default 33
-	},
-	clients = {
-		lsp = {
-			resolve_timeout = 0.08, -- default 0.06
-			weight_adjust = 2,
-		},
-	},
-	display = {
-		pum = {
-			fast_close = false,
-			x_max_len = 50, -- default 66
-			x_truncate_len = 0, -- default 12
-		},
-		preview = {
-			positions = {
-				east = 1,
-				west = 2,
-				north = 3,
-				south = 4,
-			},
-		},
-	},
-	limits = {
-		completion_auto_timeout = 0.20, -- default 0.088
-	},
-}
-
-local coq = require('coq')
 
 ----------------------
 -- ltex custom path --
@@ -93,6 +62,8 @@ end
 local on_attach = function(client, bufnr)
 	keybinds()
 end
+
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
 local on_attach_ltex_extra = function(client, bufnr)
 	require('ltex_extra').setup({
@@ -142,13 +113,14 @@ end
 -- Servers --
 -------------
 -- html
-lspconfig['html'].setup(coq.lsp_ensure_capabilities({
+lspconfig['html'].setup({
 	on_attach = on_attach,
-}))
+})
 
 -- ltex
 -- equipped with ltex-extra plugin
-lspconfig['ltex'].setup(coq.lsp_ensure_capabilities({
+lspconfig['ltex'].setup({
+	capabilities = capabilities,
 	on_attach = on_attach_ltex_extra,
 	settings = {
 		-- more info on setting: https://valentjn.github.io/ltex/settings.html
@@ -167,11 +139,12 @@ lspconfig['ltex'].setup(coq.lsp_ensure_capabilities({
 			diagnosticSeverity = 'hint',
 		},
 	},
-}))
+})
 
 -- typescript
 -- Currently typescript.nvim plugin gives better functionality
-typescript.setup(coq.lsp_ensure_capabilities({
+typescript.setup({
+	capabilities = capabilities,
 	server = {
 		on_attach = on_attach,
 		commands = {
@@ -181,17 +154,20 @@ typescript.setup(coq.lsp_ensure_capabilities({
 			},
 		},
 	},
-}))
+})
 
-lspconfig['dockerls'].setup(coq.lsp_ensure_capabilities({
+lspconfig['dockerls'].setup({
+	capabilities = capabilities,
 	on_attach = on_attach,
-}))
+})
 
-lspconfig['jsonls'].setup(coq.lsp_ensure_capabilities({
+lspconfig['jsonls'].setup({
+	capabilities = capabilities,
 	on_attach = on_attach,
-}))
+})
 
-lspconfig['cssls'].setup(coq.lsp_ensure_capabilities({
+lspconfig['cssls'].setup({
+	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
 		scss = {
@@ -210,22 +186,26 @@ lspconfig['cssls'].setup(coq.lsp_ensure_capabilities({
 			},
 		},
 	},
-}))
+})
 
-lspconfig['cssmodules_ls'].setup(coq.lsp_ensure_capabilities({
+lspconfig['cssmodules_ls'].setup({
+	capabilities = capabilities,
 	on_attach = on_attach,
-}))
+})
 
-lspconfig['tailwindcss'].setup(coq.lsp_ensure_capabilities({
+lspconfig['tailwindcss'].setup({
+	capabilities = capabilities,
 	on_attach = on_attach,
-}))
+})
 
-lspconfig['emmet_ls'].setup(coq.lsp_ensure_capabilities({
+lspconfig['emmet_ls'].setup({
+	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
-}))
+})
 
-lspconfig['sumneko_lua'].setup(coq.lsp_ensure_capabilities({
+lspconfig['sumneko_lua'].setup({
+	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings for lua
 		Lua = {
@@ -242,4 +222,4 @@ lspconfig['sumneko_lua'].setup(coq.lsp_ensure_capabilities({
 			},
 		},
 	},
-}))
+})

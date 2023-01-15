@@ -1,40 +1,30 @@
+-- import nvim-autopairs safely
 local autopairs_setup, autopairs = pcall(require, 'nvim-autopairs')
 if not autopairs_setup then
 	return
 end
 
-local remap = vim.api.nvim_set_keymap
+-- configure autopairs
+autopairs.setup({
+	check_ts = true, -- enable treesitter
+	ts_config = {
+		lua = { 'string' }, -- don't add pairs in lua string treesitter nodes
+		javascript = { 'template_string' }, -- don't add pairs in javscript template_string treesitter nodes
+		java = false, -- don't check treesitter on java
+	},
+})
 
-autopairs.setup({ map_bs = false })
-
-vim.g.coq_settings = { keymap = { recommended = false } }
-
--- these mappings are coq recommended mappings unrelated to nvim-autopairs
-remap('i', '<esc>', [[pumvisible() ? "<c-e><esc>" : "<esc>"]], { expr = true, noremap = true })
-remap('i', '<c-c>', [[pumvisible() ? "<c-e><c-c>" : "<c-c>"]], { expr = true, noremap = true })
-remap('i', '<tab>', [[pumvisible() ? "<c-n>" : "<tab>"]], { expr = true, noremap = true })
-remap('i', '<s-tab>', [[pumvisible() ? "<c-p>" : "<bs>"]], { expr = true, noremap = true })
-
-_G.MUtils = {}
-
-MUtils.CR = function()
-	if vim.fn.pumvisible() ~= 0 then
-		if vim.fn.complete_info({ 'selected' }).selected ~= -1 then
-			return autopairs.esc('<c-y>')
-		else
-			return autopairs.esc('<c-e>') .. autopairs.autopairs_cr()
-		end
-	else
-		return autopairs.autopairs_cr()
-	end
+-- import nvim-autopairs completion functionality safely
+local cmp_autopairs_setup, cmp_autopairs = pcall(require, 'nvim-autopairs.completion.cmp')
+if not cmp_autopairs_setup then
+	return
 end
-remap('i', '<cr>', 'v:lua.MUtils.CR()', { expr = true, noremap = true })
 
-MUtils.BS = function()
-	if vim.fn.pumvisible() ~= 0 and vim.fn.complete_info({ 'mode' }).mode == 'eval' then
-		return autopairs.esc('<c-e>') .. autopairs.autopairs_bs()
-	else
-		return autopairs.autopairs_bs()
-	end
+-- import nvim-cmp plugin safely (completions plugin)
+local cmp_setup, cmp = pcall(require, 'cmp')
+if not cmp_setup then
+	return
 end
-remap('i', '<bs>', 'v:lua.MUtils.BS()', { expr = true, noremap = true })
+
+-- make autopairs and completion work together
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())

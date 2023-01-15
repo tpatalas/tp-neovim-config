@@ -13,29 +13,29 @@ colorscheme: [Tokyonight](https://github.com/folke/tokyonight.nvim)
 
 <!-- vim-markdown-toc GFM -->
 
-- [Installation (Homebrew)](#installation-homebrew)
-  - [Install Neovim](#install-neovim)
-  - [Install Lazygit](#install-lazygit)
-- [Major Keymaps](#major-keymaps)
-  - [General Keymaps (Normal Mode)](#general-keymaps-normal-mode)
-    - [Formatting](#formatting)
-    - [Buffers](#buffers)
-    - [Window Management](#window-management)
-- [Installed Plugins](#installed-plugins)
-  - [Plugin Manager](#plugin-manager)
-  - [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
-  - [Themes](#themes)
-  - [Windows and terminal Manager](#windows-and-terminal-manager)
-  - [Essential plugins](#essential-plugins)
-  - [Search, find, and navigation](#search-find-and-navigation)
-  - [Autocompletion and snippets](#autocompletion-and-snippets)
-  - [LSP Configuration](#lsp-configuration)
-  - [Formatting and linting](#formatting-and-linting)
-  - [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
-  - [Git integration](#git-integration)
-  - [Markdown](#markdown)
-  - [Comments](#comments)
-- [References](#references)
+* [Installation (Homebrew)](#installation-homebrew)
+  * [Install Neovim](#install-neovim)
+  * [Install Lazygit](#install-lazygit)
+* [Major Keymaps](#major-keymaps)
+  * [General Keymaps (Normal Mode)](#general-keymaps-normal-mode)
+    * [Formatting](#formatting)
+    * [Buffers](#buffers)
+    * [Window Management](#window-management)
+* [Installed Plugins](#installed-plugins)
+  * [Plugin Manager](#plugin-manager)
+  * [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
+  * [Themes](#themes)
+  * [Windows and terminal Manager](#windows-and-terminal-manager)
+  * [Essential plugins](#essential-plugins)
+  * [Search, find, and navigation](#search-find-and-navigation)
+  * [Autocompletion and snippets](#autocompletion-and-snippets)
+  * [LSP Configuration](#lsp-configuration)
+  * [Formatting and linting](#formatting-and-linting)
+  * [Syntax highlight and auto-closing](#syntax-highlight-and-auto-closing)
+  * [Git integration](#git-integration)
+  * [Markdown](#markdown)
+  * [Comments](#comments)
+* [References](#references)
 
 <!-- vim-markdown-toc -->
 
@@ -168,7 +168,7 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 
 #### Autocompletion and snippets
 
-- [coq_nvim](https://github.com/ms-jpq/coq_nvim)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
 #### LSP Configuration
 
