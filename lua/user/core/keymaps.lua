@@ -5,7 +5,6 @@ local noremap = { noremap = true }
 keymap.set('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
-vim.g.VM_default_mappings = 0 -- disable the visual-multi default key mapping
 
 -- Modes
 --   normal_mode = "n",
@@ -20,7 +19,7 @@ vim.g.VM_default_mappings = 0 -- disable the visual-multi default key mapping
 ---------------------------------
 
 -- escape insert mode
-keymap.set('i', 'jk', '<ESC>l', noremap)
+keymap.set('i', 'jk', '<ESC>', noremap)
 
 -- delete Word in insert mode
 keymap.set('i', '<c-d><c-d>', '<ESC>dawi', noremap)
@@ -47,6 +46,8 @@ keymap.set('n', '<leader>EE', ':e!<CR>', noremap) -- save
 keymap.set('n', '<leader>RR', ':%s/<c-r><c-w>/<c-r><c-w>', noremap) -- Search and replace the word under current
 keymap.set('n', '<leader>rr', '*#cgn', noremap) -- change the current word under the cursor * change > ESC > press `.` to change next
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
+keymap.set('n', 'n', 'nzz', noremap) -- center search result
+keymap.set('n', 'n', 'Nzz', noremap) -- center search result
 
 ----------------
 -- formatting --
@@ -102,7 +103,7 @@ keymap.set('n', '<c-a-left>', ':vertical resize -5<CR>', noremap) -- decrease si
 keymap.set('n', '<c-a-up>', ':horizontal resize +5<CR>', noremap) -- increase size horizontally
 keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decrease size horizontally
 keymap.set('n', '<c-@>', '<C-W>w', noremap) -- ctrl+` is the easier way to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
-keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press <alt-=>
+keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press < alt-= >
 
 ----------------------
 --  Plugin Keybinds --
@@ -143,7 +144,7 @@ keymap.set('n', '<leader>ef', ':NvimTreeFindFile<CR>', noremap) --  Move the cur
 keymap.set('n', '<leader>ec', ':NvimTreeCollapse<CR>', noremap) -- Collapses the nvim-tree recursively.
 
 -- lsp server restart
-keymap.set('n', '<leader>lsr', ':LspRestart<CR>', noremap) -- mapping to restart lsp if necessary
+keymap.set('n', '<leader>lsp', ':LspRestart<CR>', noremap) -- mapping to restart lsp if necessary
 
 -- markdown preview
 keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
