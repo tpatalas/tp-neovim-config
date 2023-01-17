@@ -107,55 +107,8 @@ lualine.setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	tabline = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {
-			{
-				'buffers',
-				show_filename_only = true, -- Shows shortened relative path when set to false.
-				hide_filename_extension = true, -- Hide filename extension when set to true.
-				show_modified_status = true, -- Shows indicator when the buffer is modified.	mode = 2,
-				mode = 2,
-				-- 0: Shows buffer name
-				-- 1: Shows buffer index
-				-- 2: Shows buffer name + buffer index
-				-- 3: Shows buffer number
-				-- 4: Shows buffer name + buffer number
-				symbols = {
-					modified = ' ●',
-					alternate_file = '',
-					directory = '',
-				},
-				max_length = vim.o.columns * 7 / 10,
-			},
-		},
-		lualine_x = {},
-		lualine_y = {
-			{
-				'filename',
-				file_status = true,
-				newfile_status = false,
-				path = 1,
-				shorting_target = 100,
-				symbols = {
-					modified = '[+]',
-					readonly = '[-]',
-					unnamed = '',
-					newfile = '[New]',
-				},
-			},
-		},
-		lualine_z = {},
-	},
-	winbar = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {},
-	},
+	tabline = {},
+	winbar = {},
 	inactive_winbar = {},
 	extensions = { 'toggleterm', 'nvim-tree' },
 })
