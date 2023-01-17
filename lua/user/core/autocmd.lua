@@ -42,3 +42,15 @@ vim.cmd([[autocmd FileType lua :%s/\s\+$//e]])
 -- auto close quickFix after selecting item --
 ----------------------------------------------
 vim.cmd([[autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>]])
+
+------------------------
+-- auto cursor shape --
+-----------------------
+vim.cmd([[
+  augroup BlinkCursor
+    autocmd!
+    autocmd BufRead,BufNewFile * set guicursor=n-v:block-Cursor
+    autocmd InsertEnter * set guicursor+=i-c:ver100-iCursor
+    autocmd CursorHold,CursorHoldI * set guicursor+=n-v-c:blinkon1
+  augroup end
+]])
