@@ -1,20 +1,27 @@
-require('user.plugins-setup')
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		'git',
+		'clone',
+		'--filter=blob:none',
+		'https://github.com/folke/lazy.nvim.git',
+		'--branch=stable', -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.maplocalleader = ' '
+vim.g.mapleader = ' '
+
 require('user.core.reload')
 require('user.core.options')
 require('user.core.keymaps')
-require('user.core.colorscheme')
 require('user.core.autocmd')
-require('user.plugins.telescope')
-require('user.plugins.comment')
-require('user.plugins.lualine')
-require('user.plugins.nvim-tree')
-require('user.plugins.lsp.mason')
-require('user.plugins.lsp.lspsaga')
-require('user.plugins.lsp.lspconfig')
-require('user.plugins.lsp.null-ls')
-require('user.plugins.autopairs')
-require('user.plugins.treesitter')
-require('user.plugins.gitsigns')
-require('user.plugins.toggle-term')
-require('user.plugins.todo-comments')
-require('user.plugins.nvim-cmp')
+
+require('lazy').setup('user.plugins', {
+	change_detection = {
+		enabled = true,
+		notify = false,
+	},
+})
