@@ -11,15 +11,6 @@ return {
 			definition_action_keys = {
 				edit = '<CR>',
 			},
-			symbol_in_winbar = {
-				enable = true,
-				separator = ' ',
-				hide_keyword = true,
-				show_file = true,
-				folder_level = 2,
-				respect_root = true,
-				color_mode = true,
-			},
 			ui = {
 				-- currently only round theme
 				theme = 'round',
