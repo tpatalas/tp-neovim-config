@@ -40,8 +40,4 @@ luac.out
 *.x86_64
 *.hex
 
-# unrelated
-*note.md
-
-plugin/packer_compiled.lua
 .luarc.json

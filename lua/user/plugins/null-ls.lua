@@ -88,8 +88,8 @@ return {
 			formatting.prettierd,
 			diagnostics.cspell.with(cspell),
 			codeactions.cspell.with(cspell),
-			codeactions.eslint.with(eslint),
-			diagnostics.eslint.with(eslint),
+			codeactions.eslint_d.with(eslint),
+			diagnostics.eslint_d.with(eslint),
 		}
 
 		local on_attach = function(current_client, bufnr)
