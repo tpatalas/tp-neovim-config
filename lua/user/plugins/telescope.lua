@@ -1,11 +1,11 @@
 return {
-	'nvim-telescope/telescope-fzf-native.nvim',
+	'nvim-telescope/telescope.nvim',
 	lazy = true,
 	cmd = 'Telescope',
-	build = 'make',
+	branch = '0.1.x', -- fuzzy finder
 	dependencies = {
-		'nvim-telescope/telescope.nvim',
-		branch = '0.1.x', -- fuzzy finder
+		'nvim-telescope/telescope-fzf-native.nvim',
+		build = 'make',
 	},
 	config = function()
 		local actions = require('telescope.actions')
@@ -67,5 +67,6 @@ return {
 			},
 			extensions = {},
 		})
+		require('telescope').load_extension('fzf')
 	end,
 }
