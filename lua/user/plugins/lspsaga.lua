@@ -11,6 +11,9 @@ return {
 			definition_action_keys = {
 				edit = '<CR>',
 			},
+			symbol_in_winbar = {
+				enable = false,
+			},
 			ui = {
 				-- currently only round theme
 				theme = 'round',

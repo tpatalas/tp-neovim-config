@@ -88,8 +88,8 @@ keymap.set('n', '<a-8>', ':LualineBuffersJump 8<CR>', noremap)
 keymap.set('n', '<a-9>', ':LualineBuffersJump 9<CR>', noremap)
 keymap.set('n', '<a-10>', ':LualineBuffersJump 10<CR>', noremap)
 -- buffers action
-keymap.set('n', '<a-w>', ':bp<bar>sp<bar>bn<bar>bd<CR>', noremap) -- close current buffer
-keymap.set('n', '<a-W>', ':%bd|e#|bd#<CR><CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
+keymap.set('n', '<leader>ww', ':bp<bar>sp<bar>bn<bar>bd<CR>', noremap) -- close current buffer
+keymap.set('n', '<leader>WW', ':%bd|e#|bd#<CR><CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
 
 -- delete single character without copying into register
 keymap.set('n', 'x', '"_x', noremap)
