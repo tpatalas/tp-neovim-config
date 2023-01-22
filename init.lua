@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
 
-require('user.core.reload')
 require('user.core.options')
 require('user.core.keymaps')
 require('user.core.autocmd')
