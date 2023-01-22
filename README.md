@@ -112,8 +112,8 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 | `alt+9`           | Go to the buffer 9                  | Plugin: Lualine |
 | `alt+0`           | Go to the buffer 10                 | Plugin: Lualine |
 |                   |                                     |                 |
-| `alt+w`           | Close the current buffer            | -               |
-| `alt+W`           | Close all except the current buffer | -               |
+| `<leader>ww`      | Close the current buffer            | -               |
+| `<ldeader>WW`     | Close all except the current buffer | -               |
 
 ##### Window Management
 

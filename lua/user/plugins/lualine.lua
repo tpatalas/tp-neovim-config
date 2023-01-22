@@ -14,18 +14,18 @@ return {
 			normal = {
 				a = { fg = colors.blue, bg = colors.bg_dark },
 				b = { fg = colors.fg_float, bg = colors.bg_dark },
-				c = { fg = colors.yellow, bg = colors.bg_dark },
+				c = { fg = colors.cyan, bg = colors.bg_dark },
 				x = { fg = colors.fg_float, bg = colors.bg_dark },
 				y = { fg = colors.fg_float, bg = colors.bg_dark },
 				z = { fg = colors.yellow, bg = colors.bg_dark },
 			},
 			insert = {
-				a = { fg = colors.cyan, bg = colors.bg_dark },
-				b = { fg = colors.cyan, bg = colors.bg_dark },
-				c = { fg = colors.cyan, bg = colors.bg_dark },
-				x = { fg = colors.cyan, bg = colors.bg_dark },
-				y = { fg = colors.cyan, bg = colors.bg_dark },
-				z = { fg = colors.cyan, bg = colors.bg_dark },
+				a = { fg = colors.yellow, bg = colors.bg_dark },
+				b = { fg = colors.yellow, bg = colors.bg_dark },
+				c = { fg = colors.yellow, bg = colors.bg_dark },
+				x = { fg = colors.yellow, bg = colors.bg_dark },
+				y = { fg = colors.yellow, bg = colors.bg_dark },
+				z = { fg = colors.yellow, bg = colors.bg_dark },
 			},
 			visual = {
 				a = { fg = colors.magenta, bg = colors.bg_dark },
@@ -45,6 +45,9 @@ return {
 				a = { fg = colors.fg_gutter, bg = '' },
 				b = { fg = colors.fg_gutter, bg = '' },
 				c = { fg = colors.fg_gutter, bg = '' },
+				x = { fg = colors.fg_gutter, bg = '' },
+				y = { fg = colors.fg_gutter, bg = '' },
+				z = { fg = colors.fg_gutter, bg = '' },
 			},
 		}
 
@@ -68,9 +71,9 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { 'mode' },
-				lualine_b = { 'branch' },
-				lualine_c = {
+				lualine_a = { { 'mode', icon = '', color = { bg = colors.bg_highlight } } },
+				lualine_b = {
+					{ 'branch', icon = { '', align = 'left' } },
 					{
 						'diagnostics',
 						sources = { 'nvim_workspace_diagnostic' },
@@ -81,11 +84,15 @@ return {
 						always_visible = false,
 					},
 				},
+				lualine_c = {},
 				lualine_x = { 'filetype' },
 				lualine_y = { 'progress', 'location' },
 				lualine_z = {
-					total_lines,
-					'filesize',
+					{ total_lines, icon = 'ﴴ' },
+					{
+						'filesize',
+						icon = '',
+					},
 					{
 						'diff',
 						symbols = { added = ' ', modified = '柳', removed = ' ' },
@@ -106,7 +113,19 @@ return {
 				lualine_y = {},
 				lualine_z = {},
 			},
-			tabline = {},
+			tabline = {
+				lualine_c = {
+					{
+						'buffers',
+						max_length = vim.o.columns * 9 / 10, -- Maximum width of tabs component.
+						mode = 2,
+						buffers_color = {
+							active = { fg = colors.green1, bg = colors.bg_highlight }, -- Color for active tab.
+							inactive = { fg = colors.fg_gutter, bg = colors.bg_dark }, -- Color for inactive tab.
+						},
+					},
+				},
+			},
 			winbar = {},
 			inactive_winbar = {},
 			extensions = { 'toggleterm', 'nvim-tree' },
