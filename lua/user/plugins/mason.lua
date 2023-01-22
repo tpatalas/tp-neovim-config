@@ -20,8 +20,6 @@ return {
 		})
 
 		mason_lspconfig.setup({
-			-- list of servers for mason to install
-			-- https://github.com/williamboman/mason-lspconfig.nvim
 			ensure_installed = {
 				'tsserver',
 				'html',
