@@ -12,8 +12,8 @@ return {
 		require('telescope').setup({
 			defaults = {
 				sorting_strategy = 'ascending',
-				path_display = { 'smart' },
-				-- path_display = { truncate = 6 },
+				-- path_display = { 'smart' },
+				path_display = { truncate = 6 },
 				prompt_prefix = '> ',
 				layout_strategy = 'horizontal',
 				layout_config = {
