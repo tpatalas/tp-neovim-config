@@ -3,11 +3,6 @@
 -----------------------------
 vim.cmd([[autocmd BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=63,72,80]])
 
-------------------------------
--- keymap based on filetype --
-------------------------------
-vim.cmd([[autocmd FileType lua nnoremap <buffer><leader><CR><CR> :w<CR><cmd>lua ReloadConfig()<CR>]])
-
 -----------------------------------------
 -- conditional textwidth and wrap text --
 -----------------------------------------

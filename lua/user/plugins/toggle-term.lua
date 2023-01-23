@@ -50,7 +50,7 @@ return {
 			dir = 'git_dir',
 			direction = 'float',
 			float_opts = {
-				border = 'single',
+				border = 'curved',
 			},
 			-- function to run on opening the terminal
 			on_open = function(term)
