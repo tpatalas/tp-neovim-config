@@ -95,9 +95,15 @@ return {
 						always_visible = false,
 					},
 				},
-				lualine_c = {},
+				lualine_c = {
+					{
+						require('lazy.status').updates,
+						cond = require('lazy.status').has_updates,
+						color = { fg = '#ff9e64' },
+					},
+				},
 				lualine_x = { 'filetype' },
-				lualine_y = { { 'location', padding = 0 }, { 'progress', icon = '' } },
+				lualine_y = { { 'location' }, { 'progress', icon = '' } },
 				lualine_z = {
 					{ total_lines, icon = 'ﴴ' },
 					{
