@@ -165,6 +165,7 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Vim-matchup](https://github.com/andymass/vim-matchup)
 - [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
+- [Barbecue](https://github.com/utilyre/barbecue.nvim)
 
 #### Autocompletion and snippets
 

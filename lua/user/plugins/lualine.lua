@@ -4,36 +4,40 @@
 return {
 	'nvim-lualine/lualine.nvim',
 	config = function()
-		local colors = require('tokyonight.colors').setup() -- pass in any of the config options as explained above
+		local colors = require('tokyonight.colors').setup()
 
 		local total_lines = function()
 			return vim.fn.line('$')
 		end
 
+		local block = function()
+			return '▊'
+		end
+
 		local custom_theme = {
 			normal = {
-				a = { fg = colors.blue, bg = colors.bg_dark },
-				b = { fg = colors.fg_float, bg = colors.bg_dark },
-				c = { fg = colors.cyan, bg = colors.bg_dark },
-				x = { fg = colors.fg_float, bg = colors.bg_dark },
-				y = { fg = colors.fg_float, bg = colors.bg_dark },
-				z = { fg = colors.yellow, bg = colors.bg_dark },
+				a = { fg = colors.blue, bg = '' },
+				b = { fg = colors.fg_float, bg = '' },
+				c = { fg = colors.cyan, bg = '' },
+				x = { fg = colors.fg_float, bg = '' },
+				y = { fg = colors.fg_float, bg = '' },
+				z = { fg = colors.blue, bg = '' },
 			},
 			insert = {
-				a = { fg = colors.yellow, bg = colors.bg_dark },
-				b = { fg = colors.yellow, bg = colors.bg_dark },
-				c = { fg = colors.yellow, bg = colors.bg_dark },
-				x = { fg = colors.yellow, bg = colors.bg_dark },
-				y = { fg = colors.yellow, bg = colors.bg_dark },
-				z = { fg = colors.yellow, bg = colors.bg_dark },
+				a = { fg = colors.yellow, bg = '' },
+				b = { fg = colors.yellow, bg = '' },
+				c = { fg = colors.yellow, bg = '' },
+				x = { fg = colors.yellow, bg = '' },
+				y = { fg = colors.yellow, bg = '' },
+				z = { fg = colors.yellow, bg = '' },
 			},
 			visual = {
-				a = { fg = colors.magenta, bg = colors.bg_dark },
-				b = { fg = colors.magenta, bg = colors.bg_dark },
-				c = { fg = colors.magenta, bg = colors.bg_dark },
-				x = { fg = colors.magenta, bg = colors.bg_dark },
-				y = { fg = colors.magenta, bg = colors.bg_dark },
-				z = { fg = colors.magenta, bg = colors.bg_dark },
+				a = { fg = colors.magenta, bg = '' },
+				b = { fg = colors.magenta, bg = '' },
+				c = { fg = colors.magenta, bg = '' },
+				x = { fg = colors.magenta, bg = '' },
+				y = { fg = colors.magenta, bg = '' },
+				z = { fg = colors.magenta, bg = '' },
 			},
 			command = {
 				a = {
@@ -71,7 +75,14 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { { 'mode', icon = '', color = { bg = colors.bg_highlight } } },
+				lualine_a = {
+					{
+						'mode',
+						icon = '▊ ',
+						color = { bg = colors.bg_highlight },
+						padding = { left = 0, right = 1 },
+					},
+				},
 				lualine_b = {
 					{ 'branch', icon = { '', align = 'left' } },
 					{
@@ -86,7 +97,7 @@ return {
 				},
 				lualine_c = {},
 				lualine_x = { 'filetype' },
-				lualine_y = { 'progress', 'location' },
+				lualine_y = { { 'location', padding = 0 }, { 'progress', icon = '' } },
 				lualine_z = {
 					{ total_lines, icon = 'ﴴ' },
 					{
@@ -102,9 +113,9 @@ return {
 							removed = { fg = colors.red },
 						},
 					},
+					{ block, padding = 0.4 },
 				},
 			},
-			--
 			inactive_sections = {
 				lualine_a = {},
 				lualine_b = {},
@@ -120,8 +131,8 @@ return {
 						max_length = vim.o.columns * 9 / 10, -- Maximum width of tabs component.
 						mode = 2,
 						buffers_color = {
-							active = { fg = colors.green1, bg = colors.bg_highlight }, -- Color for active tab.
-							inactive = { fg = colors.fg_gutter, bg = colors.bg_dark }, -- Color for inactive tab.
+							active = { fg = colors.green1, bg = colors.terminal_black }, -- Color for active tab.
+							inactive = { fg = colors.comment, bg = colors.bg_dark }, -- Color for inactive tab.
 						},
 					},
 				},
