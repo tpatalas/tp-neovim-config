@@ -145,6 +145,7 @@ keymap.set('n', '<leader>ec', ':NvimTreeCollapse<CR>', noremap) -- Collapses the
 
 -- lsp server restart
 keymap.set('n', '<leader>lsp', ':LspRestart<CR>', noremap) -- mapping to restart lsp if necessary
+keymap.set('n', '<leader>lsd', ':lua vim.diagnostic.reset()<CR>', noremap) -- reset diagnostics
 
 -- markdown preview
 keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
