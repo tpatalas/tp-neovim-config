@@ -120,7 +120,7 @@ keymap.set('n', '<leader>tl', ':lua_LAZYGIT_TOGGLE()<CR>', noremap)
 -- telescope find files
 keymap.set('n', '<leader>to', '<cmd>Telescope find_files previewer=false<CR>', noremap) -- find files within current working directory, respects gitignore
 keymap.set('n', '<leader>ts', '<cmd>Telescope live_grep previewer=false<CR>', noremap) -- find string in current working directory as you type
-keymap.set('n', '<leader>tc', '<cmd>Telescope grep_string previewer=false<CR>', noremap) -- find string under cursor in current working directory
+keymap.set('n', '<leader>tc', '<cmd>Telescope grep_string<CR>', noremap) -- find string under cursor in current working directory
 keymap.set('n', '<leader>tb', '<cmd>Telescope buffers<CR> previewer=false', noremap) -- list open buffers in current neovim instance
 keymap.set('n', '<leader>th', '<cmd>Telescope help_tags previewer=false<CR>', noremap) -- list available help tags
 keymap.set('n', '<leader>td', '<cmd>Telescope diagnostics<CR>', noremap) -- lists diagnostics for all open buffers
