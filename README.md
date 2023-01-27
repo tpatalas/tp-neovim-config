@@ -35,7 +35,6 @@ colorscheme: [Tokyonight](https://github.com/folke/tokyonight.nvim)
   - [Git integration](#git-integration)
   - [Markdown](#markdown)
   - [Comments](#comments)
-- [References](#references)
 
 <!-- vim-markdown-toc -->
 
@@ -165,7 +164,6 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Vim-matchup](https://github.com/andymass/vim-matchup)
 - [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
-- [Barbecue](https://github.com/utilyre/barbecue.nvim)
 
 #### Autocompletion and snippets
 
@@ -202,9 +200,3 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 - [Todo-comments](https://github.com/folke/todo-comments.nvim)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
 - [Nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
-
-### References
-
-- [LunarVim/Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch)
-- [Homebrew](https://brew.sh/)
-- [Jesseduffield/lazygit](https://github.com/jesseduffield/lazygit/)
