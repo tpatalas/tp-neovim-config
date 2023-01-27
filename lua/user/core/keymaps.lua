@@ -116,18 +116,19 @@ keymap.set('n', '<leader>tl', ':lua_LAZYGIT_TOGGLE()<CR>', noremap)
 ---------------
 -- telescope --
 ---------------
+-- toggle previewer by <C-p>
 -- telescope find files
-keymap.set('n', '<leader>to', '<cmd>Telescope find_files<CR>', noremap) -- find files within current working directory, respects gitignore
-keymap.set('n', '<leader>ts', '<cmd>Telescope live_grep<CR>', noremap) -- find string in current working directory as you type
-keymap.set('n', '<leader>tc', '<cmd>Telescope grep_string<CR>', noremap) -- find string under cursor in current working directory
-keymap.set('n', '<leader>tb', '<cmd>Telescope buffers<CR>', noremap) -- list open buffers in current neovim instance
-keymap.set('n', '<leader>th', '<cmd>Telescope help_tags<CR>', noremap) -- list available help tags
+keymap.set('n', '<leader>to', '<cmd>Telescope find_files previewer=false<CR>', noremap) -- find files within current working directory, respects gitignore
+keymap.set('n', '<leader>ts', '<cmd>Telescope live_grep previewer=false<CR>', noremap) -- find string in current working directory as you type
+keymap.set('n', '<leader>tc', '<cmd>Telescope grep_string previewer=false<CR>', noremap) -- find string under cursor in current working directory
+keymap.set('n', '<leader>tb', '<cmd>Telescope buffers<CR> previewer=false', noremap) -- list open buffers in current neovim instance
+keymap.set('n', '<leader>th', '<cmd>Telescope help_tags previewer=false<CR>', noremap) -- list available help tags
 keymap.set('n', '<leader>td', '<cmd>Telescope diagnostics<CR>', noremap) -- lists diagnostics for all open buffers
 -- telescope git commands
-keymap.set('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', noremap) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set('n', '<leader>gf', '<cmd>Telescope git_bcommits<CR>', noremap) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set('n', '<leader>gb', '<cmd>Telescope git_branches<CR>', noremap) -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set('n', '<leader>gs', '<cmd>Telescope git_status<CR>', noremap) -- list current changes per file with diff preview ["gs" for git status]
+keymap.set('n', '<leader>gc', '<cmd>Telescope git_commits previewer=false<CR>', noremap) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+keymap.set('n', '<leader>gf', '<cmd>Telescope git_bcommits<CR> previewer=false', noremap) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+keymap.set('n', '<leader>gb', '<cmd>Telescope git_branches previewer=false<CR>', noremap) -- list git branches (use <cr> to checkout) ["gb" for git branch]
+keymap.set('n', '<leader>gs', '<cmd>Telescope git_status previewer=false<CR>', noremap) -- list current changes per file with diff preview ["gs" for git status]
 -- telescope todo-comments
 keymap.set(
 	'n',
