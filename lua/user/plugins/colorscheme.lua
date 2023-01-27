@@ -39,6 +39,7 @@ return {
 				highlights.ColorColumn = { bg = colors.bg_highlight }
 				highlights.Cursor = { bg = colors.yellow }
 				highlights.NormalFloat = { bg = colors.bg }
+				highlights.LspSagaWinbarFolderName = { fg = colors.fg_dark }
 			end,
 		})
 
