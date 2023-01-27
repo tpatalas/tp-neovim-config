@@ -1,7 +1,11 @@
+-- https://github.com/glepnir/lspsaga.nvim
+-- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
+
 return {
 	'glepnir/lspsaga.nvim',
-	event = 'BufRead',
+	-- event = 'BufRead',
 	config = function()
+		local colors = require('tokyonight.colors').setup()
 		local saga = require('lspsaga')
 		saga.setup({
 			move_in_saga = { prev = '<C-k>', next = '<C-j>' },
@@ -12,13 +16,15 @@ return {
 				edit = '<CR>',
 			},
 			symbol_in_winbar = {
-				enable = false,
+				enable = true,
+				separator = '  ',
+				color_mode = false,
 			},
 			ui = {
 				-- currently only round theme
 				theme = 'round',
 				-- border type can be single,double,rounded,solid,shadow.
-				border = 'double',
+				border = '',
 				winblend = 0,
 				expand = '',
 				collapse = '',
@@ -28,20 +34,14 @@ return {
 				incoming = ' ',
 				outgoing = ' ',
 				colors = {
-					--float window normal background color
+					-- highlights.LspSagaWinbarFolderName =  -- in the colorScheme
 					normal_bg = '',
-					--title background color
-					title_bg = '#afd700',
-					red = '#e95678',
-					magenta = '#b33076',
-					orange = '#FF8700',
-					yellow = '#f7bb3b',
-					green = '#afd700',
-					cyan = '#36d0e0',
-					blue = '#61afef',
-					purple = '#CBA6F7',
-					white = '#d1d4cf',
-					black = '#1c1c19',
+					red = colors.fg_dark,
+					orange = colors.orange,
+					white = colors.fg_dark,
+				},
+				kind = {
+					Folder = '',
 				},
 			},
 		})
