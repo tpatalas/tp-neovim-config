@@ -9,13 +9,14 @@ return {
 	},
 	config = function()
 		local actions = require('telescope.actions')
+		local layouts = require('telescope.actions.layout')
 		require('telescope').setup({
 			defaults = {
 				sorting_strategy = 'ascending',
 				-- path_display = { 'smart' },
-				path_display = { truncate = 6 },
-				prompt_prefix = '> ',
-				layout_strategy = 'horizontal',
+				-- path_display = { truncate = 6 },
+				prompt_prefix = '  ',
+				layout_strategy = 'vertical',
 				layout_config = {
 					bottom_pane = {
 						height = 25,
@@ -23,10 +24,10 @@ return {
 						prompt_position = 'top',
 					},
 					center = {
-						height = 0.30,
+						height = 0.99,
 						preview_cutoff = 0,
 						prompt_position = 'top',
-						width = 0.95,
+						width = 0.85,
 						anchor = 'N',
 						mirror = true,
 					},
@@ -36,7 +37,7 @@ return {
 						width = 0.8,
 					},
 					horizontal = {
-						height = 0.99,
+						height = 0.97,
 						preview_cutoff = 0,
 						prompt_position = 'top',
 						width = 0.99,
@@ -46,7 +47,8 @@ return {
 						height = 0.99,
 						preview_cutoff = 0,
 						prompt_position = 'top',
-						width = 0.90,
+						width = 0.85,
+						preview_height = 0.73,
 						anchor = 'N',
 						mirror = true,
 					},
@@ -57,6 +59,7 @@ return {
 						['<C-k>'] = actions.move_selection_previous, -- move to prev result
 						['<C-j>'] = actions.move_selection_next, -- move to next result
 						['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickFixList
+						['<C-p>'] = layouts.toggle_preview, -- toggle preview.
 					},
 				},
 			},
