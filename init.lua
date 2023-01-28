@@ -26,6 +26,5 @@ require('lazy').setup('user.plugins', {
 	checker = {
 		enabled = true,
 		notify = false, -- integrated with lualine. Lazy will show a number of available updates on the lualine
-		frequency = 21600, -- check update every 6 hours
 	},
 })

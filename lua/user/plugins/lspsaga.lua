@@ -24,7 +24,7 @@ return {
 				-- currently only round theme
 				theme = 'round',
 				-- border type can be single,double,rounded,solid,shadow.
-				border = '',
+				border = 'rounded',
 				winblend = 0,
 				expand = '',
 				collapse = '',
