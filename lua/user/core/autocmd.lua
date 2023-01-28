@@ -1,13 +1,14 @@
------------------------------
--- conditional colorcolumn --
------------------------------
-vim.cmd([[autocmd BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=63,72,80]])
-
 -----------------------------------------
 -- conditional textwidth and wrap text --
 -----------------------------------------
-vim.cmd([[autocmd FileType markdown set colorcolumn=80,90]])
-vim.cmd([[autocmd FileType markdown set textwidth=80 wrap]])
+vim.cmd([[
+  augroup MarkdownWrap
+    autocmd!
+    autocmd BufRead,BufNewFile * if &filetype != 'markdown' && &filetype != 'gitcommit' | set textwidth=0 nowrap colorcolumn=80 | endif
+    autocmd FileType markdown set textwidth=80 wrap colorcolumn=80,90
+    autocmd FileType gitcommit set colorcolumn=63,80
+  augroup end
+]])
 
 ---------------------------------------------------
 -- highlight and autosave the match under cursor --
@@ -50,7 +51,13 @@ vim.cmd([[
   augroup end
 ]])
 
-------------------------------
--- auto restart ltex server --
-------------------------------
-vim.cmd([[autocmd BufDelete * if &filetype == "gitcommit" || &filetype == 'markdown' | silent! :LspRestart | endif ]])
+----------------------
+-- auto ltex server --
+----------------------
+vim.cmd([[
+  augroup LspLtexLs
+      autocmd!
+      autocmd BufRead,BufNewFile,BufEnter * if &filetype == "gitcommit" || &filetype == 'markdown' | silent! :LspStart | endif
+      autocmd BufDelete * if &filetype == "gitcommit" || &filetype == 'markdown' | silent! :LspStop | endif
+  augroup end
+]])

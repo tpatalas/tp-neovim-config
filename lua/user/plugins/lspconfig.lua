@@ -116,7 +116,8 @@ return {
 		lspconfig['ltex'].setup({
 			capabilities = capabilities,
 			on_attach = on_attach_ltex_extra,
-			fileTypes = { 'gitcommit', 'markdown' },
+			filetypes = { 'gitcommit', 'markdown' },
+			autostart = false,
 			settings = {
 				-- more info on setting: https://valentjn.github.io/ltex/settings.html
 				ltex = {
