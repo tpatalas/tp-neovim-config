@@ -49,3 +49,8 @@ vim.cmd([[
     autocmd CursorHold,CursorHoldI * set guicursor+=n-v-c:blinkon1
   augroup end
 ]])
+
+------------------------------
+-- auto restart ltex server --
+------------------------------
+vim.cmd([[autocmd BufDelete * if &filetype == "gitcommit" || &filetype == 'markdown' | silent! :LspRestart | endif ]])
