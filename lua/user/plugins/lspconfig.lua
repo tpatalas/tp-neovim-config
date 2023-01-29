@@ -121,9 +121,12 @@ return {
 			settings = {
 				-- more info on setting: https://valentjn.github.io/ltex/settings.html
 				ltex = {
+					-- more info: https://valentjn.github.io/ltex/settings.html#ltexjavainitialheapsize
 					additionalRules = {
 						enablePickyRules = true,
 						motherTongue = 'en',
+						-- NOTE: languageModel and word2VecModel increase the memory usage.
+						--
 						-- download n-gram: https://dev.languagetool.org/finding-errors-using-n-gram-data.html
 						-- please read before download n-gram data, it is 8.3GB for just English.
 						languageModel = '~/.language-models/ngram',
@@ -133,6 +136,11 @@ return {
 					},
 					checkFrequency = 'edit', -- save or manual if performance has an issue
 					diagnosticSeverity = 'hint',
+					java = {
+						initialHeapSize = 48, -- in megabytes default: 64
+						maximumHeapSize = 312, -- in megabytes default: 512
+					},
+					sentenceCacheSize = 1000, -- default: 2000
 				},
 			},
 		})
