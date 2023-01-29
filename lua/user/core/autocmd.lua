@@ -58,6 +58,6 @@ vim.cmd([[
   augroup LspLtexLs
       autocmd!
       autocmd BufRead,BufNewFile,BufEnter * if &filetype == "gitcommit" || &filetype == 'markdown' | silent! :LspStart | endif
-      autocmd BufDelete * if &filetype == "gitcommit" || &filetype == 'markdown' | silent! :LspStop | endif
+      autocmd BufDelete,BufHidden * if &filetype == "gitcommit" || &filetype == 'markdown' | silent! :LspStop | endif
   augroup end
 ]])

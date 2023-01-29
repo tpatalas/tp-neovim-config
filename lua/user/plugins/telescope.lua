@@ -48,7 +48,7 @@ return {
 						preview_cutoff = 0,
 						prompt_position = 'top',
 						width = 0.85,
-						preview_height = 0.73,
+						preview_height = 0.70,
 						anchor = 'N',
 						mirror = true,
 					},
