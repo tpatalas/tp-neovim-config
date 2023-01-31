@@ -145,9 +145,14 @@ keymap.set('n', '<leader>eo', ':NvimTreeToggle<CR>', noremap) -- toggle file exp
 keymap.set('n', '<leader>ef', ':NvimTreeFindFile<CR>', noremap) --  Move the cursor in the tree for the current buffer, opening folders if needed.
 keymap.set('n', '<leader>ec', ':NvimTreeCollapse<CR>', noremap) -- Collapses the nvim-tree recursively.
 
--- lsp server restart
+------------------------
+-- lsp server restart --
+------------------------
 keymap.set('n', '<leader>lsp', ':LspRestart<CR>', noremap) -- mapping to restart lsp if necessary
 keymap.set('n', '<leader>lsd', ':lua vim.diagnostic.reset()<CR>', noremap) -- reset diagnostics
+-- ltex
+keymap.set('n', '<leader>ltp', ':LspStart ltex-ls<CR>', noremap)
+keymap.set('n', '<leader>lts', ':LspStop ltex-ls<CR>', noremap)
 
 -- markdown preview
 keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
