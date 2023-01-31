@@ -14,13 +14,57 @@ return {
 			return '▊'
 		end
 
+		local anchor = function()
+			return '%='
+		end
+
+		---------------------------
+		-- Custom LSP statusline --
+		---------------------------
+		-- NOTE: Downloads Symbol Nerd Font to font books if icons are not rendering correctly
+		local lspClients = {
+			{ name = 'html', icon = '' },
+			{ name = 'ltex', icon = '' },
+			{ name = 'typescript', icon = 'ﯤ' },
+			{ name = 'dockerls', icon = '' },
+			{ name = 'json', icon = '' },
+			{ name = 'cssls', icon = '' },
+			{ name = 'cssmodules_ls', icon = '' },
+			{ name = 'tailwindcss', icon = '󱏿' },
+			{ name = 'sumneko_lua', icon = '' },
+			{ name = 'emmet_ls', icon = '󰅱' },
+			{ name = 'null-ls', icon = '' },
+		}
+
+		local lsp = function()
+			local clients = vim.lsp.get_active_clients()
+			local result = {}
+			if next(clients) == nil then
+				return ''
+			end
+			for _, client in ipairs(clients) do
+				if client.name == nil then
+					return ''
+				end
+				for _, lsp in ipairs(lspClients) do
+					if client.name == lsp.name then
+						table.insert(result, lsp.icon)
+					end
+				end
+			end
+			table.sort(result, function(a, b)
+				return a > b
+			end)
+			return table.concat(result, '  ')
+		end
+
 		local custom_theme = {
 			normal = {
 				a = { fg = colors.blue, bg = '' },
-				b = { fg = colors.fg_float, bg = '' },
-				c = { fg = colors.cyan, bg = '' },
-				x = { fg = colors.fg_float, bg = '' },
-				y = { fg = colors.fg_float, bg = '' },
+				b = { fg = colors.fg_dark, bg = '' },
+				c = { fg = colors.green1, bg = '' },
+				x = { fg = colors.fg_dark, bg = '' },
+				y = { fg = colors.fg_dark, bg = '' },
 				z = { fg = colors.blue, bg = '' },
 			},
 			insert = {
@@ -99,11 +143,17 @@ return {
 					{
 						require('lazy.status').updates,
 						cond = require('lazy.status').has_updates,
-						color = { fg = '#ff9e64' },
+						color = { fg = colors.orange },
 					},
+					{ anchor },
+					{ anchor },
+					{ lsp, icon = 'LSP ' },
 				},
-				lualine_x = { 'filetype' },
-				lualine_y = { { 'location' }, { 'progress', icon = '' } },
+				lualine_x = { { anchor }, 'filetype' },
+				lualine_y = {
+					{ 'location' },
+					{ 'progress', icon = 'ﴜ' },
+				},
 				lualine_z = {
 					{ total_lines, icon = 'ﴴ' },
 					{
