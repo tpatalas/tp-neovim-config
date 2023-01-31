@@ -108,6 +108,7 @@ return {
 		-------------
 		-- html
 		lspconfig['html'].setup({
+			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
@@ -200,6 +201,18 @@ return {
 		lspconfig['tailwindcss'].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = {
+				'html',
+				'typescriptreact',
+				'typescript',
+				'javascriptreact',
+				'javascript',
+				'css',
+				'sass',
+				'scss',
+				'less',
+				'svelte',
+			},
 		})
 
 		lspconfig['emmet_ls'].setup({
