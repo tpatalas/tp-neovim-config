@@ -1,8 +1,8 @@
 local keymap = vim.keymap -- for conciseness
-local noremap = { noremap = true }
+local noremap = { noremap = true, silent = true }
 
 -- set leader key to space
-keymap.set('', '<Space>', '<Nop>', { noremap = true, silent = true })
+keymap.set('', '<Space>', '<Nop>', noremap)
 vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
 
