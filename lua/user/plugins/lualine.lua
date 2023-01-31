@@ -6,65 +6,13 @@ return {
 	config = function()
 		local colors = require('tokyonight.colors').setup()
 
-		local total_lines = function()
-			return vim.fn.line('$')
-		end
-
-		local block = function()
-			return '▊'
-		end
-
-		local anchor = function()
-			return '%='
-		end
-
-		---------------------------
-		-- Custom LSP statusline --
-		---------------------------
-		-- NOTE: Downloads Symbol Nerd Font to font books if icons are not rendering correctly
-		local lspClients = {
-			{ name = 'html', icon = '' },
-			{ name = 'ltex', icon = '' },
-			{ name = 'typescript', icon = 'ﯤ' },
-			{ name = 'dockerls', icon = '' },
-			{ name = 'json', icon = '' },
-			{ name = 'cssls', icon = '' },
-			{ name = 'cssmodules_ls', icon = '' },
-			{ name = 'tailwindcss', icon = '󱏿' },
-			{ name = 'sumneko_lua', icon = '' },
-			{ name = 'emmet_ls', icon = '󰅱' },
-			{ name = 'null-ls', icon = '' },
-		}
-
-		local lsp = function()
-			local clients = vim.lsp.get_active_clients()
-			local result = {}
-			if next(clients) == nil then
-				return ''
-			end
-			for _, client in ipairs(clients) do
-				if client.name == nil then
-					return ''
-				end
-				for _, lsp in ipairs(lspClients) do
-					if client.name == lsp.name then
-						table.insert(result, lsp.icon)
-					end
-				end
-			end
-			table.sort(result, function(a, b)
-				return a > b
-			end)
-			return table.concat(result, '  ')
-		end
-
 		local custom_theme = {
 			normal = {
 				a = { fg = colors.blue, bg = '' },
 				b = { fg = colors.fg_dark, bg = '' },
 				c = { fg = colors.green1, bg = '' },
 				x = { fg = colors.fg_dark, bg = '' },
-				y = { fg = colors.fg_dark, bg = '' },
+				y = { fg = colors.green, bg = '' },
 				z = { fg = colors.blue, bg = '' },
 			},
 			insert = {
@@ -99,6 +47,59 @@ return {
 			},
 		}
 
+		local total_lines = function()
+			return vim.fn.line('$')
+		end
+
+		local block = function()
+			return '▊'
+		end
+
+		local anchor = function()
+			return '%='
+		end
+
+		---------------------------
+		-- Custom LSP statusline --
+		---------------------------
+		-- NOTE: Downloads Symbol Nerd Font to font books if icons are not rendering correctly
+		local lspClients = {
+			{ name = 'html', icon = '' },
+			{ name = 'ltex', icon = '' },
+			{ name = 'typescript', icon = 'ﯤ' },
+			{ name = 'dockerls', icon = '' },
+			{ name = 'json', icon = '' },
+			{ name = 'cssls', icon = '' },
+			{ name = 'cssmodules_ls', icon = '' },
+			{ name = 'tailwindcss', icon = '󱏿' },
+			{ name = 'sumneko_lua', icon = '' },
+			{ name = 'emmet_ls', icon = '' },
+			{ name = 'null-ls', icon = '' },
+			{ name = 'tsserver', icon = '' },
+		}
+
+		local lsp = function()
+			local clients = vim.lsp.get_active_clients()
+			local result = {}
+			if next(clients) == nil then
+				return ''
+			end
+			for _, client in ipairs(clients) do
+				if client.name == nil then
+					return ''
+				end
+				for _, lsp in ipairs(lspClients) do
+					if client.name == lsp.name then
+						table.insert(result, lsp.icon)
+					end
+				end
+			end
+			table.sort(result, function(a, b)
+				return a > b
+			end)
+			return table.concat(result, '  ')
+		end
+
 		require('lualine').setup({
 			options = {
 				icons_enabled = true,
@@ -128,7 +129,7 @@ return {
 					},
 				},
 				lualine_b = {
-					{ 'branch', icon = { '', align = 'left' } },
+					{ 'branch', icon = { '', align = 'left' }, color },
 					{
 						'diagnostics',
 						sources = { 'nvim_workspace_diagnostic' },
@@ -145,21 +146,20 @@ return {
 						cond = require('lazy.status').has_updates,
 						color = { fg = colors.orange },
 					},
-					{ anchor },
-					{ anchor },
-					{ lsp, icon = 'LSP ' },
 				},
-				lualine_x = { { anchor }, 'filetype' },
-				lualine_y = {
+				lualine_x = {
+					{ anchor },
 					{ 'location' },
 					{ 'progress', icon = 'ﴜ' },
 				},
-				lualine_z = {
+				lualine_y = {
 					{ total_lines, icon = 'ﴴ' },
 					{
 						'filesize',
 						icon = '',
 					},
+				},
+				lualine_z = {
 					{
 						'diff',
 						symbols = { added = ' ', modified = '柳', removed = ' ' },
@@ -169,6 +169,7 @@ return {
 							removed = { fg = colors.red },
 						},
 					},
+					{ lsp, icon = 'LSP ', color = { bg = colors.bg_highlight }, padding = { left = 1, right = 1 } },
 					{ block, padding = 0.4 },
 				},
 			},
