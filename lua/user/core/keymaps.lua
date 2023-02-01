@@ -150,12 +150,12 @@ keymap.set('n', '<leader>ec', ':NvimTreeCollapse<CR>', noremap) -- Collapses the
 ------------------------
 keymap.set('n', '<leader>lr', ':LspRestart<CR>', noremap) -- mapping to restart lsp if necessary
 keymap.set('n', '<leader>ld', ':lua vim.diagnostic.reset()<CR>', noremap) -- reset diagnostics
-keymap.set('n', '<leader>lo', ':LspStart<CR>', noremap) -- start lsp
-keymap.set('n', '<leader>ls', ':LspStop<CR>', noremap) -- stop lsp
+keymap.set('n', '<leader>ls', ':LspStart<CR>', noremap) -- start lsp
+keymap.set('n', '<leader>lx', ':LspStop<CR>', noremap) -- stop lsp
 keymap.set('n', '<leader>li', ':LspInfo<CR>', noremap) -- lsp info
 -- ltex lsp
-keymap.set('n', '<leader>lto', ':LspStart ltex_id()<CR>', noremap) -- start ltex
-keymap.set('n', '<leader>lts', ':LspStop ltex_id()<CR>', noremap) -- stop ltex
+keymap.set('n', '<leader>lts', ':LspStart ltex_id()<CR>', noremap) -- start ltex
+keymap.set('n', '<leader>ltx', ':LspStop ltex_id()<CR>', noremap) -- stop ltex
 -- markdown preview
 keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
 keymap.set('n', '<leader>mps', ':MarkdownPreviewStop<CR>', noremap) -- stop markdown preview stop
