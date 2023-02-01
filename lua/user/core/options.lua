@@ -30,7 +30,7 @@ opt.backspace = 'indent,eol,start' -- allow backspacr on indent, end of line or 
 opt.clipboard:append('unnamedplus') -- use system clipboard as default register
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
-opt.hidden = true
+opt.hidden = false
 opt.iskeyword:append('-') -- consider string-string as whole word
 opt.backup = false -- creates a backup file
 opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
