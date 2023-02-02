@@ -129,7 +129,7 @@ keymap.set('n', '<leader>td', '<cmd>Telescope diagnostics<CR>', noremap) -- list
 keymap.set('n', '<leader>gc', '<cmd>Telescope git_commits previewer=false<CR>', noremap) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
 keymap.set('n', '<leader>gf', '<cmd>Telescope git_bcommits<CR> previewer=false', noremap) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 keymap.set('n', '<leader>gb', '<cmd>Telescope git_branches previewer=false<CR>', noremap) -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set('n', '<leader>gs', '<cmd>Telescope git_status previewer=false<CR>', noremap) -- list current changes per file with diff preview ["gs" for git status]
+keymap.set('n', '<leader>gs', '<cmd>Telescope git_status<CR>', noremap) -- list current changes per file with diff preview ["gs" for git status]
 -- telescope todo-comments
 keymap.set(
 	'n',
