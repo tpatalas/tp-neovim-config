@@ -150,7 +150,7 @@ return {
 				lualine_x = {
 					{ anchor },
 					{ 'location' },
-					{ 'progress', icon = 'ﴜ' },
+					-- { 'progress', icon = 'ﴜ' },
 				},
 				lualine_y = {
 					{ total_lines, icon = 'ﴴ' },
