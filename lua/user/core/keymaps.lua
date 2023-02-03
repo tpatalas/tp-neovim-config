@@ -129,7 +129,7 @@ keymap.set('n', '<leader>td', '<cmd>Telescope diagnostics<CR>', noremap) -- list
 keymap.set('n', '<leader>gc', '<cmd>Telescope git_commits previewer=false<CR>', noremap) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
 keymap.set('n', '<leader>gf', '<cmd>Telescope git_bcommits<CR> previewer=false', noremap) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 keymap.set('n', '<leader>gb', '<cmd>Telescope git_branches previewer=false<CR>', noremap) -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set('n', '<leader>gs', '<cmd>Telescope git_status previewer=false<CR>', noremap) -- list current changes per file with diff preview ["gs" for git status]
+keymap.set('n', '<leader>gs', '<cmd>Telescope git_status<CR>', noremap) -- list current changes per file with diff preview ["gs" for git status]
 -- telescope todo-comments
 keymap.set(
 	'n',
@@ -150,12 +150,12 @@ keymap.set('n', '<leader>ec', ':NvimTreeCollapse<CR>', noremap) -- Collapses the
 ------------------------
 keymap.set('n', '<leader>lr', ':LspRestart<CR>', noremap) -- mapping to restart lsp if necessary
 keymap.set('n', '<leader>ld', ':lua vim.diagnostic.reset()<CR>', noremap) -- reset diagnostics
-keymap.set('n', '<leader>lo', ':LspStart<CR>', noremap) -- start lsp
-keymap.set('n', '<leader>ls', ':LspStop<CR>', noremap) -- stop lsp
+keymap.set('n', '<leader>ls', ':LspStart<CR>', noremap) -- start lsp
+keymap.set('n', '<leader>lx', ':LspStop<CR>', noremap) -- stop lsp
 keymap.set('n', '<leader>li', ':LspInfo<CR>', noremap) -- lsp info
 -- ltex lsp
-keymap.set('n', '<leader>lto', ':LspStart ltex_id()<CR>', noremap) -- start ltex
-keymap.set('n', '<leader>lts', ':LspStop ltex_id()<CR>', noremap) -- stop ltex
+keymap.set('n', '<leader>lts', ':LspStart ltex_id()<CR>', noremap) -- start ltex
+keymap.set('n', '<leader>ltx', ':LspStop ltex_id()<CR>', noremap) -- stop ltex
 -- markdown preview
 keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
 keymap.set('n', '<leader>mps', ':MarkdownPreviewStop<CR>', noremap) -- stop markdown preview stop

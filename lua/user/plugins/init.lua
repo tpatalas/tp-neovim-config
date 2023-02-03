@@ -10,15 +10,15 @@ return {
 	'vim-scripts/ReplaceWithRegister', -- replace with register contents using motion (gr + motion)
 
 	-- commenting
-	'numToStr/Comment.nvim',
-	'JoosepAlviste/nvim-ts-context-commentstring',
+	{ 'numToStr/Comment.nvim', lazy = true },
+	{ 'JoosepAlviste/nvim-ts-context-commentstring', lazy = true },
 
 	-- search and finder
 	{
 		'andymass/vim-matchup',
-		init = function()
-			-- may set any options here
-			vim.g.matchup_matchparen_offscreen = { method = 'popup' }
+		lazy = true,
+		config = function()
+			vim.g.matchup_matchparen_offscreen = ''
 		end,
 	},
 
@@ -29,13 +29,14 @@ return {
 	{
 		'iamcco/markdown-preview.nvim',
 		build = 'cd app && npm install',
-		init = function()
+		lazy = true,
+		config = function()
 			vim.g.mkdp_filetypes = { 'markdown' }
 		end,
 		ft = { 'markdown' },
 	}, -- markdown preview
-	'dhruvasagar/vim-table-mode', -- markdown table
-	'mzlogin/vim-markdown-toc', -- toc generator
+	{ 'dhruvasagar/vim-table-mode', lazy = true }, -- markdown table
+	{ 'mzlogin/vim-markdown-toc', lazy = true }, -- toc generator
 
-	'barreiroleo/ltex-extra.nvim',
+	{ 'barreiroleo/ltex-extra.nvim', lazy = true },
 }
