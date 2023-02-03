@@ -11,7 +11,7 @@ return {
 			highlight = '#51566F',
 		}
 		require('tokyonight').setup({
-			style = 'night',
+			style = 'moon',
 			light_style = 'day',
 			transparent = true,
 			terminal_colors = true,
@@ -39,6 +39,7 @@ return {
 				highlights.ColorColumn = { bg = colors.bg_highlight }
 				highlights.Cursor = { bg = colors.yellow }
 				highlights.NormalFloat = { bg = colors.bg }
+				highlights.MsgArea = { fg = colors.fg_dark, bg = '' }
 			end,
 		})
 

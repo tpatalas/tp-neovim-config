@@ -32,10 +32,12 @@ return {
 				z = { fg = colors.magenta, bg = '' },
 			},
 			command = {
-				a = {
-					bg = colors.orange,
-					fg = colors.fg_float,
-				},
+				a = { fg = colors.orange, bg = '' },
+				b = { fg = colors.orange, bg = '' },
+				c = { fg = colors.orange, bg = '' },
+				x = { fg = colors.orange, bg = '' },
+				y = { fg = colors.orange, bg = '' },
+				z = { fg = colors.orange, bg = '' },
 			},
 			inactive = {
 				a = { fg = colors.fg_gutter, bg = '' },
@@ -63,41 +65,15 @@ return {
 		-- Custom LSP statusline --
 		---------------------------
 		-- NOTE: Downloads Symbol Nerd Font to font books if icons are not rendering correctly
-		local lspClients = {
-			{ name = 'html', icon = '' },
-			{ name = 'ltex', icon = '' },
-			{ name = 'typescript', icon = 'ﯤ' },
-			{ name = 'dockerls', icon = '' },
-			{ name = 'json', icon = '' },
-			{ name = 'cssls', icon = '' },
-			{ name = 'cssmodules_ls', icon = '' },
-			{ name = 'tailwindcss', icon = '󱏿' },
-			{ name = 'sumneko_lua', icon = '' },
-			{ name = 'emmet_ls', icon = '' },
-			{ name = 'null-ls', icon = '' },
-			{ name = 'tsserver', icon = '' },
-		}
 
-		local lsp = function()
+		local ltex = function()
 			local clients = vim.lsp.get_active_clients()
-			local result = {}
-			if next(clients) == nil then
-				return ''
-			end
 			for _, client in ipairs(clients) do
-				if client.name == nil then
-					return ''
-				end
-				for _, lsp in ipairs(lspClients) do
-					if client.name == lsp.name then
-						table.insert(result, lsp.icon)
-					end
+				if client.name == 'ltex' then
+					return ' ltex'
 				end
 			end
-			table.sort(result, function(a, b)
-				return a > b
-			end)
-			return table.concat(result, '  ')
+			return ' '
 		end
 
 		require('lualine').setup({
@@ -146,11 +122,12 @@ return {
 						cond = require('lazy.status').has_updates,
 						color = { fg = colors.orange },
 					},
+					{ ltex, padding = { left = 1, right = 1 } },
 				},
 				lualine_x = {
 					{ anchor },
 					{ 'location' },
-					-- { 'progress', icon = 'ﴜ' },
+					{ 'progress', icon = 'ﴜ' },
 				},
 				lualine_y = {
 					{ total_lines, icon = 'ﴴ' },
@@ -169,7 +146,6 @@ return {
 							removed = { fg = colors.red },
 						},
 					},
-					{ lsp, icon = 'LSP ', color = { bg = colors.bg_highlight }, padding = { left = 1, right = 1 } },
 					{ block, padding = 0.4 },
 				},
 			},
