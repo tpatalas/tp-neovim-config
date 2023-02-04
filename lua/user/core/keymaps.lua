@@ -54,10 +54,10 @@ keymap.set('n', 'n', 'Nzz', noremap) -- center search result
 ----------------
 -- formatting general
 keymap.set('n', '<leader>fa', 'gggqG', noremap) -- apply formatting if any
-keymap.set('n', '<leader>fr', ':TypescriptRenameFile<CR>') -- rename file and update imports
-keymap.set('n', '<leader>fd', ':TypescriptRemoveUnused<CR>') -- remove unused variables
-keymap.set('n', '<leader>fm', ':TypescriptAddMissingImports<CR>') -- add missing imports
-keymap.set('n', '<leader>fi', ':OrganizeImports<CR>') -- Organize Import (Custom: typescript)
+keymap.set('n', '<leader>fr', '<cmd>TypescriptRenameFile<CR>') -- rename file and update imports
+keymap.set('n', '<leader>fd', '<cmd>TypescriptRemoveUnused<CR>') -- remove unused variables
+keymap.set('n', '<leader>fm', '<cmd>TypescriptAddMissingImports<CR>') -- add missing imports
+keymap.set('n', '<leader>fi', '<cmd>OrganizeImports<CR>') -- Organize Import (Custom: typescript)
 -- formatting move lines
 keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
 keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
