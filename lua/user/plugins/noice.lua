@@ -173,10 +173,19 @@ return {
 							winhighlight = { Normal = 'Normal', FloatBorder = 'DiagnosticInfo' },
 						},
 					},
-				}, ---@see section on views
-				routes = {}, --- @see section on routes
-				status = {}, --- @see section on statusline components
-				format = {}, --- @see section on formatting
+				},
+				routes = {
+					{
+						filter = {
+							event = 'msg_show',
+							kind = '',
+							find = 'written',
+						},
+						opts = { skip = true },
+					},
+				},
+				status = {},
+				format = {},
 			})
 		end,
 		dependencies = {
