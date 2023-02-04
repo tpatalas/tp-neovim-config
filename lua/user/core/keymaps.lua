@@ -39,7 +39,7 @@ keymap.set('n', '<leader>AA', 'ggVG<CR>', noremap) -- select everything in visua
 keymap.set('n', '<leader>QQ', ':q!<CR>', noremap) -- quit without saving
 keymap.set('n', '<leader>qq', ':q<CR>', noremap) -- quit
 -- save & edit
-keymap.set('n', '<leader>ss', ':w<CR>', noremap) -- save
+keymap.set('n', '<leader>ss', ':silent w<CR>', noremap) -- save
 keymap.set('n', '<leader>ee', ':e<CR>', noremap) -- save
 keymap.set('n', '<leader>EE', ':e!<CR>', noremap) -- save
 -- search and  Replace
@@ -88,9 +88,8 @@ keymap.set('n', '<a-8>', ':LualineBuffersJump 8<CR>', noremap)
 keymap.set('n', '<a-9>', ':LualineBuffersJump 9<CR>', noremap)
 keymap.set('n', '<a-10>', ':LualineBuffersJump 10<CR>', noremap)
 -- buffers action
--- keymap.set('n', '<leader>ww', ':bp<bar>sp<bar>bn<bar>bd<CR>', noremap) -- close current buffer
 keymap.set('n', '<leader>ww', ':bd<CR>', noremap) -- close current buffer
-keymap.set('n', '<leader>WW', ':%bd|e#|bd#<CR><CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
+keymap.set('n', '<leader>WW', ':%bd|e#<CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
 
 -- delete single character without copying into register
 keymap.set('n', 'x', '"_x', noremap)
@@ -99,8 +98,8 @@ keymap.set('n', 'x', '"_x', noremap)
 keymap.set('n', '<leader>wv', '<C-w>v') -- split window vertically
 keymap.set('n', '<leader>wh', '<C-w>s') -- split window horizontally
 keymap.set('n', '<leader>wc', ':close<CR>') -- close current split window
-keymap.set('n', '<c-a-right>', ':vertical resize +5<CR>', noremap) -- increase size vertically
-keymap.set('n', '<c-a-left>', ':vertical resize -5<CR>', noremap) -- decrease size vertically
+keymap.set('n', '<c-a-right>', ':vertical resize -5<CR>', noremap) -- increase size vertically
+keymap.set('n', '<c-a-left>', ':vertical resize +5<CR>', noremap) -- decrease size vertically
 keymap.set('n', '<c-a-up>', ':horizontal resize +5<CR>', noremap) -- increase size horizontally
 keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decrease size horizontally
 keymap.set('n', '<c-@>', '<C-W>w', noremap) -- ctrl+` is the easier way to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"

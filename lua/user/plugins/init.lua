@@ -10,8 +10,8 @@ return {
 	'vim-scripts/ReplaceWithRegister', -- replace with register contents using motion (gr + motion)
 
 	-- commenting
-	{ 'numToStr/Comment.nvim', lazy = true },
-	{ 'JoosepAlviste/nvim-ts-context-commentstring', lazy = true },
+	{ 'numToStr/Comment.nvim' },
+	{ 'JoosepAlviste/nvim-ts-context-commentstring' },
 
 	-- search and finder
 	{

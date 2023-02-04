@@ -41,3 +41,4 @@ opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
 -- opt.showtabline = 2 -- always show tabs
 opt.smartindent = true -- make indenting smarter again
 opt.swapfile = false -- disable/enable the swapFile
+opt.shortmess = vim.o.shortmess .. 'aoOstTWFAIc'

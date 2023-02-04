@@ -5,7 +5,6 @@ return {
 	'glepnir/lspsaga.nvim',
 	-- event = 'BufRead',
 	config = function()
-		local colors = require('tokyonight.colors').setup()
 		local saga = require('lspsaga')
 		saga.setup({
 			move_in_saga = { prev = '<C-k>', next = '<C-j>' },
@@ -33,13 +32,6 @@ return {
 				diagnostic = '🐞',
 				incoming = ' ',
 				outgoing = ' ',
-				colors = {
-					-- highlights.LspSagaWinbarFolderName =  -- in the colorScheme
-					normal_bg = '',
-					red = colors.fg_dark,
-					orange = colors.orange,
-					white = colors.fg_dark,
-				},
 				kind = {
 					Folder = '',
 				},
