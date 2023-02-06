@@ -1,3 +1,4 @@
+-- https://github.com/folke/lazy.nvim
 return {
 	-- plugin manager
 	'nvim-lua/plenary.nvim', -- lua functions that many plugins use
@@ -35,8 +36,16 @@ return {
 		end,
 		ft = { 'markdown' },
 	}, -- markdown preview
-	{ 'dhruvasagar/vim-table-mode', lazy = true }, -- markdown table
-	{ 'mzlogin/vim-markdown-toc', lazy = true }, -- toc generator
+	{
+		'dhruvasagar/vim-table-mode',
+		lazy = true,
+		ft = { 'markdown' },
+	}, -- markdown table
+	{
+		'mzlogin/vim-markdown-toc',
+		lazy = true,
+		ft = { 'markdown' },
+	}, -- toc generator
 
 	{ 'barreiroleo/ltex-extra.nvim', lazy = true },
 }
