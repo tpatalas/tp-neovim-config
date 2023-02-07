@@ -14,7 +14,6 @@ return {
 				messages = {
 					-- popup: powered by nui.nvim
 					-- split: powered by nui.nvim
-					-- notify: powered by nvim-notify
 					-- virtualtext: shows the message as virtualtext (for example for search_count)
 					-- mini: similar to notifier.nvim & fidget.nvim
 					-- notify_send: generate a desktop notification
@@ -24,6 +23,15 @@ return {
 					view_warn = 'mini', -- view for warnings
 					view_history = 'messages', -- view for :messages
 					view_search = 'virtualtext', -- view for search count messages. Set to `false` to disable
+				},
+				popupmenu = {
+					enabled = true, -- enables the Noice popupmenu UI
+					backend = 'nui', -- backend to use to show regular cmdline completions
+					kind_icons = {}, -- set to `false` to disable icons
+				},
+				redirect = {
+					view = 'mini',
+					filter = { event = 'msg_show' },
 				},
 				commands = {
 					history = {
@@ -40,11 +48,11 @@ return {
 						},
 					},
 					last = {
-						view = 'popup',
+						view = 'mini',
 						opts = { enter = true, format = 'details' },
 						filter = {
 							any = {
-								{ event = 'mini' },
+								{ event = 'notify' },
 								{ error = true },
 								{ warning = true },
 								{ event = 'msg_show', kind = { '' } },
@@ -54,7 +62,7 @@ return {
 						filter_opts = { count = 1 },
 					},
 					errors = {
-						view = 'popup',
+						view = 'mini',
 						opts = { enter = true, format = 'details' },
 						filter = { error = true },
 						filter_opts = { reverse = true },
@@ -158,11 +166,11 @@ return {
 					popupmenu = {
 						relative = 'editor',
 						position = {
-							row = 8,
+							row = 11,
 							col = '50%',
 						},
 						size = {
-							width = 60,
+							width = 65,
 							height = 10,
 						},
 						border = {
@@ -185,12 +193,15 @@ return {
 					},
 				},
 				status = {},
-				format = {},
+				format = {
+					level = {
+						icons = false,
+					},
+				},
 			})
 		end,
 		dependencies = {
 			'MunifTanjim/nui.nvim',
-			'rcarriga/nvim-notify',
 		},
 	},
 }
