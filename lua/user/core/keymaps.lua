@@ -3,6 +3,8 @@ local noremap = { noremap = true, silent = true }
 
 -- set leader key to space
 keymap.set('', '<Space>', '<Nop>', noremap)
+-- disable default help key
+keymap.set('', '<F1>', '<Nop>', noremap)
 vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
 
@@ -48,6 +50,7 @@ keymap.set('n', '<leader>rr', '*#cgn', noremap) -- change the current word under
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'n', 'Nzz', noremap) -- center search result
+-- disable keys
 
 ----------------
 -- formatting --
