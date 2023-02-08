@@ -169,3 +169,6 @@ keymap.set('n', '<leader>mto', ':TableModeToggle<CR>', noremap) -- toggle markdo
 
 -- colorizer
 keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colorizer
+
+-- hardmode
+keymap.set('n', '<leader>hhh', ':HardTimeToggle<CR>', noremap)

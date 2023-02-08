@@ -50,3 +50,8 @@ vim.cmd([[
 		  \,sm:block-blinkwait175-blinkoff150-blinkon175
   augroup end
 ]])
+
+---------------------
+-- hardtime toggle --
+---------------------
+vim.cmd([[autocmd User HardTimeToggle if g:hard_time == 1 | let g:hard_time = 0 | else | let g:hard_time = 1 | endif]])
