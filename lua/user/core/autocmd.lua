@@ -27,7 +27,7 @@ vim.cmd([[
 ---------------
 -- auto save --
 ---------------
-vim.cmd([[autocmd CursorHold *.* if @% != 'wezterm.lua' | silent! write]])
+vim.cmd([[autocmd TextChanged,TextChangedI *.* if @% != 'wezterm.lua' | silent! write]])
 
 -----------------------------------
 -- remove all trailing whitespce --
