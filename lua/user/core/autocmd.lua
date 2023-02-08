@@ -45,8 +45,8 @@ vim.cmd([[autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>]])
 vim.cmd([[
   augroup BlinkCursor
     autocmd!
-    autocmd BufRead,BufNewFile * set guicursor=n-v:block-Cursor
-    autocmd InsertEnter * set guicursor+=i-c:ver100-iCursor
-    autocmd CursorHold,CursorHoldI * set guicursor+=n-v-c:blinkon1
+    autocmd VimEnter * set guicursor=n-v:block,i-c-ci-ve:ver25,r-cr:hor20,o:hor50
+		  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+		  \,sm:block-blinkwait175-blinkoff150-blinkon175
   augroup end
 ]])
