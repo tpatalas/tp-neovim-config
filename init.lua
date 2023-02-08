@@ -14,13 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
 
----------------
--- hard mode --
----------------
--- vim.g.hardtime_default_on = 1
-vim.g.hardtime_timeout = 2000
-vim.g.hardtime_maxcount = 5
-
 require('user.core.options')
 require('user.core.keymaps')
 require('user.core.autocmd')

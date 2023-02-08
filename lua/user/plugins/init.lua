@@ -48,6 +48,4 @@ return {
 	}, -- toc generator
 
 	{ 'barreiroleo/ltex-extra.nvim', lazy = true },
-
-	'takac/vim-hardtime', -- hardmode plugin to disable navigation keys
 }
