@@ -3,6 +3,8 @@ local noremap = { noremap = true, silent = true }
 
 -- set leader key to space
 keymap.set('', '<Space>', '<Nop>', noremap)
+-- disable default help key
+keymap.set('', '<F1>', '<Nop>', noremap)
 vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
 
