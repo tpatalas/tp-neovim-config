@@ -34,6 +34,7 @@
   "toggleterm.nvim": { "branch": "main", "commit": "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" },
   "tokyonight.nvim": { "branch": "main", "commit": "6705d069d9b37146024113c36aa90cec90630859" },
   "typescript.nvim": { "branch": "main", "commit": "f66d4472606cb24615dfb7dbc6557e779d177624" },
+  "vim-hardtime": { "branch": "master", "commit": "91177392e9372a1cf09a4b9b79532d2490bd405f" },
   "vim-markdown-toc": { "branch": "master", "commit": "7ec05df27b4922830ace2246de36ac7e53bea1db" },
   "vim-matchup": { "branch": "master", "commit": "959e0e79ea240cdee29efbdd0d2e2e718931ccec" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
