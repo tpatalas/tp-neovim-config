@@ -32,6 +32,7 @@ return {
 				exclude = {
 					'.http',
 					'.md',
+					'.env*',
 				},
 			},
 			actions = {
