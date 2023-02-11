@@ -22,6 +22,7 @@ vim.g.hardtime_showmsg = 1
 vim.g.hardtime_timeout = 1200
 vim.g.hardtime_allow_different_key = 1
 vim.g.hardtime_motion_with_count_resets = 1
+vim.g.hardtime_ignore_buffer_patterns = { 'nvim-cmp' }
 ---------------------
 require('user.core.options')
 require('user.core.keymaps')
