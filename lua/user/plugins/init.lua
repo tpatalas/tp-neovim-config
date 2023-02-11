@@ -33,6 +33,7 @@ return {
 		lazy = true,
 		config = function()
 			vim.g.mkdp_filetypes = { 'markdown' }
+			vim.g.mkdp_browser = '/Applications/Firefox.app'
 		end,
 		ft = { 'markdown' },
 	}, -- markdown preview
