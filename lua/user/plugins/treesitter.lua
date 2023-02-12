@@ -43,6 +43,7 @@ return {
 				'html',
 				'css',
 				'markdown',
+				'markdown_inline',
 				'svelte',
 				'graphql',
 				'bash',
