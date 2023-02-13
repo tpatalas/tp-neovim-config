@@ -3,7 +3,7 @@
 
 return {
 	'glepnir/lspsaga.nvim',
-	-- event = 'BufRead',
+	event = 'BufRead',
 	config = function()
 		local saga = require('lspsaga')
 		saga.setup({
