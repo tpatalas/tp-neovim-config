@@ -20,7 +20,7 @@ vim.cmd([[
     endfunction
     autocmd!
     autocmd CursorMovedI,CursorMoved * call HighlightCurrentWord('')
-    autocmd CursorHold * if @% != 'NvimTree_1' | call HighlightCurrentWord('<cword>')
+    autocmd CursorHold * if @% !~ 'neo-tree*' | call HighlightCurrentWord('<cword>')
   augroup end
 ]])
 
