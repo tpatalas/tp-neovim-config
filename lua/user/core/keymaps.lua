@@ -140,11 +140,10 @@ keymap.set(
 ) -- open todo-comments within telescope
 
 ------------------------------
--- file explorer nvim-tree ---
+-- file explorer Neotree ---
 ------------------------------
-keymap.set('n', '<leader>eo', ':NvimTreeToggle<CR>', noremap) -- toggle file explorer
-keymap.set('n', '<leader>ef', ':NvimTreeFindFile<CR>', noremap) --  Move the cursor in the tree for the current buffer, opening folders if needed.
-keymap.set('n', '<leader>ec', ':NvimTreeCollapse<CR>', noremap) -- Collapses the nvim-tree recursively.
+keymap.set('n', '<leader>eo', ':Neotree toggle<CR>', noremap) -- toggle file explorer
+keymap.set('n', '<leader>ef', ':Neotree reveal_force_cwd<CR>', noremap)
 
 ------------------------
 -- lsp server restart --

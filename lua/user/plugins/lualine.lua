@@ -172,7 +172,7 @@ return {
 			},
 			winbar = {},
 			inactive_winbar = {},
-			extensions = { 'toggleterm', 'nvim-tree' },
+			extensions = { 'toggleterm' },
 		})
 	end,
 }
