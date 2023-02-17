@@ -59,5 +59,4 @@ return {
 		ft = { 'markdown' },
 	}, -- toc generator
 	{ 'barreiroleo/ltex-extra.nvim', lazy = true }, -- ltex
-	{ 'takac/vim-hardtime' }, -- hardtime
 }
