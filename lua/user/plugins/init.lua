@@ -59,4 +59,13 @@ return {
 		ft = { 'markdown' },
 	}, -- toc generator
 	{ 'barreiroleo/ltex-extra.nvim', lazy = true }, -- ltex
+	{
+		'ggandor/leap.nvim',
+		dependencies = {
+			'tpope/vim-repeat',
+			config = function()
+				require('leap').add_default_mappings()
+			end,
+		},
+	},
 }
