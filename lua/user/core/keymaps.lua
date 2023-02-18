@@ -1,6 +1,5 @@
 local keymap = vim.keymap -- for conciseness
 local noremap = { noremap = true, silent = true }
-
 -- set leader key to space
 keymap.set('', '<Space>', '<Nop>', noremap)
 -- disable default help key
@@ -71,6 +70,7 @@ keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap)
 keymap.set('n', '<c-d>', '<c-d>zz', noremap) -- move forward half a screen then center cursor
 keymap.set('n', '<c-u>', '<c-u>zz', noremap) -- move backward half a screen then center cursor
 keymap.set('n', ']]', ']]zz', noremap) -- go to the end of the line then center cursor
+keymap.set('n', 'G', 'Gzz', noremap) -- go to the end of the line then center cursor
 keymap.set('n', '}', '}zz', noremap) -- jump to the next paragraph then center cursor
 keymap.set('n', '{', '{zz', noremap) -- jump to the previous paragraph then center cursor
 keymap.set('n', '<s-down>', '<s-down>zz', noremap)
