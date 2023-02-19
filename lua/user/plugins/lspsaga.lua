@@ -15,7 +15,7 @@ return {
 				edit = '<CR>',
 			},
 			symbol_in_winbar = {
-				enable = true,
+				enable = false,
 				separator = '  ',
 				color_mode = false,
 			},
