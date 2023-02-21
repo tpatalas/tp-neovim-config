@@ -7,6 +7,10 @@ return {
 	config = function()
 		local saga = require('lspsaga')
 		saga.setup({
+			diagnostic = {
+				on_insert = false,
+				on_insert_follow = false,
+			},
 			move_in_saga = { prev = '<C-k>', next = '<C-j>' },
 			finder_action_keys = {
 				open = '<CR>',
