@@ -58,7 +58,6 @@ return {
 		lazy = true,
 		ft = { 'markdown' },
 	}, -- toc generator
-	{ 'barreiroleo/ltex-extra.nvim', lazy = true }, -- ltex
 	{
 		'ggandor/leap.nvim',
 		dependencies = {
