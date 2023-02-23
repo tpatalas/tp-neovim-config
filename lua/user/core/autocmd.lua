@@ -50,3 +50,8 @@ vim.cmd([[
 		  \,sm:block-blinkwait175-blinkoff150-blinkon175
   augroup end
 ]])
+
+----------------------------------
+-- clear search when unload Buf --
+----------------------------------
+vim.cmd([[autocmd BufUnload * :let @/ = ""]])

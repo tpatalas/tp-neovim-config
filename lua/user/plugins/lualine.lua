@@ -61,6 +61,16 @@ return {
 			return '%='
 		end
 
+		function search_count()
+			local res = vim.fn.searchcount({ maxcount = 1000, timeout = 500 })
+
+			if res.total > 0 then
+				return string.format('%s/%d %s', res.current, res.total, vim.fn.getreg('/'))
+			else
+				return ''
+			end
+		end
+
 		---------------------------
 		-- Custom LSP statusline --
 		---------------------------
@@ -112,6 +122,7 @@ return {
 						cond = require('lazy.status').has_updates,
 						color = { fg = colors.orange },
 					},
+					{ search_count, icon = '󰍉' },
 				},
 				lualine_x = {
 					{ anchor },
