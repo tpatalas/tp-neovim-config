@@ -16,20 +16,6 @@ return {
 		local lspconfig = require('lspconfig')
 		local typescript = require('typescript')
 		local cmp_nvim_lsp = require('cmp_nvim_lsp')
-		----------------------
-		-- ltex custom path --
-		----------------------
-		-- you need to create the custom path if you wish to save dictionary in one place
-		local dictionary_path = vim.fn.finddir('~/.config/langs/ltex') -- optionl
-		-- if custom path does not exist it will create a dictionary in cwd (this will lead to save dictionary for each workspace)
-		local dictionary_custom_path = function() -- optional
-			local custom_path = nil
-			if dictionary_path ~= '' then
-				custom_path = dictionary_path
-			end
-			return custom_path
-		end
-
 		---------------------
 		-- keymap setting ---
 		---------------------
@@ -58,17 +44,6 @@ return {
 		end
 
 		local capabilities = cmp_nvim_lsp.default_capabilities()
-
-		local on_attach_ltex_extra = function(client, bufnr)
-			require('ltex_extra').setup({
-				load_langs = { 'en-US' },
-				init_check = true,
-				path = dictionary_custom_path(),
-				log_level = 'none',
-			})
-			keybinds()
-			keymap.set('n', '<leader><cr><cr>', '<cmd>lua require("ltex_extra").reload()<CR>')
-		end
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = ' ', Warn = ' ', Hint = 'ﴞ ', Info = ' ' }
@@ -110,40 +85,6 @@ return {
 		lspconfig['html'].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-		})
-
-		-- ltex
-		-- equipped with ltex-extra plugin
-		lspconfig['ltex'].setup({
-			capabilities = capabilities,
-			on_attach = on_attach_ltex_extra,
-			filetypes = { 'gitcommit', 'markdown' },
-			autostart = false,
-			settings = {
-				-- more info on setting: https://valentjn.github.io/ltex/settings.html
-				ltex = {
-					-- more info: https://valentjn.github.io/ltex/settings.html#ltexjavainitialheapsize
-					additionalRules = {
-						enablePickyRules = true,
-						motherTongue = 'en',
-						-- NOTE: languageModel and word2VecModel increase the memory usage.
-						--
-						-- download n-gram: https://dev.languagetool.org/finding-errors-using-n-gram-data.html
-						-- please read before download n-gram data, it is 8.3GB for just English.
-						languageModel = '~/.language-models/ngram',
-						-- download word2vec: https://languagetool.org/download/word2vec/
-						-- please read before download word2Vec: https://github.com/languagetool-org/languagetool/blob/master/languagetool-standalone/CHANGES.md#word2vec
-						word2VecModel = '~/.language-models/word2VecModel',
-					},
-					checkFrequency = 'edit', -- save or manual if performance has an issue
-					diagnosticSeverity = 'hint',
-					java = {
-						initialHeapSize = 48, -- in megabytes default: 64
-						maximumHeapSize = 312, -- in megabytes default: 512
-					},
-					sentenceCacheSize = 1000, -- default: 2000
-				},
-			},
 		})
 
 		-- typescript

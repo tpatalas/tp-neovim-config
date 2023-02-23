@@ -66,16 +66,6 @@ return {
 		---------------------------
 		-- NOTE: Downloads Symbol Nerd Font to font books if icons are not rendering correctly
 
-		local ltex = function()
-			local clients = vim.lsp.get_active_clients()
-			for _, client in ipairs(clients) do
-				if client.name == 'ltex' then
-					return ' ltex'
-				end
-			end
-			return ' '
-		end
-
 		require('lualine').setup({
 			options = {
 				icons_enabled = true,
@@ -122,7 +112,6 @@ return {
 						cond = require('lazy.status').has_updates,
 						color = { fg = colors.orange },
 					},
-					{ ltex, padding = { left = 1, right = 1 } },
 				},
 				lualine_x = {
 					{ anchor },

@@ -41,18 +41,6 @@ return {
 				create_config_file = true,
 				find_json = cspell_config_file_path,
 			},
-			filetypes = {
-				'lua',
-				'javascript',
-				'javascriptreact',
-				'typescript',
-				'typescriptreact',
-				'json',
-				'css',
-			},
-			disable_filetypes = {
-				'NvimTree',
-			},
 			extra_args = {
 				'--config',
 				cspell_config_args(),
