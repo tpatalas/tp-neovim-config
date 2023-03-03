@@ -43,7 +43,7 @@ these setups is meant to provide the best practice.
 > For other installation methods, please visit [Installing Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 ```bash
-# insatll nevoim
+# install Neovim
 brew install neovim
 ```
 
@@ -56,7 +56,7 @@ nvim -v
 
 ```bash
 cd ~
-# backup previouse configs
+# backup pervious configs
 mv ~/.config/nvim ~/.config/nvim_backup
 # clone config
 git clone https://github.com/tpAtalas/tp-neovim-config.git ~/.config/nvim
@@ -76,10 +76,12 @@ brew install lazygit
 
 #### Core
 
-| Feature       | Description                          | Plugins / comments |
-| ------------- | ------------------------------------ | ------------------ |
-| Fuzzy finding | find, filter, and preview the search | `telescope`        |
-|               |                                      |                    |
+| Feature         | Description                          | Plugins / comments                                                |
+| --------------- | ------------------------------------ | ----------------------------------------------------------------- |
+| Fuzzy finding   | find, filter, and preview the search | [`telescope`]('https://github.com/nvim-telescope/telescope.nvim') |
+| Package manager | manage plugins                       | [`lazy.nvim`]('https://github.com/folke/lazy.nvim')               |
+| Terminal        | use terminal within Neovim           | [`toggleterm.nvim`]('https://github.com/akinsho/toggleterm.nvim') |
+| File explorer   | show the file tree                   | [`neo-tree`]('https://github.com/nvim-neo-tree/neo-tree.nvim')    |
 
 #### Misc
 
@@ -137,7 +139,7 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 | `alt+0`           | Go to the buffer 10                 | Plugin: Lualine |
 |                   |                                     |                 |
 | `<leader>ww`      | Close the current buffer            | -               |
-| `<ldeader>WW`     | Close all except the current buffer | -               |
+| `<leader>WW`      | Close all except the current buffer | -               |
 
 ##### Window Management
 
