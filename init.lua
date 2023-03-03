@@ -14,13 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
 
-vim.g.hardtime_default_on = 0
-vim.g.hardtime_ignore_quickfix = 1
-vim.g.hardtime_maxcount = 3
-vim.g.hardtime_motion_with_count_resets = 1
-vim.g.hardtime_allow_different_key = 1
-vim.g.hardtime_ignore_buffer_patterns = { 'nvim-cmp' }
-
 require('user.core.options')
 require('user.core.keymaps')
 require('user.core.autocmd')

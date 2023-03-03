@@ -67,5 +67,4 @@ return {
 			end,
 		},
 	},
-	'takac/vim-hardtime',
 }
