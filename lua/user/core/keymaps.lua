@@ -8,10 +8,10 @@ vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
 
 -- Modes
+--   visual_block_mode = "x",
+--   visual_mode = "v",
 --   normal_mode = "n",
 --   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
 --
@@ -24,6 +24,20 @@ keymap.set('i', 'jk', '<ESC>', noremap)
 
 -- delete Word in insert mode
 keymap.set('i', '<c-d><c-d>', '<ESC>dawi', noremap)
+
+-----------------------------------
+-- General Keymaps - Visual Mode --
+-----------------------------------
+----------------
+-- Formatting --
+----------------
+-- NOTE: moving highlighted lines are usually composed as `:move \'<-2<CR>gv=gv`
+-- with single <CR>. However, due to interference of message if there is more than
+-- 3 lines of operation, the additional <CR> is added to clear out the message.
+keymap.set('v', '<a-up>', ':move \'<-2<CR><CR>gv=gv', noremap) -- move highlighted lines up
+keymap.set('v', '<a-down>', ':move \'>+1<CR><CR>gv=gv', noremap) -- move highlighted lines down
+keymap.set('v', '<a-right>', '>gv', noremap) -- insert tab
+keymap.set('v', '<a-left>', '<gv', noremap) -- remove tab
 
 -----------------------------------
 -- General Keymaps - Normal Mode --
@@ -48,7 +62,7 @@ keymap.set('n', '<leader>RR', ':%s/<c-r><c-w>/<c-r><c-w>', noremap) -- Search an
 keymap.set('n', '<leader>rr', '*#cgn', noremap) -- change the current word under the cursor * change > ESC > press `.` to change next
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
-keymap.set('n', 'n', 'Nzz', noremap) -- center search result
+keymap.set('n', 'N', 'Nzz', noremap) -- center search result
 
 ----------------
 -- formatting --
@@ -153,9 +167,6 @@ keymap.set('n', '<leader>ld', ':lua vim.diagnostic.reset()<CR>', noremap) -- res
 keymap.set('n', '<leader>ls', ':LspStart<CR>', noremap) -- start lsp
 keymap.set('n', '<leader>lx', ':LspStop<CR>', noremap) -- stop lsp
 keymap.set('n', '<leader>li', ':LspInfo<CR>', noremap) -- lsp info
--- ltex lsp
-keymap.set('n', '<leader>lts', ':LspStart ltex_id()<CR>', noremap) -- start ltex
-keymap.set('n', '<leader>ltx', ':LspStop ltex_id()<CR>', noremap) -- stop ltex
 -- markdown preview
 keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
 keymap.set('n', '<leader>mps', ':MarkdownPreviewStop<CR>', noremap) -- stop markdown preview stop
