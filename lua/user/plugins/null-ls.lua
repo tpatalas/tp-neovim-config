@@ -15,55 +15,6 @@ return {
 			end,
 		}
 
-		--------------------
-		-- cspell setting --
-		--------------------
-		local cspell_custom_file_path = vim.fn.findfile('~/.config/langs/cspell.json')
-
-		local cspell_config_file_path = function()
-			local custom_path = nil
-			if cspell_custom_file_path ~= '' then
-				custom_path = cspell_custom_file_path
-			end
-			return custom_path
-		end
-
-		local cspell_config_args = function()
-			if cspell_config_file_path ~= nil then
-				return cspell_custom_file_path
-			else
-				return nil
-			end
-		end
-
-		local cspell = {
-			config = {
-				create_config_file = true,
-				find_json = cspell_config_file_path,
-			},
-			extra_args = {
-				'--config',
-				cspell_config_args(),
-				'--cache',
-				'--gitignore',
-				'--no-gitignore',
-				'--locale',
-				'en-US',
-				'--language-id',
-				'companies',
-				'softwareTerms',
-				'misc',
-				'typescript',
-				'node',
-				'html',
-				'python',
-				'css',
-				'bash',
-				'fonts',
-				'filetypes',
-				'npm',
-			},
-		}
 		local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
 		-- Built-in sources:
@@ -74,8 +25,6 @@ return {
 			formatting.markdownlint,
 			formatting.stylua,
 			formatting.prettierd,
-			diagnostics.cspell.with(cspell),
-			codeactions.cspell.with(cspell),
 			codeactions.eslint_d.with(eslint),
 			diagnostics.eslint_d.with(eslint),
 		}
