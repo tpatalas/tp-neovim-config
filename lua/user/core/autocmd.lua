@@ -27,7 +27,9 @@ vim.cmd([[
 ---------------
 -- auto save --
 ---------------
-vim.cmd([[autocmd CursorHold *.* if @% != 'wezterm.lua' | silent! write]])
+vim.cmd(
+	[[autocmd TextChanged,InsertLeave *.* if &filetype != 'gitcommit' || @% != 'wezterm.lua' | silent! write | endif]]
+)
 
 -----------------------------------
 -- remove all trailing whitespce --
