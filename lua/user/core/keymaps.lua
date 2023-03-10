@@ -63,16 +63,23 @@ keymap.set('n', '<leader>rr', '*#cgn', noremap) -- change the current word under
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'N', 'Nzz', noremap) -- center search result
+-- spelling
+keymap.set('n', '<leader>co', 'a<C-x>s', noremap) -- show spelling suggest dropdown menu
+keymap.set('n', '<leader>ca', 'zg', noremap) -- add to spelling book
+keymap.set('n', '<leader>cw', 'zw', noremap) -- add as spelling book as a bad word
+keymap.set('n', '<leader>cd', 'zuwzug', noremap) -- remove from spelling book
 
 ----------------
 -- formatting --
 ----------------
 -- formatting general
 keymap.set('n', '<leader>fa', 'gggqG', noremap) -- apply formatting if any
-keymap.set('n', '<leader>fr', '<cmd>TypescriptRenameFile<CR>') -- rename file and update imports
-keymap.set('n', '<leader>fd', '<cmd>TypescriptRemoveUnused<CR>') -- remove unused variables
-keymap.set('n', '<leader>fm', '<cmd>TypescriptAddMissingImports<CR>') -- add missing imports
-keymap.set('n', '<leader>fi', '<cmd>OrganizeImports<CR>') -- Organize Import (Custom: typescript)
+keymap.set('n', '<leader>fr', '<cmd>TypescriptRenameFile<CR>', noremap) -- rename file and update imports
+keymap.set('n', '<leader>fd', '<cmd>TypescriptRemoveUnused<CR>', noremap) -- remove unused variables
+keymap.set('n', '<leader>fm', '<cmd>TypescriptAddMissingImports<CR>', noremap) -- add missing imports
+keymap.set('n', '<leader>fi', '<cmd>OrganizeImports<CR>', noremap) -- Organize Import (Custom: typescript)
+keymap.set('n', '<leader>fb', '$%%v%', noremap) -- highlight the content inside of the bracket
+keymap.set('n', '<leader>FB', '$%%V%', noremap) -- highlight the content inside and outside of the the bracket
 -- formatting move lines
 keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
 keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
