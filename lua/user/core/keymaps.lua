@@ -64,10 +64,10 @@ keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word 
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'N', 'Nzz', noremap) -- center search result
 -- spelling
-keymap.set('n', '<leader>so', 'a<C-x>s', noremap) -- show spelling suggest dropdown menu
-keymap.set('n', '<leader>sa', 'zg', noremap) -- add to spelling book
-keymap.set('n', '<leader>sw', 'zw', noremap) -- add as spelling book as a bad word
-keymap.set('n', '<leader>sd', 'zuwzug', noremap) -- remove from spelling book
+keymap.set('n', '<leader>co', 'a<C-x>s', noremap) -- show spelling suggest dropdown menu
+keymap.set('n', '<leader>ca', 'zg', noremap) -- add to spelling book
+keymap.set('n', '<leader>cw', 'zw', noremap) -- add as spelling book as a bad word
+keymap.set('n', '<leader>cd', 'zuwzug', noremap) -- remove from spelling book
 
 ----------------
 -- formatting --
