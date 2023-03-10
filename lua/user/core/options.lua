@@ -2,14 +2,14 @@ local opt = vim.opt -- for conciseness
 
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
-opt.pumheight = 10 -- max number of items to show in the popup menu
+opt.pumheight = 5
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 -- opt.colorcolumn = '80'
 opt.textwidth = 0
-opt.undofile = true -- undo file after ':wp'
+opt.undofile = true -- undo file after ':wpq'
 opt.linebreak = true
 opt.breakindent = true
 opt.lazyredraw = false
@@ -43,3 +43,7 @@ opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
 opt.smartindent = true -- make indenting smarter again
 opt.swapfile = false -- disable/enable the swapFile
 opt.shortmess = vim.o.shortmess .. 'aoOstTWFAIc'
+opt.spell = true
+opt.spelllang = 'en_us'
+opt.spellsuggest:append('5')
+opt.spellfile = vim.fn.findfile('~/.config/langs/en.utf-8.add')
