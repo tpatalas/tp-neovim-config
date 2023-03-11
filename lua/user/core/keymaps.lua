@@ -64,10 +64,8 @@ keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word 
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'N', 'Nzz', noremap) -- center search result
 -- spelling
-keymap.set('n', '<leader>co', 'a<C-x>s', noremap) -- show spelling suggest dropdown menu
-keymap.set('n', '<leader>ca', 'zg', noremap) -- add to spelling book
-keymap.set('n', '<leader>cw', 'zw', noremap) -- add as spelling book as a bad word
-keymap.set('n', '<leader>cd', 'zuwzug', noremap) -- remove from spelling book
+keymap.set('n', 'zo', 'a<C-x>s', noremap) -- show spelling suggest dropdown menu
+keymap.set('n', 'zd', 'zuwzug', noremap) -- remove from spelling book
 
 ----------------
 -- formatting --
@@ -79,7 +77,7 @@ keymap.set('n', '<leader>fd', '<cmd>TypescriptRemoveUnused<CR>', noremap) -- rem
 keymap.set('n', '<leader>fm', '<cmd>TypescriptAddMissingImports<CR>', noremap) -- add missing imports
 keymap.set('n', '<leader>fi', '<cmd>OrganizeImports<CR>', noremap) -- Organize Import (Custom: typescript)
 keymap.set('n', '<leader>fb', '$%%v%', noremap) -- highlight the content inside of the bracket
-keymap.set('n', '<leader>FB', '$%%V%', noremap) -- highlight the content inside and outside of the the bracket
+keymap.set('n', '<leader>FB', '$%%V%', noremap) -- highlight the content inside and outside of the bracket
 -- formatting move lines
 keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
 keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward

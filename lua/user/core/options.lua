@@ -47,3 +47,4 @@ opt.spell = true
 opt.spelllang = 'en_us'
 opt.spellsuggest:append('5')
 opt.spellfile = vim.fn.findfile('~/.config/langs/en.utf-8.add')
+opt.spelloptions = 'camel,noplainbuffer'
