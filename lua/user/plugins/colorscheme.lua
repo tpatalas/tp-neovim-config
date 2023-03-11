@@ -40,6 +40,10 @@ return {
 				highlights.Cursor = { bg = colors.yellow }
 				highlights.NormalFloat = { bg = colors.bg }
 				highlights.MsgArea = { fg = colors.fg_dark, bg = '' }
+				highlights.SpellBad = { fg = '', bg = '', undercurl = true, sp = colors.green }
+				highlights.SpellCap = { fg = '', bg = '', undercurl = true, sp = colors.green }
+				highlights.SpellRare = { fg = '', bg = '', undercurl = true, sp = colors.green }
+				highlights.SpellLocal = { fg = '', bg = '', undercurl = true, sp = colors.green }
 			end,
 		})
 
