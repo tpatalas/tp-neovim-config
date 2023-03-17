@@ -11,7 +11,7 @@ return {
 					hide_gitignored = true,
 					hide_dotfiles = false,
 				},
-				follow_current_file = true,
+				follow_current_file = false,
 			},
 		})
 	end,
