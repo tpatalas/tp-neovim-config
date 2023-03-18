@@ -43,7 +43,3 @@ opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
 opt.smartindent = true -- make indenting smarter again
 opt.swapfile = false -- disable/enable the swapFile
 opt.shortmess = vim.o.shortmess .. 'aoOstTWFAIc'
-opt.spell = true
-opt.spelllang = 'en_us'
-opt.spellsuggest:append('5')
-opt.spellfile = vim.fn.findfile('~/.config/langs/en.utf-8.add')
