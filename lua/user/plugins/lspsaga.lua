@@ -7,6 +7,9 @@ return {
 	config = function()
 		local saga = require('lspsaga')
 		saga.setup({
+			lightbulb = {
+				enable = false,
+			},
 			diagnostic = {
 				on_insert = false,
 				on_insert_follow = false,
