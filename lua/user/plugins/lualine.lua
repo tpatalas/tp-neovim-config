@@ -109,7 +109,7 @@ return {
 					{
 						'diagnostics',
 						sources = { 'nvim_workspace_diagnostic' },
-						symbols = { error = ' ', warn = ' ', info = ' ', hint = 'ﴞ ' },
+						symbols = { error = ' ', warn = ' ', info = ' ', hint = '󰠠 ' },
 						sections = { 'error', 'warn', 'info', 'hint' },
 						colored = true,
 						update_in_insert = true,
@@ -127,13 +127,13 @@ return {
 				lualine_x = {
 					{ anchor },
 					{ 'location' },
-					{ 'progress', icon = 'ﴜ' },
+					{ 'progress', icon = '󱨂 ' },
 				},
 				lualine_y = {
-					{ total_lines, icon = 'ﴴ' },
+					{ total_lines, icon = ' ' },
 					{
 						'filesize',
-						icon = '',
+						icon = ' ',
 					},
 				},
 				lualine_z = {

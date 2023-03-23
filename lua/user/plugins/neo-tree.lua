@@ -6,10 +6,21 @@ return {
 	},
 	config = function()
 		require('neo-tree').setup({
+			window = {
+				position = 'right',
+				width = 35,
+			},
 			filesystem = {
 				filtered_items = {
 					hide_gitignored = true,
 					hide_dotfiles = false,
+					hide_by_name = {
+						'.gitignore',
+						'.git',
+						'.github',
+						'.husky',
+						'.swc',
+					},
 				},
 				follow_current_file = false,
 			},
