@@ -59,12 +59,29 @@ return {
 		ft = { 'markdown' },
 	}, -- toc generator
 	{
-		'ggandor/leap.nvim',
+		'utilyre/barbecue.nvim',
+		name = 'barbecue',
+		version = '*',
 		dependencies = {
-			'tpope/vim-repeat',
-			config = function()
-				require('leap').add_default_mappings()
-			end,
+			'SmiteshP/nvim-navic',
 		},
+		theme = 'tokyonight',
+		opts = {
+			show_navic = false,
+		},
+	},
+	{
+		'glepnir/dashboard-nvim',
+		event = 'VimEnter',
+		config = function()
+			require('dashboard').setup({
+				config = {
+					week_header = {
+						enable = true, --boolean use a week header
+					},
+				},
+			})
+		end,
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
 	},
 }
