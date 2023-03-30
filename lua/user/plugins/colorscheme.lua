@@ -41,6 +41,7 @@ return {
 				highlights.NormalFloat = { bg = colors.bg }
 				highlights.MsgArea = { fg = colors.fg_dark, bg = '' }
 				highlights.NeoTreeNormal = { bg = '' }
+				highlights.NeoTreeNormalNC = { bg = '' }
 				highlights.WinSeparator = { fg = colors.bg_highlight, bg = colors.bg_highlight }
 			end,
 		})
