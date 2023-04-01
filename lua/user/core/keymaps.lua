@@ -4,6 +4,7 @@ local noremap = { noremap = true, silent = true }
 keymap.set('', '<Space>', '<Nop>', noremap)
 -- disable default help key
 keymap.set('', '<F1>', '<Nop>', noremap)
+keymap.set('i', '<F1>', '<Nop>', noremap)
 vim.g.maplocalleader = ' '
 vim.g.mapleader = ' '
 
