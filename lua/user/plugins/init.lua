@@ -84,4 +84,12 @@ return {
 		end,
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
 	},
+	{
+		'chrisgrieser/nvim-early-retirement',
+		event = 'VeryLazy',
+		config = true,
+		opts = {
+			retirementAgeMins = 5,
+		},
+	},
 }
