@@ -60,7 +60,7 @@ keymap.set('n', '<leader>ee', ':e<CR>', noremap) -- save
 keymap.set('n', '<leader>EE', ':e!<CR>', noremap) -- save
 -- search and  Replace
 keymap.set('n', '<leader>RR', ':%s/<c-r><c-w>/<c-r><c-w>', noremap) -- Search and replace the word under current
-keymap.set('n', '<leader>rr', '*#cgn', noremap) -- change the current word under the cursor * change > ESC > press `.` to change next
+keymap.set('n', '<leader>rr', '/\\<<C-R>=expand(\'<cword>\')<CR>\\>\\C<CR>``cgn', noremap) -- search for the current word under the cursor surrounded by angle brackets and perform
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'N', 'Nzz', noremap) -- center search result
@@ -86,10 +86,21 @@ keymap.set('n', '<c-d>', '<c-d>zz', noremap) -- move forward half a screen then 
 keymap.set('n', '<c-u>', '<c-u>zz', noremap) -- move backward half a screen then center cursor
 keymap.set('n', ']]', ']]zz', noremap) -- go to the end of the line then center cursor
 keymap.set('n', 'G', 'Gzz', noremap) -- go to the end of the line then center cursor
-keymap.set('n', '}', '}zz', noremap) -- jump to the next paragraph then center cursor
-keymap.set('n', '{', '{zz', noremap) -- jump to the previous paragraph then center cursor
 keymap.set('n', '<s-down>', '<s-down>zz', noremap)
 keymap.set('n', '<s-up>', '<s-up>zz', noremap)
+keymap.set('n', '<c-d>', '5<down>', noremap) -- move 5 lines down
+keymap.set('n', '<c-u>', '5<up>', noremap) -- move 5 lines up
+-- character navigation
+keymap.set('n', '}', '/}<CR>', noremap)
+keymap.set('n', '{', '/{<CR>', noremap)
+keymap.set('n', '(', '/(<CR>', noremap)
+keymap.set('n', ')', '/)<CR>', noremap)
+keymap.set('n', '[', '/[<CR>', noremap)
+keymap.set('n', ']', '/]<CR>', noremap)
+keymap.set('n', '\'', '/\'<CR>', noremap)
+keymap.set('n', ',', '/,<CR>', noremap)
+keymap.set('n', '=', '/=<CR>', noremap)
+
 -- buffers navigation
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
