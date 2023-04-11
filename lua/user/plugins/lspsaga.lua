@@ -15,10 +15,8 @@ return {
 		keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opts) -- see available code actions
 		keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', opts) -- smart rename
 		keymap.set('n', '<leader>d', '<cmd>Lspsaga show_line_diagnostics<CR>')
-		keymap.set('n', '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts) -- jump to previous diagnostic in buffer
-		keymap.set('n', ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts) -- jump to next diagnostic in buffer
-		keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<CR><cmd>Lspsaga code_action<CR>', opts) -- jump to previous diagnostic in buffer
-		keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR><cmd>Lspsaga code_action<CR>', opts) -- jump to next diagnostic in buffer
+		keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts) -- jump to previous diagnostic in buffer
+		keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts) -- jump to next diagnostic in buffer
 		keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts) -- show documentation for what is under cursor
 
 		local saga = require('lspsaga')
@@ -30,6 +28,7 @@ return {
 				on_insert = false,
 				on_insert_follow = false,
 				show_code_action = false,
+				jump_num_shortcut = false,
 			},
 			move_in_saga = { prev = '<C-k>', next = '<C-j>' },
 			finder_action_keys = {
