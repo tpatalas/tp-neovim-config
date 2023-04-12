@@ -117,7 +117,7 @@ keymap.set('n', '<a-9>', ':LualineBuffersJump 9<CR>', noremap)
 keymap.set('n', '<a-10>', ':LualineBuffersJump 10<CR>', noremap)
 -- buffers action
 keymap.set('n', '<leader>ww', ':silent! bd<CR>', noremap) -- close current buffer
-keymap.set('n', '<leader>WW', ':silent! %bd|e#<CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
+keymap.set('n', '<leader>WW', ':silent! %bd|e#|normal`"<CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
 
 -- delete single character without copying into register
 keymap.set('n', 'x', '"_x', noremap)
