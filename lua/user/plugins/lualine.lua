@@ -127,13 +127,13 @@ return {
 				lualine_x = {
 					{ anchor },
 					{ 'location' },
-					{ 'progress', icon = '󱨂 ' },
+					{ 'progress', icon = '󱨂' },
 				},
 				lualine_y = {
-					{ total_lines, icon = ' ' },
+					{ total_lines, icon = '' },
 					{
 						'filesize',
-						icon = ' ',
+						icon = '',
 					},
 				},
 				lualine_z = {
