@@ -8,7 +8,6 @@ return {
 		local codeactions = null_ls.builtins.code_actions
 		local completion = null_ls.builtins.completion
 
-    --kljdflkjdsklfjdklsjflkdjslkf
 		local eslint = {
 			condition = function(utils)
 				return utils.root_has_file('.eslintrc.json')

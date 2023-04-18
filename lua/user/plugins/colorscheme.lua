@@ -43,6 +43,7 @@ return {
 				highlights.NeoTreeNormal = { bg = '' }
 				highlights.NeoTreeNormalNC = { bg = '' }
 				highlights.WinSeparator = { fg = colors.bg_highlight, bg = colors.bg_highlight }
+				highlights.IndentBlanklineContextChar = { fg = colors.blue }
 			end,
 		})
 
