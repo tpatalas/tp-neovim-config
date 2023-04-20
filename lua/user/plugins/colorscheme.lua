@@ -7,6 +7,8 @@ return {
 	branch = 'main',
 	priority = 1000, -- make sure to load this before all the other start plugins
 	config = function()
+		local util = require('tokyonight.util')
+
 		local custom = {
 			highlight = '#51566F',
 		}
@@ -43,7 +45,7 @@ return {
 				highlights.NeoTreeNormal = { bg = '' }
 				highlights.NeoTreeNormalNC = { bg = '' }
 				highlights.WinSeparator = { fg = colors.bg_highlight, bg = colors.bg_highlight }
-				highlights.IndentBlanklineContextChar = { fg = colors.blue }
+				highlights.IndentBlanklineContextChar = { fg = colors.magenta }
 			end,
 		})
 
