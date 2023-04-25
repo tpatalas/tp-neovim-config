@@ -16,11 +16,6 @@ colorscheme: [Tokyonight](https://github.com/folke/tokyonight.nvim)
 - [Installation (Homebrew)](#installation-homebrew)
   - [Install Neovim](#install-neovim)
   - [Install Lazygit](#install-lazygit)
-- [Major Keymaps](#major-keymaps)
-  - [General Keymaps (Normal Mode)](#general-keymaps-normal-mode)
-    - [Formatting](#formatting)
-    - [Buffers](#buffers)
-    - [Window Management](#window-management)
 - [Installed Plugins](#installed-plugins)
   - [Plugin Manager](#plugin-manager)
   - [Essential Lua Functions for other plugins](#essential-lua-functions-for-other-plugins)
@@ -68,68 +63,6 @@ brew install neovim
 brew install lazygit
 ```
 
-### Major Keymaps
-
-> [More keymaps](https://github.com/tpAtalas/tp-nvim-lua-config/blob/master/lua/user/core/keymaps.lua)
-
-#### General Keymaps (Normal Mode)
-
-##### Formatting
-
-| Keymap        | Description                                      | Comment                  |
-| ------------- | ------------------------------------------------ | ------------------------ |
-| `<leader>fma` | Apply formatting                                 | -                        |
-| `<leader>fmo` | Remove unused imports                            | -                        |
-|               |                                                  |                          |
-| `alt+up`      | Move the current line upward                     | -                        |
-| `alt+down`    | Move the current line downward                   | -                        |
-|               |                                                  |                          |
-| `<leader>RR`  | Search the word under the cursor and replace all | -                        |
-| `<leader>rr`  | Replace the current word under the cursor \*     | press `.` to change next |
-| `<leader>DD`  | Delete all                                       | -                        |
-| `<leader>AA`  | Select all with Visual mode                      |
-
-\* **Replace the current word under the cursor**:  
-_1) `<leader>rr` 2) change
-word 3)`<ESC>` 4) Press `.` to apply the change next_
-
-##### Buffers
-
-| Keymap            | Description                         | Comment         |
-| ----------------- | ----------------------------------- | --------------- |
-| `shift+alt+left`  | Go to the previous buffer           | -               |
-| `shift+alt+right` | Go to the next buffer               | -               |
-|                   |                                     |                 |
-| `alt+1`           | Go to the buffer 1                  | Plugin: Lualine |
-| `alt+2`           | Go to the buffer 2                  | Plugin: Lualine |
-| `alt+3`           | Go to the buffer 3                  | Plugin: Lualine |
-| `alt+4`           | Go to the buffer 4                  | Plugin: Lualine |
-| `alt+5`           | Go to the buffer 5                  | Plugin: Lualine |
-| `alt+6`           | Go to the buffer 6                  | Plugin: Lualine |
-| `alt+7`           | Go to the buffer 7                  | Plugin: Lualine |
-| `alt+8`           | Go to the buffer 8                  | Plugin: Lualine |
-| `alt+9`           | Go to the buffer 9                  | Plugin: Lualine |
-| `alt+0`           | Go to the buffer 10                 | Plugin: Lualine |
-|                   |                                     |                 |
-| `<leader>ww`      | Close the current buffer            | -               |
-| `<ldeader>WW`     | Close all except the current buffer | -               |
-
-##### Window Management
-
-| Keymap           | Description                         | Comment |
-| ---------------- | ----------------------------------- | ------- |
-| `leader+wv`      | Split the window vertically         | -       |
-| `leader+wh`      | Split the window horizontally       | -       |
-| `leader+wc`      | Close the current split window      | -       |
-|                  |                                     |         |
-| `ctrl+alt+right` | Increase the vertical window size   | -       |
-| `ctrl+alt+left`  | Decrease the vertical window size   | -       |
-| `ctrl+alt+up`    | Increase the horizontal window size | -       |
-| `ctrl+alt+down`  | Decrease the horizontal window size | -       |
-|                  |                                     |         |
-| `ctrl+backtick`  | Switch between split windows        | -       |
-| `<leader>=`      | Reset window size                   | -       |
-
 ### Installed Plugins
 
 > Following plugins are installed for the initial setup
@@ -148,6 +81,9 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 - [Nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [Nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- [Barbecue](https://github.com/utilyre/barbecue.nvim)
+- [dashboard-nvim](https://github.com/glepnir/dashboard-nvi)
+- [Indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 
 #### Windows and terminal Manager
 
@@ -163,7 +99,7 @@ word 3)`<ESC>` 4) Press `.` to apply the change next_
 
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Vim-matchup](https://github.com/andymass/vim-matchup)
-- [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
+- [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 
 #### Autocompletion and snippets
 

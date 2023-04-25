@@ -8,7 +8,6 @@ return {
 		local codeactions = null_ls.builtins.code_actions
 		local completion = null_ls.builtins.completion
 
-    --kljdflkjdsklfjdklsjflkdjslkf
 		local eslint = {
 			condition = function(utils)
 				return utils.root_has_file('.eslintrc.json')
@@ -95,6 +94,8 @@ return {
 			formatting.markdownlint,
 			formatting.stylua,
 			formatting.prettierd,
+			diagnostics.hadolint,
+			diagnostics.dotenv_linter,
 			diagnostics.cspell.with(cspell),
 			codeactions.cspell.with(cspell),
 			codeactions.eslint_d.with(eslint),
