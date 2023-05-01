@@ -60,6 +60,7 @@ return {
 				'javascript',
 				'javascriptreact',
 				'css',
+				'gitcommit',
 			},
 			extra_args = {
 				'--config',
