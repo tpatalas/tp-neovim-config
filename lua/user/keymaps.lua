@@ -82,13 +82,12 @@ keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap)
 
 -- navigation --
 -- general navigation
-keymap.set('n', ']]', ']]zz', noremap) -- go to the end of the line then center cursor
 keymap.set('n', 'G', 'Gzz', noremap) -- go to the end of the line then center cursor
 keymap.set('n', '<s-down>', '<s-down>zz', noremap)
 keymap.set('n', '<s-up>', '<s-up>zz', noremap)
 keymap.set('n', '<c-d>', '5<down>', noremap) -- move 5 lines down
 keymap.set('n', '<c-u>', '5<up>', noremap) -- move 5 lines up
--- character navigation
+-- character navigation forward
 keymap.set('n', '}', '/}<CR>', noremap)
 keymap.set('n', '{', '/{<CR>', noremap)
 keymap.set('n', '(', '/(<CR>', noremap)
@@ -97,7 +96,21 @@ keymap.set('n', '[', '/[<CR>', noremap)
 keymap.set('n', ']', '/]<CR>', noremap)
 keymap.set('n', '\'', '/\'<CR>', noremap)
 keymap.set('n', ',', '/,<CR>', noremap)
+keymap.set('n', '.', '/,<CR>', noremap)
 keymap.set('n', '=', '/=<CR>', noremap)
+keymap.set('n', '\'', '/\'<CR>', noremap)
+-- character navigation backward
+keymap.set('n', '<a-}>', '?}<CR>', noremap)
+keymap.set('n', '<a-{>', '?{<CR>', noremap)
+keymap.set('n', '<a-(>', '?(<CR>', noremap)
+keymap.set('n', '<a-)>', '?)<CR>', noremap)
+keymap.set('n', '<a-[>', '?[<CR>', noremap)
+keymap.set('n', '<a-]>', '?]<CR>', noremap)
+keymap.set('n', '<a-\'>', '?\'<CR>', noremap)
+keymap.set('n', '<a-,>', '?,<CR>', noremap)
+keymap.set('n', '<a-.>', '?,<CR>', noremap)
+keymap.set('n', '<a-=>', '?=<CR>', noremap)
+keymap.set('n', '<a-\'>', '?\'<CR>', noremap)
 
 -- buffers navigation
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
