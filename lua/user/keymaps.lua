@@ -87,6 +87,8 @@ keymap.set('n', '<s-down>', '<s-down>zz', noremap)
 keymap.set('n', '<s-up>', '<s-up>zz', noremap)
 keymap.set('n', '<c-d>', '5<down>', noremap) -- move 5 lines down
 keymap.set('n', '<c-u>', '5<up>', noremap) -- move 5 lines up
+keymap.set('n', '<c-i>', '<c-i>zz', noremap) -- go newer position and center the cursor
+keymap.set('n', '<c-o>', '<c-o>zz', noremap) -- go older position and center the cursor
 -- character navigation forward
 keymap.set('n', '}', '/}<CR>', noremap)
 keymap.set('n', '{', '/{<CR>', noremap)
@@ -207,5 +209,5 @@ keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colori
 -------------
 keymap.set('n', '<leader>ha', ':lua require("harpoon.mark").add_file()<CR>', noremap) -- add file
 keymap.set('n', '<leader>hq', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', noremap) -- quick menu
-keymap.set('n', 'O', ':lua require("harpoon.ui").nav_next()<CR>', noremap) -- navigate to next mark
-keymap.set('n', 'I', ':lua require("harpoon.ui").nav_prev()<CR>', noremap) -- navigate to prev mark
+keymap.set('n', '<leader>o', ':lua require("harpoon.ui").nav_next()<CR>zz', noremap) -- navigate to next mark
+keymap.set('n', '<leader>i', ':lua require("harpoon.ui").nav_prev()<CR>zz', noremap) -- navigate to prev mark
