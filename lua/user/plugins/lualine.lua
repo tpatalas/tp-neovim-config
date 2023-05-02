@@ -53,10 +53,6 @@ return {
 			return vim.fn.line('$')
 		end
 
-		local block = function()
-			return '▊'
-		end
-
 		local anchor = function()
 			return '%='
 		end
@@ -99,7 +95,7 @@ return {
 				lualine_a = {
 					{
 						'mode',
-						icon = '▊ ',
+						icon = ' ',
 						color = { bg = colors.bg_highlight },
 						padding = { left = 0, right = 1 },
 					},
@@ -146,7 +142,6 @@ return {
 							removed = { fg = colors.red },
 						},
 					},
-					{ block, padding = 0.4 },
 				},
 			},
 			inactive_sections = {
@@ -161,7 +156,7 @@ return {
 				lualine_c = {
 					{
 						'buffers',
-						max_length = vim.o.columns * 9 / 10, -- Maximum width of tabs component.
+						max_length = vim.o.columns * 1, -- Maximum width of tabs component.
 						mode = 2,
 						buffers_color = {
 							active = { fg = colors.green1, bg = colors.terminal_black }, -- Color for active tab.
