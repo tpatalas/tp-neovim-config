@@ -152,19 +152,7 @@ return {
 				lualine_y = {},
 				lualine_z = {},
 			},
-			tabline = {
-				lualine_c = {
-					{
-						'buffers',
-						max_length = vim.o.columns * 1, -- Maximum width of tabs component.
-						mode = 2,
-						buffers_color = {
-							active = { fg = colors.green1, bg = colors.terminal_black }, -- Color for active tab.
-							inactive = { fg = colors.comment, bg = colors.bg_dark }, -- Color for inactive tab.
-						},
-					},
-				},
-			},
+			tabline = {},
 			winbar = {},
 			inactive_winbar = {},
 			extensions = { 'toggleterm' },
