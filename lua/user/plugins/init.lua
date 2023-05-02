@@ -90,4 +90,7 @@ return {
 			})
 		end,
 	},
+	{
+		'ThePrimeagen/harpoon',
+	},
 }

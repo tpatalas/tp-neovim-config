@@ -25,7 +25,6 @@ return {
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 			-- set keybinds
 			keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts) -- got to declaration
-			keymap.set('n', '<leader>o', '<cmd>LSoutlineToggle<CR>', opts) -- see outline on right hand side
 			keymap.set('n', '<space>wa', '<cmd>add_workspace_folder<CR>', opts)
 		end
 

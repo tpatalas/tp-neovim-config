@@ -186,6 +186,7 @@ keymap.set('n', '<leader>ld', ':lua vim.diagnostic.reset()<CR>', noremap) -- res
 keymap.set('n', '<leader>ls', ':LspStart<CR>', noremap) -- start lsp
 keymap.set('n', '<leader>lx', ':LspStop<CR>', noremap) -- stop lsp
 keymap.set('n', '<leader>li', ':LspInfo<CR>', noremap) -- lsp info
+
 -- markdown preview
 keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
 keymap.set('n', '<leader>mps', ':MarkdownPreviewStop<CR>', noremap) -- stop markdown preview stop
@@ -200,3 +201,11 @@ keymap.set('n', '<leader>mto', ':TableModeToggle<CR>', noremap) -- toggle markdo
 
 -- colorizer
 keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colorizer
+
+-------------
+-- harpoon --
+-------------
+keymap.set('n', '<leader>ha', ':lua require("harpoon.mark").add_file()<CR>', noremap) -- add file
+keymap.set('n', '<leader>hq', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', noremap) -- quick menu
+keymap.set('n', 'O', ':lua require("harpoon.ui").nav_next()<CR>', noremap) -- navigate to next mark
+keymap.set('n', 'I', ':lua require("harpoon.ui").nav_prev()<CR>', noremap) -- navigate to prev mark
