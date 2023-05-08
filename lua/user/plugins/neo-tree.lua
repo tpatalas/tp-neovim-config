@@ -17,7 +17,6 @@ return {
 					hide_by_name = {
 						'.gitignore',
 						'.git',
-						'.github',
 						'.husky',
 						'.swc',
 					},
