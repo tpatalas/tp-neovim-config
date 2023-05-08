@@ -92,6 +92,7 @@ return {
 		local source = {
 			diagnostics.tsc,
 			-- WARNING: diagnostics listed below do not support workspace level diagnostics
+			diagnostics.actionlint,
 			formatting.markdownlint,
 			formatting.stylua,
 			formatting.prettierd,
