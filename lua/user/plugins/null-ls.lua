@@ -60,6 +60,7 @@ return {
 				'javascript',
 				'javascriptreact',
 				'css',
+				'gitcommit',
 			},
 			extra_args = {
 				'--config',
@@ -91,11 +92,10 @@ return {
 		local source = {
 			diagnostics.tsc,
 			-- WARNING: diagnostics listed below do not support workspace level diagnostics
+			diagnostics.actionlint,
 			formatting.markdownlint,
 			formatting.stylua,
 			formatting.prettierd,
-			diagnostics.hadolint,
-			diagnostics.dotenv_linter,
 			diagnostics.cspell.with(cspell),
 			codeactions.cspell.with(cspell),
 			codeactions.eslint_d.with(eslint),

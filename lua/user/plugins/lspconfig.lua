@@ -25,7 +25,6 @@ return {
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 			-- set keybinds
 			keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts) -- got to declaration
-			keymap.set('n', '<leader>o', '<cmd>LSoutlineToggle<CR>', opts) -- see outline on right hand side
 			keymap.set('n', '<space>wa', '<cmd>add_workspace_folder<CR>', opts)
 		end
 
@@ -35,7 +34,7 @@ return {
 
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
-		local signs = { Error = ' ', Warn = ' ', Info = ' ', Hint = '󰠠 ' }
+		local signs = { Error = ' ', Warn = ' ', Info = ' ', Hint = 'ﴞ ' }
 		for type, icon in pairs(signs) do
 			local hl = 'DiagnosticSign' .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
@@ -149,11 +148,6 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
-		})
-
-		lspconfig['marksman'].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
 		})
 
 		lspconfig['lua_ls'].setup({

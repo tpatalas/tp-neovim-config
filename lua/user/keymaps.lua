@@ -82,24 +82,33 @@ keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap)
 
 -- navigation --
 -- general navigation
-keymap.set('n', '<c-d>', '<c-d>zz', noremap) -- move forward half a screen then center cursor
-keymap.set('n', '<c-u>', '<c-u>zz', noremap) -- move backward half a screen then center cursor
-keymap.set('n', ']]', ']]zz', noremap) -- go to the end of the line then center cursor
 keymap.set('n', 'G', 'Gzz', noremap) -- go to the end of the line then center cursor
 keymap.set('n', '<s-down>', '<s-down>zz', noremap)
 keymap.set('n', '<s-up>', '<s-up>zz', noremap)
 keymap.set('n', '<c-d>', '5<down>', noremap) -- move 5 lines down
 keymap.set('n', '<c-u>', '5<up>', noremap) -- move 5 lines up
--- character navigation
+keymap.set('n', '<c-i>', '<c-i>zz', noremap) -- go newer position and center the cursor
+keymap.set('n', '<c-o>', '<c-o>zz', noremap) -- go older position and center the cursor
+-- character navigation forward
 keymap.set('n', '}', '/}<CR>', noremap)
 keymap.set('n', '{', '/{<CR>', noremap)
 keymap.set('n', '(', '/(<CR>', noremap)
 keymap.set('n', ')', '/)<CR>', noremap)
 keymap.set('n', '[', '/[<CR>', noremap)
 keymap.set('n', ']', '/]<CR>', noremap)
-keymap.set('n', '\'', '/\'<CR>', noremap)
 keymap.set('n', ',', '/,<CR>', noremap)
 keymap.set('n', '=', '/=<CR>', noremap)
+keymap.set('n', '\'', '/\'<CR>', noremap)
+-- character navigation backward
+keymap.set('n', '<a-}>', '?}<CR>', noremap)
+keymap.set('n', '<a-{>', '?{<CR>', noremap)
+keymap.set('n', '<a-(>', '?(<CR>', noremap)
+keymap.set('n', '<a-)>', '?)<CR>', noremap)
+keymap.set('n', '<a-[>', '?[<CR>', noremap)
+keymap.set('n', '<a-]>', '?]<CR>', noremap)
+keymap.set('n', '<a-,>', '?,<CR>', noremap)
+keymap.set('n', '<a-=>', '?=<CR>', noremap)
+keymap.set('n', '<a-\'>', '?\'<CR>', noremap)
 
 -- buffers navigation
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
@@ -179,6 +188,7 @@ keymap.set('n', '<leader>ld', ':lua vim.diagnostic.reset()<CR>', noremap) -- res
 keymap.set('n', '<leader>ls', ':LspStart<CR>', noremap) -- start lsp
 keymap.set('n', '<leader>lx', ':LspStop<CR>', noremap) -- stop lsp
 keymap.set('n', '<leader>li', ':LspInfo<CR>', noremap) -- lsp info
+
 -- markdown preview
 keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
 keymap.set('n', '<leader>mps', ':MarkdownPreviewStop<CR>', noremap) -- stop markdown preview stop
@@ -193,3 +203,11 @@ keymap.set('n', '<leader>mto', ':TableModeToggle<CR>', noremap) -- toggle markdo
 
 -- colorizer
 keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colorizer
+
+-------------
+-- harpoon --
+-------------
+keymap.set('n', '<leader>ha', ':lua require("harpoon.mark").add_file()<CR>', noremap) -- add file
+keymap.set('n', '<leader>hq', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', noremap) -- quick menu
+keymap.set('n', '<leader>o', ':lua require("harpoon.ui").nav_next()<CR>zz', noremap) -- navigate to next mark
+keymap.set('n', '<leader>i', ':lua require("harpoon.ui").nav_prev()<CR>zz', noremap) -- navigate to prev mark

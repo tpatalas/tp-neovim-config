@@ -71,22 +71,6 @@ return {
 		},
 	},
 	{
-		'glepnir/dashboard-nvim',
-		event = 'VimEnter',
-		config = function()
-			require('dashboard').setup({
-				config = {
-					week_header = {
-						enable = true, --boolean use a week header
-					},
-				},
-			})
-		end,
-		dependencies = {
-			'nvim-tree/nvim-web-devicons',
-		},
-	},
-	{
 		'lukas-reineke/indent-blankline.nvim',
 		event = 'BufRead',
 		config = function()
@@ -96,5 +80,17 @@ return {
 				show_current_context_start = false,
 			})
 		end,
+	},
+	{
+		'rmagatti/auto-session',
+		config = function()
+			require('auto-session').setup({
+				log_level = 'error',
+				auto_session_suppress_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
+			})
+		end,
+	},
+	{
+		'ThePrimeagen/harpoon',
 	},
 }
