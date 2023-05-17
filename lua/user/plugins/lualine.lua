@@ -4,48 +4,48 @@
 return {
 	'nvim-lualine/lualine.nvim',
 	config = function()
-		local colors = require('tokyonight.colors').setup()
+		local palette = require('nightfox.palette').load('nightfox')
 
 		local custom_theme = {
 			normal = {
-				a = { fg = colors.blue, bg = '' },
-				b = { fg = colors.fg_dark, bg = '' },
-				c = { fg = colors.green1, bg = '' },
-				x = { fg = colors.fg_dark, bg = '' },
-				y = { fg = colors.green, bg = '' },
-				z = { fg = colors.blue, bg = '' },
+				a = { fg = palette.blue.base, bg = palette.bg0 },
+				b = { fg = palette.fg2, bg = palette.bg0 },
+				c = { fg = palette.green.base, bg = palette.bg0 },
+				x = { fg = palette.fg2, bg = palette.bg0 },
+				y = { fg = palette.green.base, bg = palette.bg0 },
+				z = { fg = palette.blue.base, bg = palette.bg0 },
 			},
 			insert = {
-				a = { fg = colors.yellow, bg = '' },
-				b = { fg = colors.yellow, bg = '' },
-				c = { fg = colors.yellow, bg = '' },
-				x = { fg = colors.yellow, bg = '' },
-				y = { fg = colors.yellow, bg = '' },
-				z = { fg = colors.yellow, bg = '' },
+				a = { fg = palette.yellow.base, bg = palette.bg0 },
+				b = { fg = palette.yellow.base, bg = palette.bg0 },
+				c = { fg = palette.yellow.base, bg = palette.bg0 },
+				x = { fg = palette.yellow.base, bg = palette.bg0 },
+				y = { fg = palette.yellow.base, bg = palette.bg0 },
+				z = { fg = palette.yellow.base, bg = palette.bg0 },
 			},
 			visual = {
-				a = { fg = colors.magenta, bg = '' },
-				b = { fg = colors.magenta, bg = '' },
-				c = { fg = colors.magenta, bg = '' },
-				x = { fg = colors.magenta, bg = '' },
-				y = { fg = colors.magenta, bg = '' },
-				z = { fg = colors.magenta, bg = '' },
+				a = { fg = palette.magenta.base, bg = palette.bg0 },
+				b = { fg = palette.magenta.base, bg = palette.bg0 },
+				c = { fg = palette.magenta.base, bg = palette.bg0 },
+				x = { fg = palette.magenta.base, bg = palette.bg0 },
+				y = { fg = palette.magenta.base, bg = palette.bg0 },
+				z = { fg = palette.magenta.base, bg = palette.bg0 },
 			},
 			command = {
-				a = { fg = colors.orange, bg = '' },
-				b = { fg = colors.orange, bg = '' },
-				c = { fg = colors.orange, bg = '' },
-				x = { fg = colors.orange, bg = '' },
-				y = { fg = colors.orange, bg = '' },
-				z = { fg = colors.orange, bg = '' },
+				a = { fg = palette.orange.base, bg = palette.bg0 },
+				b = { fg = palette.orange.base, bg = palette.bg0 },
+				c = { fg = palette.orange.base, bg = palette.bg0 },
+				x = { fg = palette.orange.base, bg = palette.bg0 },
+				y = { fg = palette.orange.base, bg = palette.bg0 },
+				z = { fg = palette.orange.base, bg = palette.bg0 },
 			},
 			inactive = {
-				a = { fg = colors.fg_gutter, bg = '' },
-				b = { fg = colors.fg_gutter, bg = '' },
-				c = { fg = colors.fg_gutter, bg = '' },
-				x = { fg = colors.fg_gutter, bg = '' },
-				y = { fg = colors.fg_gutter, bg = '' },
-				z = { fg = colors.fg_gutter, bg = '' },
+				a = { fg = palette.fg0, bg = palette.bg0 },
+				b = { fg = palette.fg0, bg = palette.bg0 },
+				c = { fg = palette.fg0, bg = palette.bg0 },
+				x = { fg = palette.fg0, bg = palette.bg0 },
+				y = { fg = palette.fg0, bg = palette.bg0 },
+				z = { fg = palette.fg0, bg = palette.bg0 },
 			},
 		}
 
@@ -63,7 +63,7 @@ return {
 			if res.total > 0 then
 				return string.format('%s/%d %s', res.current, res.total, vim.fn.getreg('/'))
 			else
-				return ''
+				return palette.bg0
 			end
 		end
 
@@ -76,8 +76,8 @@ return {
 			options = {
 				icons_enabled = true,
 				theme = custom_theme,
-				component_separators = '',
-				section_separators = '',
+				component_separators = ' ',
+				section_separators = ' ',
 				disabled_filetypes = {
 					statusline = {},
 					winbar = {},
@@ -96,8 +96,7 @@ return {
 					{
 						'mode',
 						icon = ' ',
-						color = { bg = colors.bg_highlight },
-						padding = { left = 0, right = 1 },
+						padding = { left = 1, right = 1 },
 					},
 				},
 				lualine_b = {
@@ -116,7 +115,7 @@ return {
 					{
 						require('lazy.status').updates,
 						cond = require('lazy.status').has_updates,
-						color = { fg = colors.orange },
+						color = { fg = palette.orange.base },
 					},
 					{ search_count, icon = '󰍉' },
 				},
@@ -137,9 +136,9 @@ return {
 						'diff',
 						symbols = { added = ' ', modified = '柳', removed = ' ' },
 						diff_color = {
-							added = { fg = colors.cyan },
-							modified = { fg = colors.orange },
-							removed = { fg = colors.red },
+							added = { fg = palette.cyan.base },
+							modified = { fg = palette.orange.base },
+							removed = { fg = palette.red.base },
 						},
 					},
 				},
