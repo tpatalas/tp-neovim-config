@@ -18,7 +18,7 @@ return {
 				all = {
 					MatchParen = { fg = '', bg = 'sel1' },
 					IncSearch = { fg = '', bg = 'sel1' },
-					Search = { fg = 'orange', bg = '' },
+					Search = { fg = 'palette.red', bg = '' },
 				},
 			},
 		})
