@@ -65,7 +65,6 @@ return {
 		dependencies = {
 			'SmiteshP/nvim-navic',
 		},
-		theme = 'tokyonight',
 		opts = {
 			show_navic = false,
 		},
