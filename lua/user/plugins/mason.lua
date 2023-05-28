@@ -27,7 +27,6 @@ return {
 				'cssls',
 				'dockerls',
 				'eslint',
-				'graphql',
 				'jsonls',
 				'marksman',
 				'yamlls',
