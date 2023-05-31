@@ -15,7 +15,6 @@
 > more.
 
 ![image](https://github.com/tpAtalas/tp-nvim-lua-config/blob/assets/image.png?raw=true)
-colorscheme: [Tokyonight](https://github.com/folke/tokyonight.nvim)
 
 ## Table of contents
 
