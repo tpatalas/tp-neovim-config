@@ -155,16 +155,16 @@ keymap.set('n', '<leader>tl', ':lua_LAZYGIT_TOGGLE()<CR>', noremap)
 ---------------
 -- toggle previewer by <C-p>
 -- telescope find files
-keymap.set('n', '<leader>to', '<cmd>Telescope find_files previewer=false<CR>', noremap) -- find files within current working directory, respects gitignore
-keymap.set('n', '<leader>ts', '<cmd>Telescope live_grep previewer=false<CR>', noremap) -- find string in current working directory as you type
+keymap.set('n', '<leader>to', '<cmd>Telescope find_files previewer=true<CR>', noremap) -- find files within current working directory, respects gitignore
+keymap.set('n', '<leader>ts', '<cmd>Telescope live_grep previewer=true<CR>', noremap) -- find string in current working directory as you type
 keymap.set('n', '<leader>tc', '<cmd>Telescope grep_string<CR>', noremap) -- find string under cursor in current working directory
-keymap.set('n', '<leader>tb', '<cmd>Telescope buffers<CR> previewer=false', noremap) -- list open buffers in current neovim instance
-keymap.set('n', '<leader>th', '<cmd>Telescope help_tags previewer=false<CR>', noremap) -- list available help tags
+keymap.set('n', '<leader>tb', '<cmd>Telescope buffers<CR> previewer=true', noremap) -- list open buffers in current neovim instance
+keymap.set('n', '<leader>th', '<cmd>Telescope help_tags previewer=true<CR>', noremap) -- list available help tags
 keymap.set('n', '<leader>td', '<cmd>Telescope diagnostics<CR>', noremap) -- lists diagnostics for all open buffers
 -- telescope git commands
-keymap.set('n', '<leader>gc', '<cmd>Telescope git_commits previewer=false<CR>', noremap) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set('n', '<leader>gf', '<cmd>Telescope git_bcommits<CR> previewer=false', noremap) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set('n', '<leader>gb', '<cmd>Telescope git_branches previewer=false<CR>', noremap) -- list git branches (use <cr> to checkout) ["gb" for git branch]
+keymap.set('n', '<leader>gc', '<cmd>Telescope git_commits previewer=true<CR>', noremap) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+keymap.set('n', '<leader>gf', '<cmd>Telescope git_bcommits<CR> previewer=true', noremap) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+keymap.set('n', '<leader>gb', '<cmd>Telescope git_branches previewer=true<CR>', noremap) -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set('n', '<leader>gs', '<cmd>Telescope git_status<CR>', noremap) -- list current changes per file with diff preview ["gs" for git status]
 -- telescope todo-comments
 keymap.set(
@@ -208,6 +208,8 @@ keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colori
 -- harpoon --
 -------------
 keymap.set('n', '<leader>ha', ':lua require("harpoon.mark").add_file()<CR>', noremap) -- add file
+keymap.set('n', '<leader>hd', ':lua require("harpoon.mark").rm_file()<CR>', noremap) -- remove file
+keymap.set('n', '<leader>hc', ':lua require("harpoon.mark").clear_all()<CR>', noremap) -- clear all files
 keymap.set('n', '<leader>hq', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', noremap) -- quick menu
 keymap.set('n', '<leader>o', ':lua require("harpoon.ui").nav_next()<CR>zz', noremap) -- navigate to next mark
 keymap.set('n', '<leader>i', ':lua require("harpoon.ui").nav_prev()<CR>zz', noremap) -- navigate to prev mark
