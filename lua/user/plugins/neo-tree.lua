@@ -1,3 +1,6 @@
+-- more info:
+-- https://github.com/nvim-neo-tree/neo-tree.nvim
+
 return {
 	'nvim-neo-tree/neo-tree.nvim',
 	branch = 'v2.x',
@@ -8,7 +11,7 @@ return {
 		require('neo-tree').setup({
 			window = {
 				position = 'right',
-				width = 35,
+				width = 40,
 			},
 			filesystem = {
 				filtered_items = {
@@ -22,6 +25,17 @@ return {
 					},
 				},
 				follow_current_file = false,
+				never_show = {
+					'.DS_Store',
+					'thumbs.db',
+				},
+				group_empty_dirs = true,
+			},
+
+			default_component_configs = {
+				indent = {
+					padding = 1,
+				},
 			},
 		})
 	end,
