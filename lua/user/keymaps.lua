@@ -49,6 +49,7 @@ keymap.set('v', '<a-left>', '<gv', noremap) -- remove tab
 -------------
 -- deleting
 keymap.set('n', '<leader>DD', ':%d<CR>', noremap) -- delete everything
+keymap.set('n', '<leader>dd', 'VGd', noremap) -- delete everything below
 -- select
 keymap.set('n', '<leader>AA', 'ggVG<CR>', noremap) -- select everything in visual mode
 -- exiting
