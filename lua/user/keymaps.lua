@@ -49,7 +49,6 @@ keymap.set('v', '<a-left>', '<gv', noremap) -- remove tab
 -------------
 -- deleting
 keymap.set('n', '<leader>DD', ':%d<CR>', noremap) -- delete everything
-keymap.set('n', '<leader>dd', 'VGd', noremap) -- delete everything below
 -- select
 keymap.set('n', '<leader>AA', 'ggVG<CR>', noremap) -- select everything in visual mode
 -- exiting
@@ -69,8 +68,6 @@ keymap.set('n', 'N', 'Nzz', noremap) -- center search result
 ----------------
 -- formatting --
 ----------------
--- formatting general
-keymap.set('n', '<leader>fa', 'gggqG', noremap) -- apply formatting if any
 -- formatting move lines
 keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
 keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
