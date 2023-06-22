@@ -48,20 +48,6 @@ return {
 			},
 		}
 
-		local function total_lines_project()
-			local handle = io.popen('git ls-files | xargs wc -l | tail -n 1 | awk \'{print $1}\'')
-			local result = handle:read('*a')
-			handle:close()
-
-			local total_lines = tonumber(result)
-
-			if total_lines and total_lines >= 1000 then
-				return string.format('%.1fk', total_lines / 1000)
-			else
-				return result:gsub('%s+', '')
-			end
-		end
-
 		local total_lines_file = function()
 			return vim.fn.line('$')
 		end
@@ -115,6 +101,7 @@ return {
 				},
 				lualine_b = {
 					{ 'branch', icon = { '', align = 'left' }, color },
+					{ 'encoding', icon = '' },
 					{
 						'diagnostics',
 						sources = { 'nvim_workspace_diagnostic' },
@@ -134,15 +121,13 @@ return {
 					{ search_count, icon = '󰍉' },
 				},
 				lualine_x = {
-					{ 'encoding', icon = '' },
+					{ anchor },
 					{ 'location', icon = '' },
 					{ 'progress', icon = '' },
-					{ anchor },
 				},
 				lualine_y = {
 					{ total_lines_file, icon = '' },
 					{ 'filesize', icon = '' },
-					{ total_lines_project, icon = '' },
 				},
 				lualine_z = {
 					{
