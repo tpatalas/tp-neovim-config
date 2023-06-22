@@ -47,7 +47,7 @@ return {
 		vim.lsp.handlers['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
 			local client = vim.lsp.get_client_by_id(ctx.client_id)
 
-			if client and client.name == 'tsserver' then
+			if client and client.name == 'typescript-tools' then
 				result.diagnostics = vim.tbl_filter(function(diagnostic)
 					return not diagnostic.message:find('File is a CommonJS module; it may be converted to an ES module.')
 				end, result.diagnostics)
