@@ -10,7 +10,7 @@ return {
 				a = { fg = palette.blue.base, bg = palette.bg0 },
 				b = { fg = palette.fg2, bg = palette.bg0 },
 				c = { fg = palette.green.base, bg = palette.bg0 },
-				x = { fg = palette.fg2, bg = palette.bg0 },
+				x = { fg = palette.fg3, bg = palette.bg0 },
 				y = { fg = palette.green.base, bg = palette.bg0 },
 				z = { fg = palette.blue.base, bg = palette.bg0 },
 			},
@@ -134,9 +134,10 @@ return {
 					{ search_count, icon = '󰍉' },
 				},
 				lualine_x = {
-					{ anchor },
+					{ 'encoding', icon = '' },
 					{ 'location', icon = '' },
 					{ 'progress', icon = '' },
+					{ anchor },
 				},
 				lualine_y = {
 					{ total_lines_file, icon = '' },
