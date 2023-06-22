@@ -10,11 +10,11 @@ return {
 	event = 'BufReadPre',
 	dependencies = {
 		'hrsh7th/cmp-nvim-lsp',
-		'jose-elias-alvarez/typescript.nvim',
+		'pmizio/typescript-tools.nvim',
 	},
 	config = function()
 		local lspconfig = require('lspconfig')
-		local typescript = require('typescript')
+		local typescript = require('typescript-tools')
 		local cmp_nvim_lsp = require('cmp_nvim_lsp')
 		---------------------
 		-- keymap setting ---
@@ -43,21 +43,11 @@ return {
 		-----------
 		-- utils --
 		-----------
-		-- tsserver organize import
-		local function organize_imports()
-			local params = {
-				command = '_typescript.organizeImports',
-				arguments = { vim.api.nvim_buf_get_name(0) },
-				title = '',
-			}
-			vim.lsp.buf.execute_command(params)
-		end
-
 		-- disable following diagnostics
 		vim.lsp.handlers['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
 			local client = vim.lsp.get_client_by_id(ctx.client_id)
 
-			if client and client.name == 'tsserver' then
+			if client and client.name == 'typescript-tools' then
 				result.diagnostics = vim.tbl_filter(function(diagnostic)
 					return not diagnostic.message:find('File is a CommonJS module; it may be converted to an ES module.')
 				end, result.diagnostics)
@@ -73,20 +63,19 @@ return {
 		lspconfig['html'].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				separate_diagnostic_server = true,
+				publish_diagnostic_on = 'insert_leave',
+			},
 		})
 
 		-- typescript
 		-- Currently typescript.nvim plugin gives better functionality
 		typescript.setup({
 			capabilities = capabilities,
-			server = {
-				on_attach = on_attach,
-				commands = {
-					OrganizeImports = {
-						organize_imports,
-						description = 'Organize Imports',
-					},
-				},
+			settings = {
+				separate_diagnostic_server = true,
+				publish_diagnostic_on = 'insert_leave',
 			},
 		})
 

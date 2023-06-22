@@ -1,5 +1,4 @@
 -- https://github.com/nvim-lualine/lualine.nvim
--- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
 
 return {
 	'nvim-lualine/lualine.nvim',
@@ -11,7 +10,7 @@ return {
 				a = { fg = palette.blue.base, bg = palette.bg0 },
 				b = { fg = palette.fg2, bg = palette.bg0 },
 				c = { fg = palette.green.base, bg = palette.bg0 },
-				x = { fg = palette.fg2, bg = palette.bg0 },
+				x = { fg = palette.fg3, bg = palette.bg0 },
 				y = { fg = palette.green.base, bg = palette.bg0 },
 				z = { fg = palette.blue.base, bg = palette.bg0 },
 			},
@@ -49,7 +48,21 @@ return {
 			},
 		}
 
-		local total_lines = function()
+		local function total_lines_project()
+			local handle = io.popen('git ls-files | xargs wc -l | tail -n 1 | awk \'{print $1}\'')
+			local result = handle:read('*a')
+			handle:close()
+
+			local total_lines = tonumber(result)
+
+			if total_lines and total_lines >= 1000 then
+				return string.format('%.1fk', total_lines / 1000)
+			else
+				return result:gsub('%s+', '')
+			end
+		end
+
+		local total_lines_file = function()
 			return vim.fn.line('$')
 		end
 
@@ -86,9 +99,10 @@ return {
 				always_divide_middle = true,
 				globalstatus = true,
 				refresh = {
-					statusline = 1000,
-					tabline = 1000,
-					winbar = 1000,
+					-- 30 min
+					statusline = 1800000,
+					tabline = 1800000,
+					winbar = 1800000,
 				},
 			},
 			sections = {
@@ -120,21 +134,20 @@ return {
 					{ search_count, icon = '󰍉' },
 				},
 				lualine_x = {
+					{ 'encoding', icon = '' },
+					{ 'location', icon = '' },
+					{ 'progress', icon = '' },
 					{ anchor },
-					{ 'location' },
-					{ 'progress', icon = '󱨂' },
 				},
 				lualine_y = {
-					{ total_lines, icon = '' },
-					{
-						'filesize',
-						icon = '',
-					},
+					{ total_lines_file, icon = '' },
+					{ 'filesize', icon = '' },
+					{ total_lines_project, icon = '' },
 				},
 				lualine_z = {
 					{
 						'diff',
-						symbols = { added = ' ', modified = '柳', removed = ' ' },
+						symbols = { added = ' ', modified = ' ', removed = ' ' },
 						diff_color = {
 							added = { fg = palette.cyan.base },
 							modified = { fg = palette.orange.base },

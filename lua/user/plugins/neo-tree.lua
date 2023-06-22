@@ -29,7 +29,7 @@ return {
 					'.DS_Store',
 					'thumbs.db',
 				},
-				group_empty_dirs = true,
+				group_empty_dirs = false,
 			},
 
 			default_component_configs = {
