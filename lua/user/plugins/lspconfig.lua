@@ -43,16 +43,6 @@ return {
 		-----------
 		-- utils --
 		-----------
-		-- tsserver organize import
-		local function organize_imports()
-			local params = {
-				command = 'TSToolsOrganizeImports',
-				arguments = { vim.api.nvim_buf_get_name(0) },
-				title = '',
-			}
-			vim.lsp.buf.execute_command(params)
-		end
-
 		-- disable following diagnostics
 		vim.lsp.handlers['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
 			local client = vim.lsp.get_client_by_id(ctx.client_id)
@@ -83,14 +73,9 @@ return {
 		-- Currently typescript.nvim plugin gives better functionality
 		typescript.setup({
 			capabilities = capabilities,
-			server = {
-				on_attach = on_attach,
-				commands = {
-					OrganizeImports = {
-						organize_imports,
-						description = 'Organize Imports',
-					},
-				},
+			settings = {
+				separate_diagnostic_server = true,
+				publish_diagnostic_on = 'insert_leave',
 			},
 		})
 
