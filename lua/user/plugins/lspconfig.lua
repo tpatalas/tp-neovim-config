@@ -10,11 +10,11 @@ return {
 	event = 'BufReadPre',
 	dependencies = {
 		'hrsh7th/cmp-nvim-lsp',
-		'jose-elias-alvarez/typescript.nvim',
+		'pmizio/typescript-tools.nvim',
 	},
 	config = function()
 		local lspconfig = require('lspconfig')
-		local typescript = require('typescript')
+		local typescript = require('typescript-tools')
 		local cmp_nvim_lsp = require('cmp_nvim_lsp')
 		---------------------
 		-- keymap setting ---
@@ -46,7 +46,7 @@ return {
 		-- tsserver organize import
 		local function organize_imports()
 			local params = {
-				command = '_typescript.organizeImports',
+				command = 'TSToolsOrganizeImports',
 				arguments = { vim.api.nvim_buf_get_name(0) },
 				title = '',
 			}
@@ -73,6 +73,10 @@ return {
 		lspconfig['html'].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				separate_diagnostic_server = true,
+				publish_diagnostic_on = 'insert_leave',
+			},
 		})
 
 		-- typescript
