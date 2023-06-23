@@ -9,7 +9,7 @@ return {
 			options = {
 				transparent = true,
 				styles = {
-					comments = 'italic',
+					-- comments = 'italic',
 					keywords = 'italic',
 					types = 'italic,bold',
 				},
