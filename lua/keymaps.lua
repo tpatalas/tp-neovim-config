@@ -60,7 +60,6 @@ keymap.set('n', '<leader>ee', ':e<CR>', noremap) -- save
 keymap.set('n', '<leader>EE', ':e!<CR>', noremap) -- save
 -- search and  Replace
 keymap.set('n', '<leader>RR', ':%s/<c-r><c-w>/<c-r><c-w>', noremap) -- Search and replace the word under current
-keymap.set('n', '<leader>rr', '/\\<<C-R>=expand(\'<cword>\')<CR>\\>\\C<CR>``cgn', noremap) -- search for the current word under the cursor surrounded by angle brackets and perform
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'N', 'Nzz', noremap) -- center search result
