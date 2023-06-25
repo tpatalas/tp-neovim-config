@@ -74,9 +74,10 @@ keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
 keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap) -- vim highlight group
 -- typescript
 -- More Info: https://github.com/pmizio/typescript-tools.nvim/blob/master/lua/typescript-tools/user_commands.lua
-keymap.set('n', '<leader>fd', '<cmd>TSToolsRemoveUnusedImports<CR>', noremap) -- remove unused variables
-keymap.set('n', '<leader>fs', '<cmd>TSToolsSortImports<CR>', noremap) -- sort and combine imports
-keymap.set('n', '<leader>fo', '<cmd>TSToolsOrganizeImports<CR>', noremap) -- Organize Import (Custom: typescript)
+keymap.set('n', '<leader>fr', '<cmd>TypescriptRenameFile<CR>', noremap) -- rename file and update imports                                   █│
+keymap.set('n', '<leader>fd', '<cmd>TypescriptRemoveUnused<CR>', noremap) -- remove unused variables                                        █│
+keymap.set('n', '<leader>fm', '<cmd>TypescriptAddMissingImports<CR>', noremap) -- add missing imports                                       █│
+keymap.set('n', '<leader>fo', '<cmd>OrganizeImports<CR>', noremap) -- Organize Import (Custom: typescript)
 
 -- navigation --
 -- general navigation
