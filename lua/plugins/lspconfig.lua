@@ -10,11 +10,11 @@ return {
 	event = 'BufReadPre',
 	dependencies = {
 		'hrsh7th/cmp-nvim-lsp',
-		'pmizio/typescript-tools.nvim',
+		'jose-elias-alvarez/typescript.nvim',
 	},
 	config = function()
 		local lspconfig = require('lspconfig')
-		local typescript = require('typescript-tools')
+		local typescript = require('typescript')
 		local cmp_nvim_lsp = require('cmp_nvim_lsp')
 		---------------------
 		-- keymap setting ---
