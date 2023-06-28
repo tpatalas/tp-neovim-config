@@ -134,11 +134,6 @@ keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press < alt-= >
 --  Plugin Keybinds --
 ----------------------
 
--- markdown toc
-keymap.set('n', '<leader>mco', ':GenTocGFM<CR>', noremap) -- generate markdown toc
-keymap.set('n', '<leader>mcu', ':UpdateToc<CR>', noremap) -- update markdown toc
-keymap.set('n', '<leader>mcd', ':RemoveToc<CR>', noremap) -- delete markdown toc
-
 -- colorizer
 keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colorizer
 
