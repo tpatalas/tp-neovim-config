@@ -1,20 +1,12 @@
 -- https://github.com/folke/lazy.nvim
+
 return {
-	-- plugin manager
 	'nvim-lua/plenary.nvim', -- lua functions that many plugins use
-
-	-- colors
-	'norcalli/nvim-colorizer.lua', -- colorizer
-
-	-- essential plugins
 	'tpope/vim-surround', -- add, delete, change surroundings (it's awesome)
 	'vim-scripts/ReplaceWithRegister', -- replace with register contents using motion (gr + motion)
-
-	-- commenting
-	{ 'numToStr/Comment.nvim' },
-	{ 'JoosepAlviste/nvim-ts-context-commentstring' },
-
-	-- search and finder
+	'numToStr/Comment.nvim',
+	'JoosepAlviste/nvim-ts-context-commentstring',
+	'nvim-tree/nvim-web-devicons',
 	{
 		'andymass/vim-matchup',
 		lazy = true,
@@ -22,15 +14,6 @@ return {
 			vim.g.matchup_matchparen_offscreen = ''
 		end,
 	},
-
-	-- vscode like icon
-	'nvim-tree/nvim-web-devicons',
-
-	{
-		'mzlogin/vim-markdown-toc',
-		lazy = true,
-		ft = { 'markdown' },
-	}, -- toc generator
 	{
 		'utilyre/barbecue.nvim',
 		name = 'barbecue',
@@ -61,8 +44,5 @@ return {
 				auto_session_suppress_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
 			})
 		end,
-	},
-	{
-		'ThePrimeagen/harpoon',
 	},
 }
