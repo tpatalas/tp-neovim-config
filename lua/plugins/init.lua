@@ -26,28 +26,6 @@ return {
 	-- vscode like icon
 	'nvim-tree/nvim-web-devicons',
 
-	-- markdown
-	{
-		'iamcco/markdown-preview.nvim',
-		build = 'cd app && npm install',
-		lazy = true,
-		config = function()
-			local browser_path = '/Applications/Firefox.app'
-			-- comment browser_path if you want to use the default browser
-			local check_browser_path = vim.fn.findfile(browser_path)
-			local custom_browser_path = function()
-				local custom_path = nil
-				if check_browser_path ~= nil then
-					custom_path = browser_path
-				end
-				return custom_path
-			end
-
-			vim.g.mkdp_filetypes = { 'markdown' }
-			vim.g.mkdp_browser = custom_browser_path()
-		end,
-		ft = { 'markdown' },
-	}, -- markdown preview
 	{
 		'dhruvasagar/vim-table-mode',
 		lazy = true,

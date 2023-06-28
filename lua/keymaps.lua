@@ -1,5 +1,6 @@
 local keymap = vim.keymap -- for conciseness
 local noremap = { noremap = true, silent = true }
+
 -- set leader key to space
 keymap.set('', '<Space>', '<Nop>', noremap)
 -- disable default help key
@@ -132,10 +133,6 @@ keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press < alt-= >
 ----------------------
 --  Plugin Keybinds --
 ----------------------
-
--- markdown preview
-keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
-keymap.set('n', '<leader>mps', ':MarkdownPreviewStop<CR>', noremap) -- stop markdown preview stop
 
 -- markdown toc
 keymap.set('n', '<leader>mco', ':GenTocGFM<CR>', noremap) -- generate markdown toc
