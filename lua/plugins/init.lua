@@ -27,11 +27,6 @@ return {
 	'nvim-tree/nvim-web-devicons',
 
 	{
-		'dhruvasagar/vim-table-mode',
-		lazy = true,
-		ft = { 'markdown' },
-	}, -- markdown table
-	{
 		'mzlogin/vim-markdown-toc',
 		lazy = true,
 		ft = { 'markdown' },
