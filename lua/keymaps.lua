@@ -1,5 +1,6 @@
 local keymap = vim.keymap -- for conciseness
 local noremap = { noremap = true, silent = true }
+
 -- set leader key to space
 keymap.set('', '<Space>', '<Nop>', noremap)
 -- disable default help key
@@ -22,9 +23,6 @@ vim.g.mapleader = ' '
 
 -- escape insert mode
 keymap.set('i', 'jk', '<ESC>', noremap)
-
--- delete Word in insert mode
-keymap.set('i', '<c-d><c-d>', '<ESC>dawi', noremap)
 
 -----------------------------------
 -- General Keymaps - Visual Mode --
@@ -58,8 +56,9 @@ keymap.set('n', '<leader>qq', ':q<CR>', noremap) -- quit
 keymap.set('n', '<leader>ss', ':silent w<CR>', noremap) -- save
 keymap.set('n', '<leader>ee', ':e<CR>', noremap) -- save
 keymap.set('n', '<leader>EE', ':e!<CR>', noremap) -- save
--- search and  Replace
+-- search and Replace
 keymap.set('n', '<leader>RR', ':%s/<c-r><c-w>/<c-r><c-w>', noremap) -- Search and replace the word under current
+keymap.set('n', '<leader>rr', ':let @/ = "\\\\<" . expand(\'<cword>\') . "\\\\>"<CR>:set hlsearch<CR>cgn', noremap) -- Search for the word under the cursor. cgn is removed for versatile usage.
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'N', 'Nzz', noremap) -- center search result
@@ -72,11 +71,15 @@ keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
 keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
 -- formatting color
 keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap) -- vim highlight group
+-- formatting search
+keymap.set('n', '<ESC>', ':noh<CR>', noremap) -- exit search highlight
+
 -- typescript
 -- More Info: https://github.com/pmizio/typescript-tools.nvim/blob/master/lua/typescript-tools/user_commands.lua
-keymap.set('n', '<leader>fd', '<cmd>TSToolsRemoveUnusedImports<CR>', noremap) -- remove unused variables
-keymap.set('n', '<leader>fs', '<cmd>TSToolsSortImports<CR>', noremap) -- sort and combine imports
-keymap.set('n', '<leader>fo', '<cmd>TSToolsOrganizeImports<CR>', noremap) -- Organize Import (Custom: typescript)
+keymap.set('n', '<leader>fr', '<cmd>TypescriptRenameFile<CR>', noremap) -- rename file and update imports                                   █│
+keymap.set('n', '<leader>fd', '<cmd>TypescriptRemoveUnused<CR>', noremap) -- remove unused variables                                        █│
+keymap.set('n', '<leader>fm', '<cmd>TypescriptAddMissingImports<CR>', noremap) -- add missing imports                                       █│
+keymap.set('n', '<leader>fo', '<cmd>TypescriptOrganizeImports<CR>', noremap) -- Organize Import (Custom: typescript)
 
 -- navigation --
 -- general navigation
@@ -94,9 +97,8 @@ keymap.set('n', '(', '/(<CR>', noremap)
 keymap.set('n', ')', '/)<CR>', noremap)
 keymap.set('n', '[', '/[<CR>', noremap)
 keymap.set('n', ']', '/]<CR>', noremap)
-keymap.set('n', ',', '/,<CR>', noremap)
-keymap.set('n', '=', '/=<CR>', noremap)
-keymap.set('n', '\'', '/\'<CR>', noremap)
+keymap.set('n', '<', '/<<CR>', noremap)
+keymap.set('n', '>', '/><CR>', noremap)
 -- character navigation backward
 keymap.set('n', '<a-}>', '?}<CR>', noremap)
 keymap.set('n', '<a-{>', '?{<CR>', noremap)
@@ -104,24 +106,12 @@ keymap.set('n', '<a-(>', '?(<CR>', noremap)
 keymap.set('n', '<a-)>', '?)<CR>', noremap)
 keymap.set('n', '<a-[>', '?[<CR>', noremap)
 keymap.set('n', '<a-]>', '?]<CR>', noremap)
-keymap.set('n', '<a-,>', '?,<CR>', noremap)
-keymap.set('n', '<a-=>', '?=<CR>', noremap)
-keymap.set('n', '<a-\'>', '?\'<CR>', noremap)
+keymap.set('n', '<a-<>', '?<<CR>', noremap)
+keymap.set('n', '<a->>', '?><CR>', noremap)
 
 -- buffers navigation
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
--- buffers jump by index
-keymap.set('n', '<a-1>', ':LualineBuffersJump 1<CR>', noremap)
-keymap.set('n', '<a-2>', ':LualineBuffersJump 2<CR>', noremap)
-keymap.set('n', '<a-3>', ':LualineBuffersJump 3<CR>', noremap)
-keymap.set('n', '<a-4>', ':LualineBuffersJump 4<CR>', noremap)
-keymap.set('n', '<a-5>', ':LualineBuffersJump 5<CR>', noremap)
-keymap.set('n', '<a-6>', ':LualineBuffersJump 6<CR>', noremap)
-keymap.set('n', '<a-7>', ':LualineBuffersJump 7<CR>', noremap)
-keymap.set('n', '<a-8>', ':LualineBuffersJump 8<CR>', noremap)
-keymap.set('n', '<a-9>', ':LualineBuffersJump 9<CR>', noremap)
-keymap.set('n', '<a-10>', ':LualineBuffersJump 10<CR>', noremap)
 -- buffers action
 keymap.set('n', '<leader>ww', ':silent! bd<CR>', noremap) -- close current buffer
 keymap.set('n', '<leader>WW', ':silent! %bd|e#|normal`"<CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
@@ -143,61 +133,6 @@ keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press < alt-= >
 ----------------------
 --  Plugin Keybinds --
 ----------------------
-
--- toggleTerm
-keymap.set('n', '<leader>tt', ':ToggleTerm<CR>', noremap) -- toggle split window maximization or press <c-\>
-keymap.set('n', '<leader>tl', ':lua_LAZYGIT_TOGGLE()<CR>', noremap)
-
----------------
--- telescope --
----------------
--- toggle previewer by <C-p>
--- telescope find files
-keymap.set('n', '<leader>to', '<cmd>Telescope find_files previewer=true<CR>', noremap) -- find files within current working directory, respects gitignore
-keymap.set('n', '<leader>ts', '<cmd>Telescope live_grep previewer=true<CR>', noremap) -- find string in current working directory as you type
-keymap.set('n', '<leader>tc', '<cmd>Telescope grep_string<CR>', noremap) -- find string under cursor in current working directory
-keymap.set('n', '<leader>tb', '<cmd>Telescope buffers<CR> previewer=true', noremap) -- list open buffers in current neovim instance
-keymap.set('n', '<leader>th', '<cmd>Telescope help_tags previewer=true<CR>', noremap) -- list available help tags
-keymap.set('n', '<leader>td', '<cmd>Telescope diagnostics<CR>', noremap) -- lists diagnostics for all open buffers
--- telescope git commands
-keymap.set('n', '<leader>gc', '<cmd>Telescope git_commits previewer=true<CR>', noremap) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set('n', '<leader>gf', '<cmd>Telescope git_bcommits<CR> previewer=true', noremap) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set('n', '<leader>gb', '<cmd>Telescope git_branches previewer=true<CR>', noremap) -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set('n', '<leader>gs', '<cmd>Telescope git_status<CR>', noremap) -- list current changes per file with diff preview ["gs" for git status]
--- telescope todo-comments
-keymap.set(
-	'n',
-	'<leader>tn',
-	':TodoTelescope keywords=TODO,HACK,NOTE,WARN,PERF,TEST,FIX,FIXME,FIXIT,BUG,ISSUE<CR>',
-	noremap
-) -- open todo-comments within telescope
-
-------------------------------
--- file explorer Neotree ---
-------------------------------
-keymap.set('n', '<leader>eo', ':Neotree toggle<CR>', noremap) -- toggle file explorer
-keymap.set('n', '<leader>ef', ':Neotree reveal_force_cwd<CR>', noremap)
-
-------------------------
--- lsp server restart --
-------------------------
-keymap.set('n', '<leader>lr', ':LspRestart<CR>', noremap) -- mapping to restart lsp if necessary
-keymap.set('n', '<leader>ld', ':lua vim.diagnostic.reset()<CR>', noremap) -- reset diagnostics
-keymap.set('n', '<leader>ls', ':LspStart<CR>', noremap) -- start lsp
-keymap.set('n', '<leader>lx', ':LspStop<CR>', noremap) -- stop lsp
-keymap.set('n', '<leader>li', ':LspInfo<CR>', noremap) -- lsp info
-
--- markdown preview
-keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
-keymap.set('n', '<leader>mps', ':MarkdownPreviewStop<CR>', noremap) -- stop markdown preview stop
-
--- markdown toc
-keymap.set('n', '<leader>mco', ':GenTocGFM<CR>', noremap) -- generate markdown toc
-keymap.set('n', '<leader>mcu', ':UpdateToc<CR>', noremap) -- update markdown toc
-keymap.set('n', '<leader>mcd', ':RemoveToc<CR>', noremap) -- delete markdown toc
-
--- vim table mode
-keymap.set('n', '<leader>mto', ':TableModeToggle<CR>', noremap) -- toggle markdown table
 
 -- colorizer
 keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colorizer

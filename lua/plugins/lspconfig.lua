@@ -1,4 +1,6 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+local noremap = { noremap = true, silent = true }
+
 vim.diagnostic.config({
 	underline = true,
 	virtual_text = false,
@@ -10,11 +12,18 @@ return {
 	event = 'BufReadPre',
 	dependencies = {
 		'hrsh7th/cmp-nvim-lsp',
-		'pmizio/typescript-tools.nvim',
+		'jose-elias-alvarez/typescript.nvim',
+	},
+	keys = {
+		{ '<leader>lr', ':LspRestart<CR>', noremap }, -- mapping to restart lsp if necessary
+		{ '<leader>ld', ':lua vim.diagnostic.reset()<CR>', noremap }, -- reset diagnostics
+		{ '<leader>ls', ':LspStart<CR>', noremap }, -- start lsp
+		{ '<leader>lx', ':LspStop<CR>', noremap }, -- stop lsp
+		{ '<leader>li', ':LspInfo<CR>', noremap }, -- lsp info
 	},
 	config = function()
 		local lspconfig = require('lspconfig')
-		local typescript = require('typescript-tools')
+		local typescript = require('typescript')
 		local cmp_nvim_lsp = require('cmp_nvim_lsp')
 		---------------------
 		-- keymap setting ---
@@ -47,7 +56,7 @@ return {
 		vim.lsp.handlers['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
 			local client = vim.lsp.get_client_by_id(ctx.client_id)
 
-			if client and client.name == 'typescript-tools' then
+			if client and client.name == 'tsserver' then
 				result.diagnostics = vim.tbl_filter(function(diagnostic)
 					return not diagnostic.message:find('File is a CommonJS module; it may be converted to an ES module.')
 				end, result.diagnostics)
