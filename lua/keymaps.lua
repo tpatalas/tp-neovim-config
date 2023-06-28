@@ -133,15 +133,6 @@ keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press < alt-= >
 --  Plugin Keybinds --
 ----------------------
 
-------------------------
--- lsp server restart --
-------------------------
-keymap.set('n', '<leader>lr', ':LspRestart<CR>', noremap) -- mapping to restart lsp if necessary
-keymap.set('n', '<leader>ld', ':lua vim.diagnostic.reset()<CR>', noremap) -- reset diagnostics
-keymap.set('n', '<leader>ls', ':LspStart<CR>', noremap) -- start lsp
-keymap.set('n', '<leader>lx', ':LspStop<CR>', noremap) -- stop lsp
-keymap.set('n', '<leader>li', ':LspInfo<CR>', noremap) -- lsp info
-
 -- markdown preview
 keymap.set('n', '<leader>mpo', ':MarkdownPreview<CR>', noremap) -- start markdown preview open
 keymap.set('n', '<leader>mps', ':MarkdownPreviewStop<CR>', noremap) -- stop markdown preview stop
