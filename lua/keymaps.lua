@@ -133,12 +133,6 @@ keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press < alt-= >
 --  Plugin Keybinds --
 ----------------------
 
-------------------------------
--- file explorer Neotree ---
-------------------------------
-keymap.set('n', '<leader>eo', ':Neotree toggle<CR>', noremap) -- toggle file explorer
-keymap.set('n', '<leader>ef', ':Neotree reveal_force_cwd<CR>', noremap)
-
 ------------------------
 -- lsp server restart --
 ------------------------
