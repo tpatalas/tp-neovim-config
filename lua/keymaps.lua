@@ -70,6 +70,8 @@ keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
 keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
 -- formatting color
 keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap) -- vim highlight group
+-- formatting search
+keymap.set('n', '<ESC>', ':noh<CR>', noremap) -- exit search highlight
 
 -- typescript
 -- More Info: https://github.com/pmizio/typescript-tools.nvim/blob/master/lua/typescript-tools/user_commands.lua
