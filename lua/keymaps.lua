@@ -146,10 +146,6 @@ keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press < alt-= >
 --  Plugin Keybinds --
 ----------------------
 
--- toggleTerm
-keymap.set('n', '<leader>tt', ':ToggleTerm<CR>', noremap) -- toggle split window maximization or press <c-\>
-keymap.set('n', '<leader>tl', ':lua_LAZYGIT_TOGGLE()<CR>', noremap)
-
 ---------------
 -- telescope --
 ---------------
