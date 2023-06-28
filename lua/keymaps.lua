@@ -23,9 +23,6 @@ vim.g.mapleader = ' '
 -- escape insert mode
 keymap.set('i', 'jk', '<ESC>', noremap)
 
--- delete Word in insert mode
-keymap.set('i', '<c-d><c-d>', '<ESC>dawi', noremap)
-
 -----------------------------------
 -- General Keymaps - Visual Mode --
 -----------------------------------
@@ -73,6 +70,7 @@ keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
 keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
 -- formatting color
 keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap) -- vim highlight group
+
 -- typescript
 -- More Info: https://github.com/pmizio/typescript-tools.nvim/blob/master/lua/typescript-tools/user_commands.lua
 keymap.set('n', '<leader>fr', '<cmd>TypescriptRenameFile<CR>', noremap) -- rename file and update imports                                   █│
@@ -96,9 +94,8 @@ keymap.set('n', '(', '/(<CR>', noremap)
 keymap.set('n', ')', '/)<CR>', noremap)
 keymap.set('n', '[', '/[<CR>', noremap)
 keymap.set('n', ']', '/]<CR>', noremap)
-keymap.set('n', ',', '/,<CR>', noremap)
-keymap.set('n', '=', '/=<CR>', noremap)
-keymap.set('n', '\'', '/\'<CR>', noremap)
+keymap.set('n', '<', '/<<CR>', noremap)
+keymap.set('n', '>', '/><CR>', noremap)
 -- character navigation backward
 keymap.set('n', '<a-}>', '?}<CR>', noremap)
 keymap.set('n', '<a-{>', '?{<CR>', noremap)
@@ -106,24 +103,12 @@ keymap.set('n', '<a-(>', '?(<CR>', noremap)
 keymap.set('n', '<a-)>', '?)<CR>', noremap)
 keymap.set('n', '<a-[>', '?[<CR>', noremap)
 keymap.set('n', '<a-]>', '?]<CR>', noremap)
-keymap.set('n', '<a-,>', '?,<CR>', noremap)
-keymap.set('n', '<a-=>', '?=<CR>', noremap)
-keymap.set('n', '<a-\'>', '?\'<CR>', noremap)
+keymap.set('n', '<a-<>', '?<<CR>', noremap)
+keymap.set('n', '<a->>', '?><CR>', noremap)
 
 -- buffers navigation
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
--- buffers jump by index
-keymap.set('n', '<a-1>', ':LualineBuffersJump 1<CR>', noremap)
-keymap.set('n', '<a-2>', ':LualineBuffersJump 2<CR>', noremap)
-keymap.set('n', '<a-3>', ':LualineBuffersJump 3<CR>', noremap)
-keymap.set('n', '<a-4>', ':LualineBuffersJump 4<CR>', noremap)
-keymap.set('n', '<a-5>', ':LualineBuffersJump 5<CR>', noremap)
-keymap.set('n', '<a-6>', ':LualineBuffersJump 6<CR>', noremap)
-keymap.set('n', '<a-7>', ':LualineBuffersJump 7<CR>', noremap)
-keymap.set('n', '<a-8>', ':LualineBuffersJump 8<CR>', noremap)
-keymap.set('n', '<a-9>', ':LualineBuffersJump 9<CR>', noremap)
-keymap.set('n', '<a-10>', ':LualineBuffersJump 10<CR>', noremap)
 -- buffers action
 keymap.set('n', '<leader>ww', ':silent! bd<CR>', noremap) -- close current buffer
 keymap.set('n', '<leader>WW', ':silent! %bd|e#|normal`"<CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
