@@ -1,4 +1,6 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+local noremap = { noremap = true, silent = true }
+
 vim.diagnostic.config({
 	underline = true,
 	virtual_text = false,
@@ -11,6 +13,13 @@ return {
 	dependencies = {
 		'hrsh7th/cmp-nvim-lsp',
 		'jose-elias-alvarez/typescript.nvim',
+	},
+	keys = {
+		{ '<leader>lr', ':LspRestart<CR>', noremap }, -- mapping to restart lsp if necessary
+		{ '<leader>ld', ':lua vim.diagnostic.reset()<CR>', noremap }, -- reset diagnostics
+		{ '<leader>ls', ':LspStart<CR>', noremap }, -- start lsp
+		{ '<leader>lx', ':LspStop<CR>', noremap }, -- stop lsp
+		{ '<leader>li', ':LspInfo<CR>', noremap }, -- lsp info
 	},
 	config = function()
 		local lspconfig = require('lspconfig')
