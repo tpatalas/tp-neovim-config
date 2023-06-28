@@ -2,8 +2,8 @@ return {
 	'akinsho/toggleterm.nvim',
 	version = '*',
 	keys = {
-		{ '<leader>tt', ':ToggleTerm<CR>', { noremap = true, silent = true } },
-		{ '<leader>tl', ':lua_LAZYGIT_TOGGLE()<CR>', { noremap = true, silent = true } },
+		{ '<leader>at', ':ToggleTerm<CR>', { noremap = true, silent = true } },
+		{ '<leader>al', ':lua_LAZYGIT_TOGGLE()<CR>', { noremap = true, silent = true } },
 	},
 	config = function()
 		require('toggleterm').setup({
