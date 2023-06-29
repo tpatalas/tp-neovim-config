@@ -74,12 +74,6 @@ keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap)
 -- formatting search
 keymap.set('n', '<ESC>', ':noh<CR>', noremap) -- exit search highlight
 
--- typescript
-keymap.set('n', '<leader>fr', '<cmd>TypescriptRenameFile<CR>', noremap) -- rename file and update imports                                   █│
-keymap.set('n', '<leader>fd', '<cmd>TypescriptRemoveUnused<CR>', noremap) -- remove unused variables                                        █│
-keymap.set('n', '<leader>fm', '<cmd>TypescriptAddMissingImports<CR>', noremap) -- add missing imports                                       █│
-keymap.set('n', '<leader>fo', '<cmd>TypescriptOrganizeImports<CR>', noremap) -- Organize Import (Custom: typescript)
-
 -- navigation --
 -- general navigation
 keymap.set('n', 'G', 'Gzz', noremap) -- go to the end of the line then center cursor

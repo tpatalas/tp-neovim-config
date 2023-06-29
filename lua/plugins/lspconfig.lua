@@ -23,7 +23,6 @@ return {
 	},
 	config = function()
 		local lspconfig = require('lspconfig')
-		local typescript = require('typescript')
 		local cmp_nvim_lsp = require('cmp_nvim_lsp')
 		---------------------
 		-- keymap setting ---
@@ -49,22 +48,6 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 		end
 
-		-----------
-		-- utils --
-		-----------
-		-- disable following diagnostics
-		vim.lsp.handlers['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
-			local client = vim.lsp.get_client_by_id(ctx.client_id)
-
-			if client and client.name == 'tsserver' then
-				result.diagnostics = vim.tbl_filter(function(diagnostic)
-					return not diagnostic.message:find('File is a CommonJS module; it may be converted to an ES module.')
-				end, result.diagnostics)
-			end
-
-			return vim.lsp.diagnostic.on_publish_diagnostics(nil, result, ctx, ...)
-		end
-
 		-------------
 		-- Servers --
 		-------------
@@ -72,16 +55,6 @@ return {
 		lspconfig['html'].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			settings = {
-				separate_diagnostic_server = true,
-				publish_diagnostic_on = 'insert_leave',
-			},
-		})
-
-		-- typescript
-		-- Currently typescript.nvim plugin gives better functionality
-		typescript.setup({
-			capabilities = capabilities,
 			settings = {
 				separate_diagnostic_server = true,
 				publish_diagnostic_on = 'insert_leave',
