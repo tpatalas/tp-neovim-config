@@ -126,11 +126,10 @@ return {
 			debug = false,
 			fallback_severity = vim.diagnostic.severity.WARN,
 			float = false,
-			virtual_text = true,
+			virtual_text = false,
 			signs = true,
 			severity_sort = true,
 			update_in_insert = true,
-			debounce = 350,
 		})
 	end,
 }
