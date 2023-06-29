@@ -21,6 +21,7 @@ return {
 					Search = { fg = 'palette.red', bg = '' },
 					TelescopeBorder = { fg = 'palette.white' },
 					VertSplit = { fg = 'palette.white' },
+					NormalFloat = { bg = '' },
 				},
 			},
 		})
