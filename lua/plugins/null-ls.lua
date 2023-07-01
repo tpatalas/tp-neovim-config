@@ -121,15 +121,11 @@ return {
 		end
 
 		null_ls.setup({
-			sources = source,
 			on_attach = on_attach,
 			debug = false,
 			fallback_severity = vim.diagnostic.severity.WARN,
-			float = false,
-			virtual_text = false,
-			signs = true,
-			severity_sort = true,
-			update_in_insert = true,
+			update_in_insert = false,
+			debounce = 500,
 		})
 	end,
 }
