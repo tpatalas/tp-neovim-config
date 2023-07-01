@@ -122,20 +122,3 @@ keymap.set('n', '<c-a-up>', ':horizontal resize +5<CR>', noremap) -- increase si
 keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decrease size horizontally
 keymap.set('n', '<c-@>', '<C-W>w', noremap) -- ctrl+` is the easier way to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
 keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press < alt-= >
-
-----------------------
---  Plugin Keybinds --
-----------------------
-
--- colorizer
-keymap.set('n', '<leader>cro', ':ColorizerToggle<CR>', noremap) -- toggle colorizer
-
--------------
--- harpoon --
--------------
-keymap.set('n', '<leader>ha', ':lua require("harpoon.mark").add_file()<CR>', noremap) -- add file
-keymap.set('n', '<leader>hd', ':lua require("harpoon.mark").rm_file()<CR>', noremap) -- remove file
-keymap.set('n', '<leader>hc', ':lua require("harpoon.mark").clear_all()<CR>', noremap) -- clear all files
-keymap.set('n', '<leader>hq', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', noremap) -- quick menu
-keymap.set('n', '<leader>o', ':lua require("harpoon.ui").nav_next()<CR>zz', noremap) -- navigate to next mark
-keymap.set('n', '<leader>i', ':lua require("harpoon.ui").nav_prev()<CR>zz', noremap) -- navigate to prev mark
