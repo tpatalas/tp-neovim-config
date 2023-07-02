@@ -121,6 +121,7 @@ return {
 		end
 
 		null_ls.setup({
+			sources = source,
 			on_attach = on_attach,
 			debug = false,
 			fallback_severity = vim.diagnostic.severity.WARN,
