@@ -6,7 +6,7 @@ vim.cmd([[
     autocmd!
     " autocmd BufRead,BufNewFile * if &filetype != 'markdown' && &filetype != 'gitcommit' | set textwidth=0 nowrap colorcolumn=80 | endif
     autocmd FileType markdown set textwidth=80 wrap colorcolumn=80,90
-    autocmd FileType gitcommit set colorcolumn=63,80
+    autocmd FileType gitcommit set colorcolumn=50,80
   augroup end
 ]])
 
