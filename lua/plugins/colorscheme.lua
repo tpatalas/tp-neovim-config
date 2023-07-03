@@ -18,7 +18,7 @@ return {
 				all = {
 					MatchParen = { fg = '', bg = 'sel1' },
 					IncSearch = { fg = '', bg = 'sel1' },
-					Search = { fg = 'palette.red', bg = '' },
+					Search = { fg = '', bg = '' },
 					TelescopeBorder = { fg = 'palette.white' },
 					VertSplit = { fg = 'palette.white' },
 					NormalFloat = { bg = '' },
