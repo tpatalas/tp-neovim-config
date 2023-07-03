@@ -8,8 +8,8 @@ return {
 		local custom_theme = {
 			normal = {
 				a = { fg = palette.blue.base, bg = palette.bg0 },
-				b = { fg = palette.fg2, bg = palette.bg0 },
-				c = { fg = palette.green.base, bg = palette.bg0 },
+				b = { fg = palette.fg1, bg = palette.bg0 },
+				c = { fg = palette.fg3, bg = palette.bg0 },
 				x = { fg = palette.fg3, bg = palette.bg0 },
 				y = { fg = palette.green.base, bg = palette.bg0 },
 				z = { fg = palette.blue.base, bg = palette.bg0 },
@@ -101,7 +101,10 @@ return {
 				},
 				lualine_b = {
 					{ 'branch', icon = { '', align = 'left' }, color },
+				},
+				lualine_c = {
 					{ 'encoding', icon = '' },
+					{ 'fileType' },
 					{
 						'diagnostics',
 						sources = { 'nvim_workspace_diagnostic' },
@@ -111,16 +114,14 @@ return {
 						update_in_insert = true,
 						always_visible = false,
 					},
-				},
-				lualine_c = {
 					{
 						require('lazy.status').updates,
 						cond = require('lazy.status').has_updates,
 						color = { fg = palette.orange.base },
 					},
-					{ search_count, icon = '󰍉' },
 				},
 				lualine_x = {
+					{ search_count, icon = '󰍉', color = { fg = palette.orange.base } },
 					{ anchor },
 					{ 'location', icon = '' },
 					{ 'progress', icon = '' },
