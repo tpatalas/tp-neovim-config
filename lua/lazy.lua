@@ -24,4 +24,7 @@ require('lazy').setup('plugins', {
 		notify = false, -- integrated with lualine. Lazy will show a number of available updates on the lualine
 		frequency = 86400, -- every 24 hours
 	},
+	ui = {
+		border = 'rounded',
+	},
 })
