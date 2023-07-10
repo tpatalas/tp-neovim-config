@@ -21,6 +21,9 @@ return {
 
 		local saga = require('lspsaga')
 		saga.setup({
+			implement = {
+				enable = false,
+			},
 			lightbulb = {
 				enable = false,
 			},
