@@ -28,7 +28,7 @@ vim.cmd([[
 -- auto save --
 ---------------
 vim.cmd(
-	[[autocmd TextChanged,InsertLeave *.* if &filetype != 'gitcommit' || @% != 'wezterm.lua' | silent! write | endif]]
+	[[autocmd TextChanged,InsertLeave *.* if &filetype != 'gitcommit' && @% != 'wezterm.lua' | silent! write | endif]]
 )
 
 -----------------------------------
