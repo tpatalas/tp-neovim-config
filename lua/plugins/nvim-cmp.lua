@@ -45,7 +45,7 @@ return {
 		cmp.setup({
 			snippet = {
 				expand = function(args)
-					luasnip.lsp_expand(args.body)
+					require('luasnip').lsp_expand(args.body)
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
@@ -59,9 +59,9 @@ return {
 			}),
 			completion = { keyword_length = 2 },
 			sources = cmp.config.sources({
-				{ name = 'nvim_lsp', keyword_length = 2, group_index = 1, max_item_count = 10 }, -- lsp
-				{ name = 'luasnip', keyword_length = 2, group_index = 2, max_item_count = 10 }, -- snippets
-				{ name = 'buffer', keyword_length = 2, group_index = 2, max_item_count = 10 }, -- text within current buffer
+				{ name = 'nvim_lsp' }, -- lsp
+				{ name = 'luasnip' }, -- snippets
+				{ name = 'buffer' }, -- text within current buffer
 				{ name = 'path' }, -- file system paths
 			}),
 			-- configure lspkind for vs-code like icons
