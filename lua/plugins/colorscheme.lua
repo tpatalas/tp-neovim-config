@@ -20,6 +20,7 @@ return {
 					IncSearch = { fg = '', bg = 'sel1' },
 					Search = { fg = '', bg = '' },
 					TelescopeBorder = { fg = 'palette.white' },
+					VertSplit = { fg = 'palette.bg3' },
 					NormalFloat = { bg = '' },
 				},
 			},
