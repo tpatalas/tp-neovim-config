@@ -67,8 +67,8 @@ keymap.set('n', 'N', 'Nzz', noremap) -- center search result
 -- formatting --
 ----------------
 -- formatting move lines
-keymap.set('n', '<a-up>', ':move -2<CR>', noremap) -- move line upward
-keymap.set('n', '<a-down>', ':move +1<CR>', noremap) -- move line downward
+keymap.set('n', '<c-up>', ':move -2<CR>', noremap) -- move line upward
+keymap.set('n', '<c-down>', ':move +1<CR>', noremap) -- move line downward
 -- formatting color
 keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap) -- vim highlight group
 -- formatting search
@@ -80,9 +80,7 @@ keymap.set('n', 'G', 'Gzz', noremap) -- go to the end of the line then center cu
 keymap.set('n', '<s-down>', '<s-down>zz', noremap)
 keymap.set('n', '<s-up>', '<s-up>zz', noremap)
 keymap.set('n', '<c-d>', '5<down>', noremap) -- move 5 lines down
-keymap.set('n', '<c-down>', '5<down>', noremap) -- move 5 lines down
 keymap.set('n', '<c-u>', '5<up>', noremap) -- move 5 lines up
-keymap.set('n', '<c-up>', '5<up>', noremap) -- move 5 lines up
 keymap.set('n', '<c-i>', '<c-i>zz', noremap) -- go newer position and center the cursor
 keymap.set('n', '<c-o>', '<c-o>zz', noremap) -- go older position and center the cursor
 -- character navigation forward
