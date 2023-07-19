@@ -22,6 +22,11 @@ return {
 					TelescopeBorder = { fg = 'palette.white' },
 					VertSplit = { fg = 'palette.bg3' },
 					NormalFloat = { bg = '' },
+					TabLineFill = { bg = '' },
+					HarpoonInactive = { fg = 'sel1' },
+					HarpoonActive = { fg = 'palette.fg0', bg = 'palette.bg2' },
+					HarpoonNumberActive = { fg = 'palette.fg0', bg = 'palette.bg2' },
+					HarpoonNumberInactive = { fg = 'sel1' },
 				},
 			},
 		})
