@@ -15,17 +15,6 @@ return {
 		end,
 	},
 	{
-		'utilyre/barbecue.nvim',
-		name = 'barbecue',
-		version = '*',
-		dependencies = {
-			'SmiteshP/nvim-navic',
-		},
-		opts = {
-			show_navic = false,
-		},
-	},
-	{
 		'lukas-reineke/indent-blankline.nvim',
 		event = 'BufRead',
 		config = function()
