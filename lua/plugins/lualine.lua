@@ -8,10 +8,10 @@ return {
 		local custom_theme = {
 			normal = {
 				a = { fg = palette.blue.base, bg = palette.bg0 },
-				b = { fg = palette.fg1, bg = palette.bg0 },
+				b = { fg = palette.fg3, bg = palette.bg0 },
 				c = { fg = palette.fg3, bg = palette.bg0 },
-				x = { fg = palette.fg3, bg = palette.bg0 },
-				y = { fg = palette.green.base, bg = palette.bg0 },
+				x = { fg = palette.fg2, bg = palette.bg0 },
+				y = { fg = palette.fg3, bg = palette.bg0 },
 				z = { fg = palette.blue.base, bg = palette.bg0 },
 			},
 			insert = {
@@ -96,15 +96,14 @@ return {
 					{
 						'mode',
 						icon = ' ',
-						padding = { left = 1, right = 1 },
+						padding = { left = 0, right = 1 },
 					},
 				},
 				lualine_b = {
-					{ 'branch', icon = { '', align = 'left' }, color },
+					{ 'branch', icon = { '', align = 'left' }, padding = { left = 0, right = 1 } },
 				},
 				lualine_c = {
-					{ 'encoding', icon = '' },
-					{ 'fileType' },
+					-- { 'fileType' },
 					{
 						'diagnostics',
 						sources = { 'nvim_workspace_diagnostic' },
@@ -121,14 +120,21 @@ return {
 					},
 				},
 				lualine_x = {
-					{ search_count, icon = '󰍉', color = { fg = palette.orange.base } },
+					-- { 'encoding', icon = '' },
+					{ search_count, icon = '󰍉', color = { fg = palette.pink.bright } },
+					{
+						'filename',
+						path = 1,
+						icon = { '', align = 'left' },
+						padding = { left = 1, right = 0 },
+					},
 					{ anchor },
-					{ 'location', icon = '' },
-					{ 'progress', icon = '' },
 				},
 				lualine_y = {
-					{ total_lines_file, icon = '' },
-					{ 'filesize', icon = '' },
+					{ 'progress', icon = '', padding = { left = 0, right = 1 } },
+					{ 'location', icon = '', padding = { left = 0, right = 1 } },
+					{ 'filesize', icon = '', padding = { left = 0, right = 1 } },
+					{ total_lines_file, icon = '', padding = { left = 0, right = 1 } },
 				},
 				lualine_z = {
 					{
