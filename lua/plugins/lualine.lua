@@ -96,11 +96,10 @@ return {
 					{
 						'mode',
 						icon = ' ',
-						padding = { left = 0, right = 1 },
 					},
 				},
 				lualine_b = {
-					{ 'branch', icon = { '', align = 'left' }, padding = { left = 0, right = 1 } },
+					{ 'branch', icon = { '', align = 'left' } },
 				},
 				lualine_c = {
 					-- { 'fileType' },
