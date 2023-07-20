@@ -123,7 +123,7 @@ return {
 					{ search_count, icon = '󰍉', color = { fg = palette.pink.bright } },
 					{
 						'filename',
-						path = 1,
+						path = 4,
 						icon = { '', align = 'left' },
 						padding = { left = 1, right = 0 },
 					},
