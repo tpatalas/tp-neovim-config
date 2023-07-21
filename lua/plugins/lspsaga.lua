@@ -49,7 +49,8 @@ return {
 				-- currently only round theme
 				theme = 'round',
 				-- border type can be single,double,rounded,solid,shadow.
-				border = 'rounded',
+				title = true,
+				border = 'solid',
 				winblend = 0,
 				expand = '',
 				collapse = '',
