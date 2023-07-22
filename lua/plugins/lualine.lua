@@ -102,7 +102,7 @@ return {
 					{ 'branch', icon = { '', align = 'left' } },
 				},
 				lualine_c = {
-					-- { 'fileType' },
+					{ 'filetype', padding = { left = 1, right = 0 } },
 					{
 						'diagnostics',
 						sources = { 'nvim_workspace_diagnostic' },

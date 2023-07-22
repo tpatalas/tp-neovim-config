@@ -27,6 +27,6 @@ require('lazy').setup('plugins', {
 		frequency = 86400, -- every 24 hours
 	},
 	ui = {
-		border = 'none',
+		border = 'rounded',
 	},
 })
