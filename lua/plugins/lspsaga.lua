@@ -1,5 +1,4 @@
 -- https://github.com/glepnir/lspsaga.nvim
--- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
 
 return {
 	'glepnir/lspsaga.nvim',
@@ -50,7 +49,7 @@ return {
 				theme = 'round',
 				-- border type can be single,double,rounded,solid,shadow.
 				title = true,
-				border = 'solid',
+				border = 'rounded',
 				winblend = 0,
 				expand = '',
 				collapse = '',
