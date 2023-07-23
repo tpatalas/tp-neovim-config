@@ -10,10 +10,7 @@ vim.diagnostic.config({
 return {
 	'neovim/nvim-lspconfig',
 	event = 'BufReadPre',
-	dependencies = {
-		'hrsh7th/cmp-nvim-lsp',
-		'jose-elias-alvarez/typescript.nvim',
-	},
+	dependencies = { 'hrsh7th/cmp-nvim-lsp' },
 	keys = {
 		{ '<leader>lr', ':LspRestart<CR>', noremap }, -- mapping to restart lsp if necessary
 		{ '<leader>ld', ':lua vim.diagnostic.reset()<CR>', noremap }, -- reset diagnostics
