@@ -7,7 +7,6 @@ return {
 	cmd = 'Telescope',
 	dependencies = {
 		'nvim-telescope/telescope-fzf-native.nvim',
-		'nvim-telescope/telescope-file-browser.nvim',
 		build = 'make',
 	},
 	keys = keymaps,
@@ -24,6 +23,5 @@ return {
 			extensions = {},
 		})
 		require('telescope').load_extension('fzf')
-		require('telescope').load_extension('file_browser')
 	end,
 }
