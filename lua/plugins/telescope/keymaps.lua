@@ -12,4 +12,6 @@ return {
 	{ '<leader>sgs', '<cmd>Telescope git_status<CR>', noremap }, -- list current changes per file with diff preview ["gs" for git status]
 	-- telescope todo-comments
 	{ '<leader>st', ':TodoTelescope keywords=TODO,HACK,NOTE,WARN,PERF,TEST,FIX,FIXME,FIXIT,BUG,ISSUE<CR>', noremap }, -- open todo-comments within telescope
+	-- telescope bookmarks
+	{ '<leader>sbo', '<cmd>Telescope bookmarks<CR>', noremap }, -- open bookmarks
 }
