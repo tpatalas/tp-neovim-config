@@ -1,3 +1,5 @@
+-- https://github.com/folke/lazy.nvim
+
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -21,7 +23,10 @@ require('lazy').setup('plugins', {
 	},
 	checker = {
 		enabled = true,
-		notify = false, -- integrated with lualine. Lazy will show a number of available updates on the lualine
+		notify = false, -- notify is not required since already integrated with lualine. Lazy will show a number of available updates on the lualine
 		frequency = 86400, -- every 24 hours
+	},
+	ui = {
+		border = 'rounded',
 	},
 })

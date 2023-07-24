@@ -15,17 +15,6 @@ return {
 		end,
 	},
 	{
-		'utilyre/barbecue.nvim',
-		name = 'barbecue',
-		version = '*',
-		dependencies = {
-			'SmiteshP/nvim-navic',
-		},
-		opts = {
-			show_navic = false,
-		},
-	},
-	{
 		'lukas-reineke/indent-blankline.nvim',
 		event = 'BufRead',
 		config = function()
@@ -33,15 +22,6 @@ return {
 				space_char_blankline = ' ',
 				show_current_context = true,
 				show_current_context_start = false,
-			})
-		end,
-	},
-	{
-		'rmagatti/auto-session',
-		config = function()
-			require('auto-session').setup({
-				log_level = 'error',
-				auto_session_suppress_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
 			})
 		end,
 	},

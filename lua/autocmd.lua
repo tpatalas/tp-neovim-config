@@ -5,8 +5,8 @@ vim.cmd([[
   augroup MarkdownWrap
     autocmd!
     " autocmd BufRead,BufNewFile * if &filetype != 'markdown' && &filetype != 'gitcommit' | set textwidth=0 nowrap colorcolumn=80 | endif
-    autocmd FileType markdown set textwidth=80 wrap colorcolumn=80,90
-    autocmd FileType gitcommit set colorcolumn=63,80
+    autocmd FileType markdown set textwidth=80 wrap
+    autocmd FileType gitcommit set colorcolumn=50,80
   augroup end
 ]])
 
@@ -28,7 +28,7 @@ vim.cmd([[
 -- auto save --
 ---------------
 vim.cmd(
-	[[autocmd TextChanged,InsertLeave *.* if &filetype != 'gitcommit' || @% != 'wezterm.lua' | silent! write | endif]]
+	[[autocmd TextChanged,InsertLeave *.* if &filetype != 'gitcommit' && @% != 'wezterm.lua' | silent! write | endif]]
 )
 
 -----------------------------------
@@ -57,3 +57,14 @@ vim.cmd([[
 -- clear search when unload Buf --
 ----------------------------------
 vim.cmd([[autocmd BufUnload * :let @/ = ""]])
+
+----------------------------------------------------
+-- Disable key "-" and <c-o> on Neo-Tree filetype --
+----------------------------------------------------
+vim.cmd([[
+  augroup MyFileTypeGroup
+    autocmd!
+    autocmd FileType neo-tree nnoremap <buffer> - <ESC>
+    autocmd FileType neo-tree nnoremap <buffer> <C-O> <ESC>
+  augroup END
+]])

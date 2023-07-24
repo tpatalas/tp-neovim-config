@@ -62,6 +62,8 @@ keymap.set('n', '<leader>rr', ':let @/ = "\\\\<" . expand(\'<cword>\') . "\\\\>"
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'N', 'Nzz', noremap) -- center search result
+-- undo & redo
+keymap.set('n', '<End>', '<c-r>', noremap) -- redo change
 
 ----------------
 -- formatting --
@@ -74,15 +76,20 @@ keymap.set('n', '<leader>hio', ':so $VIMRUNTIME/syntax/hitest.vim<CR>', noremap)
 -- formatting search
 keymap.set('n', '<ESC>', ':noh<CR>', noremap) -- exit search highlight
 
--- navigation --
 -- general navigation
+-- navigation --
 keymap.set('n', 'G', 'Gzz', noremap) -- go to the end of the line then center cursor
 keymap.set('n', '<s-down>', '<s-down>zz', noremap)
 keymap.set('n', '<s-up>', '<s-up>zz', noremap)
-keymap.set('n', '<c-d>', '5<down>', noremap) -- move 5 lines down
-keymap.set('n', '<c-u>', '5<up>', noremap) -- move 5 lines up
+keymap.set('n', '<c-d>', '7<down>', noremap) -- move 7 lines down
+keymap.set('n', '<PageDown>', '7<down>', noremap) -- move 7 lines down
+keymap.set('n', '<c-u>', '7<up>', noremap) -- move 7 lines up
+keymap.set('n', '<PageUp>', '7<up>', noremap) -- move 7 lines up
 keymap.set('n', '<c-i>', '<c-i>zz', noremap) -- go newer position and center the cursor
+keymap.set('n', '+', '<c-i>zz', noremap) -- go newer position and center the cursor
 keymap.set('n', '<c-o>', '<c-o>zz', noremap) -- go older position and center the cursor
+keymap.set('n', '-', '<c-o>zz', noremap) -- go older position and center the cursor
+
 -- character navigation forward
 keymap.set('n', '}', '/}<CR>', noremap)
 keymap.set('n', '{', '/{<CR>', noremap)
@@ -120,5 +127,6 @@ keymap.set('n', '<c-a-right>', ':vertical resize -5<CR>', noremap) -- increase s
 keymap.set('n', '<c-a-left>', ':vertical resize +5<CR>', noremap) -- decrease size vertically
 keymap.set('n', '<c-a-up>', ':horizontal resize +5<CR>', noremap) -- increase size horizontally
 keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decrease size horizontally
-keymap.set('n', '<c-@>', '<C-W>w', noremap) -- ctrl+` is the easier way to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
-keymap.set('n', '<leader>=', '<C-W>=', noremap) -- reset resize: press < alt-= >
+keymap.set('n', '<c-@>', '<c-W>w', noremap) -- ctrl+` is the easier way to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
+keymap.set('n', '<Home>', '<c-w>w', noremap) -- switch window
+keymap.set('n', '<leader>=', '<c-W>=', noremap) -- reset resize: press < alt-= >

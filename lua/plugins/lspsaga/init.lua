@@ -1,5 +1,4 @@
 -- https://github.com/glepnir/lspsaga.nvim
--- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
 
 return {
 	'glepnir/lspsaga.nvim',
@@ -21,6 +20,9 @@ return {
 
 		local saga = require('lspsaga')
 		saga.setup({
+			implement = {
+				enable = false,
+			},
 			lightbulb = {
 				enable = false,
 			},
@@ -46,6 +48,7 @@ return {
 				-- currently only round theme
 				theme = 'round',
 				-- border type can be single,double,rounded,solid,shadow.
+				title = true,
 				border = 'rounded',
 				winblend = 0,
 				expand = '',
