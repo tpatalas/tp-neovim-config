@@ -29,6 +29,8 @@ return {
 					HarpoonActive = { fg = 'palette.fg0', bg = 'palette.bg2' },
 					HarpoonNumberActive = { fg = 'palette.fg0', bg = 'palette.bg2' },
 					HarpoonNumberInactive = { fg = 'sel1' },
+					OilSize = { fg = 'palette.sel1' },
+					OilMTime = { fg = 'palette.sel1' },
 				},
 			},
 		})

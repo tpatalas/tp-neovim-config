@@ -58,13 +58,3 @@ vim.cmd([[
 ----------------------------------
 vim.cmd([[autocmd BufUnload * :let @/ = ""]])
 
-----------------------------------------------------
--- Disable key "-" and <c-o> on Neo-Tree filetype --
-----------------------------------------------------
-vim.cmd([[
-  augroup MyFileTypeGroup
-    autocmd!
-    autocmd FileType neo-tree nnoremap <buffer> - <ESC>
-    autocmd FileType neo-tree nnoremap <buffer> <C-O> <ESC>
-  augroup END
-]])
