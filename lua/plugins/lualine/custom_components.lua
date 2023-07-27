@@ -14,7 +14,7 @@ M.search_count = function()
 	if res.total > 0 then
 		return string.format('%s/%d %s', res.current, res.total, vim.fn.getreg('/'))
 	else
-		return palette.bg0
+		return palette.highlight_high
 	end
 end
 

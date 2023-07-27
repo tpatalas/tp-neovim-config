@@ -1,11 +1,11 @@
--- https://github.com/nvim-lualine/lualine.nvim
+-- https://rosepinetheme.com/palette/
 
 return {
 	'nvim-lualine/lualine.nvim',
 	config = function()
-		local palette = require('nightfox.palette').load('nightfox')
 		local custom_theme = require('plugins.lualine.custom_theme')
 		local custom_components = require('plugins.lualine.custom_components')
+		local palette = require('rose-pine.palette')
 
 		require('lualine').setup({
 			options = {
@@ -51,12 +51,12 @@ return {
 					{
 						require('lazy.status').updates,
 						cond = require('lazy.status').has_updates,
-						color = { fg = palette.orange.base },
+						color = { fg = palette.love },
 					},
 				},
 				lualine_x = {
 					-- { 'encoding', icon = '' },
-					{ custom_components.search_count, icon = '󰍉', color = { fg = palette.pink.bright } },
+					{ custom_components.search_count, icon = '󰍉', color = { fg = palette.gold } },
 					{
 						'filename',
 						path = 4,
@@ -76,9 +76,9 @@ return {
 						'diff',
 						symbols = { added = ' ', modified = ' ', removed = ' ' },
 						diff_color = {
-							added = { fg = palette.cyan.base },
-							modified = { fg = palette.orange.base },
-							removed = { fg = palette.red.base },
+							added = { fg = palette.foam },
+							modified = { fg = palette.gold },
+							removed = { fg = palette.love },
 						},
 					},
 				},
