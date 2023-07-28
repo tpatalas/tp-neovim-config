@@ -6,6 +6,8 @@ return {
 		{ '<leader>al', ':lua_LAZYGIT_TOGGLE()<CR>', { noremap = true, silent = true } },
 	},
 	config = function()
+		local palette = require('rose-pine.palette')
+
 		require('toggleterm').setup({
 			size = 20,
 			open_mapping = [[<C-\>]],
@@ -19,6 +21,18 @@ return {
 			direction = 'float',
 			close_on_exit = true,
 			shell = vim.o.shell,
+			highlights = {
+				Normal = {
+					guibg = '',
+				},
+				NormalFloat = {
+					link = 'Normal',
+				},
+				FloatBorder = {
+					guifg = palette.highlight_med,
+					guibg = '',
+				},
+			},
 			float_opts = {
 				border = 'curved',
 				width = function()
@@ -28,10 +42,6 @@ return {
 					return math.floor(vim.o.lines * 0.90)
 				end,
 				winblend = 0,
-				highlights = {
-					border = 'Normal',
-					background = 'Normal',
-				},
 			},
 		})
 
@@ -53,9 +63,6 @@ return {
 			cmd = 'lazygit',
 			dir = 'git_dir',
 			direction = 'float',
-			float_opts = {
-				border = 'curved',
-			},
 			-- function to run on opening the terminal
 			on_open = function(term)
 				vim.cmd('startinsert!')

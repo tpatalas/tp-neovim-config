@@ -1,39 +1,49 @@
--- https://github.com/EdenEast/nightfox.nvim/blob/main/usage.md#palette
+-- https://rosepinetheme.com/palette/
 
 return {
-	'EdenEast/nightfox.nvim',
+	'rose-pine/neovim',
+	name = 'rose-pine',
 	lazy = false,
 	priority = 1000,
 	config = function()
-		require('nightfox').setup({
-			options = {
-				transparent = true,
-				styles = {
-					-- comments = 'italic',
-					keywords = 'italic',
-					types = 'italic,bold',
-				},
-			},
-			groups = {
-				all = {
-					MatchParen = { fg = '', bg = 'sel1' },
-					IncSearch = { fg = '', bg = 'sel1' },
-					Search = { fg = '', bg = '' },
-					TelescopeBorder = { fg = 'palette.white' },
-					VertSplit = { fg = 'palette.bg3' },
-					NormalFloat = { fg = '', bg = 'palette.bg1' },
-					FloatBorder = { fg = 'palette.bg1', bg = 'palette.bg1' },
-					Pmenu = { fg = 'palette.bg0', bg = 'palette.bg0' },
-					TabLineFill = { bg = '' },
-					HarpoonInactive = { fg = 'sel1' },
-					HarpoonActive = { fg = 'palette.fg0', bg = 'palette.bg2' },
-					HarpoonNumberActive = { fg = 'palette.fg0', bg = 'palette.bg2' },
-					HarpoonNumberInactive = { fg = 'sel1' },
-					OilSize = { fg = 'palette.sel1' },
-					OilMTime = { fg = 'palette.sel1' },
-				},
+		require('rose-pine').setup({
+			--- @usage 'auto'|'main'|'moon'|'dawn'
+			variant = 'auto',
+			--- @usage 'main'|'moon'|'dawn'
+			dark_variant = 'main',
+			bold_vert_split = false,
+			dim_nc_background = false,
+			disable_background = true,
+			disable_float_background = true,
+			disable_italics = false,
+			highlight_groups = {
+				MatchParen = { fg = '', bg = 'highlight_med' },
+				IncSearch = { fg = '', bg = 'highlight_med' },
+				CursorLine = { fg = '', bg = 'overlay' },
+				Cursor = { fg = '', bg = 'subtle' },
+				Search = { fg = '', bg = '' },
+				TelescopeBorder = { fg = 'highlight_high', bg = '' },
+				FloatBorder = { fg = 'base', bg = 'base' },
+				NormalFloat = { fg = 'subtle', bg = 'base' },
+				Pmenu = { fg = 'foam', bg = 'base' },
+				PmenuThumb = { fg = 'subtle' },
+				PmenuSel = { fg = 'text' },
+				TabLineFill = { bg = '' },
+				CmpItemAbbrMatch = { fg = 'rose', bg = '' },
+				CmpItemAbbrMatchFuzzy = { fg = 'rose', bg = '' },
+				Substitute = { fg = 'love', bg = '' },
+				HarpoonInactive = { fg = 'highlight_med' },
+				HarpoonNumberInactive = { fg = 'highlight_med' },
+				HarpoonActive = { fg = 'subtle', bg = 'highlight_med' },
+				HarpoonNumberActive = { fg = 'subtle', bg = 'highlight_med' },
+				IndentBlanklineContextChar = { fg = 'rose', bg = '' },
+				IndentBlankLineIndent = { fg = 'overlay', bg = '' },
+				GitSignsDelete = { fg = 'love', bg = '' },
+				GitSignsChange = { fg = 'gold', bg = '' },
+				GitSignsAdd = { fg = 'foam', bg = '' },
+				GitSigns = { fg = 'foam', bg = '' },
 			},
 		})
-		vim.cmd('colorscheme nightfox')
+		vim.cmd('colorscheme rose-pine')
 	end,
 }
