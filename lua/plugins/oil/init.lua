@@ -1,5 +1,16 @@
 local noremap = { noremap = true, silent = true }
 
+-- open the preview when oil is open
+-- vim.api.nvim_create_autocmd('User', {
+-- 	pattern = 'OilEnter',
+-- 	callback = vim.schedule_wrap(function(args)
+-- 		local oil = require('oil')
+-- 		if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
+-- 			oil.select({ preview = true })
+-- 		end
+-- 	end),
+-- })
+
 return {
 	'stevearc/oil.nvim',
 	opts = {},
@@ -7,6 +18,7 @@ return {
 	keys = {
 		{ '<leader>ef', ':lua require(\'oil\').open(vim.fn.expand(\'%:p:h\'))<CR>', noremap }, -- open the current directory
 		{ '<leader>eo', ':Oil . <CR>', noremap }, -- open the root
+		{ '<leader>ec', ':lua require(\'oil\').discard_all_changes()<CR>', noremap }, -- clear all changes
 	},
 	config = function()
 		require('oil').setup({
@@ -19,18 +31,13 @@ return {
 			keymaps = {
 				['g?'] = 'actions.show_help',
 				['<CR>'] = 'actions.select',
-				['<leader>ev'] = 'actions.select_vsplit',
-				['<leader>es'] = 'actions.select_split',
-				['<leader>ep'] = 'actions.preview',
-				['<leader>ww'] = 'actions.close',
-				['<leader>er'] = 'actions.refresh',
-				['<left>'] = 'actions.parent',
-				['h'] = 'actions.parent',
-				['<right>'] = 'actions.open_cwd',
-				['l'] = 'actions.open_cwd',
-				['`'] = 'actions.cd',
-				['~'] = 'actions.tcd',
-				['<leader>eh'] = 'actions.toggle_hidden',
+				['Y'] = 'actions.select_vsplit',
+				['X'] = 'actions.select_split',
+				['P'] = 'actions.preview',
+				['q'] = 'actions.close',
+				['H'] = 'actions.toggle_hidden',
+				['<Left>'] = 'actions.parent',
+				['<Right>'] = 'actions.open_cwd',
 			},
 		})
 	end,
