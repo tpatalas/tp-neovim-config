@@ -47,6 +47,16 @@ M.cssls = {
 M.tailwindcss = {
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		tailwindCSS = {
+			experimental = {
+				classRegex = {
+					-- https://cva.style/docs/getting-started/installation
+					{ 'cva\\(([^)]*)\\)', '["\'`]([^"\'`]*).*?["\'`]' },
+				},
+			},
+		},
+	},
 	filetypes = {
 		'html',
 		'typescriptreact',
