@@ -1,3 +1,5 @@
+local noremap = { noremap = true, silent = true }
+
 return {
 	{ '<leader>so', '<cmd>Telescope find_files previewer=true<CR>', noremap }, -- find files within current working directory, respects gitignore
 	{ '<leader>sl', '<cmd>Telescope live_grep previewer=true<CR>', noremap }, -- find string in current working directory as you type
