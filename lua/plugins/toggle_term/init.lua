@@ -4,12 +4,13 @@ return {
 	keys = {
 		{ '<leader>at', ':ToggleTerm<CR>', { noremap = true, silent = true } },
 		{ '<leader>al', ':lua_LAZYGIT_TOGGLE()<CR>', { noremap = true, silent = true } },
+		-- { '<leader>am', ':lua_REPL_TOGGLE()<CR>', { noremap = true, silent = true } },
 	},
 	config = function()
 		local palette = require('rose-pine.palette')
 
 		require('toggleterm').setup({
-			size = 20,
+			size = 10,
 			open_mapping = [[<C-\>]],
 			hide_numbers = true,
 			shade_filetypes = {},
@@ -59,6 +60,20 @@ return {
 
 		local Terminal = require('toggleterm.terminal').Terminal
 
+		-- local filePath = vim.fn.expand('%:p')
+		-- local cmdRepl = 'ts-node ' .. filePath
+		--
+		-- local repl = Terminal:new({
+		-- 	direction = 'horizontal',
+		-- 	on_open = function(term)
+		-- 		vim.cmd('startinsert!')
+		-- 		vim.cmd('term ' .. cmdRepl) -- Run the command in a new terminal window
+		-- 	end,
+		-- 	on_close = function(term)
+		-- 		vim.cmd('startinsert!')
+		-- 	end,
+		-- })
+
 		local lazygit = Terminal:new({
 			cmd = 'lazygit',
 			dir = 'git_dir',
@@ -73,6 +88,10 @@ return {
 				vim.cmd('startinsert!')
 			end,
 		})
+
+		function _REPL_TOGGLE()
+			repl:toggle()
+		end
 
 		function _LAZYGIT_TOGGLE()
 			lazygit:toggle()
