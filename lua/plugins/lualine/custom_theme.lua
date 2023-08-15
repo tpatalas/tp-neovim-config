@@ -10,12 +10,12 @@ return function(colors)
 			z = { fg = colors.green, bg = colors.mantle },
 		},
 		insert = {
-			a = { fg = colors.red, bg = colors.mantle },
-			b = { fg = colors.red, bg = colors.mantle },
-			c = { fg = colors.red, bg = colors.mantle },
-			x = { fg = colors.red, bg = colors.mantle },
-			y = { fg = colors.red, bg = colors.mantle },
-			z = { fg = colors.red, bg = colors.mantle },
+			a = { fg = colors.sky, bg = colors.mantle },
+			b = { fg = colors.sky, bg = colors.mantle },
+			c = { fg = colors.sky, bg = colors.mantle },
+			x = { fg = colors.sky, bg = colors.mantle },
+			y = { fg = colors.sky, bg = colors.mantle },
+			z = { fg = colors.sky, bg = colors.mantle },
 		},
 		visual = {
 			a = { fg = colors.mauve, bg = colors.mantle },
