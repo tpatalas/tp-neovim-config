@@ -1,3 +1,5 @@
+local colors = require('catppuccin.palettes').get_palette('mocha')
+
 return {
 	'akinsho/toggleterm.nvim',
 	version = '*',
@@ -7,8 +9,6 @@ return {
 		{ '<leader>am', ':lua_REPL_TOGGLE()<CR>', { noremap = true, silent = true } },
 	},
 	config = function()
-		local palette = require('rose-pine.palette')
-
 		require('toggleterm').setup({
 			size = 70,
 			open_mapping = [[<C-\>]],
@@ -30,7 +30,7 @@ return {
 					link = 'Normal',
 				},
 				FloatBorder = {
-					guifg = palette.highlight_med,
+					guifg = colors.overlay2,
 					guibg = '',
 				},
 			},
