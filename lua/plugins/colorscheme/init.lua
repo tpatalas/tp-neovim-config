@@ -65,6 +65,7 @@ return {
 					GitSignsAdd = { fg = colors.teal, bg = '' },
 					GitSigns = { fg = colors.teal, bg = '' },
 					NonText = { fg = colors.surface0 },
+					FlashLabel = { fg = colors.crust, bg = colors.yellow },
 				}
 			end,
 		})
