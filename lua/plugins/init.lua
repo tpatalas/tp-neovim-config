@@ -2,7 +2,6 @@
 
 return {
 	'nvim-lua/plenary.nvim', -- lua functions that many plugins use
-	'tpope/vim-surround', -- add, delete, change surroundings (it's awesome)
 	'vim-scripts/ReplaceWithRegister', -- replace with register contents using motion (gr + motion)
 	'numToStr/Comment.nvim',
 	'JoosepAlviste/nvim-ts-context-commentstring',
