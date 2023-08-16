@@ -1,5 +1,6 @@
 return {
 	'MaximilianLloyd/tw-values.nvim',
+	lazy = true,
 	keys = {
 		{ '<leader>sv', '<cmd>TWValues<cr>', desc = 'Show tailwind CSS values' },
 	},

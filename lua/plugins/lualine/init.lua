@@ -3,6 +3,7 @@ local colors = require('catppuccin.palettes').get_palette('mocha')
 
 return {
 	'nvim-lualine/lualine.nvim',
+	event = 'VeryLazy',
 	config = function()
 		local custom_theme = require('plugins.lualine.custom_theme')
 		local custom_components = require('plugins.lualine.custom_components')

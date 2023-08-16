@@ -2,6 +2,7 @@ local colors = require('catppuccin.palettes').get_palette('mocha')
 
 return {
 	'akinsho/toggleterm.nvim',
+	lazy = true,
 	version = '*',
 	keys = {
 		{ '<leader>at', ':ToggleTerm<CR>', { noremap = true, silent = true } },
