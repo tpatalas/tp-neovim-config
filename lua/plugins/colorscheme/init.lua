@@ -39,7 +39,7 @@ return {
 					MatchParen = { fg = '', bg = colors.surface2 },
 					IncSearch = { fg = '', bg = colors.surface2 },
 					CurSearch = { fg = '', bg = colors.surface2 },
-					CursorLine = { fg = '', bg = colors.surface0 },
+					CursorLine = { fg = '', bg = colors.surface1 },
 					Search = { fg = '', bg = '' },
 					Cursor = { fg = '', bg = colors.rosewater },
 					TelescopeBorder = { fg = colors.overlay0, bg = '' },
