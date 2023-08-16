@@ -63,7 +63,7 @@ keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word 
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'N', 'Nzz', noremap) -- center search result
 -- undo & redo
-keymap.set('n', '<End>', '<c-r>', noremap) -- redo change
+keymap.set('n', '+', '<c-r>', noremap) -- redo change
 
 ----------------
 -- formatting --
@@ -86,9 +86,9 @@ keymap.set('n', '<PageDown>', '7<down>', noremap) -- move 7 lines down
 keymap.set('n', '<c-u>', '7<up>', noremap) -- move 7 lines up
 keymap.set('n', '<PageUp>', '7<up>', noremap) -- move 7 lines up
 keymap.set('n', '<c-i>', '<c-i>zz', noremap) -- go newer position and center the cursor
-keymap.set('n', '+', '<c-i>zz', noremap) -- go newer position and center the cursor
+keymap.set('n', '<End>', '<c-i>zz', noremap) -- go newer position and center the cursor
 keymap.set('n', '<c-o>', '<c-o>zz', noremap) -- go older position and center the cursor
-keymap.set('n', '-', '<c-o>zz', noremap) -- go older position and center the cursor
+keymap.set('n', '<Home>', '<c-o>zz', noremap) -- go older position and center the cursor
 
 -- character navigation forward
 keymap.set('n', '}', '/}<CR>', noremap)
@@ -128,5 +128,5 @@ keymap.set('n', '<c-a-left>', ':vertical resize +5<CR>', noremap) -- decrease si
 keymap.set('n', '<c-a-up>', ':horizontal resize +5<CR>', noremap) -- increase size horizontally
 keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decrease size horizontally
 keymap.set('n', '<c-@>', '<c-W>w', noremap) -- ctrl+` is the easier way to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
-keymap.set('n', '<Home>', '<c-w>w', noremap) -- switch window
+keymap.set('n', '-', '<c-w>w', noremap) -- switch window
 keymap.set('n', '<leader>=', '<c-W>=', noremap) -- reset resize: press < alt-= >

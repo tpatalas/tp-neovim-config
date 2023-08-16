@@ -1,13 +1,17 @@
+local colors = require('catppuccin.palettes').get_palette('mocha')
+
 return {
 	'akinsho/toggleterm.nvim',
+	lazy = true,
 	version = '*',
 	keys = {
 		{ '<leader>at', ':ToggleTerm<CR>', { noremap = true, silent = true } },
 		{ '<leader>al', ':lua_LAZYGIT_TOGGLE()<CR>', { noremap = true, silent = true } },
+		{ '<leader>am', ':lua_REPL_TOGGLE()<CR>', { noremap = true, silent = true } },
 	},
 	config = function()
 		require('toggleterm').setup({
-			size = 20,
+			size = 70,
 			open_mapping = [[<C-\>]],
 			hide_numbers = true,
 			shade_filetypes = {},
@@ -19,6 +23,18 @@ return {
 			direction = 'float',
 			close_on_exit = true,
 			shell = vim.o.shell,
+			highlights = {
+				Normal = {
+					guibg = '',
+				},
+				NormalFloat = {
+					link = 'Normal',
+				},
+				FloatBorder = {
+					guifg = colors.overlay2,
+					guibg = '',
+				},
+			},
 			float_opts = {
 				border = 'curved',
 				width = function()
@@ -28,10 +44,6 @@ return {
 					return math.floor(vim.o.lines * 0.90)
 				end,
 				winblend = 0,
-				highlights = {
-					border = 'Normal',
-					background = 'Normal',
-				},
 			},
 		})
 
@@ -49,13 +61,23 @@ return {
 
 		local Terminal = require('toggleterm.terminal').Terminal
 
+		local function createRepl()
+			local filePath = vim.fn.expand('%:p')
+			local cmdRepl = 'ts-node ' .. filePath
+
+			local repl = Terminal:new({
+				direction = 'vertical',
+				on_open = function(term)
+					vim.cmd('term ' .. cmdRepl)
+				end,
+			})
+			return repl
+		end
+
 		local lazygit = Terminal:new({
 			cmd = 'lazygit',
 			dir = 'git_dir',
 			direction = 'float',
-			float_opts = {
-				border = 'curved',
-			},
 			-- function to run on opening the terminal
 			on_open = function(term)
 				vim.cmd('startinsert!')
@@ -66,6 +88,11 @@ return {
 				vim.cmd('startinsert!')
 			end,
 		})
+
+		function _REPL_TOGGLE()
+			local repl = createRepl()
+			repl:toggle()
+		end
 
 		function _LAZYGIT_TOGGLE()
 			lazygit:toggle()

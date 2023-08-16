@@ -1,16 +1,17 @@
--- https://github.com/nvim-lualine/lualine.nvim
+-- https://rosepinetheme.com/colors/
+local colors = require('catppuccin.palettes').get_palette('mocha')
 
 return {
 	'nvim-lualine/lualine.nvim',
+	event = 'VeryLazy',
 	config = function()
-		local palette = require('nightfox.palette').load('nightfox')
 		local custom_theme = require('plugins.lualine.custom_theme')
 		local custom_components = require('plugins.lualine.custom_components')
 
 		require('lualine').setup({
 			options = {
 				icons_enabled = true,
-				theme = custom_theme(palette),
+				theme = custom_theme(colors),
 				component_separators = ' ',
 				section_separators = ' ',
 				disabled_filetypes = {
@@ -51,12 +52,12 @@ return {
 					{
 						require('lazy.status').updates,
 						cond = require('lazy.status').has_updates,
-						color = { fg = palette.orange.base },
+						color = { fg = colors.pink },
 					},
 				},
 				lualine_x = {
 					-- { 'encoding', icon = '' },
-					{ custom_components.search_count, icon = '󰍉', color = { fg = palette.pink.bright } },
+					{ custom_components.search_count, icon = '󰍉', color = { fg = colors.yellow } },
 					{
 						'filename',
 						path = 4,
@@ -76,9 +77,9 @@ return {
 						'diff',
 						symbols = { added = ' ', modified = ' ', removed = ' ' },
 						diff_color = {
-							added = { fg = palette.cyan.base },
-							modified = { fg = palette.orange.base },
-							removed = { fg = palette.red.base },
+							added = { fg = colors.green },
+							modified = { fg = colors.yellow },
+							removed = { fg = colors.pink },
 						},
 					},
 				},
