@@ -5,6 +5,7 @@ local noremap = { noremap = true, silent = true }
 return {
 	'ThePrimeagen/harpoon',
 	lazy = false,
+	event = 'VeryLazy',
 	keys = {
 		{ '<leader>ha', ':lua require("harpoon.mark").add_file()<CR>', noremap }, -- add file
 		{ '<leader>hd', ':lua require("harpoon.mark").rm_file()<CR>', noremap }, -- remove file

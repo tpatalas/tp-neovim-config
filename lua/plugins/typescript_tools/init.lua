@@ -3,6 +3,7 @@ local keymap = vim.keymap
 
 return {
 	'pmizio/typescript-tools.nvim',
+	ft = { 'typescript', 'typescriptreact' },
 	dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
 	config = function()
 		local capabilities = require('cmp_nvim_lsp').default_capabilities()
