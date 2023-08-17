@@ -18,4 +18,9 @@ M.search_count = function()
 	end
 end
 
+M.cwd_folder_name = function()
+  local cwd = vim.fn.getcwd()
+  return cwd:match("([^/]+)$")
+end
+
 return M
