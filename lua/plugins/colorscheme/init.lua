@@ -43,7 +43,7 @@ return {
 					Search = { fg = '', bg = '' },
 					Cursor = { fg = '', bg = colors.rosewater },
 					TelescopeBorder = { fg = colors.overlay0, bg = '' },
-					TelescopeSelection = { fg = '', bg = colors.surface0 },
+					TelescopeSelection = { fg = '', bg = colors.surface1 },
 					TelescopeResultsIdentifier = { fg = '' },
 					FloatBorder = { fg = colors.mauve, bg = '' },
 					NormalFloat = { fg = colors.overlay0, bg = '' },
@@ -64,7 +64,7 @@ return {
 					GitSignsChange = { fg = colors.yellow, bg = '' },
 					GitSignsAdd = { fg = colors.teal, bg = '' },
 					GitSigns = { fg = colors.teal, bg = '' },
-					NonText = { fg = colors.text },
+					NonText = { fg = colors.tex },
 					FlashLabel = { fg = colors.crust, bg = colors.yellow },
 				}
 			end,
