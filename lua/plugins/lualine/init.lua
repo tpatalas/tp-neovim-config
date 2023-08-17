@@ -3,7 +3,8 @@ local colors = require('catppuccin.palettes').get_palette('mocha')
 
 return {
 	'nvim-lualine/lualine.nvim',
-	event = 'VeryLazy',
+	lazy = false,
+	priority = 1000,
 	config = function()
 		local custom_theme = require('plugins.lualine.custom_theme')
 		local custom_components = require('plugins.lualine.custom_components')
@@ -59,9 +60,8 @@ return {
 					-- { 'encoding', icon = '' },
 					{ custom_components.search_count, icon = '󰍉', color = { fg = colors.yellow } },
 					{
-						'filename',
-						path = 4,
-						icon = { '', align = 'left' },
+						custom_components.cwd_folder_name,
+						icon = { '󰋜', align = 'left' },
 						padding = { left = 1, right = 0 },
 					},
 					{ custom_components.anchor },
