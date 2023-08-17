@@ -1,6 +1,7 @@
 return {
 	'windwp/nvim-autopairs',
-	event = 'VeryLazy',
+	lazy = true,
+	event = { 'CursorMoved', 'CursorMovedI' },
 	config = function()
 		require('nvim-autopairs').setup({
 			check_ts = true, -- enable treesitter

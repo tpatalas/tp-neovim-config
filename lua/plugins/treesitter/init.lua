@@ -6,7 +6,7 @@ return {
 	dependencies = {
 		'windwp/nvim-ts-autotag', --autotag
 	},
-
+	event = 'VeryLazy',
 	config = function()
 		require('nvim-treesitter.configs').setup({
 			context_commentstring = {

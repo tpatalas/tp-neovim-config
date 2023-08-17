@@ -4,8 +4,7 @@ local noremap = { noremap = true, silent = true }
 
 return {
 	'ThePrimeagen/harpoon',
-	lazy = false,
-	event = 'VeryLazy',
+	lazy = true,
 	keys = {
 		{ '<leader>ha', ':lua require("harpoon.mark").add_file()<CR>', noremap }, -- add file
 		{ '<leader>hd', ':lua require("harpoon.mark").rm_file()<CR>', noremap }, -- remove file
@@ -27,7 +26,7 @@ return {
 	config = function()
 		require('harpoon').setup({
 			excluded_filetypes = { 'harpoon', 'gitcommit' },
-			tabline = true,
+			tabline = false,
 			tabline_prefix = '  ',
 			tabline_suffix = '  ',
 		})

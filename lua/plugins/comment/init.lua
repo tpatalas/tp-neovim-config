@@ -1,6 +1,7 @@
 return {
 	'numToStr/Comment.nvim',
-	event = 'VeryLazy',
+	lazy = true,
+	event = { 'CursorMoved', 'CursorMovedI' },
 	dependencies = {
 		'JoosepAlviste/nvim-ts-context-commentstring',
 	},
