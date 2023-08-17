@@ -5,7 +5,7 @@ return function(colors)
 			a = { fg = colors.blue, bg = colors.mantle },
 			b = { fg = colors.overlay2, bg = colors.mantle },
 			c = { fg = colors.overlay2, bg = colors.mantle },
-			x = { fg = colors.overlay2, bg = colors.mantle },
+			x = { fg = colors.text, bg = colors.mantle },
 			y = { fg = colors.overlay2, bg = colors.mantle },
 			z = { fg = colors.green, bg = colors.mantle },
 		},
