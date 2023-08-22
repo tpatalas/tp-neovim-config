@@ -58,3 +58,23 @@ vim.cmd([[
 ----------------------------------
 vim.cmd([[autocmd BufUnload * :let @/ = ""]])
 
+--------------------------------------------------
+-- Register buffer to Harpoon before leave nvim --
+--------------------------------------------------
+vim.cmd([[
+  augroup AutoHarpoonMark
+    autocmd!
+    function! AddFileToHarpoon()
+      if getline(1, '$') != ['']
+        " lua require("harpoon.mark").clear_all() 
+        lua require("harpoon.mark").add_file()
+      endif
+    endfunction
+    autocmd VimLeavePre * call AddFileToHarpoon()
+  augroup end
+]])
+
+-----------------------------------
+-- Clear Jump when Enter the Vim --
+-----------------------------------
+vim.cmd([[autocmd VimEnter * :clearjumps]])
