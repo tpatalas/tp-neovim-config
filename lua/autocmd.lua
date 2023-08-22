@@ -65,8 +65,8 @@ vim.cmd([[
   augroup AutoHarpoonMark
     autocmd!
     function! AddFileToHarpoon()
-      if getline(1, '$') != ['']
-        " lua require("harpoon.mark").clear_all() 
+      if getline(1, '$') != [''] && expand('%:p') !~ '/\.git/' && &filetype != 'gitcommit'
+        " lua require("harpoon.mark").clear_all()
         lua require("harpoon.mark").add_file()
       endif
     endfunction
