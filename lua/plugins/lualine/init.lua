@@ -91,8 +91,7 @@ return {
 				lualine_y = {},
 				lualine_z = {},
 			},
-			tabline = {},
-			winbar = {
+			tabline = {
 				lualine_a = {
 					{
 						custom_components.path_winbar,
@@ -100,6 +99,7 @@ return {
 					},
 				},
 			},
+			winbar = {},
 			inactive_winbar = {},
 			extensions = { 'toggleterm' },
 		})
