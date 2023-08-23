@@ -1,4 +1,4 @@
--- https://rosepinetheme.com/colors/
+--
 local colors = require('catppuccin.palettes').get_palette('mocha')
 
 return {
@@ -71,8 +71,6 @@ return {
 					{ 'location', icon = '', padding = { left = 0, right = 1 } },
 					{ 'filesize', icon = '', padding = { left = 0, right = 1 } },
 					{ custom_components.total_lines_file, icon = '', padding = { left = 0, right = 1 } },
-				},
-				lualine_z = {
 					{
 						'diff',
 						symbols = { added = ' ', modified = ' ', removed = ' ' },
@@ -83,6 +81,7 @@ return {
 						},
 					},
 				},
+				lualine_z = {},
 			},
 			inactive_sections = {
 				lualine_a = {},
@@ -93,7 +92,14 @@ return {
 				lualine_z = {},
 			},
 			tabline = {},
-			winbar = {},
+			winbar = {
+				lualine_a = {
+					{
+						custom_components.path_winbar,
+						color = { fg = colors.overlay2, bg = '' },
+					},
+				},
+			},
 			inactive_winbar = {},
 			extensions = { 'toggleterm' },
 		})
