@@ -7,7 +7,6 @@ return {
 	keys = {
 		{ '<leader>at', ':ToggleTerm<CR>', { noremap = true, silent = true } },
 		{ '<leader>al', ':lua_LAZYGIT_TOGGLE()<CR>', { noremap = true, silent = true } },
-		{ '<leader>am', ':lua_REPL_TOGGLE()<CR>', { noremap = true, silent = true } },
 	},
 	config = function()
 		require('toggleterm').setup({
