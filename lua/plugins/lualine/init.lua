@@ -3,8 +3,7 @@ local colors = require('catppuccin.palettes').get_palette('mocha')
 
 return {
 	'nvim-lualine/lualine.nvim',
-	lazy = false,
-	priority = 1000,
+	event = 'VeryLazy',
 	config = function()
 		local custom_theme = require('plugins.lualine.custom_theme')
 		local custom_components = require('plugins.lualine.custom_components')
@@ -91,7 +90,8 @@ return {
 				lualine_y = {},
 				lualine_z = {},
 			},
-			tabline = {
+			tabline = {},
+			winbar = {
 				lualine_a = {
 					{
 						custom_components.path_winbar,
@@ -99,7 +99,6 @@ return {
 					},
 				},
 			},
-			winbar = {},
 			inactive_winbar = {},
 			extensions = { 'toggleterm' },
 		})
