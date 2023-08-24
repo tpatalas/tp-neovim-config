@@ -27,7 +27,14 @@ M.filename_with_icon = function()
 	local devicons = require('nvim-web-devicons')
 	local extension = vim.fn.expand('%:e')
 	local file = vim.fn.expand('%:t')
-	local icon = extension ~= '' and devicons.get_icon(file, extension) or ''
+	local icon = ''
+
+	if file and file ~= '' then
+		icon = extension ~= '' and devicons.get_icon(file, extension) or ''
+	else
+		file = '[No file]'
+	end
+
 	return (icon and (icon .. ' ') or '') .. file
 end
 
