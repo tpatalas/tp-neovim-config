@@ -63,6 +63,10 @@ return {
 						icon = { '󰋜', align = 'left' },
 						padding = { left = 1, right = 0 },
 					},
+					{
+						custom_components.filename_with_icon,
+						icon = { '| ', align = 'left' },
+					},
 					{ custom_components.anchor },
 				},
 				lualine_y = {
