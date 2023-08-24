@@ -23,6 +23,14 @@ M.cwd_folder_name = function()
 	return cwd:match('([^/]+)$')
 end
 
+M.filename_with_icon = function()
+	local devicons = require('nvim-web-devicons')
+	local extension = vim.fn.expand('%:e')
+	local file = vim.fn.expand('%:t')
+	local icon = extension ~= '' and devicons.get_icon(file, extension) or ''
+	return (icon and (icon .. ' ') or '') .. file
+end
+
 M.path_winbar = function()
 	local devicons = require('nvim-web-devicons')
 	local fullPath = vim.fn.expand('%:p')
