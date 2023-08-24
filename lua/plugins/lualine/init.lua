@@ -91,14 +91,7 @@ return {
 				lualine_z = {},
 			},
 			tabline = {},
-			winbar = {
-				lualine_a = {
-					{
-						custom_components.path_winbar,
-						color = { fg = colors.overlay2, bg = '' },
-					},
-				},
-			},
+			winbar = {},
 			inactive_winbar = {},
 			extensions = { 'toggleterm' },
 		})
