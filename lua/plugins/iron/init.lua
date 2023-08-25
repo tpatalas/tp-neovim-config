@@ -2,12 +2,13 @@ local noremap = { noremap = true, silent = true }
 
 return {
 	'Vigemus/iron.nvim',
-	-- lazy = true,
-	-- keymaps = { '<leader>cm', '<cmd>IronRepl<CR>', noremap },
-	config = function()
-		vim.keymap.set('n', '<leader>wo', '<cmd>IronRepl<cr>', noremap)
-		vim.keymap.set('n', '<leader>wx', '<cmd>IronHide<cr>', noremap)
+	lazy = true,
+	keys = {
+		{ '<leader>wo', '<cmd>IronRepl<CR>', noremap },
+		{ '<leader>wx', '<cmd>IronHide<CR>', noremap },
+	},
 
+	config = function()
 		require('iron.core').setup({
 			config = {
 				repl_definition = {
