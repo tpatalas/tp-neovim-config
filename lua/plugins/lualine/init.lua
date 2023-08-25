@@ -30,16 +30,12 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{
-						'mode',
-						icon = ' ',
-					},
+					{ 'mode', icon = ' ' },
 				},
-				lualine_b = {
-					{ 'branch', icon = { '', align = 'left' } },
-				},
+				lualine_b = {},
 				lualine_c = {
 					{ 'filetype', padding = { left = 1, right = 0 } },
+					{ 'encoding', padding = { left = 1, right = 0 } },
 					{
 						'diagnostics',
 						sources = { 'nvim_workspace_diagnostic' },
@@ -56,22 +52,13 @@ return {
 					},
 				},
 				lualine_x = {
-					-- { 'encoding', icon = '' },
 					{ custom_components.search_count, icon = '󰍉', color = { fg = colors.yellow } },
-					{
-						custom_components.cwd_folder_name,
-						icon = { '󰋜', align = 'left' },
-						padding = { left = 1, right = 0 },
-					},
-					{
-						custom_components.filename_with_icon,
-						icon = { '| ', align = 'left' },
-					},
+					{ custom_components.path_winbar, icon = { '󰋜', align = 'left' } },
 					{ custom_components.anchor },
 				},
 				lualine_y = {
-					{ 'progress', icon = '', padding = { left = 0, right = 1 } },
-					{ 'location', icon = '', padding = { left = 0, right = 1 } },
+					-- { 'progress', icon = '', padding = { left = 0, right = 1 } },
+					-- { 'location', icon = '', padding = { left = 0, right = 1 } },
 					{ 'filesize', icon = '', padding = { left = 0, right = 1 } },
 					{ custom_components.total_lines_file, icon = '', padding = { left = 0, right = 1 } },
 					{
