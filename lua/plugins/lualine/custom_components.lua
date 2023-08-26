@@ -42,6 +42,22 @@ M.path_winbar = function()
 	end
 
 	local icon = extension ~= '' and devicons.get_icon(file, extension) or ''
+	local pathComponents = {}
+	for w in pathBelowCwd:gmatch('([^/]+)') do
+		table.insert(pathComponents, w)
+	end
+
+	if #pathComponents >= 6 then
+		local truncatedComponents = {
+			pathComponents[1],
+			pathComponents[2],
+			'...',
+			pathComponents[#pathComponents - 1],
+			pathComponents[#pathComponents],
+		}
+		pathBelowCwd = table.concat(truncatedComponents, '/')
+	end
+
 	local desiredPath = pathBelowCwd:gsub('/', '  ')
 	desiredPath = desiredPath:gsub(file, icon .. ' ' .. file)
 
