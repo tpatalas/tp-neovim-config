@@ -3,7 +3,8 @@ local colors = require('catppuccin.palettes').get_palette('mocha')
 
 return {
 	'nvim-lualine/lualine.nvim',
-	event = 'VeryLazy',
+	lazy = false,
+	priority = 500,
 	config = function()
 		local custom_theme = require('plugins.lualine.custom_theme')
 		local custom_components = require('plugins.lualine.custom_components')
@@ -23,9 +24,9 @@ return {
 				globalstatus = true,
 				refresh = {
 					-- 30 min
-					statusline = 1800000,
-					tabline = 1800000,
-					winbar = 1800000,
+					statusline = 1000,
+					tabline = 1000,
+					winbar = 1000,
 				},
 			},
 			sections = {
@@ -53,7 +54,7 @@ return {
 				},
 				lualine_x = {
 					{ custom_components.search_count, icon = '󰍉', color = { fg = colors.yellow } },
-					{ custom_components.path_winbar, icon = { '󰋜', align = 'left' } },
+					{ custom_components.path_winbar, icon = { '󰋜', align = 'left' }, color = { fg = colors.lavender } },
 					{ custom_components.anchor },
 				},
 				lualine_y = {
