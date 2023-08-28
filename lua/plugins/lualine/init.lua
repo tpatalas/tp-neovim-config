@@ -1,5 +1,5 @@
 --
-local colors = require('catppuccin.palettes').get_palette('mocha')
+local colors = require('kanagawa.colors').setup({ theme = 'wave' })
 
 return {
 	'nvim-lualine/lualine.nvim',
@@ -49,12 +49,12 @@ return {
 					{
 						require('lazy.status').updates,
 						cond = require('lazy.status').has_updates,
-						color = { fg = colors.pink },
+						color = { fg = colors.sakuraPink },
 					},
 				},
 				lualine_x = {
-					{ custom_components.search_count, icon = '󰍉', color = { fg = colors.yellow } },
-					{ custom_components.path_winbar, icon = { '󰋜', align = 'left' }, color = { fg = colors.lavender } },
+					{ custom_components.search_count, icon = '󰍉', color = { fg = colors.autumnYellow } },
+					{ custom_components.path_winbar, icon = { '󰋜', align = 'left' }, color = { fg = colors.oniViolet } },
 					{ custom_components.anchor },
 				},
 				lualine_y = {
@@ -66,9 +66,9 @@ return {
 						'diff',
 						symbols = { added = ' ', modified = ' ', removed = ' ' },
 						diff_color = {
-							added = { fg = colors.green },
-							modified = { fg = colors.yellow },
-							removed = { fg = colors.pink },
+							added = { fg = colors.springGreen },
+							modified = { fg = colors.autumnYellow },
+							removed = { fg = colors.sakuraPink },
 						},
 					},
 				},
