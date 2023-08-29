@@ -25,7 +25,7 @@ return {
 					IndentBlanklineContextChar = { fg = colors.palette.sakuraPink, bg = '' },
 					TelescopeResultsIdentifier = { fg = '' },
 					FloatBorder = { fg = colors.palette.oniViolet, bg = '' },
-					NormalFloat = { fg = colors.palette.sumiInk2, bg = '' },
+					NormalFloat = { fg = colors.palette.fujiWhite, bg = '' },
 					Pmenu = { fg = colors.palette.waveAqua2, bg = '' },
 					PmenuThumb = { fg = colors.palette.sumiInk2 },
 					PmenuSel = { fg = colors.palette.fujiWhite },
@@ -51,6 +51,7 @@ return {
 					DiagnosticSignInfo = { bg = '' },
 					DiagnosticSignHint = { bg = '' },
 					WinSeparator = { fg = colors.palette.fujiWhite },
+					LazyNormal = { fg = colors.palette.fujiWhite },
 				}
 			end,
 		})

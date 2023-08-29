@@ -49,12 +49,16 @@ return {
 					{
 						require('lazy.status').updates,
 						cond = require('lazy.status').has_updates,
-						color = { fg = colors.sakuraPink },
+						color = { fg = colors.palette.roninYellow },
 					},
 				},
 				lualine_x = {
-					{ custom_components.search_count, icon = '󰍉', color = { fg = colors.autumnYellow } },
-					{ custom_components.path_winbar, icon = { '󰋜', align = 'left' }, color = { fg = colors.oniViolet } },
+					{ custom_components.search_count, icon = '󰍉', color = { fg = colors.palette.autumnYellow } },
+					{
+						custom_components.path_winbar,
+						icon = { '󰋜', align = 'left' },
+						color = { fg = colors.palette.fujiWhite },
+					},
 					{ custom_components.anchor },
 				},
 				lualine_y = {
@@ -66,9 +70,9 @@ return {
 						'diff',
 						symbols = { added = ' ', modified = ' ', removed = ' ' },
 						diff_color = {
-							added = { fg = colors.springGreen },
-							modified = { fg = colors.autumnYellow },
-							removed = { fg = colors.sakuraPink },
+							added = { fg = colors.palette.springGreen },
+							modified = { fg = colors.palette.autumnYellow },
+							removed = { fg = colors.palette.sakuraPink },
 						},
 					},
 				},
