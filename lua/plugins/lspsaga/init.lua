@@ -27,10 +27,10 @@ return {
 				enable = false,
 			},
 			diagnostic = {
-				on_insert = false,
-				on_insert_follow = false,
-				show_code_action = false,
-				jump_num_shortcut = false,
+				on_insert = true,
+				on_insert_follow = true,
+				show_code_action = true,
+				jump_num_shortcut = true,
 			},
 			move_in_saga = { prev = '<C-k>', next = '<C-j>' },
 			finder_action_keys = {
