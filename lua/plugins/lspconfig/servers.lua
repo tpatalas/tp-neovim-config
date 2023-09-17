@@ -18,6 +18,15 @@ M.html = {
 	},
 }
 
+local function organize_imports()
+	local params = {
+		command = '_typescript.organizeImports',
+		arguments = { vim.api.nvim_buf_get_name(0) },
+		title = '',
+	}
+	vim.lsp.buf.execute_command(params)
+end
+
 M.tsserver = {
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -25,6 +34,12 @@ M.tsserver = {
 		separate_diagnostic_server = true,
 		publish_diagnostic_on = 'change',
 		tsserver_max_memory = 'auto',
+	},
+	commands = {
+		OrganizeImports = {
+			organize_imports,
+			description = 'Organize Imports',
+		},
 	},
 	handlers = {
 		['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
