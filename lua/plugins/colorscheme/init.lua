@@ -24,7 +24,7 @@ return {
 					TelescopeSelection = { fg = '', bg = colors.palette.sumiInk4 },
 					IndentBlanklineContextChar = { fg = colors.palette.sakuraPink, bg = '' },
 					TelescopeResultsIdentifier = { fg = '' },
-					FloatBorder = { fg = colors.palette.oniViolet, bg = '' },
+					FloatBorder = { fg = colors.palette.fujiWhite, bg = '' },
 					NormalFloat = { fg = colors.palette.fujiWhite, bg = '' },
 					Pmenu = { fg = colors.palette.waveAqua2, bg = '' },
 					PmenuThumb = { fg = colors.palette.sumiInk2 },
