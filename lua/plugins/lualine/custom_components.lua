@@ -18,4 +18,50 @@ M.search_count = function()
 	end
 end
 
+M.cwd_folder_name = function()
+	local cwd = vim.fn.getcwd()
+	return cwd:match('([^/]+)$')
+end
+
+M.path_winbar = function()
+	local devicons = require('nvim-web-devicons')
+	local fullPath = vim.fn.expand('%:p')
+	local cwd = vim.fn.getcwd()
+	local startIdx = fullPath:find(cwd, 1, true)
+
+	if not startIdx or startIdx <= 0 then
+		return fullPath
+	end
+
+	local pathBelowCwd = fullPath:sub(startIdx + #cwd + 1)
+	local file = pathBelowCwd:match('([^/]+)$')
+	local extension = file and file:match('%.([^%.]+)$') or ''
+
+	if not file then
+		return fullPath
+	end
+
+	local icon = extension ~= '' and devicons.get_icon(file, extension) or ''
+	local pathComponents = {}
+	for w in pathBelowCwd:gmatch('([^/]+)') do
+		table.insert(pathComponents, w)
+	end
+
+	if #pathComponents >= 6 then
+		local truncatedComponents = {
+			pathComponents[1],
+			pathComponents[2],
+			'...',
+			pathComponents[#pathComponents - 1],
+			pathComponents[#pathComponents],
+		}
+		pathBelowCwd = table.concat(truncatedComponents, '/')
+	end
+
+	local desiredPath = pathBelowCwd:gsub('/', '  ')
+	desiredPath = desiredPath:gsub(file, icon .. ' ' .. file)
+
+	return desiredPath
+end
+
 return M

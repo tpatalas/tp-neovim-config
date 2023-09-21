@@ -1,4 +1,5 @@
-local colors = require('catppuccin.palettes').get_palette('mocha')
+-- local colors = require('catppuccin.palettes').get_palette('mocha')
+local colors = require('kanagawa.colors').setup({ theme = 'wave' })
 
 return {
 	'akinsho/toggleterm.nvim',
@@ -7,7 +8,6 @@ return {
 	keys = {
 		{ '<leader>at', ':ToggleTerm<CR>', { noremap = true, silent = true } },
 		{ '<leader>al', ':lua_LAZYGIT_TOGGLE()<CR>', { noremap = true, silent = true } },
-		{ '<leader>am', ':lua_REPL_TOGGLE()<CR>', { noremap = true, silent = true } },
 	},
 	config = function()
 		require('toggleterm').setup({
@@ -30,10 +30,10 @@ return {
 				NormalFloat = {
 					link = 'Normal',
 				},
-				FloatBorder = {
-					guifg = colors.overlay2,
-					guibg = '',
-				},
+				-- FloatBorder = {
+				-- 	guifg = colors.palette.sumiInk3,
+				-- 	guibg = '',
+				-- },
 			},
 			float_opts = {
 				border = 'curved',
