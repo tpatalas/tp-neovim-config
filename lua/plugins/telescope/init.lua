@@ -7,7 +7,6 @@ return {
 	cmd = 'Telescope',
 	dependencies = {
 		'nvim-telescope/telescope-fzf-native.nvim',
-		'dhruvmanila/browser-bookmarks.nvim',
 		'nvim-telescope/telescope-file-browser.nvim',
 		build = 'make',
 	},
@@ -24,9 +23,6 @@ return {
 				},
 			},
 			extensions = {
-				bookmarks = {
-					selected_browser = 'chrome',
-				},
 				file_browser = {
 					hijack_netrw = true,
 					grouped = true,
@@ -49,7 +45,6 @@ return {
 			},
 		})
 		require('telescope').load_extension('fzf')
-		require('telescope').load_extension('bookmarks')
 		require('telescope').load_extension('file_browser')
 	end,
 }
