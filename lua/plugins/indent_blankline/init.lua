@@ -1,6 +1,6 @@
 return {
 	'lukas-reineke/indent-blankline.nvim',
-	event = 'BufRead',
+	-- event = 'VeryLazy',
 	main = 'ibl',
 	config = function()
 		local highlight = {
