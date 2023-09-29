@@ -22,7 +22,6 @@ return {
 					Cursor = { fg = '', bg = colors.palette.waveAqua2 },
 					TelescopeBorder = { fg = colors.palette.fujiWhite, bg = '' },
 					TelescopeSelection = { fg = '', bg = colors.palette.sumiInk4 },
-					IndentBlanklineContextChar = { fg = colors.palette.sakuraPink, bg = '' },
 					TelescopeResultsIdentifier = { fg = '' },
 					FloatBorder = { fg = colors.palette.oniViolet, bg = '' },
 					NormalFloat = { fg = colors.palette.fujiWhite, bg = '' },
@@ -37,7 +36,6 @@ return {
 					HarpoonNumberInactive = { fg = colors.palette.sumiInk3 },
 					HarpoonActive = { fg = colors.palette.sumiInk6, bg = colors.palette.sumiInk2 },
 					HarpoonNumberActive = { fg = colors.palette.sumiInk6, bg = colors.palette.sumiInk2 },
-					IndentBlankLineIndent = { fg = colors.palette.sumiInk5, bg = '' },
 					GitSignsDelete = { fg = colors.palette.sakuraPink, bg = '' },
 					GitSignsChange = { fg = colors.palette.autumnYellow, bg = '' },
 					GitSignsAdd = { fg = colors.palette.waveAqua2, bg = '' },
@@ -52,6 +50,7 @@ return {
 					DiagnosticSignHint = { bg = '' },
 					WinSeparator = { fg = colors.palette.fujiWhite },
 					LazyNormal = { fg = colors.palette.fujiWhite },
+					IblIndent = { fg = colors.palette.sumiInk5 },
 				}
 			end,
 		})
