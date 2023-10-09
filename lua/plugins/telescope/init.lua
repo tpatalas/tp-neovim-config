@@ -25,6 +25,7 @@ return {
 			extensions = {
 				file_browser = {
 					hijack_netrw = true,
+					respect_gitignore = false,
 					grouped = true,
 					hidden = { file_browser = false, folder_browser = false },
 					display_stat = { date = true, size = true },
