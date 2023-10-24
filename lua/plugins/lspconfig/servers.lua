@@ -18,14 +18,14 @@ M.html = {
 	},
 }
 
-local function organize_imports()
-	local params = {
-		command = '_typescript.organizeImports',
-		arguments = { vim.api.nvim_buf_get_name(0) },
-		title = '',
-	}
-	vim.lsp.buf.execute_command(params)
-end
+-- local function organize_imports()
+-- 	local params = {
+-- 		command = '_typescript.organizeImports',
+-- 		arguments = { vim.api.nvim_buf_get_name(0) },
+-- 		title = '',
+-- 	}
+-- 	vim.lsp.buf.execute_command(params)
+-- end
 
 M.tsserver = {
 	capabilities = capabilities,
@@ -35,12 +35,12 @@ M.tsserver = {
 		publish_diagnostic_on = 'change',
 		tsserver_max_memory = 'auto',
 	},
-	commands = {
-		OrganizeImports = {
-			organize_imports,
-			description = 'Organize Imports',
-		},
-	},
+	-- commands = {
+	-- 	OrganizeImports = {
+	-- 		organize_imports,
+	-- 		description = 'Organize Imports',
+	-- 	},
+	-- },
 	handlers = {
 		['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
 			local client = vim.lsp.get_client_by_id(ctx.client_id)
