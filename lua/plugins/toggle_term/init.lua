@@ -20,7 +20,7 @@ return {
 			start_in_insert = true,
 			insert_mappings = true,
 			persist_size = true,
-			direction = 'tab', -- 'vertical' | 'horizontal' | 'tab' | 'float',
+			direction = 'float', -- 'vertical' | 'horizontal' | 'tab' | 'float',
 			close_on_exit = true,
 			shell = vim.o.shell,
 			highlights = {
@@ -30,18 +30,14 @@ return {
 				NormalFloat = {
 					link = 'Normal',
 				},
-				-- FloatBorder = {
-				-- 	guifg = colors.palette.sumiInk3,
-				-- 	guibg = '',
-				-- },
 			},
 			float_opts = {
-				border = 'curved',
+				border = 'none',
 				width = function()
 					return math.floor(vim.o.columns * 1)
 				end,
 				height = function()
-					return math.floor(vim.o.lines * 0.90)
+					return math.floor(vim.o.lines * 1)
 				end,
 				winblend = 0,
 			},
@@ -62,11 +58,6 @@ return {
 		local Terminal = require('toggleterm.terminal').Terminal
 
 		local lazygit = Terminal:new({ cmd = 'lazygit', hidden = true })
-
-		function _REPL_TOGGLE()
-			local repl = createRepl()
-			repl:toggle()
-		end
 
 		function _LAZYGIT_TOGGLE()
 			lazygit:toggle()
