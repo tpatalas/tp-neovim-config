@@ -3,92 +3,16 @@ return {
 	event = 'VeryLazy',
 	config = function()
 		local null_ls = require('null-ls')
+		local configs = require('plugins.none-ls.configs')
 		local formatting = null_ls.builtins.formatting
 		local diagnostics = null_ls.builtins.diagnostics
 		local codeactions = null_ls.builtins.code_actions
 		local completion = null_ls.builtins.completion
 
-		local eslint = {
-			condition = function(utils)
-				return utils.root_has_file('.eslintrc.json')
-			end,
-		}
-
-		--------------------
-		-- cspell setting --
-		--------------------
-		local cspell_custom_file_path = vim.fn.findfile('~/.config/langs/cspell.json')
-
-		local cspell_config_file_path = function()
-			local custom_path = nil
-			if cspell_custom_file_path ~= '' then
-				custom_path = cspell_custom_file_path
-			end
-			return custom_path
-		end
-
-		local cspell_config_args = function()
-			if cspell_config_file_path ~= nil then
-				return cspell_custom_file_path
-			else
-				return nil
-			end
-		end
-
-		local cspell = {
-			config = {
-				create_config_file = true,
-				find_json = cspell_config_file_path,
-			},
-			filetypes = {
-				'markdown',
-				'html',
-				'yaml',
-				'typescript',
-				'typescriptreact',
-				'lua',
-				'luau',
-				'graphql',
-				'scss',
-				'less',
-				'jsonc',
-				'handlebars',
-				'markdown.mdx',
-				'vue',
-				'yaml',
-				'json',
-				'javascript',
-				'javascriptreact',
-				'css',
-				'gitcommit',
-			},
-			extra_args = {
-				'--config',
-				cspell_config_args(),
-				'--cache',
-				'--gitignore',
-				'--no-gitignore',
-				'--locale',
-				'en-US',
-				'--language-id',
-				'companies',
-				'softwareTerms',
-				'misc',
-				'typescript',
-				'node',
-				'html',
-				'python',
-				'css',
-				'bash',
-				'fonts',
-				'filetypes',
-				'npm',
-			},
-		}
 		local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
 		-- Built-in sources:
-		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
+		-- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 		local source = {
 			diagnostics.tsc,
 			-- WARNING: diagnostics listed below do not support workspace level diagnostics
@@ -96,8 +20,8 @@ return {
 			formatting.markdownlint,
 			formatting.stylua,
 			formatting.prettierd,
-			diagnostics.cspell.with(cspell),
-			codeactions.cspell.with(cspell),
+			diagnostics.cspell.with(configs.cspell),
+			codeactions.cspell.with(configs.cspell),
 			codeactions.eslint_d.with(eslint),
 			diagnostics.eslint_d.with(eslint),
 		}
