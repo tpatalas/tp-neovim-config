@@ -22,8 +22,8 @@ return {
 			formatting.prettierd,
 			diagnostics.cspell.with(configs.cspell),
 			codeactions.cspell.with(configs.cspell),
-			codeactions.eslint_d.with(eslint),
-			diagnostics.eslint_d.with(eslint),
+			codeactions.eslint_d.with(configs.eslint),
+			diagnostics.eslint_d.with(configs.eslint),
 		}
 
 		local on_attach = function(current_client, bufnr)
