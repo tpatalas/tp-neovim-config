@@ -53,10 +53,10 @@ return {
 					},
 				},
 				lualine_x = {
-					{ custom_components.search_count, icon = '󰍉', color = { fg = colors.palette.autumnYellow } },
+					{ custom_components.search_count, icon = '', color = { fg = colors.palette.autumnYellow } },
 					{
 						custom_components.path_winbar,
-						icon = { '󰋜', align = 'left' },
+						icon = { '', align = 'left' },
 						color = { fg = colors.palette.fujiWhite },
 					},
 					{ custom_components.anchor },
