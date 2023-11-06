@@ -38,7 +38,7 @@ return {
 				['q'] = '',
 				['H'] = 'actions.toggle_hidden',
 				['P'] = 'actions.preview',
-				['C'] = 'actions.open_cwd',
+				['<Right>'] = 'actions.open_cwd',
 				['<Left>'] = 'actions.parent',
 				['<Home>'] = '<c-o>zz', -- go to older position
 				['<End>'] = '<c-i>zz', -- go to newer position
