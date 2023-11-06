@@ -61,4 +61,4 @@ vim.cmd([[autocmd BufUnload * :let @/ = ""]])
 -----------------------------------
 -- Clear Jump when Enter the Vim --
 -----------------------------------
--- vim.cmd([[autocmd VimEnter * :clearjumps]])
+vim.cmd([[autocmd VimEnter * :clearjumps]])
