@@ -71,7 +71,11 @@ M.path_winbar = function()
 	end
 
 	local desiredPath = pathBelowCwd:gsub('/', '  ')
-	desiredPath = desiredPath:gsub(file, icon .. ' ' .. file)
+	if icon ~= '' then
+		desiredPath = desiredPath:gsub(file, icon .. ' ' .. file)
+	else
+		desiredPath = desiredPath:gsub(file, file)
+	end
 
 	return desiredPath
 end
