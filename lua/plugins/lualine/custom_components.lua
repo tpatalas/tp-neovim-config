@@ -35,16 +35,28 @@ M.path_winbar = function()
 
 	local pathBelowCwd = fullPath:sub(startIdx + #cwd + 1)
 	local file = pathBelowCwd:match('([^/]+)$')
-	local extension = file and file:match('%.([^%.]+)$') or ''
 
 	if not file then
-		return fullPath
+		file = pathBelowCwd:match('([^/]+)/?$')
+		pathBelowCwd = pathBelowCwd:gsub('/$', '')
 	end
 
-	local icon = extension ~= '' and devicons.get_icon(file, extension) or ''
+	local extension = file and file:match('%.([^%.]+)$') or ''
+
 	local pathComponents = {}
 	for w in pathBelowCwd:gmatch('([^/]+)') do
 		table.insert(pathComponents, w)
+	end
+
+	local icon = ''
+	if #pathComponents > 1 then
+		if extension ~= '' then
+			icon = devicons.get_icon(file, extension) or ''
+		else
+			icon = ''
+		end
+	elseif #pathComponents == 1 then
+		icon = ''
 	end
 
 	if #pathComponents >= 6 then
