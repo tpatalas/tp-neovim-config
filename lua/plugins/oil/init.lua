@@ -23,6 +23,7 @@ return {
 	},
 	config = function()
 		require('oil').setup({
+			cleanup_delay_ms = 200,
 			columns = {
 				-- { 'mtime', highlight = 'OilMTime' },
 				-- { 'size', highlight = 'OilSize' },
@@ -34,11 +35,13 @@ return {
 				['<CR>'] = 'actions.select',
 				['Y'] = 'actions.select_vsplit',
 				['X'] = 'actions.select_split',
-				['P'] = 'actions.preview',
-				['q'] = 'actions.close',
+				['q'] = '',
 				['H'] = 'actions.toggle_hidden',
-				['<Home>'] = 'actions.parent',
-				['<End>'] = 'actions.open_cwd',
+				['P'] = 'actions.preview',
+				['C'] = 'actions.open_cwd',
+				['~'] = 'actions.parent',
+				['<Home>'] = '<c-o>zz', -- go to older position
+				['<End>'] = '<c-i>zz', -- go to newer position
 			},
 		})
 	end,
