@@ -17,6 +17,6 @@ return {
 	-- telescope bookmarks
 	{ '<leader>sbo', '<cmd>Telescope bookmarks<CR>', noremap }, -- open bookmarks
 	-- telescope file browser
-	{ '<leader>eo', '<cmd>Telescope file_browser previewer=false<CR>', noremap }, -- open file browser
-	{ '<leader>ef', '<cmd>Telescope file_browser path=%:p:h select_buffer=true previewer=false<CR>', noremap }, -- open file browser with the current buffer
+	-- { '<leader>eo', '<cmd>Telescope file_browser previewer=false<CR>', noremap }, -- open file browser
+	-- { '<leader>ef', '<cmd>Telescope file_browser path=%:p:h select_buffer=true previewer=false<CR>', noremap }, -- open file browser with the current buffer
 }
