@@ -1,5 +1,4 @@
---
-local colors = require('kanagawa.colors').setup({ theme = 'wave' })
+local colorscheme = require('plugins.colorscheme.setup')
 
 return {
 	'nvim-lualine/lualine.nvim',
@@ -8,6 +7,7 @@ return {
 	config = function()
 		local custom_theme = require('plugins.lualine.custom_theme')
 		local custom_components = require('plugins.lualine.custom_components')
+		local colors = require('plugins.colorscheme.palettes.' .. colorscheme)
 
 		require('lualine').setup({
 			options = {
@@ -49,15 +49,15 @@ return {
 					{
 						require('lazy.status').updates,
 						cond = require('lazy.status').has_updates,
-						color = { fg = colors.palette.roninYellow },
+						color = { fg = colors.roninYellow },
 					},
 				},
 				lualine_x = {
-					{ custom_components.search_count, icon = '', color = { fg = colors.palette.autumnYellow } },
+					{ custom_components.search_count, icon = '', color = { fg = colors.autumnYellow } },
 					{
 						custom_components.path_winbar,
 						icon = { '', align = 'left' },
-						color = { fg = colors.palette.fujiWhite },
+						color = { fg = colors.fujiWhite },
 					},
 					{ custom_components.anchor },
 				},
@@ -70,9 +70,9 @@ return {
 						'diff',
 						symbols = { added = ' ', modified = ' ', removed = ' ' },
 						diff_color = {
-							added = { fg = colors.palette.springGreen },
-							modified = { fg = colors.palette.autumnYellow },
-							removed = { fg = colors.palette.sakuraPink },
+							added = { fg = colors.springGreen },
+							modified = { fg = colors.autumnYellow },
+							removed = { fg = colors.sakuraPink },
 						},
 					},
 				},
