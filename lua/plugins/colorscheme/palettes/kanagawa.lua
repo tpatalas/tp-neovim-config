@@ -1,3 +1,4 @@
-local palette = require('kanagawa.colors').setup()
+local colors = require('kanagawa.colors').setup()
+local palette = colors.palette
 
 return palette
