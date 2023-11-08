@@ -29,14 +29,29 @@ return {
 
 			--- You can override specific color groups to use other groups or a hex color
 			--- function will be called with a ColorScheme table
-			---@param colors ColorScheme
 			on_colors = function(colors) end,
 
 			--- You can override specific highlights to use other groups or a hex color
 			--- function will be called with a Highlights and ColorScheme table
-			---@param highlights Highlights
-			---@param colors ColorScheme
-			on_highlights = function(highlights, colors) end,
+			on_highlights = function(highlights, colors)
+				highlights.IncSearch = { fg = '', bg = colors.blue0 }
+				highlights.CurSearch = { fg = '', bg = colors.blue0 }
+				highlights.LineNr = { fg = '', bg = '' }
+				highlights.CursorLineNr = { fg = colors.yellow, bg = '' }
+				highlights.Search = { fg = '', bg = '' }
+				highlights.Cursor = { fg = '', bg = colors.blue }
+				highlights.TelescopeBorder = { fg = colors.float, bg = '' }
+				highlights.TelescopeNormal = { bg = '' }
+				highlights.TelescopeSelection = { fg = '', bg = colors.bg_visual }
+				highlights.TelescopeResultsIdentifier = { fg = '' }
+				highlights.FloatBorder = { fg = colors.purple, bg = '' }
+				highlights.NormalFloat = { fg = colors.float, bg = '' }
+				highlights.Pmenu = { fg = colors.blue, bg = '' }
+				highlights.PmenuThumb = { fg = colors.float }
+				highlights.PmenuSel = { fg = colors.bg_bg_visual }
+				highlights.TabLineFill = { bg = '' }
+				highlights.WinSeparator = { fg = colors.float }
+			end,
 		})
 		vim.cmd('colorscheme tokyonight')
 	end,
