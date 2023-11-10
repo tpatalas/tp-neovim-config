@@ -6,8 +6,8 @@ return {
 	priority = 500,
 	config = function()
 		local custom_components = require('plugins.lualine.custom_components')
-		local component_colors = require('plugins.lualine.component_colors.' .. colorscheme)
-		local custom_theme = require('plugins.lualine.custom_theme.' .. colorscheme)
+		local component_colors = require('plugins.colorscheme.extends.lualine.component_colors.' .. colorscheme)
+		local custom_theme = require('plugins.colorscheme.extends.lualine.custom_theme.' .. colorscheme)
 		local colors = require('plugins.colorscheme.palettes.' .. colorscheme)
 		local component = component_colors(colors)
 
