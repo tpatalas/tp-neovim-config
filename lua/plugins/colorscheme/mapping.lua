@@ -3,4 +3,5 @@ return {
 	kanagawa = 'kanagawa',
 	catppuccin = 'catppuccin',
 	github = 'github',
+	material = 'material',
 }
