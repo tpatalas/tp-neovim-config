@@ -4,4 +4,5 @@ return {
 	catppuccin = 'catppuccin',
 	github = 'github',
 	material = 'material',
+	rosepine = 'rosepine',
 }
