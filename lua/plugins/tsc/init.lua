@@ -18,8 +18,9 @@ return {
 		{ '<leader>tl', ':lua Toggle_quickfix()<CR>', noremap },
 	},
 	config = function()
+		require('plugins.tsc.autocmd')
 		require('tsc').setup({
-			auto_open_qflist = true,
+			auto_open_qflist = false,
 			auto_close_qflist = false,
 			bin_path = require('tsc.utils').find_tsc_bin(),
 			enable_progress_notifications = false,
