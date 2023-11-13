@@ -14,7 +14,7 @@ return {
 		-- Built-in sources:
 		-- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 		local source = {
-			diagnostics.tsc,
+			-- diagnostics.tsc,
 			-- WARNING: diagnostics listed below do not support workspace level diagnostics
 			diagnostics.actionlint,
 			formatting.markdownlint,
