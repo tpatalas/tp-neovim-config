@@ -32,7 +32,7 @@ return {
 		-- Servers --
 		-------------
 		lspconfig.html.setup(server.html)
-		lspconfig.tsserver.setup(server.tsserver)
+		-- lspconfig.tsserver.setup(server.tsserver)
 		lspconfig.dockerls.setup(server.dockerls)
 		lspconfig.jsonls.setup(server.jsonls)
 		lspconfig.cssls.setup(server.cssls)

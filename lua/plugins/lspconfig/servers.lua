@@ -27,34 +27,34 @@ M.html = {
 -- 	vim.lsp.buf.execute_command(params)
 -- end
 
-M.tsserver = {
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = {
-		separate_diagnostic_server = true,
-		publish_diagnostic_on = 'change',
-		tsserver_max_memory = 'auto',
-	},
-	-- commands = {
-	-- 	OrganizeImports = {
-	-- 		organize_imports,
-	-- 		description = 'Organize Imports',
-	-- 	},
-	-- },
-	handlers = {
-		['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
-			local client = vim.lsp.get_client_by_id(ctx.client_id)
-
-			if client and client.name == 'tsserver' then
-				result.diagnostics = vim.tbl_filter(function(diagnostic)
-					return diagnostic.code ~= 80001
-				end, result.diagnostics)
-			end
-
-			return vim.lsp.diagnostic.on_publish_diagnostics(nil, result, ctx, ...)
-		end,
-	},
-}
+-- M.tsserver = {
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	settings = {
+-- 		separate_diagnostic_server = true,
+-- 		publish_diagnostic_on = 'change',
+-- 		tsserver_max_memory = 'auto',
+-- 	},
+-- commands = {
+-- 	OrganizeImports = {
+-- 		organize_imports,
+-- 		description = 'Organize Imports',
+-- 	},
+-- },
+-- 	handlers = {
+-- 		['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
+-- 			local client = vim.lsp.get_client_by_id(ctx.client_id)
+--
+-- 			if client and client.name == 'tsserver' then
+-- 				result.diagnostics = vim.tbl_filter(function(diagnostic)
+-- 					return diagnostic.code ~= 80001
+-- 				end, result.diagnostics)
+-- 			end
+--
+-- 			return vim.lsp.diagnostic.on_publish_diagnostics(nil, result, ctx, ...)
+-- 		end,
+-- 	},
+-- }
 
 M.dockerls = default_configs
 M.jsonls = default_configs
