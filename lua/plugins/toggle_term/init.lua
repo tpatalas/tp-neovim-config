@@ -1,6 +1,3 @@
--- local colors = require('catppuccin.palettes').get_palette('mocha')
-local colors = require('kanagawa.colors').setup({ theme = 'wave' })
-
 return {
 	'akinsho/toggleterm.nvim',
 	lazy = true,
@@ -20,7 +17,7 @@ return {
 			start_in_insert = true,
 			insert_mappings = true,
 			persist_size = true,
-			direction = 'float',
+			direction = 'float', -- 'vertical' | 'horizontal' | 'tab' | 'float',
 			close_on_exit = true,
 			shell = vim.o.shell,
 			highlights = {
@@ -30,18 +27,14 @@ return {
 				NormalFloat = {
 					link = 'Normal',
 				},
-				-- FloatBorder = {
-				-- 	guifg = colors.palette.sumiInk3,
-				-- 	guibg = '',
-				-- },
 			},
 			float_opts = {
-				border = 'curved',
+				border = 'none',
 				width = function()
 					return math.floor(vim.o.columns * 1)
 				end,
 				height = function()
-					return math.floor(vim.o.lines * 0.90)
+					return math.floor(vim.o.lines * 1)
 				end,
 				winblend = 0,
 			},
@@ -61,65 +54,10 @@ return {
 
 		local Terminal = require('toggleterm.terminal').Terminal
 
-		local function createRepl()
-			local filePath = vim.fn.expand('%:p')
-			local cmdRepl = 'ts-node ' .. filePath
-
-			local repl = Terminal:new({
-				direction = 'vertical',
-				on_open = function(term)
-					vim.cmd('term ' .. cmdRepl)
-				end,
-			})
-			return repl
-		end
-
-		local lazygit = Terminal:new({
-			cmd = 'lazygit',
-			dir = 'git_dir',
-			direction = 'float',
-			-- function to run on opening the terminal
-			on_open = function(term)
-				vim.cmd('startinsert!')
-				vim.api.nvim_buf_set_keymap(term.bufnr, 'n', 'q', '<cmd>close<CR>', { noremap = true, silent = true })
-			end,
-			-- function to run on closing the terminal
-			on_close = function(term)
-				vim.cmd('startinsert!')
-			end,
-		})
-
-		function _REPL_TOGGLE()
-			local repl = createRepl()
-			repl:toggle()
-		end
+		local lazygit = Terminal:new({ cmd = 'lazygit', hidden = true })
 
 		function _LAZYGIT_TOGGLE()
 			lazygit:toggle()
-		end
-
-		local node = Terminal:new({ cmd = 'node', hidden = true })
-
-		function _NODE_TOGGLE()
-			node:toggle()
-		end
-
-		local ncdu = Terminal:new({ cmd = 'ncdu', hidden = true })
-
-		function _NCDU_TOGGLE()
-			ncdu:toggle()
-		end
-
-		local htop = Terminal:new({ cmd = 'htop', hidden = true })
-
-		function _HTOP_TOGGLE()
-			htop:toggle()
-		end
-
-		local python = Terminal:new({ cmd = 'python', hidden = true })
-
-		function _PYTHON_TOGGLE()
-			python:toggle()
 		end
 	end,
 }

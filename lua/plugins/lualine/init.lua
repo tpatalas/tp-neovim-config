@@ -1,13 +1,15 @@
---
-local colors = require('kanagawa.colors').setup({ theme = 'wave' })
+local colorscheme = require('plugins.colorscheme.setup')
 
 return {
 	'nvim-lualine/lualine.nvim',
 	lazy = false,
 	priority = 500,
 	config = function()
-		local custom_theme = require('plugins.lualine.custom_theme')
 		local custom_components = require('plugins.lualine.custom_components')
+		local component_colors = require('plugins.colorscheme.extends.lualine.component_colors.' .. colorscheme)
+		local custom_theme = require('plugins.colorscheme.extends.lualine.custom_theme.' .. colorscheme)
+		local colors = require('plugins.colorscheme.palettes.' .. colorscheme)
+		local component = component_colors(colors)
 
 		require('lualine').setup({
 			options = {
@@ -47,17 +49,22 @@ return {
 						always_visible = false,
 					},
 					{
+						custom_components.quickfix_count,
+						icon = { '', align = 'left' },
+						color = component.diff_color.removed,
+					},
+					{
 						require('lazy.status').updates,
 						cond = require('lazy.status').has_updates,
-						color = { fg = colors.palette.roninYellow },
+						color = component.lazy,
 					},
 				},
 				lualine_x = {
-					{ custom_components.search_count, icon = '󰍉', color = { fg = colors.palette.autumnYellow } },
+					{ custom_components.search_count, icon = '', color = component.search_count },
 					{
 						custom_components.path_winbar,
-						icon = { '󰋜', align = 'left' },
-						color = { fg = colors.palette.fujiWhite },
+						icon = { '', align = 'left' },
+						color = component.path_winbar,
 					},
 					{ custom_components.anchor },
 				},
@@ -69,11 +76,7 @@ return {
 					{
 						'diff',
 						symbols = { added = ' ', modified = ' ', removed = ' ' },
-						diff_color = {
-							added = { fg = colors.palette.springGreen },
-							modified = { fg = colors.palette.autumnYellow },
-							removed = { fg = colors.palette.sakuraPink },
-						},
+						diff_color = component.diff_color,
 					},
 				},
 				lualine_z = {},

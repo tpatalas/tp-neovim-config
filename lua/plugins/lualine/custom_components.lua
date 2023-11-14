@@ -23,6 +23,17 @@ M.cwd_folder_name = function()
 	return cwd:match('([^/]+)$')
 end
 
+M.quickfix_count = function()
+	local qflist = vim.fn.getqflist()
+	local count = #qflist
+
+	if count > 0 then
+		return string.format('%d', count)
+	else
+		return ''
+	end
+end
+
 M.path_winbar = function()
 	local devicons = require('nvim-web-devicons')
 	local fullPath = vim.fn.expand('%:p')
@@ -35,16 +46,28 @@ M.path_winbar = function()
 
 	local pathBelowCwd = fullPath:sub(startIdx + #cwd + 1)
 	local file = pathBelowCwd:match('([^/]+)$')
-	local extension = file and file:match('%.([^%.]+)$') or ''
 
 	if not file then
-		return fullPath
+		file = pathBelowCwd:match('([^/]+)/?$')
+		pathBelowCwd = pathBelowCwd:gsub('/$', '')
 	end
 
-	local icon = extension ~= '' and devicons.get_icon(file, extension) or ''
+	local extension = file and file:match('%.([^%.]+)$') or ''
+
 	local pathComponents = {}
 	for w in pathBelowCwd:gmatch('([^/]+)') do
 		table.insert(pathComponents, w)
+	end
+
+	local icon = ''
+	if #pathComponents > 1 then
+		if extension ~= '' then
+			icon = devicons.get_icon(file, extension) or ''
+		else
+			icon = ''
+		end
+	elseif #pathComponents == 1 then
+		icon = ''
 	end
 
 	if #pathComponents >= 6 then
@@ -59,7 +82,11 @@ M.path_winbar = function()
 	end
 
 	local desiredPath = pathBelowCwd:gsub('/', '  ')
-	desiredPath = desiredPath:gsub(file, icon .. ' ' .. file)
+	if icon ~= '' then
+		desiredPath = desiredPath:gsub(file, icon .. ' ' .. file)
+	else
+		desiredPath = desiredPath:gsub(file, file)
+	end
 
 	return desiredPath
 end
