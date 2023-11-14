@@ -23,6 +23,17 @@ M.cwd_folder_name = function()
 	return cwd:match('([^/]+)$')
 end
 
+M.quickfix_count = function()
+	local qflist = vim.fn.getqflist()
+	local count = #qflist
+
+	if count > 0 then
+		return string.format('%d', count)
+	else
+		return ''
+	end
+end
+
 M.path_winbar = function()
 	local devicons = require('nvim-web-devicons')
 	local fullPath = vim.fn.expand('%:p')

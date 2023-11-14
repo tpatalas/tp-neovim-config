@@ -49,6 +49,11 @@ return {
 						always_visible = false,
 					},
 					{
+						custom_components.quickfix_count,
+						icon = { '', align = 'left' },
+						color = component.diff_color.removed,
+					},
+					{
 						require('lazy.status').updates,
 						cond = require('lazy.status').has_updates,
 						color = component.lazy,
