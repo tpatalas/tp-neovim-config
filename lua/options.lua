@@ -44,3 +44,4 @@ opt.smartindent = true -- make indenting smarter again
 opt.swapfile = false -- disable/enable the swapFile
 opt.shortmess = vim.o.shortmess .. 'aoOstTWFAIc'
 opt.splitright = true
+opt.statuscolumn = '  %@SignCb@%=%T%@NumCb@%r %s'
