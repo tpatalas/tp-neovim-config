@@ -47,8 +47,8 @@ return {
 
 				sort = {
 					{ 'type', 'asc' },
-					{ 'birthtime', 'desc' },
 					{ 'name', 'asc' },
+					{ 'birthtime', 'desc' },
 				},
 			},
 		})
