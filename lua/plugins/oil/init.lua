@@ -43,6 +43,14 @@ return {
 				['<Home>'] = '<c-o>zz', -- go to older position
 				['<End>'] = '<c-i>zz', -- go to newer position
 			},
+			view_options = {
+
+				sort = {
+					{ 'type', 'asc' },
+					{ 'birthtime', 'desc' },
+					{ 'name', 'asc' },
+				},
+			},
 		})
 	end,
 }
