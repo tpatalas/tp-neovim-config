@@ -1,25 +1,24 @@
-vim.cmd([[
-  augroup TypeScriptAutocommands
-    let g:is_tsc_running = 0
+local is_tsc_running = false
+local debounce_timer
 
-    function! DebounceTSCCommand()
-      if g:is_tsc_running
-        return
-      endif
+local function debounceTSCCommand()
+	if is_tsc_running then
+		return
+	end
 
-      if exists('g:debounce_timer')
-        call timer_stop(g:debounce_timer)
-      endif
-      let g:debounce_timer = timer_start(2000, 'RunTSC')
-    endfunction
+	if debounce_timer then
+		vim.fn.timer_stop(debounce_timer)
+	end
+	debounce_timer = vim.fn.timer_start(2000, function()
+		is_tsc_running = true
+		vim.api.nvim_command('TSC')
+		is_tsc_running = false
+	end)
+end
 
-    function! RunTSC(timer_id)
-      let g:is_tsc_running = 1
-      execute 'TSC'
-      let g:is_tsc_running = 0
-    endfunction
-
-    autocmd!
-    autocmd TextChanged,TextChangedI *.ts,*.tsx call DebounceTSCCommand()
-  augroup END
-]])
+vim.api.nvim_create_augroup('TypeScriptAutocommands', { clear = true })
+vim.api.nvim_create_autocmd({ 'TextChanged', 'TextChangedI', 'BufReadPre' }, {
+	pattern = { '*.ts', '*.tsx' },
+	group = 'TypeScriptAutocommands',
+	callback = debounceTSCCommand,
+})
