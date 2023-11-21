@@ -2,7 +2,7 @@
 
 return {
 	'nvim-tree/nvim-web-devicons',
-	config = function()
+config = function()
 		local icons_filename = require('plugins.devicons.icons_filename')
 
 		require('nvim-web-devicons').setup({
