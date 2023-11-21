@@ -1,6 +1,6 @@
 -- https://github.com/ThePrimeagen/harpoon
 
-require('plugins.harpoon.autocmd')
+-- require('plugins.harpoon.autocmd')
 local noremap = { noremap = true, silent = true }
 
 return {
