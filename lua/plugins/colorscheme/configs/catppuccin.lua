@@ -37,8 +37,32 @@ return {
 				types = {},
 				operators = {},
 			},
+			integrations = {
+				gitsigns = true,
+				nvimtree = true,
+				telescope = true,
+				-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+				illuminate = true,
+				treesitter = true,
+				treesitter_context = true,
+				-- coc_nvim = true,
+				hop = true,
+				markdown = true,
+			},
+
 			color_overrides = {},
-			custom_highlights = {},
+			custom_highlights = function(colors)
+				return {
+					IncSearch = { fg = '', bg = colors.surface1 },
+					CurSearch = { fg = '', bg = colors.surface1 },
+					CursorLineNr = { fg = colors.yellow },
+					Search = { fg = '', bg = '' },
+					TelescopeSelection = { fg = '', bg = colors.surface1 },
+					PmenuSel = { fg = colors.rosewater },
+					TabLineFill = { bg = '' },
+					WinSeparator = { fg = colors.text },
+				}
+			end,
 			integrations = {
 				cmp = true,
 				gitsigns = true,
@@ -48,6 +72,15 @@ return {
 				mini = {
 					enabled = false,
 					indentscope_color = '',
+				},
+				native_lsp = {
+					enabled = true,
+					underlines = {
+						errors = { 'undercurl' },
+						hints = { 'undercurl' },
+						warnings = { 'undercurl' },
+						information = { 'undercurl' },
+					},
 				},
 				-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 			},
