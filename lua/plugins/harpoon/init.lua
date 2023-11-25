@@ -1,6 +1,5 @@
 -- https://github.com/ThePrimeagen/harpoon
 
--- require('plugins.harpoon.autocmd')
 local noremap = { noremap = true, silent = true }
 
 return {
@@ -25,6 +24,7 @@ return {
 		{ '<leader>9', ':lua require("harpoon.ui").nav_file(9)<CR>zz', noremap }, -- navigate to file 9
 	},
 	config = function()
+		require('plugins.harpoon.autocmd')
 		require('harpoon').setup({
 			excluded_filetypes = { 'harpoon', 'gitcommit' },
 			tabline = false,
