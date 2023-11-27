@@ -50,7 +50,7 @@ return {
 					},
 					{
 						custom_components.quickfix_count,
-						icon = { '', align = 'left' },
+						icon = { '󰛦', align = 'left' },
 						color = component.diff_color.removed,
 					},
 					{
