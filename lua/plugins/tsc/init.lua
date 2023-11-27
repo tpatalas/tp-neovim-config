@@ -1,3 +1,5 @@
+-- https://github.com/dmmulroy/tsc.nvim
+
 local noremap = { noremap = true, silent = true }
 
 function Toggle_quickfix()
@@ -20,14 +22,15 @@ return {
 		{ '<leader>tl', ':lua Toggle_quickfix()<CR>', noremap },
 	},
 	config = function()
-		require('plugins.tsc.autocmd')
 		require('tsc').setup({
 			auto_open_qflist = false,
 			auto_close_qflist = false,
+			auto_start_watch_mode = false,
 			bin_path = require('tsc.utils').find_tsc_bin(),
 			enable_progress_notifications = false,
 			flags = {
 				noEmit = true,
+				watch = true,
 			},
 			hide_progress_notifications_from_history = true,
 			spinner = { '⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷' },
