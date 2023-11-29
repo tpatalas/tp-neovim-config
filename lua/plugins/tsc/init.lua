@@ -25,7 +25,7 @@ return {
 		require('tsc').setup({
 			auto_open_qflist = false,
 			auto_close_qflist = false,
-			auto_start_watch_mode = false,
+			-- auto_start_watch_mode = true,
 			bin_path = require('tsc.utils').find_tsc_bin(),
 			enable_progress_notifications = false,
 			flags = {
@@ -34,6 +34,16 @@ return {
 			},
 			hide_progress_notifications_from_history = true,
 			spinner = { '⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷' },
+		})
+
+		vim.api.nvim_create_autocmd('FileType', {
+			pattern = { 'typescript', 'typescriptreact' },
+			callback = function()
+				if vim.b.did_run_tsc == nil then
+					vim.cmd(':TSC')
+					vim.b.did_run_tsc = true
+				end
+			end,
 		})
 	end,
 }
