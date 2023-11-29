@@ -35,15 +35,5 @@ return {
 			hide_progress_notifications_from_history = true,
 			spinner = { '⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷' },
 		})
-
-		vim.api.nvim_create_autocmd('FileType', {
-			pattern = { 'typescript', 'typescriptreact' },
-			callback = function()
-				if vim.b.did_run_tsc == nil then
-					vim.cmd(':TSC')
-					vim.b.did_run_tsc = true
-				end
-			end,
-		})
 	end,
 }
