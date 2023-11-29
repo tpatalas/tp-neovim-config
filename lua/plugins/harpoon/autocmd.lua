@@ -30,7 +30,7 @@ end
 
 local function addToHarpoon()
 	if not isFileTypeExcluded() and not isFileNameExcluded() and not isFileEmpty() then
-		require('harpoon.mark').clear_all()
+	-- require('harpoon.mark').clear_all()
 		require('harpoon.mark').add_file()
 	end
 end
