@@ -30,6 +30,11 @@ return {
 				highlight = highlight,
 				remove_blankline_trail = false,
 			},
+			exclude = {
+				filetypes = {
+					'dashboard',
+				},
+			},
 			scope = {
 				highlight = highlight,
 				show_start = false,
