@@ -18,6 +18,7 @@ return {
 		{ '<leader>lx', ':LspStop<CR>', noremap }, -- stop lsp
 		{ '<leader>li', ':LspInfo<CR>', noremap }, -- lsp info
 		{ '<leader>fd', ':OrganizeImport<CR>', noremap }, -- tsserver remove unused imports
+		{ '<leader>fm', ':AddMissingImports<CR>', noremap }, -- tsserver remove unused imports
 	},
 	config = function()
 		local lspconfig = require('lspconfig')
@@ -32,7 +33,7 @@ return {
 		-- Servers --
 		-------------
 		lspconfig.html.setup(server.html)
-		-- lspconfig.tsserver.setup(server.tsserver)
+		lspconfig.tsserver.setup(server.tsserver)
 		lspconfig.dockerls.setup(server.dockerls)
 		lspconfig.jsonls.setup(server.jsonls)
 		lspconfig.cssls.setup(server.cssls)
