@@ -1,6 +1,7 @@
 -- https://github.com/dmmulroy/tsc.nvim
 
 local noremap = { noremap = true, silent = true }
+vim.g.did_run_tsc_globally = false
 
 function Toggle_quickfix()
 	local quickfix_winid = vim.fn.getqflist({ winid = 0 }).winid
@@ -40,8 +41,8 @@ return {
 			pattern = { '*.ts', '*.tsx' },
 			callback = function()
 				if vim.bo.filetype == 'typescript' or vim.bo.filetype == 'typescriptreact' then
-					if vim.g.did_run_tsc_globally == nil then
-						vim.cmd(':TSC')
+					if not vim.g.did_run_tsc_globally then
+						vim.cmd('TSC')
 						vim.g.did_run_tsc_globally = true
 					end
 				end
