@@ -1,4 +1,4 @@
-local colorscheme = require('plugins.colorscheme.setup')
+local colorscheme = require('configs.colorscheme')
 
 return {
 	'nvim-lualine/lualine.nvim',
