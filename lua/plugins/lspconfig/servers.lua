@@ -98,12 +98,6 @@ M.lua_ls = {
 	},
 }
 
-M.typos_lsp = {
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = get_included_filetypes({ 'toggleterm' }),
-}
-
 M.tsserver = {
 	capabilities = capabilities,
 	on_attach = on_attach,
