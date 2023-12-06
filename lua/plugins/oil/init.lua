@@ -13,7 +13,7 @@ local noremap = { noremap = true, silent = true }
 
 return {
 	'stevearc/oil.nvim',
-	lazy = true,
+	event = 'VeryLazy',
 	opts = {},
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	keys = {
