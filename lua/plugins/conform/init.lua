@@ -11,6 +11,9 @@ return {
 					'codespell',
 					'typos',
 				},
+				rust = {
+					'rustfmt',
+				},
 				markdown = {
 					'markdownlint',
 				},
