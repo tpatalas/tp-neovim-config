@@ -9,20 +9,27 @@ end
 
 local group = vim.api.nvim_create_augroup('AutoHighlight', { clear = true })
 
-vim.api.nvim_create_autocmd('CursorHold', {
-	group = group,
-	pattern = '*',
-	callback = function()
-		if not string.find(vim.fn.expand('%'), 'neo-tree') then
-			highlightCurrentWord()
+local excluded_filetypes = {
+	'neo-tree',
+	'oil',
+}
+
+local function shouldHighlight()
+	local filetype = vim.bo.filetype
+	for _, excluded_type in ipairs(excluded_filetypes) do
+		if filetype == excluded_type then
+			return false
 		end
-	end,
-})
+	end
+	return true
+end
 
 vim.api.nvim_create_autocmd({ 'CursorMovedI', 'CursorMoved' }, {
 	group = group,
 	pattern = '*',
 	callback = function()
-		highlightCurrentWord('')
+		if shouldHighlight() then
+			highlightCurrentWord('')
+		end
 	end,
 })
