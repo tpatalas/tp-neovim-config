@@ -59,6 +59,7 @@ return {
 					PmenuSel = { fg = colors.rosewater },
 					TabLineFill = { bg = '' },
 					WinSeparator = { fg = colors.text },
+					Cursor = { fg = '', bg = colors.overlay2 },
 				}
 			end,
 			integrations = {
