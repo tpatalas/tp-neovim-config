@@ -13,8 +13,7 @@ local noremap = { noremap = true, silent = true }
 
 return {
 	'stevearc/oil.nvim',
-	event = 'VeryLazy',
-	opts = {},
+	lazy = true,
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	keys = {
 		{ '<leader>ef', ':lua require(\'oil\').open(vim.fn.expand(\'%:p:h\'))<CR>', noremap }, -- open the current directory

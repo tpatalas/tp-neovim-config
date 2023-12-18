@@ -2,6 +2,7 @@ local colorscheme = require('plugins.colorscheme').name
 
 return {
 	'nvim-lualine/lualine.nvim',
+	lazy = true,
 	event = 'BufReadPre',
 	config = function()
 		local custom_components = require('plugins.lualine.custom_components')
