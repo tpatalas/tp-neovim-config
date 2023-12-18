@@ -2,6 +2,7 @@
 
 return {
 	'nvim-tree/nvim-web-devicons',
+	lazy = true,
 	event = 'VeryLazy',
 	config = function()
 		local icons_filename = require('plugins.devicons.icons_filename')
