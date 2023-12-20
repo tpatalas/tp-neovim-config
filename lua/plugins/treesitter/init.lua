@@ -1,5 +1,4 @@
 return {
-
 	'nvim-treesitter/nvim-treesitter',
 	build = function()
 		pcall(require('nvim-treesitter.install').update({ with_sync = true }))
@@ -7,6 +6,8 @@ return {
 	dependencies = {
 		'windwp/nvim-ts-autotag', --autotag
 	},
+	lazy = true,
+	event = 'VeryLazy',
 	config = function()
 		require('nvim-treesitter.configs').setup({
 			context_commentstring = {

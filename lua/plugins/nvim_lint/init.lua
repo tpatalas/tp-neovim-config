@@ -1,5 +1,7 @@
 return {
 	'mfussenegger/nvim-lint',
+	lazy = true,
+	event = 'VeryLazy',
 	config = function()
 		local lint = require('lint')
 		local linters_all_ft = {
