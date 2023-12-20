@@ -60,7 +60,6 @@ return {
 					TelescopeSelection = { fg = '', bg = colors.surface1 },
 					PmenuSel = { fg = colors.rosewater },
 					TabLineFill = { bg = '' },
-					WinSeparator = { fg = colors.text },
 				}
 			end,
 			integrations = {

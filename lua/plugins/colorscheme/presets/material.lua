@@ -9,6 +9,9 @@ return {
 	priority = 1000,
 	name = 'material',
 	config = function()
+		local material = require('material')
+		local colors = require('material.colors')
+
 		require('material').setup({
 
 			contrast = {
@@ -28,6 +31,7 @@ return {
 				keywords = { --[[ underline = true ]]
 				},
 				functions = { --[[ bold = true, undercurl = true ]]
+					undercurl = true,
 				},
 				variables = {},
 				operators = {},
@@ -42,7 +46,7 @@ return {
 				'lspsaga',
 				'nvim-cmp',
 				'nvim-web-devicons',
-				'telescope',
+				-- 'telescope',
 				-- "dap",
 				-- "dashboard",
 				-- "eyeliner",
@@ -82,7 +86,29 @@ return {
 
 			custom_colors = nil, -- If you want to override the default colors, set this to a function
 
-			custom_highlights = {}, -- Overwrite highlights with your own
+			custom_highlights = {
+				IncSearch = { fg = '', bg = colors.main.selection, underline = false },
+				CurSearch = { fg = '', bg = colors.main.selection, underline = false },
+				Search = { fg = '', bg = '', underline = false },
+				TelescopeSelection = { fg = '', bg = colors.main.red },
+				CursorLineNr = { fg = '' },
+
+				-- This is a list of possible values
+				-- YourHighlightGroup = {
+				--     fg = "#SOME_COLOR", -- foreground color
+				--     bg = "#SOME_COLOR", -- background color
+				--     sp = "#SOME_COLOR", -- special color (for colored underlines, undercurls...)
+				--     bold = false, -- make group bold
+				--     italic = false, -- make group italic
+				--     underline = false, -- make group underlined
+				--     undercurl = false, -- make group undercurled
+				--     underdot = false, -- make group underdotted
+				--     underdash = false, -- make group underslashed
+				--     striketrough = false, -- make group striked through
+				--     reverse = false, -- reverse the fg and bg colors
+				--     link = "SomeOtherGroup" -- link to some other highlight group
+				-- }
+			}, -- Overwrite highlights with your own
 		})
 
 		vim.cmd('colorscheme material')
