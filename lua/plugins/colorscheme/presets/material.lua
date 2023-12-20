@@ -1,12 +1,13 @@
 -- https://github.com/marko-cerovac/material.nvim
 -- https://github.com/marko-cerovac/material.nvim/blob/main/lua/material/colors/init.lua
 
-vim.g.material_style = 'darker' -- darker | lighter | oceanic | palenight | deep ocean
+vim.g.material_style = 'deep ocean' -- darker | lighter | oceanic | palenight | deep ocean
 
 return {
 	'marko-cerovac/material.nvim',
 	lazy = false,
 	priority = 1000,
+	name = 'material',
 	config = function()
 		require('material').setup({
 
@@ -35,36 +36,36 @@ return {
 
 			plugins = { -- Uncomment the plugins that you use to highlight them
 				-- Available plugins:
+				'gitsigns',
+				'harpoon',
+				'indent-blankline',
+				'lspsaga',
+				'nvim-cmp',
+				'nvim-web-devicons',
+				'telescope',
 				-- "dap",
 				-- "dashboard",
 				-- "eyeliner",
 				-- "fidget"
 				-- "flash"
-				-- "gitsigns",
-				-- "harpoon",
 				-- "hop",
 				-- "illuminate",
-				-- "indent-blankline",
-				-- "lspsaga",
 				-- "mini",
 				-- "neogit",
 				-- "neotest",
 				-- "neorg",
 				-- "noice"
-				-- "nvim-cmp",
 				-- "nvim-navic",
 				-- "nvim-tree",
-				-- "nvim-web-devicons",
 				-- "rainbow-delimiters",
 				-- "sneak",
-				-- "telescope",
 				-- "trouble",
 				-- "which-key",
 			},
 
 			disable = {
 				colored_cursor = false, -- Disable the colored cursor
-				borders = false, -- Disable borders between verticaly split windows
+				borders = false, -- Disable borders between vertically split windows
 				background = true, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
 				term_colors = false, -- Prevent the theme from setting terminal colors
 				eob_lines = false, -- Hide the end-of-buffer lines
@@ -77,7 +78,7 @@ return {
 
 			lualine_style = 'default', -- Lualine style ( can be 'stealth' or 'default' )
 
-			async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
+			async_loading = true, -- Load parts of the theme asynchronously for faster startup (turned on by default)
 
 			custom_colors = nil, -- If you want to override the default colors, set this to a function
 
