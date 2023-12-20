@@ -9,7 +9,8 @@ vim.diagnostic.config({
 
 return {
 	'neovim/nvim-lspconfig',
-	event = 'BufReadPre',
+	lazy = true,
+	event = 'VeryLazy',
 	dependencies = { 'hrsh7th/cmp-nvim-lsp' },
 	keys = {
 		{ '<leader>lr', ':LspRestart<CR>', noremap }, -- mapping to restart lsp if necessary
