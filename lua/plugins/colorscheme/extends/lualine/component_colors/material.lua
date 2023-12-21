@@ -1,12 +1,12 @@
 return function(colors)
 	return {
-		lazy = { fg = colors.yellow },
-		search_count = { fg = colors.orange },
-		path_winbar = { fg = colors.fg_dark },
+		lazy = { fg = colors.main.yellow },
+		search_count = { fg = colors.main.orange },
+		path_winbar = { fg = colors.editor.fg_dark },
 		diff_color = {
-			added = { fg = colors.green },
-			modified = { fg = colors.orange },
-			removed = { fg = colors.red },
+			added = { fg = colors.main.green },
+			modified = { fg = colors.main.orange },
+			removed = { fg = colors.main.red },
 		},
 	}
 end
