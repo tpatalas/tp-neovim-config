@@ -29,9 +29,9 @@ return {
 			symbol = '│',
 			options = { try_as_border = true },
 			draw = {
-				delay = 150,
+				delay = 100,
 				animation = require('mini.indentscope').gen_animation.linear({
-					duration = 3, -- Shorter duration (in ms) for faster animation
+					duration = 0, -- Shorter duration (in ms) for faster animation
 					unit = 'step',
 				}),
 			},
