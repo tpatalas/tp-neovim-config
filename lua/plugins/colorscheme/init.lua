@@ -86,8 +86,8 @@ return {
 			custom_colors = nil, -- If you want to override the default colors, set this to a function
 
 			custom_highlights = {
-				IncSearch = { fg = '', bg = colors.editor.selection, underline = false },
-				CurSearch = { fg = '', bg = colors.editor.selection, underline = false },
+				IncSearch = { fg = '', bg = colors.editor.contrast, underline = false, bold = true },
+				CurSearch = { fg = '', bg = colors.editor.contrast, underline = false, bold = true },
 				CursorLine = { bg = colors.editor.highlight },
 				Search = { fg = '', bg = '', underline = false },
 				TelescopeSelection = { fg = '', bg = colors.editor.selection },
