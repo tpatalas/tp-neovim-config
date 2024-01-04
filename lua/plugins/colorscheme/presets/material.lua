@@ -11,9 +11,12 @@ return {
 	config = function()
 		local material = require('material')
 		local colors = require('material.colors')
+		local custom_color = {
+			selection = '#292e42',
+			search = '#394b70',
+		}
 
 		require('material').setup({
-
 			contrast = {
 				terminal = false, -- Enable contrast for the built-in terminal
 				sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
@@ -31,7 +34,6 @@ return {
 				keywords = { --[[ underline = true ]]
 				},
 				functions = { --[[ bold = true, undercurl = true ]]
-					undercurl = true,
 				},
 				variables = {},
 				operators = {},
@@ -46,18 +48,18 @@ return {
 				'lspsaga',
 				'nvim-cmp',
 				'nvim-web-devicons',
+				'neorg',
 				-- 'telescope',
 				-- "dap",
 				-- "dashboard",
 				-- "eyeliner",
-				-- "fidget"
+				-- "fidgeot"
 				-- "flash"
 				-- "hop",
 				-- "illuminate",
 				-- "mini",
 				-- "neogit",
 				-- "neotest",
-				-- "neorg",
 				-- "noice"
 				-- "nvim-navic",
 				-- "nvim-tree",
@@ -84,14 +86,19 @@ return {
 
 			async_loading = true, -- Load parts of the theme asynchronously for faster startup (turned on by default)
 
-			custom_colors = nil, -- If you want to override the default colors, set this to a function
-
 			custom_highlights = {
-				IncSearch = { fg = '', bg = colors.main.selection, underline = false },
-				CurSearch = { fg = '', bg = colors.main.selection, underline = false },
+				IncSearch = { fg = colors.main.blue, bg = custom_color.search, underline = false },
+				CurSearch = { fg = colors.main.blue, bg = custom_color.search, underline = false },
+				CursorLine = { bg = custom_color.selection },
 				Search = { fg = '', bg = '', underline = false },
-				TelescopeSelection = { fg = '', bg = colors.main.red },
+				TelescopeSelection = { fg = '', bg = custom_color.selection },
+				TelescopeBorder = { fg = colors.main.paleblue, bg = '' },
 				CursorLineNr = { fg = '' },
+				TabLineFill = { bg = '' },
+				WinSeparator = { fg = colors.main.paleblue },
+				CmpItemAbbrMatch = { fg = colors.main.orange, bg = '' },
+				CmpItemAbbrMatchFuzzy = { fg = colors.main.orange, bg = '' },
+				FloatBorder = { fg = colors.main.paleblue },
 
 				-- This is a list of possible values
 				-- YourHighlightGroup = {
@@ -109,6 +116,9 @@ return {
 				--     link = "SomeOtherGroup" -- link to some other highlight group
 				-- }
 			}, -- Overwrite highlights with your own
+			custom_colors = function(colors) -- If you want to override the default colors, set this to a function
+				colors.editor.selection = custom_color.selection
+			end,
 		})
 
 		vim.cmd('colorscheme material')
