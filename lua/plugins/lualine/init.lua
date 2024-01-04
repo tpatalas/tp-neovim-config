@@ -9,6 +9,7 @@ return {
 		local component_colors = require('plugins.colorscheme.extends.lualine.component_colors.' .. colorscheme)
 		local custom_theme = require('plugins.colorscheme.extends.lualine.custom_theme.' .. colorscheme)
 		local colors = require('plugins.colorscheme.palettes.' .. colorscheme)
+		local global_icons = require('utils.global_icons')
 		local component = component_colors(colors)
 
 		require('lualine').setup({
@@ -42,7 +43,12 @@ return {
 					{
 						'diagnostics',
 						sources = { 'nvim_workspace_diagnostic' },
-						symbols = { error = ' ', warn = ' ', info = ' ', hint = '󰠠 ' },
+						symbols = {
+							error = global_icons.error,
+							warn = global_icons.warn,
+							info = global_icons.info,
+							hint = global_icons.hint,
+						},
 						sections = { 'error', 'warn', 'info', 'hint' },
 						colored = true,
 						update_in_insert = true,
