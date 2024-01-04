@@ -1,3 +1,5 @@
+-- https://github.com/stevearc/conform.nvim
+
 return {
 	'stevearc/conform.nvim',
 	layz = true,
@@ -21,6 +23,9 @@ return {
 				},
 				lua = {
 					'stylua',
+				},
+				toml = {
+					'taplo',
 				},
 				javascript = {
 					'eslint_d',
