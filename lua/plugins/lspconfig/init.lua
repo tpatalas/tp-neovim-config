@@ -22,9 +22,15 @@ return {
 		{ '<leader>fm', ':AddMissingImports<CR>', noremap }, -- tsserver remove unused imports
 	},
 	config = function()
+		local global_icons = require('utils.global_icons')
 		local lspconfig = require('lspconfig')
 		local server = require('plugins.lspconfig.servers')
-		local signs = { Error = ' ', Warn = ' ', Info = ' ', Hint = 'ﴞ ' }
+		local signs = {
+			Error = global_icons.error,
+			Warn = global_icons.warn,
+			Info = global_icons.info,
+			Hint = global_icons.hint,
+		}
 		for type, icon in pairs(signs) do
 			local hl = 'DiagnosticSign' .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
