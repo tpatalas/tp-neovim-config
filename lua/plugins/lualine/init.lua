@@ -66,7 +66,7 @@ return {
 					},
 				},
 				lualine_x = {
-					{ custom_components.search_count, icon = '', color = component.search_count },
+					{ custom_components.search_count, icon = '󰍉', color = component.search_count },
 					{
 						custom_components.path_winbar,
 						icon = { '', align = 'left' },
