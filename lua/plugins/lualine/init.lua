@@ -34,7 +34,7 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{ 'mode', icon = ' ' },
+					{ 'mode', icon = ' ' },
 				},
 				lualine_b = {},
 				lualine_c = {
