@@ -15,7 +15,6 @@ return {
 		local cmp = require('cmp')
 		local icons = require('plugins.nvim_cmp.icons')
 		local configs = require('plugins.nvim_cmp.configs')
-		-- find more here: https://www.nerdfonts.com/cheat-sheet
 
 		vim.opt.completeopt = 'menu,menuone,noselect'
 
