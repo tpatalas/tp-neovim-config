@@ -41,7 +41,7 @@ local function shouldHighlight()
 end
 
 local timer = nil
-local delay_ms = 300
+local delay_ms = 500
 local last_position = nil
 
 local function startHighlightTimer()
