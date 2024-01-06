@@ -62,8 +62,6 @@ keymap.set('n', '<leader>rr', ':let @/ = "\\\\<" . expand(\'<cword>\') . "\\\\>"
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'N', 'Nzz', noremap) -- center search result
--- undo & redo
-keymap.set('n', '+', '<c-r>', noremap) -- redo change
 
 ----------------
 -- formatting --
@@ -113,7 +111,7 @@ keymap.set('n', '<a->>', '?><CR>', noremap)
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
 -- buffers action
-keymap.set('n', '<leader>ww', ':silent! bd<CR>', noremap) -- close current buffer
+--[[ keymap.set('n', '<leader>ww', ':silent! bd<CR>', noremap) -- close current buffer ]]
 keymap.set('n', '<leader>WW', ':silent! %bd|e#|normal`"<CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
 
 -- delete single character without copying into register
