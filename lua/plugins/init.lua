@@ -9,6 +9,7 @@ return {
 	{
 		'andymass/vim-matchup',
 		-- lazy load causes issue on this plugin
+		lazy = true,
 		config = function()
 			vim.g.matchup_matchparen_offscreen = ''
 		end,
