@@ -3,6 +3,8 @@
 return {
 	'echasnovski/mini.notify',
 	version = false,
+	lazy = true,
+	event = 'VeryLazy',
 	config = function()
 		require('mini.notify').setup({
 			content = {
