@@ -8,8 +8,7 @@ return {
 	},
 	{
 		'andymass/vim-matchup',
-		lazy = true,
-		event = { 'CursorMoved', 'CursorMovedI' },
+		-- lazy load causes issue on this plugin
 		config = function()
 			vim.g.matchup_matchparen_offscreen = ''
 		end,
