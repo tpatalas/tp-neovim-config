@@ -1,10 +1,16 @@
----------------------------------------------------
--- highlight and autosave the match under cursor --
----------------------------------------------------
-local function highlightCurrentWord(event)
-	local word = event ~= '' and event or vim.fn.expand('<cword>')
+-------------------------------------------------------------
+-- highlight and autosave the match under cursor with delay--
+-------------------------------------------------------------
+local function clearHighlight()
+	vim.cmd('match none')
+end
+
+local function highlightCurrentWord()
+	local word = vim.fn.expand('<cword>')
 	local escaped_word = vim.fn.escape(word, '/\\')
-	vim.cmd(string.format('match IncSearch /\\V\\<%s\\>/', escaped_word))
+	if escaped_word ~= '' then
+		vim.cmd(string.format('match IncSearch /\\V\\<%s\\>/', escaped_word))
+	end
 end
 
 local group = vim.api.nvim_create_augroup('AutoHighlight', { clear = true })
@@ -24,12 +30,38 @@ local function shouldHighlight()
 	return true
 end
 
-vim.api.nvim_create_autocmd({ 'CursorMovedI', 'CursorMoved' }, {
+local timer = nil
+local delay_ms = 300
+local last_position = nil
+
+local function startHighlightTimer()
+	if timer then
+		vim.fn.timer_stop(timer)
+	end
+	timer = vim.fn.timer_start(delay_ms, function()
+		local current_position = vim.api.nvim_win_get_cursor(0)
+		if current_position[1] == last_position[1] and current_position[2] == last_position[2] then
+			if shouldHighlight() then
+				highlightCurrentWord()
+			end
+		end
+	end)
+end
+
+vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
 	group = group,
 	pattern = '*',
 	callback = function()
-		if shouldHighlight() then
-			highlightCurrentWord('')
-		end
+		clearHighlight()
+		last_position = vim.api.nvim_win_get_cursor(0)
+		startHighlightTimer()
+	end,
+})
+
+vim.api.nvim_create_autocmd('BufLeave', {
+	group = group,
+	pattern = '*',
+	callback = function()
+		clearHighlight()
 	end,
 })
