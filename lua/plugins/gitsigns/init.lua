@@ -6,6 +6,7 @@ return {
 			signs = {
 				add = { text = '▎' },
 				change = { text = '▎' },
+				add = { text = '▎' },
 				delete = { text = '' },
 				topdelete = { text = '' },
 				changedelete = { text = '▎' },
