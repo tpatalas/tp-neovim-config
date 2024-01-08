@@ -110,7 +110,7 @@ keymap.set('n', '<a-]>', '?]<CR>', noremap)
 keymap.set('n', '<a-<>', '?<<CR>', noremap)
 keymap.set('n', '<a->>', '?><CR>', noremap)
 
--l- buffers navigation
+-- buffers navigation
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
 -- buffers action

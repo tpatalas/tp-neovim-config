@@ -21,7 +21,14 @@ return {
 		{ '<leader>sgb', '<cmd>Telescope git_branches previewer=true<CR>', noremap }, -- list git branches (use <cr> to checkout) ["gb" for git branch]
 		{ '<leader>sgs', '<cmd>Telescope git_status<CR>', noremap }, -- list current changes per file with diff preview ["gs" for git status]
 		-- telescope todo-comments
-		{ '<leader>st', ':TodoTelescope keywords=TODO,HACK,NOTE,WARN,PERF,TEST,FIX,FIXME,FIXIT,BUG,ISSUE<CR>', noremap }, -- open todo-comments within telescope
+		{
+			'<leader>st',
+			'<cmd>TodoTelescope keywords=TODO,HACK,NOTE,WARN,PERF,TEST,FIX,FIXME,FIXIT,BUG,ISSUE<CR>',
+			noremap,
+		}, -- open todo-comments within telescope
+		-- telescope Neorg link search
+		{ '<leader>snf', '<cmd>Telescope neorg insert_file_link<CR>', noremap }, -- find file link
+		{ '<leader>snl', '<cmd>Telescope neorg insert_link<CR>', noremap }, -- find link in the current file
 	},
 	config = function()
 		local default_configs = require('plugins.telescope.configs')

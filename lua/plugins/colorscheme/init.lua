@@ -82,6 +82,7 @@ return {
 				CmpItemAbbrMatchFuzzy = { fg = colors.main.orange, bg = '' },
 				FloatBorder = { fg = colors.main.paleblue },
 				MatchParen = { fg = colors.main.yellow, bg = colors.editor.selection, bold = false },
+				NeorgCodeBlock = { bg = colors.editor.selection },
 
 				-- This is a list of possible values
 				-- YourHighlightGroup = {
