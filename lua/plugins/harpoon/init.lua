@@ -23,12 +23,31 @@ return {
 	},
 	config = function()
 		local harpoon = require('harpoon')
+		local list = harpoon:list()
+		local excluded_filetypes = { 'oil', 'gitcommit' }
+		local excluded_filenames = { 'wezterm.lua' }
+
+		local function isFileTypeExcluded()
+			local filetype = vim.bo.filetype
+			return vim.tbl_contains(excluded_filetypes, filetype)
+		end
+
+		local function isFileNameExcluded()
+			local filename = vim.fn.expand('%:t')
+			return vim.tbl_contains(excluded_filenames, filename)
+		end
+
+		local function isFileEmpty()
+			return vim.fn.line('$') <= 1 and vim.fn.getline(1) == ''
+		end
 
 		-- run before setup
-		-- Keep only first two
 		vim.api.nvim_create_autocmd('VimLeavePre', {
 			callback = function()
-				local list = harpoon:list()
+				if not isFileTypeExcluded() and not isFileNameExcluded() and not isFileEmpty() then
+					list:prepend()
+				end
+
 				if #list.items > 2 then
 					list.items = { list.items[1], list.items[2] }
 				end
