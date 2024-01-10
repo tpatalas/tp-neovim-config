@@ -1,5 +1,4 @@
 local noremap = { noremap = true, silent = true }
-local keymaps = require('plugins.telescope.keymaps')
 
 return {
 	'nvim-telescope/telescope.nvim',
