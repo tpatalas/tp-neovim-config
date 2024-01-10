@@ -49,24 +49,6 @@ return {
 				'nvim-cmp',
 				'nvim-web-devicons',
 				'neorg',
-				-- 'telescope',
-				-- "dap",
-				-- "dashboard",
-				-- "eyeliner",
-				-- "fidgeot"
-				-- "flash"
-				-- "hop",
-				-- "illuminate",
-				-- "mini",
-				-- "neogit",
-				-- "neotest",
-				-- "noice"
-				-- "nvim-navic",
-				-- "nvim-tree",
-				-- "rainbow-delimiters",
-				-- "sneak",
-				-- "trouble",
-				-- "which-key",
 			},
 
 			disable = {
@@ -99,6 +81,7 @@ return {
 				CmpItemAbbrMatch = { fg = colors.main.orange, bg = '' },
 				CmpItemAbbrMatchFuzzy = { fg = colors.main.orange, bg = '' },
 				FloatBorder = { fg = colors.main.paleblue },
+				MatchParen = { fg = colors.main.yellow, bg = colors.editor.selection, bold = false },
 
 				-- This is a list of possible values
 				-- YourHighlightGroup = {
