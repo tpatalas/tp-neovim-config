@@ -1,5 +1,4 @@
 local noremap = { noremap = true, silent = true }
-local keymaps = require('plugins.telescope.keymaps')
 
 return {
 	'nvim-telescope/telescope.nvim',
@@ -16,7 +15,6 @@ return {
 		{ '<leader>sb', '<cmd>Telescope buffers previewer=true<CR>', noremap }, -- list open buffers in current neovim instance
 		{ '<leader>sh', '<cmd>Telescope help_tags previewer=true<CR>', noremap }, -- list available help tags
 		{ '<leader>sd', '<cmd>Telescope diagnostics<CR>', noremap }, -- lists diagnostics for all open buffers
-		{ '<leader>sf', '<cmd>Telescope quickfix<CR>', noremap }, -- lists quickfix items
 		-- telescope git commands
 		{ '<leader>sgc', '<cmd>Telescope git_commits previewer=true<CR>', noremap }, -- list all git commits (use <cr> to checkout) ["gc" for git commits]
 		{ '<leader>sgf', '<cmd>Telescope git_bcommits previewer=true<CR>', noremap }, -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
