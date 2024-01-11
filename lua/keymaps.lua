@@ -88,6 +88,9 @@ keymap.set('n', '<End>', '<c-i>zz', noremap) -- go newer position and center the
 keymap.set('n', '<c-o>', '<c-o>zz', noremap) -- go older position and center the cursor
 keymap.set('n', '<Home>', '<c-o>zz', noremap) -- go older position and center the cursor
 
+-- undo & redo
+keymap.set('n', '+', '<cmd>redo<CR>', noremap)
+
 -- character navigation forward
 keymap.set('n', '}', '/}<CR>', noremap)
 keymap.set('n', '{', '/{<CR>', noremap)
