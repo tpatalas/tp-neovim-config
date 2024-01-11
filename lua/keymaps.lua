@@ -131,3 +131,6 @@ keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decrease 
 keymap.set('n', '<c-@>', '<c-W>w', noremap) -- ctrl+` is the easier way to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
 keymap.set('n', '-', '<c-w>w', noremap) -- switch window
 keymap.set('n', '<leader>=', '<c-W>=', noremap) -- reset resize: press < alt-= >
+
+-- lazynvim
+keymap.set('n', 'L', '<cmd>Lazy<CR>', noremap) -- open lazy.nvim
