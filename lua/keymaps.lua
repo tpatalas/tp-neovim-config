@@ -89,7 +89,7 @@ keymap.set('n', '<c-o>', '<c-o>zz', noremap) -- go older position and center the
 keymap.set('n', '<Home>', '<c-o>zz', noremap) -- go older position and center the cursor
 
 -- undo & redo
-keymap.set('n', '+', '<cmd>redo<CR>', noremap)
+keymap.set('n', '=', '<cmd>redo<CR>', noremap)
 
 -- character navigation forward
 keymap.set('n', '}', '/}<CR>', noremap)
@@ -110,7 +110,7 @@ keymap.set('n', '<a-]>', '?]<CR>', noremap)
 keymap.set('n', '<a-<>', '?<<CR>', noremap)
 keymap.set('n', '<a->>', '?><CR>', noremap)
 
--- buffers navigation
+-l- buffers navigation
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
 -- buffers action
