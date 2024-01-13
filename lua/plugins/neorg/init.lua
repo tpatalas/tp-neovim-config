@@ -90,7 +90,5 @@ return {
 				},
 			},
 		})
-		-- Set up Neorg telescope keybindings
-		local neorg_callbacks = require('neorg.core.callbacks')
 	end,
 }
