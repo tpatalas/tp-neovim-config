@@ -34,7 +34,36 @@ return {
 			load = {
 				['core.defaults'] = {},
 				['core.summary'] = {},
-				['core.esupports.metagen'] = { config = { type = 'auto', update_date = true } },
+				['core.esupports.metagen'] = {
+					config = {
+						type = 'auto',
+						update_date = true,
+						template = {
+							{
+								'title',
+								function()
+									return vim.fn.expand('%:t:r')
+								end,
+							},
+							{ 'description', '' },
+							{ 'author', 'tpAtalas' },
+							{ 'categories', '' },
+							{
+								'created',
+								function()
+									return os.date('%d %b %Y %H:%M')
+								end,
+							},
+							{
+								'updated',
+								function()
+									return os.date('%d %b %Y %H:%M')
+								end,
+							},
+							{ 'version', require('neorg').norg_version },
+						},
+					},
+				},
 				['core.completion'] = { config = { engine = 'nvim-cmp', name = '[Norg]' } },
 				['core.integrations.nvim-cmp'] = {},
 				['core.integrations.treesitter'] = {},
