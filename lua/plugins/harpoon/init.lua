@@ -48,6 +48,15 @@ return {
 					list:prepend()
 				end
 
+				local filteredItems = {}
+				for _, item in ipairs(list.items) do
+					if item.filename and #item.filename > 0 then
+						table.insert(filteredItems, item)
+					end
+				end
+
+				list.items = filteredItems
+
 				if #list.items > 2 then
 					list.items = { list.items[1], list.items[2] }
 				end
