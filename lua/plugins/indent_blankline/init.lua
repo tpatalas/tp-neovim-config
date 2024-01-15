@@ -34,6 +34,7 @@ return {
 			exclude = {
 				filetypes = {
 					'dashboard',
+					'norg',
 				},
 			},
 			scope = {
