@@ -41,24 +41,11 @@ return {
 			return vim.fn.line('$') <= 1 and vim.fn.getline(1) == ''
 		end
 
-		-- run before setup
 		vim.api.nvim_create_autocmd('VimLeavePre', {
 			callback = function()
 				if not isFileTypeExcluded() and not isFileNameExcluded() and not isFileEmpty() then
+					list:clear()
 					list:prepend()
-				end
-
-				local filteredItems = {}
-				for _, item in ipairs(list.items) do
-					if item.filename and #item.filename > 0 then
-						table.insert(filteredItems, item)
-					end
-				end
-
-				list.items = filteredItems
-
-				if #list.items > 2 then
-					list.items = { list.items[1], list.items[2] }
 				end
 			end,
 		})
