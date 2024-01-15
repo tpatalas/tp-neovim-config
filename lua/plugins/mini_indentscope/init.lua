@@ -5,6 +5,7 @@ return {
 	init = function()
 		vim.api.nvim_create_autocmd('FileType', {
 			pattern = {
+				'norg',
 				'help',
 				'oil',
 				'oil_preview',
