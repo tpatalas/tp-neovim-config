@@ -26,7 +26,6 @@ return {
 				always_divide_middle = true,
 				globalstatus = true,
 				refresh = {
-					-- 30 min
 					statusline = 1000,
 					tabline = 1000,
 					winbar = 1000,
@@ -39,7 +38,7 @@ return {
 				lualine_b = {},
 				lualine_c = {
 					{ 'filetype', padding = { left = 1, right = 0 } },
-					{ 'encoding', padding = { left = 1, right = 0 } },
+					{ 'branch', color = component.branch },
 					{
 						'diagnostics',
 						sources = { 'nvim_workspace_diagnostic' },
@@ -59,25 +58,17 @@ return {
 						icon = { '󰛦', align = 'left' },
 						color = component.diff_color.removed,
 					},
-					{
-						require('lazy.status').updates,
-						cond = require('lazy.status').has_updates,
-						color = component.lazy,
-					},
 				},
 				lualine_x = {
+					{ require('lazy.status').updates, cond = require('lazy.status').has_updates, color = component.lazy },
 					{ custom_components.search_count, icon = '󰍉', color = component.search_count },
-					{
-						custom_components.path_winbar,
-						-- icon = { '', align = 'left' },
-						color = component.path_winbar,
-					},
 					{ custom_components.anchor },
 				},
 				lualine_y = {
 					-- { 'progress', icon = '', padding = { left = 0, right = 1 } },
 					-- { 'location', icon = '', padding = { left = 0, right = 1 } },
-					{ 'filesize', icon = '', padding = { left = 0, right = 1 } },
+					{ 'encoding', padding = { left = 1, right = 1 } },
+					{ 'filesize', icon = '', padding = { left = 1, right = 1 } },
 					{ custom_components.total_lines_file, icon = '', padding = { left = 0, right = 1 } },
 					{
 						'diff',
@@ -96,9 +87,16 @@ return {
 				lualine_z = {},
 			},
 			tabline = {},
-			winbar = {},
+			winbar = {
+				lualine_a = {
+					{
+						custom_components.path_winbar,
+						color = component.path_winbar,
+						padding = { left = 2 },
+					},
+				},
+			},
 			inactive_winbar = {},
-			extensions = { 'toggleterm' },
 		})
 	end,
 }

@@ -44,7 +44,7 @@ M.path_winbar = function()
 	local cwdIcon = ''
 
 	if not startIdx or startIdx <= 0 then
-		return cwdIcon .. ' ' .. cwdFolderName .. ' | ' .. fullPath
+		return cwdIcon .. ' ' .. cwdFolderName .. fullPath
 	end
 
 	local pathBelowCwd = fullPath:sub(endIdx + 1)
@@ -67,18 +67,20 @@ M.path_winbar = function()
 		icon = extension ~= '' and devicons.get_icon(file, extension) or ''
 	end
 
-	local firstPathComponentIcon = ''
+	local firstPathComponentIcon = '  |  '
 	if #pathComponents > 0 then
 		pathComponents[1] = firstPathComponentIcon .. ' ' .. pathComponents[1]
 	end
 
 	local desiredPath
-	if #pathComponents >= 6 then
+	if #pathComponents >= 8 then
 		desiredPath = table.concat({
 			pathComponents[1],
 			pathComponents[2],
+			pathComponents[3],
 			'...',
 			pathComponents[#pathComponents - 1],
+			pathComponents[#pathComponents - 2],
 			pathComponents[#pathComponents],
 		}, '  ')
 	else
@@ -89,7 +91,7 @@ M.path_winbar = function()
 		desiredPath = desiredPath:gsub(file, icon .. ' ' .. file, 1)
 	end
 
-	return cwdIcon .. ' ' .. cwdFolderName .. ' | ' .. desiredPath
+	return cwdIcon .. ' ' .. cwdFolderName .. desiredPath
 end
 
 return M
