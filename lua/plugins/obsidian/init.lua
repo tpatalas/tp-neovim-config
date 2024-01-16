@@ -32,7 +32,7 @@ return {
 				use_path_only = false,
 			},
 			mappings = {
-				['gf'] = {
+				['<leader><CR>'] = {
 					action = function()
 						return require('obsidian').util.gf_passthrough()
 					end,
