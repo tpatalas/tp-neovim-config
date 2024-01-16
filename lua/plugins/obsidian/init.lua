@@ -9,8 +9,8 @@ return {
 	keys = function()
 		local noremap = { noremap = true, silent = true }
 		return {
-			{ '<leader>os', '<cmd>ObsidianSearch<CR>', noremap },
-			{ '<leader>or', '<cmd>ObsidianRename<CR>', noremap },
+			{ '<leader>ns', '<cmd>ObsidianSearch<CR>', noremap },
+			{ '<leader>nr', '<cmd>ObsidianRename<CR>', noremap },
 		}
 	end,
 	config = function()
