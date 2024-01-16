@@ -27,8 +27,6 @@ return {
 			noremap,
 		}, -- open todo-comments within telescope
 		-- telescope Neorg link search
-		{ '<leader>snf', '<cmd>Telescope neorg insert_file_link<CR>', noremap }, -- find file link
-		{ '<leader>snl', '<cmd>Telescope neorg insert_link<CR>', noremap }, -- find link in the current file
 	},
 	config = function()
 		local default_configs = require('plugins.telescope.configs')
