@@ -11,7 +11,7 @@ end
 
 local function add_missing_imports()
 	local bufnr = vim.api.nvim_get_current_buf()
-	local clients = vim.lsp.buf_get_clients(bufnr)
+	local clients = vim.lsp.get_clients()
 
 	if not next(clients) then
 		return
