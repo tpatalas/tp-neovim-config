@@ -9,16 +9,21 @@ return {
 	lazy = true,
 	keys = {
 		-- { '<leader>ha', '<cmd>lua require("harpoon"):list():append()<CR>', noremap }, -- add file
-		{ '<leader>ha', '<cmd>lua require("harpoon"):list():prepend()<CR>', noremap }, -- add file
-		-- {
-		-- 	'<leader>ha',
-		-- 	'<cmd>lua require("harpoon"):list():prepend()<CR> | <cmd>lua require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())<CR>',
-		-- 	noremap,
-		-- }, -- add file and open quick menu
+		-- { '<leader>ha', '<cmd>lua require("harpoon"):list():prepend()<CR>', noremap }, -- add file
+		{
+			'<leader>ha',
+			'<cmd>lua require("harpoon"):list():prepend()<CR> | <cmd>lua require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())<CR>',
+			noremap,
+		}, -- add file and open quick menu
 		{ '<leader>o', '<cmd>lua require("harpoon"):list():next({ ui_nav_wrap = true })<CR>', noremap }, -- navigate to next mark with wrap
 		{ '<leader>i', '<cmd>lua require("harpoon"):list():prev({ ui_nav_wrap = true })<CR>', noremap }, -- navigate to previous mark
 		{ '<leader>hc', '<cmd>lua require("harpoon"):list():clear()<CR>', noremap }, -- clear all files
 		{ '<leader>hd', '<cmd>lua require("harpoon"):list():remove()<CR>', noremap }, -- remove current file listed on the harpoon list
+		{
+			'<leader>hx',
+			'<cmd>lua require("harpoon"):list():remove()<CR> | <cmd>lua require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())<CR>',
+			noremap,
+		}, -- remove current file listed on the harpoon list
 		{ '<leader>hq', '<cmd>lua require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())<CR>', noremap }, -- quick menu
 	},
 	config = function()
