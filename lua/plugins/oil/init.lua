@@ -34,7 +34,7 @@ return {
 				['<CR>'] = 'actions.select',
 				['Y'] = 'actions.select_vsplit',
 				['X'] = 'actions.select_split',
-				['q'] = '',
+				['q'] = 'actions.close',
 				['H'] = 'actions.toggle_hidden',
 				['P'] = 'actions.preview',
 				['<Right>'] = 'actions.open_cwd',
