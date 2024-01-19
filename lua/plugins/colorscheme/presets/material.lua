@@ -49,6 +49,24 @@ return {
 				'nvim-cmp',
 				'nvim-web-devicons',
 				'neorg',
+				-- 'telescope',
+				-- "dap",
+				-- "dashboard",
+				-- "eyeliner",
+				-- "fidgeot"
+				-- "flash"
+				-- "hop",
+				-- "illuminate",
+				-- "mini",
+				-- "neogit",
+				-- "neotest",
+				-- "noice"
+				-- "nvim-navic",
+				-- "nvim-tree",
+				-- "rainbow-delimiters",
+				-- "sneak",
+				-- "trouble",
+				-- "which-key",
 			},
 
 			disable = {
@@ -81,15 +99,6 @@ return {
 				CmpItemAbbrMatch = { fg = colors.main.orange, bg = '' },
 				CmpItemAbbrMatchFuzzy = { fg = colors.main.orange, bg = '' },
 				FloatBorder = { fg = colors.main.paleblue },
-				MatchParen = { fg = colors.main.yellow, bg = colors.editor.selection, bold = false },
-				NeorgCodeBlock = { bg = colors.editor.selection },
-				['@text.title.1.markdown'] = { fg = colors.main.blue, bold = true },
-				['@text.title.2.markdown'] = { fg = colors.main.cyan, bold = true },
-				['@text.title.3.markdown'] = { fg = colors.main.green, bold = true },
-				['@text.title.4.markdown'] = { fg = colors.main.purple, bold = true },
-				['@text.title.5.markdown'] = { fg = colors.main.orange, bold = true },
-				['@text.title.6.markdown'] = { fg = colors.main.yellow, bold = true },
-				['@text.literal.markdown_inline'] = { fg = '', bg = colors.editor.highlight, italic = true },
 
 				-- This is a list of possible values
 				-- YourHighlightGroup = {

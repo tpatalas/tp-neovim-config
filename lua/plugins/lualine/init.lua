@@ -1,15 +1,17 @@
-local colorscheme = require('plugins.colorscheme.setup')
+local colorscheme = require('plugins.colorscheme').name
 
 return {
 	'nvim-lualine/lualine.nvim',
-	lazy = false,
-	priority = 500,
+	lazy = true,
+	event = 'BufReadPre',
 	config = function()
 		local custom_components = require('plugins.lualine.custom_components')
 		local component_colors = require('plugins.colorscheme.extends.lualine.component_colors.' .. colorscheme)
 		local custom_theme = require('plugins.colorscheme.extends.lualine.custom_theme.' .. colorscheme)
 		local colors = require('plugins.colorscheme.palettes.' .. colorscheme)
+		local global_icons = require('utils.global_icons')
 		local component = component_colors(colors)
+		local path_winbar = { custom_components.path_winbar, color = component.path_winbar, padding = { left = 2 } }
 
 		require('lualine').setup({
 			options = {
@@ -25,7 +27,6 @@ return {
 				always_divide_middle = true,
 				globalstatus = true,
 				refresh = {
-					-- 30 min
 					statusline = 1000,
 					tabline = 1000,
 					winbar = 1000,
@@ -33,16 +34,21 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{ 'mode', icon = ' ' },
+					{ 'mode', icon = ' ' },
 				},
 				lualine_b = {},
 				lualine_c = {
 					{ 'filetype', padding = { left = 1, right = 0 } },
-					{ 'encoding', padding = { left = 1, right = 0 } },
+					{ 'branch', color = component.branch },
 					{
 						'diagnostics',
 						sources = { 'nvim_workspace_diagnostic' },
-						symbols = { error = ' ', warn = ' ', info = ' ', hint = 'ﴞ ' },
+						symbols = {
+							error = global_icons.error,
+							warn = global_icons.warn,
+							info = global_icons.info,
+							hint = global_icons.hint,
+						},
 						sections = { 'error', 'warn', 'info', 'hint' },
 						colored = true,
 						update_in_insert = true,
@@ -50,28 +56,20 @@ return {
 					},
 					{
 						custom_components.quickfix_count,
-						icon = { '', align = 'left' },
+						icon = { '󰛦', align = 'left' },
 						color = component.diff_color.removed,
-					},
-					{
-						require('lazy.status').updates,
-						cond = require('lazy.status').has_updates,
-						color = component.lazy,
 					},
 				},
 				lualine_x = {
-					{ custom_components.search_count, icon = '', color = component.search_count },
-					{
-						custom_components.path_winbar,
-						icon = { '', align = 'left' },
-						color = component.path_winbar,
-					},
+					{ require('lazy.status').updates, cond = require('lazy.status').has_updates, color = component.lazy },
+					{ custom_components.search_count, icon = '󰍉', color = component.search_count },
 					{ custom_components.anchor },
 				},
 				lualine_y = {
 					-- { 'progress', icon = '', padding = { left = 0, right = 1 } },
 					-- { 'location', icon = '', padding = { left = 0, right = 1 } },
-					{ 'filesize', icon = '', padding = { left = 0, right = 1 } },
+					{ 'encoding', padding = { left = 1, right = 1 } },
+					{ 'filesize', icon = '', padding = { left = 1, right = 1 } },
 					{ custom_components.total_lines_file, icon = '', padding = { left = 0, right = 1 } },
 					{
 						'diff',
@@ -90,9 +88,16 @@ return {
 				lualine_z = {},
 			},
 			tabline = {},
-			winbar = {},
-			inactive_winbar = {},
-			extensions = { 'toggleterm' },
+			winbar = {
+				lualine_a = {
+					path_winbar,
+				},
+			},
+			inactive_winbar = {
+				lualine_a = {
+					path_winbar,
+				},
+			},
 		})
 	end,
 }

@@ -62,8 +62,6 @@ keymap.set('n', '<leader>rr', ':let @/ = "\\\\<" . expand(\'<cword>\') . "\\\\>"
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'N', 'Nzz', noremap) -- center search result
--- undo & redo
-keymap.set('n', '+', '<c-r>', noremap) -- redo change
 
 ----------------
 -- formatting --
@@ -90,6 +88,9 @@ keymap.set('n', '<End>', '<c-i>zz', noremap) -- go newer position and center the
 keymap.set('n', '<c-o>', '<c-o>zz', noremap) -- go older position and center the cursor
 keymap.set('n', '<Home>', '<c-o>zz', noremap) -- go older position and center the cursor
 
+-- undo & redo
+keymap.set('n', '=', '<cmd>redo<CR>', noremap)
+
 -- character navigation forward
 keymap.set('n', '}', '/}<CR>', noremap)
 keymap.set('n', '{', '/{<CR>', noremap)
@@ -113,7 +114,7 @@ keymap.set('n', '<a->>', '?><CR>', noremap)
 keymap.set('n', '<a-s-right>', ':bn<CR>', noremap) -- go to the next buffer
 keymap.set('n', '<a-s-left>', ':bp<CR>', noremap) -- go to the previous buffer
 -- buffers action
-keymap.set('n', '<leader>ww', ':silent! bd<CR>', noremap) -- close current buffer
+--[[ keymap.set('n', '<leader>ww', ':silent! bd<CR>', noremap) -- close current buffer ]]
 keymap.set('n', '<leader>WW', ':silent! %bd|e#|normal`"<CR>', noremap) -- close all buffers except current (actual behavior: close all > open last > close [No Name])
 
 -- delete single character without copying into register
@@ -130,3 +131,6 @@ keymap.set('n', '<c-a-down>', ':horizontal resize -5<CR>', noremap) -- decrease 
 keymap.set('n', '<c-@>', '<c-W>w', noremap) -- ctrl+` is the easier way to switch split window-- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
 keymap.set('n', '-', '<c-w>w', noremap) -- switch window
 keymap.set('n', '<leader>=', '<c-W>=', noremap) -- reset resize: press < alt-= >
+
+-- lazy.nvim
+keymap.set('n', 'H', '<cmd>Lazy<CR>', noremap) -- open lazy.nvim

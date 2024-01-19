@@ -5,7 +5,7 @@ return {
 	sorting_strategy = 'ascending',
 	-- path_display = { 'smart' },
 	-- path_display = { truncate = 6 },
-	prompt_prefix = '  ',
+	prompt_prefix = ' 󰍉 ',
 	layout_strategy = 'vertical',
 	layout_config = {
 		bottom_pane = {

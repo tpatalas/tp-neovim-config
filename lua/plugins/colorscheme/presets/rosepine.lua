@@ -4,6 +4,7 @@
 return {
 	'rose-pine/neovim',
 	lazy = false,
+	name = 'rosepine',
 	priority = 1000,
 	config = function()
 		require('rose-pine').setup({

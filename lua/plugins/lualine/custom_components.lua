@@ -38,13 +38,16 @@ M.path_winbar = function()
 	local devicons = require('nvim-web-devicons')
 	local fullPath = vim.fn.expand('%:p')
 	local cwd = vim.fn.getcwd()
-	local startIdx = fullPath:find(cwd, 1, true)
+	local startIdx, endIdx = fullPath:find(cwd, 1, true)
+
+	local cwdFolderName = M.cwd_folder_name()
+	local cwdIcon = ''
 
 	if not startIdx or startIdx <= 0 then
-		return fullPath
+		return cwdIcon .. ' ' .. cwdFolderName .. fullPath
 	end
 
-	local pathBelowCwd = fullPath:sub(startIdx + #cwd + 1)
+	local pathBelowCwd = fullPath:sub(endIdx + 1)
 	local file = pathBelowCwd:match('([^/]+)$')
 
 	if not file then
@@ -56,39 +59,39 @@ M.path_winbar = function()
 
 	local pathComponents = {}
 	for w in pathBelowCwd:gmatch('([^/]+)') do
-		table.insert(pathComponents, w)
+		pathComponents[#pathComponents + 1] = w
 	end
 
 	local icon = ''
 	if #pathComponents > 1 then
-		if extension ~= '' then
-			icon = devicons.get_icon(file, extension) or ''
-		else
-			icon = ''
-		end
-	elseif #pathComponents == 1 then
-		icon = ''
+		icon = extension ~= '' and devicons.get_icon(file, extension) or ''
 	end
 
-	if #pathComponents >= 6 then
-		local truncatedComponents = {
+	local firstPathComponentIcon = '  |  '
+	if #pathComponents > 0 then
+		pathComponents[1] = firstPathComponentIcon .. ' ' .. pathComponents[1]
+	end
+
+	local desiredPath
+	if #pathComponents >= 8 then
+		desiredPath = table.concat({
 			pathComponents[1],
 			pathComponents[2],
+			pathComponents[3],
 			'...',
 			pathComponents[#pathComponents - 1],
+			pathComponents[#pathComponents - 2],
 			pathComponents[#pathComponents],
-		}
-		pathBelowCwd = table.concat(truncatedComponents, '/')
-	end
-
-	local desiredPath = pathBelowCwd:gsub('/', '  ')
-	if icon ~= '' then
-		desiredPath = desiredPath:gsub(file, icon .. ' ' .. file)
+		}, '  ')
 	else
-		desiredPath = desiredPath:gsub(file, file)
+		desiredPath = table.concat(pathComponents, '  ')
 	end
 
-	return desiredPath
+	if icon ~= '' and file then
+		desiredPath = desiredPath:gsub(file, icon .. ' ' .. file, 1)
+	end
+
+	return cwdIcon .. ' ' .. cwdFolderName .. desiredPath
 end
 
 return M

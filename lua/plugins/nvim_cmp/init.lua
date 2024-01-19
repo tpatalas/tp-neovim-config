@@ -1,8 +1,10 @@
 return {
 	'hrsh7th/nvim-cmp',
+	lazy = true,
 	event = 'InsertEnter',
 	dependencies = {
 		'hrsh7th/cmp-buffer',
+		'hrsh7th/cmp-nvim-lsp',
 		'hrsh7th/cmp-path',
 		'hrsh7th/cmp-cmdline',
 		'L3MON4D3/LuaSnip',
@@ -13,7 +15,6 @@ return {
 		local cmp = require('cmp')
 		local icons = require('plugins.nvim_cmp.icons')
 		local configs = require('plugins.nvim_cmp.configs')
-		-- find more here: https://www.nerdfonts.com/cheat-sheet
 
 		vim.opt.completeopt = 'menu,menuone,noselect'
 

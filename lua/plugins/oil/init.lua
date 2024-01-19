@@ -14,7 +14,6 @@ local noremap = { noremap = true, silent = true }
 return {
 	'stevearc/oil.nvim',
 	lazy = true,
-	opts = {},
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	keys = {
 		{ '<leader>ef', ':lua require(\'oil\').open(vim.fn.expand(\'%:p:h\'))<CR>', noremap }, -- open the current directory
@@ -35,13 +34,21 @@ return {
 				['<CR>'] = 'actions.select',
 				['Y'] = 'actions.select_vsplit',
 				['X'] = 'actions.select_split',
-				['q'] = '',
+				['q'] = 'actions.close',
 				['H'] = 'actions.toggle_hidden',
 				['P'] = 'actions.preview',
 				['<Right>'] = 'actions.open_cwd',
 				['<Left>'] = 'actions.parent',
 				['<Home>'] = '<c-o>zz', -- go to older position
 				['<End>'] = '<c-i>zz', -- go to newer position
+			},
+			view_options = {
+
+				sort = {
+					{ 'type', 'asc' },
+					{ 'name', 'asc' },
+					{ 'birthtime', 'desc' },
+				},
 			},
 		})
 	end,

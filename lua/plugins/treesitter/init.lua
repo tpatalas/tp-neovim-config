@@ -3,9 +3,8 @@ return {
 	build = function()
 		pcall(require('nvim-treesitter.install').update({ with_sync = true }))
 	end,
-	dependencies = {
-		'windwp/nvim-ts-autotag', --autotag
-	},
+	lazy = true,
+	event = 'VeryLazy',
 	config = function()
 		require('nvim-treesitter.configs').setup({
 			context_commentstring = {

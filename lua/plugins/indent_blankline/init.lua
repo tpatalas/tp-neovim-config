@@ -1,6 +1,7 @@
 return {
 	'lukas-reineke/indent-blankline.nvim',
-	-- event = 'VeryLazy',
+	lazy = true,
+	event = 'BufReadPre',
 	main = 'ibl',
 	config = function()
 		local highlight = {
@@ -30,7 +31,14 @@ return {
 				highlight = highlight,
 				remove_blankline_trail = false,
 			},
+			exclude = {
+				filetypes = {
+					'dashboard',
+					'norg',
+				},
+			},
 			scope = {
+				enabled = false,
 				highlight = highlight,
 				show_start = false,
 			},

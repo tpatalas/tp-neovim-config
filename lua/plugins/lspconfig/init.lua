@@ -9,7 +9,8 @@ vim.diagnostic.config({
 
 return {
 	'neovim/nvim-lspconfig',
-	event = 'BufReadPre',
+	lazy = true,
+	event = 'VeryLazy',
 	dependencies = { 'hrsh7th/cmp-nvim-lsp' },
 	keys = {
 		{ '<leader>lr', ':LspRestart<CR>', noremap }, -- mapping to restart lsp if necessary
@@ -18,11 +19,18 @@ return {
 		{ '<leader>lx', ':LspStop<CR>', noremap }, -- stop lsp
 		{ '<leader>li', ':LspInfo<CR>', noremap }, -- lsp info
 		{ '<leader>fd', ':OrganizeImport<CR>', noremap }, -- tsserver remove unused imports
+		{ '<leader>fm', ':AddMissingImports<CR>', noremap }, -- tsserver remove unused imports
 	},
 	config = function()
+		local global_icons = require('utils.global_icons')
 		local lspconfig = require('lspconfig')
 		local server = require('plugins.lspconfig.servers')
-		local signs = { Error = ' ', Warn = ' ', Info = ' ', Hint = 'ﴞ ' }
+		local signs = {
+			Error = global_icons.error,
+			Warn = global_icons.warn,
+			Info = global_icons.info,
+			Hint = global_icons.hint,
+		}
 		for type, icon in pairs(signs) do
 			local hl = 'DiagnosticSign' .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
@@ -32,7 +40,7 @@ return {
 		-- Servers --
 		-------------
 		lspconfig.html.setup(server.html)
-		-- lspconfig.tsserver.setup(server.tsserver)
+		-- lspconfig.tsserver.setup(server.tsserver) -- disabled due to typescript-tools plugin
 		lspconfig.dockerls.setup(server.dockerls)
 		lspconfig.jsonls.setup(server.jsonls)
 		lspconfig.cssls.setup(server.cssls)
@@ -40,5 +48,6 @@ return {
 		lspconfig.tailwindcss.setup(server.tailwindcss)
 		lspconfig.emmet_ls.setup(server.emmet_ls)
 		lspconfig.lua_ls.setup(server.lua_ls)
+		lspconfig.typos_lsp.setup(server.typos_lsp)
 	end,
 }

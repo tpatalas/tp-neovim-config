@@ -25,7 +25,7 @@ opt.scrolloff = 10
 opt.sidescrolloff = 10
 opt.termguicolors = true
 opt.updatetime = 500
-opt.timeoutlen = 300
+opt.timeoutlen = 500
 opt.background = 'dark' -- colorschemes that can be light or dark will be made dark
 opt.backspace = 'indent,eol,start' -- allow backspacr on indent, end of line or insert mode start position
 opt.clipboard:append('unnamedplus') -- use system clipboard as default register
@@ -35,7 +35,7 @@ opt.hidden = false
 opt.iskeyword:append('-') -- consider string-string as whole word
 opt.backup = false -- creates a backup file
 opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
-opt.conceallevel = 0 -- so that `` is visible in markdown files
+opt.conceallevel = 1 -- so that `` is visible in markdown files
 opt.fileencoding = 'utf-8' -- the encoding written to a file
 opt.mouse = 'a' -- allow the mouse to be used in neovim
 opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
@@ -44,3 +44,5 @@ opt.smartindent = true -- make indenting smarter again
 opt.swapfile = false -- disable/enable the swapFile
 opt.shortmess = vim.o.shortmess .. 'aoOstTWFAIc'
 opt.splitright = true
+opt.fillchars = { eob = ' ' } -- hide end of buffer characters
+-- opt.statuscolumn = '%C%@SignCb@%=%T%@NumCb@%r%s'
