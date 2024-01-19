@@ -35,7 +35,7 @@ opt.hidden = false
 opt.iskeyword:append('-') -- consider string-string as whole word
 opt.backup = false -- creates a backup file
 opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
-opt.conceallevel = 2 -- so that `` is visible in markdown files
+opt.conceallevel = 1 -- so that `` is visible in markdown files
 opt.fileencoding = 'utf-8' -- the encoding written to a file
 opt.mouse = 'a' -- allow the mouse to be used in neovim
 opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
