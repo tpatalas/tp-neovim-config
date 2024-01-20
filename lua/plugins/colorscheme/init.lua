@@ -80,7 +80,7 @@ return {
 				['@markup.heading.5.markdown'] = { fg = colors.main.cyan, bold = true },
 				['@markup.heading.6.marker.markdown'] = { fg = colors.main.blue, bold = true },
 				['@markup.heading.6.markdown'] = { fg = colors.main.blue, bold = true },
-				['@text.literal.markdown_inline'] = { fg = '', bg = colors.editor.highlight, italic = true },
+				['@markup.raw.markdown_inline'] = { fg = '', bg = custom_color.search, bold = true },
 
 				-- This is a list of possible values
 				-- YourHighlightGroup = {
