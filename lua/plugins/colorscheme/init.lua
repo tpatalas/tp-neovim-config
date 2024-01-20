@@ -68,6 +68,7 @@ return {
 				FloatBorder = { fg = colors.main.paleblue },
 				MatchParen = { fg = colors.main.yellow, bg = colors.editor.selection, bold = false },
 				NeorgCodeBlock = { bg = colors.editor.selection },
+				MarkdownCodeBlock = { bg = colors.editor.selection },
 				['@markup.heading.1.marker.markdown'] = { fg = colors.main.red, bold = true },
 				['@markup.heading.1.markdown'] = { fg = colors.main.red, bold = true },
 				['@markup.heading.2.marker.markdown'] = { fg = colors.main.orange, bold = true },
@@ -82,6 +83,10 @@ return {
 				['@markup.heading.6.markdown'] = { fg = colors.main.blue, bold = true },
 				['@markup.raw.markdown_inline'] = { fg = '', bg = custom_color.search, bold = true },
 
+				-- - @markup.raw.block.markdown links to @markup markdown
+				-- - @none.markdown links to @none markdown
+				-- - @comment.bash links to Comment bash
+				-- - @spell.bash links to @spell bash
 				-- This is a list of possible values
 				-- YourHighlightGroup = {
 				--     fg = "#SOME_COLOR", -- foreground color
