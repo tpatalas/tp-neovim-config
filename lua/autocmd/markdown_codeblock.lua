@@ -1,4 +1,4 @@
-vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged' }, {
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged', 'InsertLeave' }, {
 	pattern = '*.md',
 	callback = function()
 		vim.defer_fn(function() -- Defer execution
@@ -9,6 +9,9 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged
 			local in_code_block = false
 			local namespace = vim.api.nvim_create_namespace('markdown_code_block')
 			local win_width = vim.api.nvim_win_get_width(0)
+
+			-- Clear existing highlights
+			vim.api.nvim_buf_clear_namespace(bufnr, namespace, 0, -1)
 
 			for i, line in ipairs(lines) do
 				if line:match('^```') then
