@@ -8,12 +8,12 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter', 'BufRead', 'BufNewFile'
 		-- prevent codeblock comment get concealed
 		vim.cmd([[syntax region MarkdownCodeBlock start=/```/ end=/```/ keepend]])
 		-- conceal Headers (nerdfonts are used)
-		vim.cmd([[syntax match MarkdownConcealH1 '^#' conceal cchar=󰉫]])
-		vim.cmd([[syntax match MarkdownConcealH2 '^##' conceal cchar=󰉬]])
-		vim.cmd([[syntax match MarkdownConcealH3 '^###' conceal cchar=󰉭]])
-		vim.cmd([[syntax match MarkdownConcealH4 '^####' conceal cchar=󰉮]])
-		vim.cmd([[syntax match MarkdownConcealH5 '^#####' conceal cchar=󰉯]])
-		vim.cmd([[syntax match MarkdownConcealH6 '^######' conceal cchar=󰉰]])
+		vim.cmd([[syntax match MarkdownConcealH1 '^#\ze\s' conceal cchar=󰉫]])
+		vim.cmd([[syntax match MarkdownConcealH2 '^##\ze\s' conceal cchar=󰉬]])
+		vim.cmd([[syntax match MarkdownConcealH3 '^###\ze\s' conceal cchar=󰉭]])
+		vim.cmd([[syntax match MarkdownConcealH4 '^####\ze\s' conceal cchar=󰉮]])
+		vim.cmd([[syntax match MarkdownConcealH5 '^#####\ze\s' conceal cchar=󰉯]])
+		vim.cmd([[syntax match MarkdownConcealH6 '^######\ze\s' conceal cchar=󰉰]])
 
 		vim.wo.conceallevel = 1
 	end,
