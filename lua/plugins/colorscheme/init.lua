@@ -70,6 +70,7 @@ return {
 				MarkdownCodeBlock = { bg = colors.editor.selection },
 				CustomMarkdownHeadingUnderline = { fg = colors.editor.border },
 				CustomMarkdownHorizontalRule = { fg = custom_color.selection },
+				MarkdownBold = { fg = colors.editor.fg_dark, bold = true },
 				['@markup.heading.1.marker.markdown'] = { fg = colors.main.red, bold = true },
 				['@markup.heading.1.markdown'] = { fg = colors.main.red, bold = true },
 				['@markup.heading.2.marker.markdown'] = { fg = colors.main.orange, bold = true },
@@ -83,6 +84,7 @@ return {
 				['@markup.heading.6.marker.markdown'] = { fg = colors.main.blue, bold = true },
 				['@markup.heading.6.markdown'] = { fg = colors.main.blue, bold = true },
 				['@markup.raw.markdown_inline'] = { fg = '', bg = custom_color.search, bold = true },
+				['@punctuation.special.markdown'] = { fg = colors.main.blue },
 
 				-- - @markup.raw.block.markdown links to @markup markdown
 				-- - @none.markdown links to @none markdown
