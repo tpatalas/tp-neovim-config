@@ -1,4 +1,4 @@
-vim.api.nvim_create_autocmd({ 'bufenter', 'bufread', 'bufwinenter', 'textchanged', 'insertleave' }, {
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged', 'InsertLeave' }, {
 	pattern = '*.md',
 	callback = function()
 		vim.defer_fn(function()
@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd({ 'bufenter', 'bufread', 'bufwinenter', 'textchanged
 					found_first_heading = true
 				end
 
-				if line:match('^---$') and found_first_heading then
+				if found_first_heading and line == '---' then
 					local unicode_line = string.rep('━', win_width)
 					vim.api.nvim_buf_set_extmark(bufnr, namespace, i - 1, 0, {
 						virt_text = { { unicode_line, 'CustomMarkdownHorizontalRule' } },
