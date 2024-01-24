@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter', 'BufRead', 'BufNewFile'
 		vim.cmd([[syntax match MarkdownConcealH6 '^######\ze\s' conceal cchar=󰉰]])
 		-- conceal strikethrough
 		vim.cmd('highlight MarkdownStrikethrough gui=strikethrough')
-		vim.cmd([[syntax match MarkdownStrikethrough '\v(\s|\_^)\~[^~]+\~(\s|\_$)' contains=MarkdownCodeBlock]])
+		vim.cmd([[syntax match MarkdownStrikethrough '\v(\s|\_^)\~\~[^~]+\~\~(\s|\_$)' contains=MarkdownCodeBlock]])
 		-- conceal italic
 		vim.cmd('highlight MarkdownItalic gui=italic')
 		vim.cmd(
