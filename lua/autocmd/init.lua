@@ -10,7 +10,3 @@ require('autocmd.reset_cursor')
 require('autocmd.markdown_conceal')
 require('autocmd.markdown_codeblock')
 require('autocmd.markdown_rules')
-
--- require('autocmd.markdown_horizontal_rule')
--- require('autocmd.markdown_heading_underline')
--- require('autocmd.markdown_quote')
