@@ -134,3 +134,10 @@ keymap.set('n', '<leader>=', '<c-W>=', noremap) -- reset resize: press < alt-= >
 
 -- lazy.nvim
 keymap.set('n', 'H', '<cmd>Lazy<CR>', noremap) -- open lazy.nvim
+
+--------------
+-- markdown --
+--------------
+vim.keymap.set('n', '@', '/\\v```\\S+<CR>', noremap) -- jump to code block delimiter
+vim.keymap.set('n', '<leader>yy', 'jV/```<CR>ky', noremap) -- copy code code block. (Cursor must be place at the start of code block delimiter)
+vim.keymap.set('n', '<leader>@', '/\\v```\\S+<CR>jV/```<CR>ky', noremap) -- jump and copy code code block.
