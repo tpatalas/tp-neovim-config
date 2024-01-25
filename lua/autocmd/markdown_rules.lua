@@ -1,0 +1,78 @@
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged', 'InsertLeave' }, {
+	pattern = '*.md',
+	callback = function()
+		vim.defer_fn(function()
+			local bufnr = vim.api.nvim_get_current_buf()
+			local total_lines = vim.api.nvim_buf_line_count(bufnr)
+			local ns_markdown_rule = vim.api.nvim_create_namespace('markdown_rule')
+			local win_width = vim.api.nvim_win_get_width(0)
+			local found_first_heading = false
+			local in_code_block = false -- Flag to track if inside a code block
+
+			vim.api.nvim_buf_clear_namespace(bufnr, ns_markdown_rule, 0, -1)
+			vim.api.nvim_buf_clear_namespace(bufnr, ns_markdown_rule, 0, -1)
+			vim.api.nvim_buf_clear_namespace(bufnr, ns_markdown_rule, 0, -1)
+
+			for i = 1, total_lines do
+				local line = vim.api.nvim_buf_get_lines(bufnr, i - 1, i, false)[1]
+
+				-- Toggle the in_code_block flag if a code block delimiter is found
+				if line:match('^```') then
+					in_code_block = not in_code_block
+				end
+
+				if not in_code_block then -- Only apply the following if not in a code block
+					-- Horizontal line logic
+					if not found_first_heading and line:match('^#%s') then
+						found_first_heading = true
+					end
+
+					if found_first_heading and line == '---' then
+						local unicode_line = string.rep('━', win_width)
+						vim.api.nvim_buf_set_extmark(bufnr, ns_markdown_rule, i - 1, 0, {
+							virt_text = { { unicode_line, 'CustomMarkdownHorizontalRule' } },
+							virt_text_pos = 'overlay',
+							hl_mode = 'combine',
+						})
+					end
+
+					-- Heading underline logic
+					if line:match('^###+%s') then
+						local underline_line_num = i
+						local unicode_line = string.rep('·', win_width)
+
+						vim.api.nvim_buf_set_extmark(bufnr, ns_markdown_rule, underline_line_num, 0, {
+							virt_text = { { unicode_line, 'CustomMarkdownHeadingUnderline' } },
+							virt_text_pos = 'overlay',
+							hl_mode = 'combine',
+						})
+					elseif line:match('^#%s') or line:match('^##%s') then
+						local underline_line_num = i
+						local unicode_line = string.rep('─', win_width)
+
+						vim.api.nvim_buf_set_extmark(bufnr, ns_markdown_rule, underline_line_num, 0, {
+							virt_text = { { unicode_line, 'CustomMarkdownHeadingUnderline' } },
+							virt_text_pos = 'overlay',
+							hl_mode = 'combine',
+						})
+					end
+
+					-- Quote conceal logic
+					local quote_match = line:match('^%s*(>+)%s*')
+					if quote_match then
+						local quote_length = #quote_match
+						local concealed_line = string.rep('┃', quote_length)
+
+						vim.api.nvim_buf_set_extmark(bufnr, ns_markdown_rule, i - 1, 0, {
+							virt_text = { { concealed_line, 'CustomMarkdownQuote' } },
+							virt_text_pos = 'overlay',
+							hl_mode = 'combine',
+							virt_text_win_col = 0,
+							priority = 150,
+						})
+					end
+				end
+			end
+		end, 0)
+	end,
+})
