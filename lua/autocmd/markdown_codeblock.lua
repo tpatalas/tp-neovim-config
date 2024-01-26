@@ -1,4 +1,4 @@
-vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged', 'InsertLeave' }, {
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged', 'TextChangedI' }, {
 	pattern = '*.md',
 	callback = function()
 		vim.defer_fn(function() -- Defer execution
