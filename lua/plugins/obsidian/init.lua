@@ -32,7 +32,7 @@ return {
 				use_path_only = false,
 			},
 			mappings = {
-				['<leader><CR>'] = {
+				['<CR>'] = {
 					action = function()
 						return require('obsidian').util.gf_passthrough()
 					end,
@@ -59,7 +59,10 @@ return {
 
 			disable_frontmatter = false,
 			note_frontmatter_func = function(note)
-				local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+				local out = { id = note.id, tags = note.tags }
+				if note.aliases and #note.aliases > 0 then
+					out.aliases = { note.aliases[#note.aliases] }
+				end
 				if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
 					for k, v in pairs(note.metadata) do
 						out[k] = v
