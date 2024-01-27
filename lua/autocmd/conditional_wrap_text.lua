@@ -12,5 +12,5 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.api.nvim_create_autocmd('FileType', {
 	group = conditionalWrapText,
 	pattern = 'gitcommit',
-	command = 'set colorcolumn=50,80',
+	command = 'set colorcolumn=70,80',
 })
