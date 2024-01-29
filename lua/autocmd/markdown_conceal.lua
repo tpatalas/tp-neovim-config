@@ -4,9 +4,9 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter', 'BufRead', 'BufNewFile'
 		-- prevent [[]] to be concealed as quote such as wiki link from Obsidian
 		vim.cmd([[syntax match MarkdownNoConceal '\[\[.\{-}\]\]' containedin=ALL]])
 
-		-- prevent codeblock comment get concealed
+		-- -- prevent codeblock comment get concealed
 		vim.cmd([[syntax region MarkdownCodeBlock start=/```/ end=/```/ keepend]])
-		-- conceal Headers (nerdfonts are used)
+		-- -- conceal Headers (nerdfonts are used)
 		vim.cmd([[syntax match MarkdownConcealH1 '^#\ze\s' conceal cchar=󰉫]])
 		vim.cmd([[syntax match MarkdownConcealH2 '^##\ze\s' conceal cchar=󰉬]])
 		vim.cmd([[syntax match MarkdownConcealH3 '^###\ze\s' conceal cchar=󰉭]])
@@ -33,5 +33,6 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter', 'BufRead', 'BufNewFile'
 		)
 
 		vim.wo.conceallevel = 2
+		vim.cmd('syntax sync fromstart') -- Force syntax highlighting to be in sync from the start to fix the some concealing issue.
 	end,
 })
