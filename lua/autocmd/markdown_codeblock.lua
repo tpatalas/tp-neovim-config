@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged
 
 				if in_code_block then
 					vim.api.nvim_buf_add_highlight(bufnr, namespace, 'MarkdownCodeBlock', i - 1, 0, -1)
-					local fill_width = win_width - #line
+					local fill_width = math.max(0, win_width)
 					local fill_text = string.rep(' ', fill_width)
 
 					vim.api.nvim_buf_set_extmark(bufnr, namespace, i - 1, #line, {
