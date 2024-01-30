@@ -69,7 +69,7 @@ return {
 				MatchParen = { fg = colors.main.yellow, bg = colors.editor.selection, bold = false },
 				MarkdownCodeBlock = { bg = colors.editor.selection },
 				CustomMarkdownHeadingUnderline = { fg = colors.editor.line_numbers },
-				CustomMarkdownHorizontalRule = { fg = custom_color.selection },
+				CustomMarkdownHorizontalRule = { fg = colors.main.darkblue },
 				MarkdownBold = { fg = colors.editor.fg_dark, bold = true },
 				['@markup.heading.1.marker.markdown'] = { fg = colors.main.red, bold = true },
 				['@markup.heading.1.markdown'] = { fg = colors.main.red, bold = true },
