@@ -8,9 +8,14 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged
 			local win_width = vim.api.nvim_win_get_width(0)
 			local found_first_heading = false
 			local in_code_block = false -- Flag to track if inside a code block
+			local set_markdown_extmark = function(line_num, unicode_line, highlight_group)
+				vim.api.nvim_buf_set_extmark(bufnr, ns_markdown_rule, line_num, 0, {
+					virt_text = { { unicode_line, highlight_group } },
+					virt_text_pos = 'overlay',
+					hl_mode = 'combine',
+				})
+			end
 
-			vim.api.nvim_buf_clear_namespace(bufnr, ns_markdown_rule, 0, -1)
-			vim.api.nvim_buf_clear_namespace(bufnr, ns_markdown_rule, 0, -1)
 			vim.api.nvim_buf_clear_namespace(bufnr, ns_markdown_rule, 0, -1)
 
 			for i = 1, total_lines do
@@ -29,47 +34,31 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged
 
 					if found_first_heading and line == '---' then
 						local unicode_line = string.rep('━', win_width)
-						vim.api.nvim_buf_set_extmark(bufnr, ns_markdown_rule, i - 1, 0, {
-							virt_text = { { unicode_line, 'CustomMarkdownHorizontalRule' } },
-							virt_text_pos = 'overlay',
-							hl_mode = 'combine',
-						})
+						set_markdown_extmark(i - 1, unicode_line, 'CustomMarkdownHorizontalRule')
 					end
 
-					-- Heading underline logic
-					if line:match('^###+%s') then
-						local underline_line_num = i
-						local unicode_line = string.rep('·', win_width)
+					-- Heading underline logic with additional space
+					local underline_char
+					if line:match('^#%s') then
+						underline_char = '━'
+					elseif line:match('^##%s') then
+						underline_char = '═'
+					elseif line:match('^###%s') then
+						underline_char = '─'
+					elseif line:match('^####+%s') then
+						underline_char = '·'
+					end
 
-						vim.api.nvim_buf_set_extmark(bufnr, ns_markdown_rule, underline_line_num, 0, {
-							virt_text = { { unicode_line, 'CustomMarkdownHeadingUnderline' } },
-							virt_text_pos = 'overlay',
-							hl_mode = 'combine',
-						})
-					elseif line:match('^#%s') or line:match('^##%s') then
-						local underline_line_num = i
-						local unicode_line = string.rep('─', win_width)
-
-						vim.api.nvim_buf_set_extmark(bufnr, ns_markdown_rule, underline_line_num, 0, {
-							virt_text = { { unicode_line, 'CustomMarkdownHeadingUnderline' } },
-							virt_text_pos = 'overlay',
-							hl_mode = 'combine',
-						})
+					if underline_char then
+						local unicode_line = string.rep(underline_char, win_width) .. ' '
+						set_markdown_extmark(i, unicode_line, 'CustomMarkdownHeadingUnderline')
 					end
 
 					-- Quote conceal logic
 					local quote_match = line:match('^%s*(>+)%s*')
 					if quote_match then
-						local quote_length = #quote_match
-						local concealed_line = string.rep('┃', quote_length)
-
-						vim.api.nvim_buf_set_extmark(bufnr, ns_markdown_rule, i - 1, 0, {
-							virt_text = { { concealed_line, 'CustomMarkdownQuote' } },
-							virt_text_pos = 'overlay',
-							hl_mode = 'combine',
-							virt_text_win_col = 0,
-							priority = 150,
-						})
+						local concealed_line = string.rep('┃', #quote_match)
+						set_markdown_extmark(i - 1, concealed_line, 'CustomMarkdownQuote')
 					end
 				end
 			end
