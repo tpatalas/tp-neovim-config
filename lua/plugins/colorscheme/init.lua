@@ -68,7 +68,7 @@ return {
 				FloatBorder = { fg = colors.main.paleblue },
 				MatchParen = { fg = colors.main.yellow, bg = colors.editor.selection, bold = false },
 				MarkdownCodeBlock = { bg = colors.editor.selection },
-				CustomMarkdownHeadingUnderline = { fg = colors.editor.line_numbers },
+				CustomMarkdownHeadingUnderline = { fg = colors.editor.selection },
 				CustomMarkdownHorizontalRule = { fg = custom_color.selection },
 				MarkdownBold = { fg = colors.editor.fg_dark, bold = true },
 				['@markup.heading.1.marker.markdown'] = { fg = colors.main.red, bold = true },
