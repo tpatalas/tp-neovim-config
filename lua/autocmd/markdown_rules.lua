@@ -42,10 +42,8 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged
 					if line:match('^#%s') then
 						underline_char = '━'
 					elseif line:match('^##%s') then
-						underline_char = '═'
-					elseif line:match('^###%s') then
 						underline_char = '─'
-					elseif line:match('^####+%s') then
+					elseif line:match('^###%s') then
 						underline_char = '·'
 					end
 
