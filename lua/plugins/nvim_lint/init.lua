@@ -24,9 +24,6 @@ return {
 			markdown = {
 				'markdownlint',
 			},
-			yaml = {
-				'actionlint',
-			},
 		}
 
 		vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufWritePost', 'InsertLeave' }, {
