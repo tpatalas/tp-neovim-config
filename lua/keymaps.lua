@@ -53,10 +53,10 @@ keymap.set('n', '<leader>AA', 'ggVG<CR>', noremap) -- select everything in visua
 keymap.set('n', '<leader>QQ', ':q!<CR>', noremap) -- quit without saving
 keymap.set('n', '<leader>qq', ':q<CR>', noremap) -- quit
 -- save & edit
-keymap.set('n', '<leader>ss', '<cmd>w<CR>', noremap) -- save
+keymap.set('n', '<leader>ss', '<cmd>silent! w<CR>', noremap) -- save
 keymap.set('n', '<leader>ee', '<cmd>e<CR>', noremap) -- save
 keymap.set('n', '<leader>EE', '<cmd>e!<CR>', noremap) -- save
--- search and 
+-- search and
 keymap.set('n', '<leader>RR', ':%s/<c-r><c-w>/<c-r><c-w>', noremap) -- Search and replace the word under current
 keymap.set('n', '<leader>rr', ':let @/ = "\\\\<" . expand(\'<cword>\') . "\\\\>"<CR>:set hlsearch<CR>cgn', noremap) -- Search for the word under the cursor. cgn is removed for versatile usage.
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
