@@ -1,13 +1,3 @@
-vim.api.nvim_create_autocmd('TermOpen', {
-	pattern = 'term://*',
-	callback = function()
-		vim.cmd('startinsert!')
-		vim.defer_fn(function()
-			vim.cmd([[stopinsert]])
-		end, 10)
-	end,
-})
-
 return {
 	'akinsho/toggleterm.nvim',
 	lazy = true,
