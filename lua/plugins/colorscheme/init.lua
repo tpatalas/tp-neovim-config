@@ -71,6 +71,7 @@ return {
 				CustomMarkdownHeadingUnderline1 = { fg = colors.editor.comments },
 				CustomMarkdownHeadingUnderline2 = { fg = colors.editor.line_numbers },
 				CustomMarkdownHeadingUnderline3 = { fg = colors.editor.line_numbers },
+				CustomMarkdownHeadingUnderline4 = { fg = colors.editor.line_numbers },
 				CustomMarkdownHorizontalRule = { fg = colors.editor.line_numbers },
 				MarkdownBold = { fg = colors.editor.fg_dark, bold = true },
 				['@markup.heading.1.marker.markdown'] = { fg = colors.main.red, bold = true },
