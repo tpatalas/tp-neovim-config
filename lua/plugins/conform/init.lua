@@ -2,7 +2,7 @@
 
 return {
 	'stevearc/conform.nvim',
-	layz = true,
+	lazy = true,
 	event = { 'VeryLazy' },
 	config = function()
 		require('conform').setup({
