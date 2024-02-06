@@ -17,12 +17,6 @@ vim.g.mapleader = ' '
 --   term_mode = "t",
 --   command_mode = "c",
 --
----------------------------------
--- General Keymaps - Insert Mode
----------------------------------
-
--- escape insert mode
-keymap.set('i', 'jk', '<ESC>', noremap)
 
 -----------------------------------
 -- General Keymaps - Visual Mode --
