@@ -22,6 +22,7 @@ return {
 			formatting.markdownlint,
 			diagnostics.markdownlint,
 			formatting.stylua,
+			formatting.rustywind,
 			formatting.taplo,
 			formatting.prettierd.with(configs.prettier),
 			-- diagnostics.cspell.with(configs.cspell),
