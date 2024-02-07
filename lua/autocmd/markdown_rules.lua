@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged
 					end
 
 					if found_first_heading and line == '---' then
-						local unicode_line = string.rep('━', win_width)
+						local unicode_line = string.rep('═', win_width)
 						set_markdown_extmark(i - 1, unicode_line, 'CustomMarkdownHorizontalRule')
 					end
 
@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged
 					local underline_char
 
 					if line:match('^#%s') then
-						underline_char = '═'
+						underline_char = '━'
 						local unicode_line = string.rep(underline_char, win_width)
 						set_markdown_extmark(i, unicode_line, 'CustomMarkdownHeadingUnderline1')
 					elseif line:match('^##%s') then
