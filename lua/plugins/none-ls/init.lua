@@ -25,8 +25,8 @@ return {
 			formatting.rustywind,
 			formatting.taplo,
 			formatting.prettierd.with(configs.prettier),
-			-- diagnostics.cspell.with(configs.cspell),
-			-- codeactions.cspell.with(configs.cspell),
+			diagnostics.cspell.with(configs.cspell),
+			codeactions.cspell.with(configs.cspell),
 			codeactions.eslint_d.with(configs.eslint),
 			diagnostics.eslint_d.with(configs.eslint),
 		}
