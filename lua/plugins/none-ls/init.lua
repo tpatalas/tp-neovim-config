@@ -54,7 +54,7 @@ return {
 			on_attach = on_attach,
 			debug = false,
 			fallback_severity = vim.diagnostic.severity.WARN,
-			update_in_insert = true,
+			update_in_insert = false,
 			debounce = 500,
 		})
 	end,
