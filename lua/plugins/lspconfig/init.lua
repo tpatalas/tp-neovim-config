@@ -48,6 +48,6 @@ return {
 		lspconfig.tailwindcss.setup(server.tailwindcss)
 		lspconfig.emmet_ls.setup(server.emmet_ls)
 		lspconfig.lua_ls.setup(server.lua_ls)
-		lspconfig.typos_lsp.setup(server.typos_lsp)
+		-- lspconfig.typos_lsp.setup(server.typos_lsp)
 	end,
 }
