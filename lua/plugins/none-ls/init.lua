@@ -24,6 +24,7 @@ return {
 			formatting.stylua,
 			formatting.rustywind,
 			formatting.taplo,
+			formatting.shfmt,
 			formatting.prettierd.with(configs.prettier),
 			diagnostics.cspell.with(configs.cspell),
 			codeactions.cspell.with(configs.cspell),
