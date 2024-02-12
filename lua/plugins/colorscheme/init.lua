@@ -74,6 +74,7 @@ return {
 				CustomMarkdownHeadingUnderline4 = { fg = colors.editor.line_numbers },
 				CustomMarkdownHorizontalRule = { fg = colors.editor.comments },
 				MarkdownBold = { fg = colors.editor.fg_dark, bold = true },
+				CodeActionNumber = { fg = colors.main.cyan, bg = '' },
 				['@markup.heading.1.marker.markdown'] = { fg = colors.main.red, bold = true },
 				['@markup.heading.1.markdown'] = { fg = colors.main.red, bold = true },
 				['@markup.heading.2.marker.markdown'] = { fg = colors.main.orange, bold = true },
