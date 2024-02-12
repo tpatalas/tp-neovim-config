@@ -21,8 +21,6 @@ return {
 					path = '~/.dev/vaults',
 				},
 			},
-
-			detect_cwd = false,
 			log_level = vim.log.levels.INFO,
 			completion = {
 				nvim_cmp = true,
