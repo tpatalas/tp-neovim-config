@@ -2,7 +2,7 @@
 
 return {
 	Array = ' ',
-	Boolean = '󰨙 ',
+	Boolean = ' ',
 	Class = ' ',
 	Codeium = '󰘦 ',
 	Color = ' ',
@@ -31,7 +31,7 @@ return {
 	Package = ' ',
 	Property = ' ',
 	Reference = ' ',
-	Snippet = ' ',
+	Snippet = ' ',
 	String = ' ',
 	Struct = '󰆼 ',
 	TabNine = '󰏚 ',
