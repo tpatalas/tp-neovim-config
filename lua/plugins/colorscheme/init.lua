@@ -71,7 +71,6 @@ return {
 				CustomMarkdownHeadingUnderline1 = { fg = colors.editor.comments },
 				CustomMarkdownHeadingUnderline2 = { fg = colors.editor.line_numbers },
 				CustomMarkdownHeadingUnderline3 = { fg = colors.editor.line_numbers },
-				CustomMarkdownHeadingUnderline4 = { fg = colors.editor.line_numbers },
 				CustomMarkdownHorizontalRule = { fg = colors.editor.comments },
 				MarkdownBold = { fg = colors.editor.fg_dark, bold = true },
 				CodeActionNumber = { fg = colors.main.cyan, bg = '' },
