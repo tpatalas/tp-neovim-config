@@ -49,13 +49,9 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged
 						local unicode_line = string.rep(underline_char, win_width)
 						set_markdown_extmark(i, unicode_line, 'CustomMarkdownHeadingUnderline2')
 					elseif line:match('^###%s') then
-						underline_char = '•'
-						local unicode_line = string.rep(underline_char, win_width)
-						set_markdown_extmark(i, unicode_line, 'CustomMarkdownHeadingUnderline3')
-					elseif line:match('^####+%s') then
 						underline_char = '·'
 						local unicode_line = string.rep(underline_char, win_width)
-						set_markdown_extmark(i, unicode_line, 'CustomMarkdownHeadingUnderline4')
+						set_markdown_extmark(i, unicode_line, 'CustomMarkdownHeadingUnderline3')
 					end
 
 					-- Quote conceal logic
