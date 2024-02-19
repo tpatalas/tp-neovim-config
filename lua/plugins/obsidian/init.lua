@@ -22,13 +22,12 @@ return {
 				},
 			},
 			log_level = vim.log.levels.INFO,
+			-- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
 			completion = {
 				nvim_cmp = true,
 				min_chars = 2,
-				prepend_note_id = true,
-				prepend_note_path = false,
-				use_path_only = false,
 			},
+			-- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
 			mappings = {
 				['<CR>'] = {
 					action = function()
@@ -43,6 +42,7 @@ return {
 					opts = { buffer = true },
 				},
 			},
+			-- Optional, customize how names/IDs for new notes are created.
 			note_id_func = function(title)
 				local suffix = ''
 				if title ~= nil then
@@ -54,8 +54,17 @@ return {
 				end
 				return tostring(os.time()) .. '-' .. suffix
 			end,
-
+			-- Optional, customize how wiki links are formatted.
+			wiki_link_func = function(opts)
+				if opts.label == nil then
+					return string.format('[[%s]]', opts.id)
+				else
+					return string.format('[[%s]]', opts.label)
+				end
+			end,
+			-- Optional, boolean or a function that takes a filename and returns a boolean.
 			disable_frontmatter = false,
+			-- Optional, alternatively you can customize the frontmatter data.
 			note_frontmatter_func = function(note)
 				note.aliases = {}
 
@@ -72,6 +81,7 @@ return {
 				end
 				return out
 			end,
+			-- Optional, customize the backlinks interface.
 			backlinks = {
 				height = 10,
 				wrap = true,
