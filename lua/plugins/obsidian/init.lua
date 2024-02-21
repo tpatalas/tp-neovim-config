@@ -1,3 +1,5 @@
+-- https://github.com/epwalsh/obsidian.nvim
+
 return {
 	'epwalsh/obsidian.nvim',
 	version = '*',
@@ -81,11 +83,6 @@ return {
 				end
 				return out
 			end,
-			-- Optional, customize the backlinks interface.
-			backlinks = {
-				height = 10,
-				wrap = true,
-			},
 			follow_url_func = function(url)
 				vim.fn.jobstart({ 'open', url }) -- Mac OS
 			end,
