@@ -79,8 +79,8 @@ M.path_winbar = function()
 			pathComponents[2],
 			pathComponents[3],
 			'...',
-			pathComponents[#pathComponents - 1],
 			pathComponents[#pathComponents - 2],
+			pathComponents[#pathComponents - 1],
 			pathComponents[#pathComponents],
 		}, '  ')
 	else
