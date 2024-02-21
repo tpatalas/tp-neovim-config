@@ -39,22 +39,14 @@ M.path_winbar = function()
 	local fullPath = vim.fn.expand('%:p')
 	local cwd = vim.fn.getcwd()
 	local startIdx, endIdx = fullPath:find(cwd, 1, true)
-
-	local cwdFolderName = M.cwd_folder_name()
-	local cwdIcon = ''
+	local pathStart = endIdx + 1
 
 	if not startIdx or startIdx <= 0 then
-		return cwdIcon .. ' ' .. cwdFolderName .. fullPath
+		return ' ' .. M.cwd_folder_name() .. fullPath
 	end
 
-	local pathBelowCwd = fullPath:sub(endIdx + 1)
-	local file = pathBelowCwd:match('([^/]+)$')
-
-	if not file then
-		file = pathBelowCwd:match('([^/]+)/?$')
-		pathBelowCwd = pathBelowCwd:gsub('/$', '')
-	end
-
+	local pathBelowCwd = fullPath:sub(pathStart)
+	local file = pathBelowCwd:match('([^/]+)/?$')
 	local extension = file and file:match('%.([^%.]+)$') or ''
 
 	local pathComponents = {}
@@ -62,36 +54,30 @@ M.path_winbar = function()
 		pathComponents[#pathComponents + 1] = w
 	end
 
-	local icon = ''
-	if #pathComponents > 1 then
-		icon = extension ~= '' and devicons.get_icon(file, extension) or ''
-	end
+	local icon = #pathComponents > 1 and devicons.get_icon(file, extension) or ''
+	local firstPathComponentIcon = ' |  '
 
-	local firstPathComponentIcon = '  |  '
 	if #pathComponents > 0 then
-		pathComponents[1] = firstPathComponentIcon .. ' ' .. pathComponents[1]
+		pathComponents[1] = firstPathComponentIcon .. pathComponents[1]
 	end
 
-	local desiredPath
-	if #pathComponents >= 8 then
-		desiredPath = table.concat({
-			pathComponents[1],
-			pathComponents[2],
-			pathComponents[3],
-			'...',
-			pathComponents[#pathComponents - 2],
-			pathComponents[#pathComponents - 1],
-			pathComponents[#pathComponents],
-		}, '  ')
-	else
-		desiredPath = table.concat(pathComponents, '  ')
-	end
+	local desiredPath = #pathComponents >= 8
+			and table.concat({
+				pathComponents[1],
+				pathComponents[2],
+				pathComponents[3],
+				'...',
+				pathComponents[#pathComponents - 2],
+				pathComponents[#pathComponents - 1],
+				pathComponents[#pathComponents],
+			}, '  ')
+		or table.concat(pathComponents, '  ')
 
 	if icon ~= '' and file then
 		desiredPath = desiredPath:gsub(file, icon .. ' ' .. file, 1)
 	end
 
-	return cwdIcon .. ' ' .. cwdFolderName .. desiredPath
+	return ' ' .. M.cwd_folder_name() .. desiredPath
 end
 
 return M
