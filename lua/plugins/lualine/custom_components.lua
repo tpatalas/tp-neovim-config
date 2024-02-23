@@ -73,7 +73,7 @@ M.path_winbar = function()
 			}, '  ')
 		or table.concat(pathComponents, '  ')
 
-	if icon ~= '' and file then
+	if icon ~= '' and file and #pathComponents > 1 then
 		desiredPath = desiredPath:gsub(file, icon .. ' ' .. file, 1)
 	end
 
