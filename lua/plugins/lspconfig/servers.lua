@@ -78,6 +78,44 @@ M.emmet_ls = {
 	filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
 }
 
+M.eslint = {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	condition = function(utils)
+		return utils.root_has_file('.eslintrc.*')
+	end,
+
+	settings = {
+		codeAction = {
+			disableRuleComment = {
+				enable = false,
+				location = 'separateLine',
+			},
+			showDocumentation = {
+				enable = true,
+			},
+		},
+		codeActionOnSave = {
+			enable = false,
+			mode = 'all',
+		},
+		experimental = {
+			useFlatConfig = false,
+		},
+		format = true,
+		nodePath = '',
+		onIgnoredFiles = 'off',
+		problems = {
+			shortenToSingleLine = false,
+		},
+		quiet = false,
+		rulesCustomizations = {},
+		run = 'onType',
+		useESLintClass = true,
+		validate = 'on',
+	},
+}
+
 M.lua_ls = {
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -135,6 +173,11 @@ M.tsserver = {
 			return vim.lsp.diagnostic.on_publish_diagnostics(nil, result, ctx, ...)
 		end,
 	},
+}
+
+M.taplo = {
+	capabilities = capabilities,
+	on_attach = on_attach,
 }
 
 return M
