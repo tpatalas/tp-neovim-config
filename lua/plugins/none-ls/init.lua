@@ -17,24 +17,26 @@ return {
 		-- Built-in sources:
 		-- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 		local source = {
-			--  Diagnostics
+			--  Diagnostics -------------------------------------
 			diagnostics.tsc,
 			-- WARNING: diagnostics listed below do not support workspace level diagnostics
 			diagnostics.markdownlint,
 			diagnostics.cspell.with(configs.cspell),
-			diagnostics.eslint_d.with(configs.eslint),
-			-- Formatter
+			-- Formatter ----------------------------------------
 			formatting.markdownlint,
 			formatting.stylua,
 			formatting.rustywind,
-			formatting.taplo,
 			formatting.shfmt,
-			formatting.trim_newlines,
-			formatting.trim_whitespace,
 			formatting.prettierd.with(configs.prettier),
-			-- Code Actions
+			-- Code Actions -------------------------------------
 			codeactions.cspell.with(configs.cspell),
-			codeactions.eslint_d.with(configs.eslint),
+			-- Deprecated ---------------------------------------
+			-- followings are deprecated from none-ls
+			-- formatting.taplo,
+			-- formatting.trim_newlines,
+			-- formatting.trim_whitespace,
+			-- diagnostics.eslint_d.with(configs.eslint),
+			-- codeactions.eslint_d.with(configs.eslint),
 		}
 
 		local on_attach = function(current_client, bufnr)

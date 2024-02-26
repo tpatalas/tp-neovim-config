@@ -1,15 +1,5 @@
 local M = {}
 
-------------
--- eslint --
-------------
-
-M.eslint = {
-	condition = function(utils)
-		return utils.root_has_file('.eslintrc.json')
-	end,
-}
-
 --------------
 -- prettier --
 --------------
