@@ -68,7 +68,8 @@ return {
 				lualine_y = {
 					-- { 'progress', icon = '', padding = { left = 0, right = 1 } },
 					-- { 'location', icon = '', padding = { left = 0, right = 1 } },
-					{ 'encoding', padding = { left = 1, right = 1 } },
+					{ custom_components.char_count, icon = '', padding = { left = 1, right = 1 } },
+					-- { 'encoding', padding = { left = 1, right = 1 } },
 					{ 'filesize', icon = '', padding = { left = 1, right = 1 } },
 					{ custom_components.total_lines_file, icon = '', padding = { left = 0, right = 1 } },
 					{
