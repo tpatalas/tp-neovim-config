@@ -5,6 +5,8 @@ return {
 	lazy = true,
 	event = 'VeryLazy',
 	config = function()
+		vim.g.nonels_supress_issue58 = true -- temporary suppress the warning message. There is a typo but this is the correct config
+
 		local null_ls = require('null-ls')
 		local configs = require('plugins.none-ls.configs')
 		local formatting = null_ls.builtins.formatting
