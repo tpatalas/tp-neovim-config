@@ -17,12 +17,6 @@ vim.g.mapleader = ' '
 --   term_mode = "t",
 --   command_mode = "c",
 --
----------------------------------
--- General Keymaps - Insert Mode
----------------------------------
-
--- escape insert mode
-keymap.set('i', 'jk', '<ESC>', noremap)
 
 -----------------------------------
 -- General Keymaps - Visual Mode --
@@ -53,10 +47,10 @@ keymap.set('n', '<leader>AA', 'ggVG<CR>', noremap) -- select everything in visua
 keymap.set('n', '<leader>QQ', ':q!<CR>', noremap) -- quit without saving
 keymap.set('n', '<leader>qq', ':q<CR>', noremap) -- quit
 -- save & edit
-keymap.set('n', '<leader>ss', ':silent w<CR>', noremap) -- save
-keymap.set('n', '<leader>ee', ':e<CR>', noremap) -- save
-keymap.set('n', '<leader>EE', ':e!<CR>', noremap) -- save
--- search and Replace
+keymap.set('n', '<leader>ss', '<cmd>silent! w<CR>', noremap) -- save
+keymap.set('n', '<leader>ee', '<cmd>e<CR>', noremap) -- save
+keymap.set('n', '<leader>EE', '<cmd>e!<CR>', noremap) -- save
+-- search and
 keymap.set('n', '<leader>RR', ':%s/<c-r><c-w>/<c-r><c-w>', noremap) -- Search and replace the word under current
 keymap.set('n', '<leader>rr', ':let @/ = "\\\\<" . expand(\'<cword>\') . "\\\\>"<CR>:set hlsearch<CR>cgn', noremap) -- Search for the word under the cursor. cgn is removed for versatile usage.
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
@@ -134,3 +128,10 @@ keymap.set('n', '<leader>=', '<c-W>=', noremap) -- reset resize: press < alt-= >
 
 -- lazy.nvim
 keymap.set('n', 'H', '<cmd>Lazy<CR>', noremap) -- open lazy.nvim
+
+--------------
+-- markdown --
+--------------
+vim.keymap.set('n', '@', '/\\v```\\S+<CR>', noremap) -- jump to code block delimiter
+vim.keymap.set('n', '<leader>yy', 'jV/```<CR>ky', noremap) -- copy code code block. (Cursor must be place at the start of code block delimiter)
+vim.keymap.set('n', '<leader>@', '/\\v```\\S+<CR>jV/```<CR>ky', noremap) -- jump and copy code code block.

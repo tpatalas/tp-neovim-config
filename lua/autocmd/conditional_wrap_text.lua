@@ -6,11 +6,11 @@ local conditionalWrapText = vim.api.nvim_create_augroup('MarkdownWrap', { clear 
 vim.api.nvim_create_autocmd('FileType', {
 	group = conditionalWrapText,
 	pattern = 'markdown',
-	command = 'set textwidth=80 wrap',
+	command = 'set textwidth=80 | set formatoptions+=t',
 })
 
 vim.api.nvim_create_autocmd('FileType', {
 	group = conditionalWrapText,
 	pattern = 'gitcommit',
-	command = 'set colorcolumn=50,80',
+	command = 'set colorcolumn=70,80',
 })

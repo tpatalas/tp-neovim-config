@@ -39,8 +39,9 @@ return {
 		-------------
 		-- Servers --
 		-------------
+		lspconfig.eslint.setup(server.eslint)
 		lspconfig.html.setup(server.html)
-		-- lspconfig.tsserver.setup(server.tsserver) -- disabled due to typescript-tools plugin
+		lspconfig.tsserver.setup(server.tsserver)
 		lspconfig.dockerls.setup(server.dockerls)
 		lspconfig.jsonls.setup(server.jsonls)
 		lspconfig.cssls.setup(server.cssls)
@@ -48,6 +49,6 @@ return {
 		lspconfig.tailwindcss.setup(server.tailwindcss)
 		lspconfig.emmet_ls.setup(server.emmet_ls)
 		lspconfig.lua_ls.setup(server.lua_ls)
-		lspconfig.typos_lsp.setup(server.typos_lsp)
+		lspconfig.taplo.setup(server.taplo)
 	end,
 }

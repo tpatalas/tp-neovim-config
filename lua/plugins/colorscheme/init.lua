@@ -26,20 +26,6 @@ return {
 				filetypes = {}, -- Specify which filetypes get the contrasted (darker) background
 			},
 
-			styles = { -- Give comments style such as bold, italic, underline etc.
-				comments = { --[[ italic = true ]]
-				},
-				strings = { --[[ bold = true ]]
-				},
-				keywords = { --[[ underline = true ]]
-				},
-				functions = { --[[ bold = true, undercurl = true ]]
-				},
-				variables = {},
-				operators = {},
-				types = {},
-			},
-
 			plugins = { -- Uncomment the plugins that you use to highlight them
 				-- Available plugins:
 				'gitsigns',
@@ -48,7 +34,6 @@ return {
 				'lspsaga',
 				'nvim-cmp',
 				'nvim-web-devicons',
-				'neorg',
 			},
 
 			disable = {
@@ -82,15 +67,32 @@ return {
 				CmpItemAbbrMatchFuzzy = { fg = colors.main.orange, bg = '' },
 				FloatBorder = { fg = colors.main.paleblue },
 				MatchParen = { fg = colors.main.yellow, bg = colors.editor.selection, bold = false },
-				NeorgCodeBlock = { bg = colors.editor.selection },
-				['@text.title.1.markdown'] = { fg = colors.main.blue, bold = true },
-				['@text.title.2.markdown'] = { fg = colors.main.cyan, bold = true },
-				['@text.title.3.markdown'] = { fg = colors.main.green, bold = true },
-				['@text.title.4.markdown'] = { fg = colors.main.purple, bold = true },
-				['@text.title.5.markdown'] = { fg = colors.main.orange, bold = true },
-				['@text.title.6.markdown'] = { fg = colors.main.yellow, bold = true },
-				['@text.literal.markdown_inline'] = { fg = '', bg = colors.editor.highlight, italic = true },
+				MarkdownCodeBlock = { bg = colors.editor.selection },
+				CustomMarkdownHeadingUnderline1 = { fg = colors.editor.comment },
+				CustomMarkdownHeadingUnderline2 = { fg = colors.editor.comment },
+				CustomMarkdownHeadingUnderline3 = { fg = colors.editor.line_numbers },
+				CustomMarkdownHorizontalRule = { fg = colors.editor.comments },
+				MarkdownBold = { fg = colors.editor.fg_dark, bold = true },
+				CodeActionNumber = { fg = colors.main.cyan, bg = '' },
+				['@markup.heading.1.marker.markdown'] = { fg = colors.main.red, bold = true },
+				['@markup.heading.1.markdown'] = { fg = colors.main.red, bold = true },
+				['@markup.heading.2.marker.markdown'] = { fg = colors.main.orange, bold = true },
+				['@markup.heading.2.markdown'] = { fg = colors.main.orange, bold = true },
+				['@markup.heading.3.marker.markdown'] = { fg = colors.main.yellow, bold = true },
+				['@markup.heading.3.markdown'] = { fg = colors.main.yellow, bold = true },
+				['@markup.heading.4.marker.markdown'] = { fg = colors.main.green, bold = true },
+				['@markup.heading.4.markdown'] = { fg = colors.main.green, bold = true },
+				['@markup.heading.5.marker.markdown'] = { fg = colors.main.cyan, bold = true },
+				['@markup.heading.5.markdown'] = { fg = colors.main.cyan, bold = true },
+				['@markup.heading.6.marker.markdown'] = { fg = colors.main.blue, bold = true },
+				['@markup.heading.6.markdown'] = { fg = colors.main.blue, bold = true },
+				['@markup.raw.markdown_inline'] = { fg = '', bg = custom_color.search, bold = true },
+				['@punctuation.special.markdown'] = { fg = colors.main.blue },
 
+				-- - @markup.raw.block.markdown links to @markup markdown
+				-- - @none.markdown links to @none markdown
+				-- - @comment.bash links to Comment bash
+				-- - @spell.bash links to @spell bash
 				-- This is a list of possible values
 				-- YourHighlightGroup = {
 				--     fg = "#SOME_COLOR", -- foreground color

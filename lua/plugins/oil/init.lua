@@ -1,5 +1,3 @@
-local noremap = { noremap = true, silent = true }
-
 -- open the preview when oil is open
 -- vim.api.nvim_create_autocmd('User', {
 -- 	pattern = 'OilEnter',
@@ -15,11 +13,15 @@ return {
 	'stevearc/oil.nvim',
 	lazy = true,
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
-	keys = {
-		{ '<leader>ef', ':lua require(\'oil\').open(vim.fn.expand(\'%:p:h\'))<CR>', noremap }, -- open the current directory
-		{ '<leader>eo', ':Oil . <CR>', noremap }, -- open the root
-		{ '<leader>ec', ':lua require(\'oil\').discard_all_changes()<CR>', noremap }, -- clear all changes
-	},
+	keys = function()
+		local noremap = { noremap = true, silent = true }
+
+		return {
+			{ '<leader>ef', ':lua require(\'oil\').open(vim.fn.expand(\'%:p:h\'))<CR>', noremap }, -- open the current directory
+			{ '<leader>eo', ':Oil . <CR>', noremap }, -- open the root
+			{ '<leader>ec', ':lua require(\'oil\').discard_all_changes()<CR>', noremap }, -- clear all changes
+		}
+	end,
 	config = function()
 		require('oil').setup({
 			-- cleanup_delay_ms = 200,
@@ -43,7 +45,7 @@ return {
 				['<End>'] = '<c-i>zz', -- go to newer position
 			},
 			view_options = {
-
+				show_hidden = true,
 				sort = {
 					{ 'type', 'asc' },
 					{ 'name', 'asc' },

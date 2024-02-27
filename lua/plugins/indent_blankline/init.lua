@@ -1,7 +1,7 @@
 return {
 	'lukas-reineke/indent-blankline.nvim',
 	lazy = true,
-	event = 'BufReadPre',
+	event = 'VeryLazy',
 	main = 'ibl',
 	config = function()
 		local highlight = {
@@ -28,7 +28,7 @@ return {
 		require('ibl').setup({
 			indent = { char = '│', tab_char = '│' },
 			whitespace = {
-				highlight = highlight,
+				-- highlight = highlight,
 				remove_blankline_trail = false,
 			},
 			exclude = {
