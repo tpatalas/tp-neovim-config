@@ -8,6 +8,12 @@ M.anchor = function()
 	return '%='
 end
 
+M.char_count = function()
+	local current_line = vim.fn.line('.')
+	local line_contents = vim.fn.getline(current_line)
+	return #line_contents
+end
+
 M.search_count = function()
 	local res = vim.fn.searchcount({ maxcount = 1000, timeout = 500 })
 
