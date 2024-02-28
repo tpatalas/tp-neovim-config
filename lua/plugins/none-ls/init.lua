@@ -23,17 +23,19 @@ return {
 			diagnostics.tsc,
 			-- WARNING: diagnostics listed below do not support workspace level diagnostics
 			diagnostics.markdownlint,
-			diagnostics.cspell.with(configs.cspell),
+			diagnostics.codespell,
 			-- Formatter ----------------------------------------
 			formatting.markdownlint,
 			formatting.stylua,
 			formatting.rustywind,
 			formatting.shfmt,
 			formatting.prettierd.with(configs.prettier),
-			-- Code Actions -------------------------------------
-			codeactions.cspell.with(configs.cspell),
-			-- Deprecated ---------------------------------------
-			-- followings are deprecated from none-ls
+			-- Completion ----------------------------------------
+			completion.spell,
+			-- Deprecated ----------------------------------------
+			-- diagnostics.cspell.with(configs.cspell),
+			-- codeactions.cspell.with(configs.cspell),
+			-- following are deprecated from none-ls
 			-- formatting.taplo,
 			-- formatting.trim_newlines,
 			-- formatting.trim_whitespace,
