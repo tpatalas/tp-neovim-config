@@ -31,7 +31,7 @@ return {
 			formatting.shfmt,
 			formatting.prettierd.with(configs.prettier),
 			-- Completion ----------------------------------------
-			completion.spell,
+			-- completion.spell,
 			-- Deprecated ----------------------------------------
 			-- diagnostics.cspell.with(configs.cspell),
 			-- codeactions.cspell.with(configs.cspell),
