@@ -13,8 +13,8 @@ return {
 	},
 	config = function()
 		local cmp = require('cmp')
-		local icons = require('plugins.nvim_cmp.icons')
-		local configs = require('plugins.nvim_cmp.configs')
+		local icons = require('plugins.nvim-cmp.icons')
+		local configs = require('plugins.nvim-cmp.configs')
 
 		vim.opt.completeopt = 'menu,menuone,noselect'
 
