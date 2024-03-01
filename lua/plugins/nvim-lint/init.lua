@@ -7,7 +7,7 @@ return {
 	config = function()
 		local lint = require('lint')
 		local linters_all_ft = {
-			{ linter = { 'codespell' }, exclude_ft = {}, exclude_file_name = {} },
+			{ linter = 'codespell', exclude_ft = {}, exclude_file_name = {} },
 		}
 
 		lint.linters_by_ft = {
