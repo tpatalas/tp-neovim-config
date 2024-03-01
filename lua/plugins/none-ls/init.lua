@@ -18,8 +18,6 @@ return {
 		-- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 		local source = {
 			--  Diagnostics -------------------------------------
-			diagnostics.tsc,
-			-- WARNING: diagnostics listed below do not support workspace level diagnostics
 			diagnostics.markdownlint,
 			diagnostics.codespell,
 			-- Formatter ----------------------------------------
@@ -31,6 +29,7 @@ return {
 			-- Completion ----------------------------------------
 			-- completion.spell,
 			-- Deprecated ----------------------------------------
+			-- diagnostics.tsc,
 			-- diagnostics.cspell.with(configs.cspell),
 			-- codeactions.cspell.with(configs.cspell),
 			-- following are deprecated from none-ls
