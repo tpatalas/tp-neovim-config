@@ -14,6 +14,7 @@ return {
 				},
 				['*'] = {
 					'codespell',
+					'typos',
 				},
 				markdown = {
 					'markdownlint',
