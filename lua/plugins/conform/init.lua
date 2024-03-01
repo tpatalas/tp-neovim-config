@@ -2,7 +2,6 @@
 
 return {
 	'stevearc/conform.nvim',
-	enabled = false,
 	lazy = true,
 	event = { 'VeryLazy' },
 	config = function()

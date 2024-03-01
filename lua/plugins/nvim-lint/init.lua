@@ -2,9 +2,7 @@
 
 return {
 	'mfussenegger/nvim-lint',
-
 	lazy = true,
-	enabled = false,
 	event = 'VeryLazy',
 	config = function()
 		local lint = require('lint')
