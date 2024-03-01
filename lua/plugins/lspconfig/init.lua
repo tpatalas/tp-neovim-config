@@ -36,12 +36,9 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 		end
 
-		-------------
-		-- Servers --
-		-------------
+		-- Servers Enabled -------------------------------------------------------
 		lspconfig.eslint.setup(server.eslint)
 		lspconfig.html.setup(server.html)
-		lspconfig.tsserver.setup(server.tsserver)
 		lspconfig.dockerls.setup(server.dockerls)
 		lspconfig.jsonls.setup(server.jsonls)
 		lspconfig.cssls.setup(server.cssls)
@@ -50,5 +47,7 @@ return {
 		lspconfig.emmet_ls.setup(server.emmet_ls)
 		lspconfig.lua_ls.setup(server.lua_ls)
 		lspconfig.taplo.setup(server.taplo)
+		-- Servers Disabled ------------------------------------------------------
+		-- lspconfig.tsserver.setup(server.tsserver)
 	end,
 }
