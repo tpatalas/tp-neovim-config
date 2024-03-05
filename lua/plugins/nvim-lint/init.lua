@@ -14,12 +14,6 @@ return {
 			javascript = {
 				'eslint_d',
 			},
-			yaml = {
-				'actionlint',
-			},
-			yml = {
-				'actionlint',
-			},
 			javascriptreact = {
 				'eslint_d',
 			},
