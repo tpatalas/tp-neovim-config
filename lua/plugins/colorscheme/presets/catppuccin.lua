@@ -62,7 +62,6 @@ return {
 					TelescopeSelection = { fg = '', bg = colors.surface1 },
 					PmenuSel = { fg = colors.rosewater },
 					TabLineFill = { bg = '' },
-					MarkdownCodeBlock = { bg = colors.mantle },
 					CustomMarkdownHorizontalRule = { fg = colors.surface1 },
 					CustomMarkdownHeadingUnderline1 = { fg = colors.surface1 },
 					CustomMarkdownHeadingUnderline2 = { fg = colors.surface1 },
@@ -73,6 +72,7 @@ return {
 					MiniIndentscopeSymbol = { fg = colors.peach },
 					['@markup.quote.markdown'] = { fg = colors.overlay2 },
 					['@punctuation.special.markdown'] = { fg = colors.overlay2 },
+					CustomMarkdownCodeBlock = { bg = colors.mantle },
 				}
 			end,
 			integrations = {
