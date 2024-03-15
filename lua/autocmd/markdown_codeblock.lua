@@ -20,12 +20,12 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged
 				end
 
 				if in_code_block then
-					vim.api.nvim_buf_add_highlight(bufnr, namespace, 'MarkdownCodeBlock', i - 1, 0, -1)
+					vim.api.nvim_buf_add_highlight(bufnr, namespace, 'CustomMarkdownCodeBlock', i - 1, 0, -1)
 					local fill_width = math.max(0, win_width)
 					local fill_text = string.rep(' ', fill_width)
 
 					vim.api.nvim_buf_set_extmark(bufnr, namespace, i - 1, #line, {
-						virt_text = { { fill_text, 'MarkdownCodeBlock' } },
+						virt_text = { { fill_text, 'CustomMarkdownCodeBlock' } },
 						virt_text_pos = 'overlay',
 						hl_mode = 'combine',
 					})
@@ -33,6 +33,6 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged
 
 				::continue::
 			end
-		end, 10) -- 10 ms delay, adjust as needed
+		end, 50) -- 50ms delay, adjust as needed
 	end,
 })
