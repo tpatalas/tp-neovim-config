@@ -1,3 +1,3 @@
-local colorscheme = require('plugins.colorscheme.presets.material')
+local colorscheme = require('plugins.colorscheme.presets.catppuccin')
 
 return colorscheme

@@ -1,10 +1,11 @@
 -- https://github.com/catppuccin/nvim
+-- https://github.com/catppuccin/nvim/blob/main/lua/catppuccin/palettes/mocha.lua
 
 return {
 	'catppuccin/nvim',
 	name = 'catppuccin',
 	lazy = false,
-	-- priority = 1000,
+	priority = 1000,
 	config = function()
 		require('catppuccin').setup({
 			flavour = 'mocha', -- latte, frappe, macchiato, mocha
@@ -39,27 +40,37 @@ return {
 			},
 			integrations = {
 				gitsigns = true,
-				nvimtree = true,
+				-- nvimtree = true,
 				telescope = true,
 				-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-				illuminate = true,
+				-- illuminate = true,
 				treesitter = true,
 				treesitter_context = true,
 				-- coc_nvim = true,
-				hop = true,
+				-- hop = true,
 				markdown = true,
 			},
 
 			color_overrides = {},
 			custom_highlights = function(colors)
 				return {
-					IncSearch = { fg = '', bg = colors.surface1 },
-					CurSearch = { fg = '', bg = colors.surface1 },
+					IncSearch = { fg = colors.peach, bg = colors.surface1 },
+					CurSearch = { fg = colors.peach, bg = colors.surface1 },
+					Search = { fg = colors.peach, bg = colors.surface1 },
 					CursorLineNr = { fg = colors.yellow },
 					Search = { fg = '', bg = '' },
 					TelescopeSelection = { fg = '', bg = colors.surface1 },
 					PmenuSel = { fg = colors.rosewater },
 					TabLineFill = { bg = '' },
+					MarkdownCodeBlock = { bg = colors.base },
+					CustomMarkdownHorizontalRule = { fg = colors.overlay0 },
+					CustomMarkdownHeadingUnderline1 = { fg = colors.overlay0 },
+					CustomMarkdownHeadingUnderline2 = { fg = colors.overlay0 },
+					CustomMarkdownHeadingUnderline3 = { fg = colors.surface0 },
+					CodeActionNumber = { bg = '' },
+					Cursor = { bg = colors.sky },
+					IblIndent = { fg = colors.base },
+					MiniIndentscopeSymbol = { fg = colors.peach },
 				}
 			end,
 			integrations = {
@@ -69,7 +80,7 @@ return {
 				treesitter = true,
 				notify = false,
 				mini = {
-					enabled = false,
+					enabled = true,
 					indentscope_color = '',
 				},
 				native_lsp = {
@@ -89,3 +100,30 @@ return {
 		vim.cmd.colorscheme('catppuccin')
 	end,
 }
+
+-- rosewater = "#f5e0dc",
+-- 	flamingo = "#f2cdcd",
+-- 	pink = "#f5c2e7",
+-- 	mauve = "#cba6f7",
+-- 	red = "#f38ba8",
+-- 	maroon = "#eba0ac",
+-- 	peach = "#fab387",
+-- 	yellow = "#f9e2af",
+-- 	green = "#a6e3a1",
+-- 	teal = "#94e2d5",
+-- 	sky = "#89dceb",
+-- 	sapphire = "#74c7ec",
+-- 	blue = "#89b4fa",
+-- 	lavender = "#b4befe",
+-- 	text = "#cdd6f4",
+-- 	subtext1 = "#bac2de",
+-- 	subtext0 = "#a6adc8",
+-- 	overlay2 = "#9399b2",
+-- 	overlay1 = "#7f849c",
+-- 	overlay0 = "#6c7086",
+-- 	surface2 = "#585b70",
+-- 	surface1 = "#45475a",
+-- 	surface0 = "#313244",
+-- 	base = "#1e1e2e",
+-- 	mantle = "#181825",
+-- 	crust = "#11111b",
