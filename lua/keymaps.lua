@@ -52,7 +52,13 @@ keymap.set('n', '<leader>ee', '<cmd>e<CR>', noremap) -- save
 keymap.set('n', '<leader>EE', '<cmd>e!<CR>', noremap) -- save
 -- search and
 keymap.set('n', '<leader>RR', ':%s/<c-r><c-w>/<c-r><c-w>', noremap) -- Search and replace the word under current
-keymap.set('n', '<leader>rr', ':let @/ = "\\\\<" . expand(\'<cword>\') . "\\\\>"<CR>:set hlsearch<CR>cgn', noremap) -- Search for the word under the cursor. cgn is removed for versatile usage.
+keymap.set(
+	'n',
+	'<leader>rr',
+	':let @/ = substitute(expand("<cword>"), "\\\\<\\\\>", "", "g")<CR>:set hlsearch<CR>cgn',
+	noremap
+) -- Search for the word under the cursor. cgn is removed for versatile usage.
+
 keymap.set('n', '<leader>ll', '<s-v>/\\%V', noremap) -- Search the pattern/word within the highlighted line
 keymap.set('n', 'n', 'nzz', noremap) -- center search result
 keymap.set('n', 'N', 'Nzz', noremap) -- center search result
