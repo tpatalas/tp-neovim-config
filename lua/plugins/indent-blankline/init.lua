@@ -35,6 +35,7 @@ return {
 				filetypes = {
 					'dashboard',
 					'norg',
+					'markdown',
 				},
 			},
 			scope = {
