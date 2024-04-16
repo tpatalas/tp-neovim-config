@@ -72,7 +72,7 @@ return {
 					MiniIndentscopeSymbol = { fg = colors.peach },
 					['@markup.quote.markdown'] = { fg = colors.overlay2 },
 					['@punctuation.special.markdown'] = { fg = colors.overlay2 },
-					CustomMarkdownCodeBlock = { bg = colors.mantle },
+					CustomMarkdownCodeBlock = { bg = colors.base },
 				}
 			end,
 			integrations = {
