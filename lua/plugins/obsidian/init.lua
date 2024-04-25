@@ -74,7 +74,10 @@ return {
 					note:add_alias(note.title)
 				end
 
-				local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+				local fullPath = vim.fn.expand('%:p')
+				local filename = vim.fn.fnamemodify(fullPath, ':t:r')
+
+				local out = { id = filename, aliases = note.aliases, tags = note.tags }
 
 				if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
 					for k, v in pairs(note.metadata) do
