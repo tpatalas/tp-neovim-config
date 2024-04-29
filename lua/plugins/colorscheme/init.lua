@@ -1,3 +1,3 @@
-local colorscheme = require('plugins.colorscheme.presets.catppuccin')
+local colorscheme = require('plugins.colorscheme.presets.tokyonight')
 
 return colorscheme
