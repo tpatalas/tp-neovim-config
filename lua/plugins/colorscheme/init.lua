@@ -1,3 +1,3 @@
-local colorscheme = require('plugins.colorscheme.presets.tokyonight')
+local colorscheme = require('plugins.colorscheme.presets.material')
 
 return colorscheme

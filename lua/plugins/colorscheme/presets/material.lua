@@ -65,6 +65,7 @@ return {
 				WinSeparator = { fg = colors.main.paleblue },
 				CmpItemAbbrMatch = { fg = colors.main.orange, bg = '' },
 				CmpItemAbbrMatchFuzzy = { fg = colors.main.orange, bg = '' },
+				PmenuThumb = { bg = colors.editor.fg },
 				FloatBorder = { fg = colors.main.paleblue },
 				MatchParen = { fg = colors.main.yellow, bg = colors.editor.selection, bold = false },
 				MarkdownCodeBlock = { bg = colors.editor.selection },
