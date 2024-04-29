@@ -68,11 +68,11 @@ return {
 				PmenuThumb = { bg = colors.editor.fg },
 				FloatBorder = { fg = colors.main.paleblue },
 				MatchParen = { fg = colors.main.yellow, bg = colors.editor.selection, bold = false },
-				MarkdownCodeBlock = { bg = colors.editor.selection },
+				CustomMarkdownHorizontalRule = { fg = colors.editor.comment },
 				CustomMarkdownHeadingUnderline1 = { fg = colors.editor.comment },
-				CustomMarkdownHeadingUnderline2 = { fg = colors.editor.comment },
+				CustomMarkdownHeadingUnderline2 = { fg = colors.editor.line_numbers },
 				CustomMarkdownHeadingUnderline3 = { fg = colors.editor.line_numbers },
-				CustomMarkdownHorizontalRule = { fg = colors.editor.comments },
+				CustomMarkdownCodeBlock = { bg = colors.editor.selection },
 				MarkdownBold = { fg = colors.editor.fg_dark, bold = true },
 				CodeActionNumber = { fg = colors.main.cyan, bg = '' },
 				['@markup.heading.1.marker.markdown'] = { fg = colors.main.red, bold = true },
@@ -118,3 +118,19 @@ return {
 		vim.cmd('colorscheme material')
 	end,
 }
+
+-- colors.editor.bg           = "#0F111A"
+-- colors.editor.bg_alt       = "#090B10"
+-- colors.editor.fg           = "#A6ACCD"
+-- -- colors.editor.fg_darker    = "#8DA3CA" -- TODO
+-- colors.editor.fg_dark      = "#717CB4"
+-- colors.editor.selection    = "#1F2233"
+-- colors.editor.contrast     = "#090B10"
+-- colors.editor.active       = "#1A1C25"
+-- colors.editor.border       = "#232637"
+-- colors.editor.line_numbers = "#3B3F51"
+-- colors.editor.highlight    = "#1F2233"
+-- colors.editor.disabled     = "#464B5D"
+-- colors.editor.accent       = "#84FFFF"
+-- colors.syntax.comments     = "#464B5D"
+--
