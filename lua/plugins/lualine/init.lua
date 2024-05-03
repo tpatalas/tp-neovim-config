@@ -11,7 +11,6 @@ return {
 		local colors = require('plugins.colorscheme.palettes.' .. colorscheme)
 		local global_icons = require('utils.global_icons')
 		local component = component_colors(colors)
-		local path_winbar = { custom_components.path_winbar, color = component.path_winbar, padding = { left = 2 } }
 
 		require('lualine').setup({
 			options = {
@@ -91,12 +90,12 @@ return {
 			tabline = {},
 			winbar = {
 				lualine_a = {
-					path_winbar,
+					{ custom_components.path_winbar, color = component.path_winbar, padding = { left = 2 } },
 				},
 			},
 			inactive_winbar = {
 				lualine_a = {
-					path_winbar,
+					{ custom_components.path_winbar, color = component.path_winbar, padding = { left = 2 } },
 				},
 			},
 		})

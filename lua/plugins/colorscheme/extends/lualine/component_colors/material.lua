@@ -2,7 +2,7 @@ return function(colors)
 	return {
 		lazy = { fg = colors.main.yellow },
 		search_count = { fg = colors.main.orange },
-		path_winbar = { fg = colors.editor.fg_dark, bg = '' },
+		path_winbar = { fg = colors.editor.disabled, bg = '' },
 		branch = { fg = colors.main.gray },
 		diff_color = {
 			added = { fg = colors.main.green },
