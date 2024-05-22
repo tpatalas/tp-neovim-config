@@ -60,7 +60,7 @@ return {
 					},
 				},
 				lualine_x = {
-					{ require('lazy.status').updates, cond = require('lazy.status').has_updates, color = component.lazy },
+					-- { require('lazy.status').updates, cond = require('lazy.status').has_updates, color = component.lazy },
 					{ custom_components.search_count, icon = '󰍉', color = component.search_count },
 					{ custom_components.anchor },
 				},
