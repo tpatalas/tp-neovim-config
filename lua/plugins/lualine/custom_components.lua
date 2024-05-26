@@ -48,7 +48,7 @@ M.path_winbar = function()
 	local pathStart = endIdx + 1
 
 	if not startIdx or startIdx <= 0 then
-		return ' ' .. M.cwd_folder_name() .. fullPath
+		return '󰋜 ' .. M.cwd_folder_name() .. fullPath
 	end
 
 	local pathBelowCwd = fullPath:sub(pathStart)
@@ -83,7 +83,7 @@ M.path_winbar = function()
 		desiredPath = desiredPath:gsub(file, icon .. ' ' .. file, 1)
 	end
 
-	return ' ' .. M.cwd_folder_name() .. desiredPath
+	return '󰋜 ' .. M.cwd_folder_name() .. desiredPath
 end
 
 return M
