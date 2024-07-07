@@ -46,6 +46,25 @@ return {
 				highlights.WinSeparator = { fg = colors.orange }
 				highlights.PmenuSel = { fg = colors.bg_bg_visual }
 				highlights.Pmenu = { fg = colors.blue, bg = '' }
+				highlights.MatchParen = { fg = colors.yellow, bg = colors.blue0 }
+				highlights.CustomMarkdownCodeBlock = { bg = colors.bg_highlight }
+				highlights.CustomMarkdownHorizontalRule = { fg = colors.comment }
+				highlights.CustomMarkdownHeadingUnderline1 = { fg = colors.dark5 }
+				highlights.CustomMarkdownHeadingUnderline2 = { fg = colors.comment }
+				highlights.CustomMarkdownHeadingUnderline3 = { fg = colors.comment }
+
+				-- highlights['@markup.heading.1.markdown'] = { fg = colors.red }
+				-- highlights['@markup.heading.2.marker.markdown'] = { fg = colors.orange }
+				-- highlights['@markup.heading.2.markdown'] = { fg = colors.orange }
+				-- highlights['@markup.heading.3.marker.markdown'] = { fg = colors.yellow }
+				-- highlights['@markup.heading.3.markdown'] = { fg = colors.yellow }
+				-- highlights['@markup.heading.4.marker.markdown'] = { fg = colors.green }
+				-- highlights['@markup.heading.4.markdown'] = { fg = colors.green }
+				-- highlights['@markup.heading.5.marker.markdown'] = { fg = colors.cyan }
+				-- highlights['@markup.heading.5.markdown'] = { fg = colors.main.cyan }
+				-- highlights['@markup.heading.6.marker.markdown'] = { fg = colors.blue }
+				-- highlights['@markup.heading.6.markdown'] = { fg = colors.blue }
+
 				-- highlights.TelescopeBorder = { fg = colors.float, bg = '' }
 				-- highlights.TelescopePromptTitle = { bg = '' }
 				-- highlights.TelescopePromptBorder = { bg = '' }
@@ -55,6 +74,9 @@ return {
 				-- highlights.FloatBorder = { fg = colors.purple, bg = '' }
 				-- highlights.NormalFloat = { fg = colors.float, bg = '' }
 				-- highlights.TabLineFill = { bg = '' }
+				--     ['@markup.heading.1.marker.markdown'] = { fg = colors.main.red, bold = true }
+				-- highlights['@markup.raw.markdown_inline'] = { fg = '', bg = colors.orange }
+				-- highlights['@punctuation.special.markdown'] = { fg = colors.orange }
 			end,
 		})
 		vim.cmd('colorscheme tokyonight')
