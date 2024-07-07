@@ -42,20 +42,19 @@ return {
 				highlights.LineNr = { fg = '', bg = '' }
 				highlights.CursorLineNr = { fg = colors.yellow, bg = '' }
 				highlights.Search = { fg = '', bg = '' }
-				highlights.Cursor = { fg = '', bg = colors.blue0 }
-				highlights.TelescopeBorder = { fg = colors.float, bg = '' }
-				highlights.TelescopePromptTitle = { bg = '' }
-				highlights.TelescopePromptBorder = { bg = '' }
-				highlights.TelescopeNormal = { bg = '' }
-				highlights.TelescopeSelection = { fg = '', bg = colors.bg_visual }
-				highlights.TelescopeResultsIdentifier = { fg = '' }
-				highlights.FloatBorder = { fg = colors.purple, bg = '' }
-				highlights.NormalFloat = { fg = colors.float, bg = '' }
-				highlights.Pmenu = { fg = colors.blue, bg = '' }
-				highlights.PmenuThumb = { fg = colors.float }
+				highlights.Cursor = { bg = colors.blue0, fg = colors.orange }
+				highlights.WinSeparator = { fg = colors.orange }
 				highlights.PmenuSel = { fg = colors.bg_bg_visual }
-				highlights.TabLineFill = { bg = '' }
-				highlights.WinSeparator = { fg = colors.float }
+				highlights.Pmenu = { fg = colors.blue, bg = '' }
+				-- highlights.TelescopeBorder = { fg = colors.float, bg = '' }
+				-- highlights.TelescopePromptTitle = { bg = '' }
+				-- highlights.TelescopePromptBorder = { bg = '' }
+				-- highlights.TelescopeNormal = { bg = '' }
+				-- highlights.TelescopeSelection = { fg = '', bg = colors.bg_visual }
+				-- highlights.TelescopeResultsIdentifier = { fg = '' }
+				-- highlights.FloatBorder = { fg = colors.purple, bg = '' }
+				-- highlights.NormalFloat = { fg = colors.float, bg = '' }
+				-- highlights.TabLineFill = { bg = '' }
 			end,
 		})
 		vim.cmd('colorscheme tokyonight')
