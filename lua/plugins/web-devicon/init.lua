@@ -4,6 +4,7 @@
 return {
 	'nvim-tree/nvim-web-devicons',
 	lazy = true,
+	enabled = false,
 	ft = { 'norg', 'oil' },
 	opts = {
 		override_by_extension = {
