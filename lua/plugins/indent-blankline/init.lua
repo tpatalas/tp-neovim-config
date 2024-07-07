@@ -29,12 +29,13 @@ return {
 			indent = { char = '│', tab_char = '│' },
 			whitespace = {
 				-- highlight = highlight,
-				remove_blankline_trail = false,
+				remove_blankline_trail = true,
 			},
 			exclude = {
 				filetypes = {
 					'dashboard',
 					'norg',
+					'markdown',
 				},
 			},
 			scope = {

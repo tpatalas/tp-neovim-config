@@ -3,6 +3,7 @@
 return {
 	'folke/tokyonight.nvim',
 	lazy = false,
+	name = 'tokyonight',
 	priority = 1000,
 	config = function()
 		require('tokyonight').setup({
@@ -43,6 +44,8 @@ return {
 				highlights.Search = { fg = '', bg = '' }
 				highlights.Cursor = { fg = '', bg = colors.blue0 }
 				highlights.TelescopeBorder = { fg = colors.float, bg = '' }
+				highlights.TelescopePromptTitle = { bg = '' }
+				highlights.TelescopePromptBorder = { bg = '' }
 				highlights.TelescopeNormal = { bg = '' }
 				highlights.TelescopeSelection = { fg = '', bg = colors.bg_visual }
 				highlights.TelescopeResultsIdentifier = { fg = '' }

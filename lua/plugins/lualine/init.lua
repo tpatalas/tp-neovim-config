@@ -11,7 +11,6 @@ return {
 		local colors = require('plugins.colorscheme.palettes.' .. colorscheme)
 		local global_icons = require('utils.global_icons')
 		local component = component_colors(colors)
-		local path_winbar = { custom_components.path_winbar, color = component.path_winbar, padding = { left = 2 } }
 
 		require('lualine').setup({
 			options = {
@@ -61,14 +60,15 @@ return {
 					},
 				},
 				lualine_x = {
-					{ require('lazy.status').updates, cond = require('lazy.status').has_updates, color = component.lazy },
+					-- { require('lazy.status').updates, cond = require('lazy.status').has_updates, color = component.lazy },
 					{ custom_components.search_count, icon = '󰍉', color = component.search_count },
 					{ custom_components.anchor },
 				},
 				lualine_y = {
 					-- { 'progress', icon = '', padding = { left = 0, right = 1 } },
 					-- { 'location', icon = '', padding = { left = 0, right = 1 } },
-					{ 'encoding', padding = { left = 1, right = 1 } },
+					{ custom_components.char_count, icon = '', padding = { left = 1, right = 1 } },
+					-- { 'encoding', padding = { left = 1, right = 1 } },
 					{ 'filesize', icon = '', padding = { left = 1, right = 1 } },
 					{ custom_components.total_lines_file, icon = '', padding = { left = 0, right = 1 } },
 					{
@@ -90,12 +90,12 @@ return {
 			tabline = {},
 			winbar = {
 				lualine_a = {
-					path_winbar,
+					{ custom_components.path_winbar, color = component.path_winbar, padding = { left = 2 } },
 				},
 			},
 			inactive_winbar = {
 				lualine_a = {
-					path_winbar,
+					{ custom_components.path_winbar, color = component.path_winbar, padding = { left = 2 } },
 				},
 			},
 		})

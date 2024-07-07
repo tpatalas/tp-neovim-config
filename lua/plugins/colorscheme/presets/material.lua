@@ -26,20 +26,6 @@ return {
 				filetypes = {}, -- Specify which filetypes get the contrasted (darker) background
 			},
 
-			styles = { -- Give comments style such as bold, italic, underline etc.
-				comments = { --[[ italic = true ]]
-				},
-				strings = { --[[ bold = true ]]
-				},
-				keywords = { --[[ underline = true ]]
-				},
-				functions = { --[[ bold = true, undercurl = true ]]
-				},
-				variables = {},
-				operators = {},
-				types = {},
-			},
-
 			plugins = { -- Uncomment the plugins that you use to highlight them
 				-- Available plugins:
 				'gitsigns',
@@ -48,25 +34,6 @@ return {
 				'lspsaga',
 				'nvim-cmp',
 				'nvim-web-devicons',
-				'neorg',
-				-- 'telescope',
-				-- "dap",
-				-- "dashboard",
-				-- "eyeliner",
-				-- "fidgeot"
-				-- "flash"
-				-- "hop",
-				-- "illuminate",
-				-- "mini",
-				-- "neogit",
-				-- "neotest",
-				-- "noice"
-				-- "nvim-navic",
-				-- "nvim-tree",
-				-- "rainbow-delimiters",
-				-- "sneak",
-				-- "trouble",
-				-- "which-key",
 			},
 
 			disable = {
@@ -98,8 +65,35 @@ return {
 				WinSeparator = { fg = colors.main.paleblue },
 				CmpItemAbbrMatch = { fg = colors.main.orange, bg = '' },
 				CmpItemAbbrMatchFuzzy = { fg = colors.main.orange, bg = '' },
+				PmenuThumb = { bg = colors.editor.fg },
 				FloatBorder = { fg = colors.main.paleblue },
+				MatchParen = { fg = colors.main.yellow, bg = colors.editor.selection, bold = false },
+				CustomMarkdownHorizontalRule = { fg = colors.editor.comment },
+				CustomMarkdownHeadingUnderline1 = { fg = colors.editor.comment },
+				CustomMarkdownHeadingUnderline2 = { fg = colors.editor.line_numbers },
+				CustomMarkdownHeadingUnderline3 = { fg = colors.editor.line_numbers },
+				CustomMarkdownCodeBlock = { bg = colors.editor.selection },
+				MarkdownBold = { fg = colors.editor.fg_dark, bold = true },
+				CodeActionNumber = { fg = colors.main.cyan, bg = '' },
+				['@markup.heading.1.marker.markdown'] = { fg = colors.main.red, bold = true },
+				['@markup.heading.1.markdown'] = { fg = colors.main.red, bold = true },
+				['@markup.heading.2.marker.markdown'] = { fg = colors.main.orange, bold = true },
+				['@markup.heading.2.markdown'] = { fg = colors.main.orange, bold = true },
+				['@markup.heading.3.marker.markdown'] = { fg = colors.main.yellow, bold = true },
+				['@markup.heading.3.markdown'] = { fg = colors.main.yellow, bold = true },
+				['@markup.heading.4.marker.markdown'] = { fg = colors.main.green, bold = true },
+				['@markup.heading.4.markdown'] = { fg = colors.main.green, bold = true },
+				['@markup.heading.5.marker.markdown'] = { fg = colors.main.cyan, bold = true },
+				['@markup.heading.5.markdown'] = { fg = colors.main.cyan, bold = true },
+				['@markup.heading.6.marker.markdown'] = { fg = colors.main.blue, bold = true },
+				['@markup.heading.6.markdown'] = { fg = colors.main.blue, bold = true },
+				['@markup.raw.markdown_inline'] = { fg = '', bg = custom_color.search, bold = true },
+				['@punctuation.special.markdown'] = { fg = colors.main.blue },
 
+				-- - @markup.raw.block.markdown links to @markup markdown
+				-- - @none.markdown links to @none markdown
+				-- - @comment.bash links to Comment bash
+				-- - @spell.bash links to @spell bash
 				-- This is a list of possible values
 				-- YourHighlightGroup = {
 				--     fg = "#SOME_COLOR", -- foreground color
@@ -124,3 +118,19 @@ return {
 		vim.cmd('colorscheme material')
 	end,
 }
+
+-- colors.editor.bg           = "#0F111A"
+-- colors.editor.bg_alt       = "#090B10"
+-- colors.editor.fg           = "#A6ACCD"
+-- -- colors.editor.fg_darker    = "#8DA3CA" -- TODO
+-- colors.editor.fg_dark      = "#717CB4"
+-- colors.editor.selection    = "#1F2233"
+-- colors.editor.contrast     = "#090B10"
+-- colors.editor.active       = "#1A1C25"
+-- colors.editor.border       = "#232637"
+-- colors.editor.line_numbers = "#3B3F51"
+-- colors.editor.highlight    = "#1F2233"
+-- colors.editor.disabled     = "#464B5D"
+-- colors.editor.accent       = "#84FFFF"
+-- colors.syntax.comments     = "#464B5D"
+--

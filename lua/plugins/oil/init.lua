@@ -26,9 +26,9 @@ return {
 		require('oil').setup({
 			-- cleanup_delay_ms = 200,
 			columns = {
-				-- { 'mtime', highlight = 'OilMTime' },
+				'icon',
 				-- { 'size', highlight = 'OilSize' },
-				{ 'icon', highlight = 'OilIcons' },
+				-- { 'mtime', highlight = 'OilMTime' },
 				-- "permissions",
 			},
 			keymaps = {
