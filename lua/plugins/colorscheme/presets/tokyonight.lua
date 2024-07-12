@@ -42,7 +42,7 @@ return {
 				highlights.LineNr = { fg = '', bg = '' }
 				highlights.CursorLineNr = { fg = colors.yellow, bg = '' }
 				highlights.Search = { fg = '', bg = '' }
-				highlights.Cursor = { bg = colors.blue0, fg = colors.orange }
+				highlights.Cursor = { bg = colors.blue6 }
 				highlights.WinSeparator = { fg = colors.orange }
 				highlights.PmenuSel = { fg = colors.bg_bg_visual }
 				highlights.Pmenu = { fg = colors.blue, bg = '' }
