@@ -15,6 +15,13 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead', 'BufWinEnter', 'TextChanged
 				if line:match('^```') then
 					in_code_block = not in_code_block
 					if in_code_block then
+						-- Add virtual text to indicate the type of code block
+						local code_type = line:match('^```(.*)') or ''
+						vim.api.nvim_buf_set_extmark(bufnr, namespace, i - 1, #line, {
+							virt_text = { { code_type, 'Comment' } },
+							virt_text_pos = 'eol',
+							hl_mode = 'combine',
+						})
 						goto continue
 					end
 				end
