@@ -47,6 +47,7 @@ return {
 		lspconfig.emmet_ls.setup(server.emmet_ls)
 		lspconfig.lua_ls.setup(server.lua_ls)
 		lspconfig.taplo.setup(server.taplo)
+		lspconfig.harper_ls.setup(server.harper_ls)
 		-- Servers Disabled ------------------------------------------------------
 		-- lspconfig.tsserver.setup(server.tsserver)
 	end,

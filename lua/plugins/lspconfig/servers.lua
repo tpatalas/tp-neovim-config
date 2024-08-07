@@ -180,4 +180,34 @@ M.taplo = {
 	on_attach = on_attach,
 }
 
+-- https://github.com/elijah-potter/harper/blob/master/harper-ls/README.md
+M.harper_ls = {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		['harper-ls'] = {
+			userDictPath = '~/.config/langs/dict.txt',
+			linters = {
+				spell_check = true,
+				spelled_numbers = false,
+				an_a = true,
+				sentence_capitalization = false,
+				unclosed_quotes = true,
+				wrong_quotes = false,
+				long_sentences = true,
+				repeated_words = true,
+				spaces = true,
+				matcher = true,
+				correct_number_suffix = true,
+				number_suffix_capitalization = true,
+				multiple_sequential_pronouns = true,
+			},
+			diagnosticSeverity = 'hint', -- Can also be "information", "warning", or "error"
+			codeActions = {
+				forceStable = true,
+			},
+		},
+	},
+}
+
 return M
