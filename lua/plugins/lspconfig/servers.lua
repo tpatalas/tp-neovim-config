@@ -142,7 +142,7 @@ M.typos_lsp = {
 	filetypes = get_included_filetypes({ 'toggleterm' }),
 }
 
-M.tsserver = {
+M.ts_ls = {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
@@ -164,7 +164,7 @@ M.tsserver = {
 		['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
 			local client = vim.lsp.get_client_by_id(ctx.client_id)
 
-			if client and client.name == 'tsserver' then
+			if client and client.name == 'ts_ls' then
 				result.diagnostics = vim.tbl_filter(function(diagnostic)
 					return diagnostic.code ~= 80001
 				end, result.diagnostics)
