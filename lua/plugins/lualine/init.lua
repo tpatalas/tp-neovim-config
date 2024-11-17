@@ -2,8 +2,8 @@ local colorscheme = require('plugins.colorscheme').name
 
 return {
 	'nvim-lualine/lualine.nvim',
-	lazy = true,
-	event = 'VeryLazy',
+	-- lazy = true,
+	-- event = 'VeryLazy',
 	config = function()
 		local custom_components = require('plugins.lualine.custom_components')
 		local component_colors = require('plugins.colorscheme.extends.lualine.component_colors.' .. colorscheme)
@@ -26,9 +26,9 @@ return {
 				always_divide_middle = true,
 				globalstatus = true,
 				refresh = {
-					statusline = 1000,
-					tabline = 1000,
-					winbar = 1000,
+					statusline = 100,
+					tabline = 100,
+					winbar = 100,
 				},
 			},
 			sections = {
@@ -87,17 +87,21 @@ return {
 				lualine_y = {},
 				lualine_z = {},
 			},
-			tabline = {},
-			winbar = {
+			tabline = {
 				lualine_a = {
 					{ custom_components.path_winbar, color = component.path_winbar, padding = { left = 2 } },
 				},
 			},
-			inactive_winbar = {
-				lualine_a = {
-					{ custom_components.path_winbar, color = component.path_winbar, padding = { left = 2 } },
-				},
-			},
+			-- winbar = {
+			-- 	lualine_a = {
+			-- 		{ custom_components.path_winbar, color = component.path_winbar, padding = { left = 2 } },
+			-- 	},
+			-- },
+			-- inactive_winbar = {
+			-- 	lualine_a = {
+			-- 		{ custom_components.path_winbar, color = component.path_winbar, padding = { left = 2 } },
+			-- 	},
+			-- },
 		})
 	end,
 }
