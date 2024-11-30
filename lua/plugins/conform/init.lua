@@ -51,6 +51,10 @@ return {
 				html = {
 					'rustywind',
 				},
+				swift = {
+					'swift_format',
+					'swiftformat',
+				},
 			},
 			format_on_save = {
 				timeout_ms = 1000,

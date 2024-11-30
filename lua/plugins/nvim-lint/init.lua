@@ -26,6 +26,9 @@ return {
 			markdown = {
 				'markdownlint',
 			},
+			swift = {
+				'swiftlint',
+			},
 		}
 
 		vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufWritePost', 'InsertLeave' }, {
