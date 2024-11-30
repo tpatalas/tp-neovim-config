@@ -210,4 +210,9 @@ M.harper_ls = {
 	},
 }
 
+M.sourcekit = {
+	capabilities = capabilities,
+	on_attach = on_attach,
+}
+
 return M

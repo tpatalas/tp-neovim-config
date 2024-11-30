@@ -48,6 +48,7 @@ return {
 		lspconfig.lua_ls.setup(server.lua_ls)
 		lspconfig.taplo.setup(server.taplo)
 		lspconfig.harper_ls.setup(server.harper_ls)
+		lspconfig.sourcekit.setup(server.sourcekit)
 		-- Servers Disabled ------------------------------------------------------
 		-- lspconfig.tsserver.setup(server.tsserver)
 	end,
