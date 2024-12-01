@@ -142,7 +142,7 @@ M.typos_lsp = {
 	filetypes = get_included_filetypes({ 'toggleterm' }),
 }
 
-M.tsserver = {
+M.ts_ls = {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
@@ -164,7 +164,7 @@ M.tsserver = {
 		['textDocument/publishDiagnostics'] = function(_, result, ctx, ...)
 			local client = vim.lsp.get_client_by_id(ctx.client_id)
 
-			if client and client.name == 'tsserver' then
+			if client and client.name == 'ts_ls' then
 				result.diagnostics = vim.tbl_filter(function(diagnostic)
 					return diagnostic.code ~= 80001
 				end, result.diagnostics)
@@ -176,6 +176,41 @@ M.tsserver = {
 }
 
 M.taplo = {
+	capabilities = capabilities,
+	on_attach = on_attach,
+}
+
+-- https://github.com/elijah-potter/harper/blob/master/harper-ls/README.md
+M.harper_ls = {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		['harper-ls'] = {
+			userDictPath = '~/.config/langs/dict.txt',
+			linters = {
+				spell_check = true,
+				spelled_numbers = false,
+				an_a = true,
+				sentence_capitalization = false,
+				unclosed_quotes = true,
+				wrong_quotes = false,
+				long_sentences = true,
+				repeated_words = true,
+				spaces = true,
+				matcher = true,
+				correct_number_suffix = true,
+				number_suffix_capitalization = true,
+				multiple_sequential_pronouns = true,
+			},
+			diagnosticSeverity = 'hint', -- Can also be "information", "warning", or "error"
+			codeActions = {
+				forceStable = true,
+			},
+		},
+	},
+}
+
+M.sourcekit = {
 	capabilities = capabilities,
 	on_attach = on_attach,
 }

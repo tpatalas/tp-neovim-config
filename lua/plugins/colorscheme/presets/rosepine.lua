@@ -8,72 +8,75 @@ return {
 	priority = 1000,
 	config = function()
 		require('rose-pine').setup({
-			--- @usage 'auto'|'main'|'moon'|'dawn'
-			variant = 'main',
-			--- @usage 'main'|'moon'|'dawn'
-			dark_variant = 'main',
-			bold_vert_split = false,
-			dim_nc_background = false,
-			disable_background = true,
-			disable_float_background = true,
-			disable_italics = false,
+			variant = 'auto', -- auto, main, moon, or dawn
+			dark_variant = 'main', -- main, moon, or dawn
+			dim_inactive_windows = false,
+			extend_background_behind_borders = true,
 
-			--- @usage string hex value or named color from rosepinetheme.com/palette
+			enable = {
+				terminal = true,
+				legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+				migrations = true, -- Handle deprecated options automatically
+			},
+
+			styles = {
+				bold = true,
+				italic = true,
+				transparency = true,
+			},
+
 			groups = {
-				background = 'base',
-				background_nc = '_experimental_nc',
-				panel = 'surface',
-				panel_nc = 'base',
-				border = 'highlight_med',
-				comment = 'muted',
+				border = 'muted',
 				link = 'iris',
-				punctuation = 'subtle',
+				panel = 'surface',
 
 				error = 'love',
 				hint = 'iris',
 				info = 'foam',
+				note = 'pine',
+				todo = 'rose',
 				warn = 'gold',
 
-				headings = {
-					h1 = 'iris',
-					h2 = 'foam',
-					h3 = 'rose',
-					h4 = 'gold',
-					h5 = 'pine',
-					h6 = 'foam',
-				},
-				-- or set all headings at once
-				-- headings = 'subtle'
+				git_add = 'foam',
+				git_change = 'rose',
+				git_delete = 'love',
+				git_dirty = 'rose',
+				git_ignore = 'muted',
+				git_merge = 'iris',
+				git_rename = 'pine',
+				git_stage = 'iris',
+				git_text = 'rose',
+				git_untracked = 'subtle',
+
+				h1 = 'iris',
+				h2 = 'foam',
+				h3 = 'rose',
+				h4 = 'gold',
+				h5 = 'pine',
+				h6 = 'foam',
 			},
 
-			-- Change specific vim highlight groups
-			-- https://github.com/rose-pine/neovim/wiki/Recipes
 			highlight_groups = {
-				CursorLine = { bg = 'foam', blend = 10 },
-				Cursor = { bg = 'gold', blend = 50 },
-				IncSearch = { fg = '', bg = 'gold', blend = 20 },
-				search = { fg = '', bg = 'gold', blend = 20 },
-				StatusLine = { fg = 'love', bg = 'love', blend = 10 },
-				LineNr = { fg = 'muted', bg = '' },
-				CursorLineNr = { fg = 'gold', bg = '' },
-				TelescopeBorder = { fg = 'subtle', bg = '' },
-				TelescopeResultsIdentifier = { fg = '' },
-				TelescopePromptCounter = { fg = 'subtle' },
-				FloatBorder = { fg = 'iris', bg = '' },
-				NormalFloat = { fg = 'muted', bg = '' },
-				GitSignsDelete = { fg = 'love', bg = '' },
-				GitSignsChange = { fg = 'gold', bg = '' },
-				GitSignsAdd = { fg = 'pine', bg = '' },
-				GitSigns = { fg = 'pine', bg = '' },
-				NonText = { fg = 'overlay' },
-				CmpItemAbbrMatch = { fg = 'rose', bg = '' },
-				CmpItemAbbrMatchFuzzy = { fg = 'rose', bg = '' },
-				ToggleTerm1FloatBorder = { fg = 'muted' },
-				Normal = { fg = 'subtle' },
+				-- Comment = { fg = "foam" },
+				-- VertSplit = { fg = "muted", bg = "muted" },
 			},
+
+			before_highlight = function(group, highlight, palette)
+				-- Disable all undercurls
+				-- if highlight.undercurl then
+				--     highlight.undercurl = false
+				-- end
+				--
+				-- Change palette colour
+				-- if highlight.fg == palette.pine then
+				--     highlight.fg = palette.foam
+				-- end
+			end,
 		})
 
-		-- Set colorscheme after options
 		vim.cmd('colorscheme rose-pine')
+		-- vim.cmd("colorscheme rose-pine-main")
+		-- vim.cmd("colorscheme rose-pine-moon")
+		-- vim.cmd("colorscheme rose-pine-dawn")
 	end,
 }

@@ -4,14 +4,7 @@
 return {
 	'nvim-tree/nvim-web-devicons',
 	lazy = true,
-	ft = { 'norg', 'oil' },
-	opts = {
-		override_by_extension = {
-			['norg'] = {
-				icon = '',
-				color = '#51a0cf',
-				name = 'Neorg',
-			},
-		},
-	},
+	event = 'VeryLazy',
+	enabled = true,
+	ft = { 'oil' },
 }
